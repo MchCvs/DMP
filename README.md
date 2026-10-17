@@ -1,128 +1,66 @@
-# 🚀 DMP — Debian Maintenance Professionnel
+# DMP — Debian Maintenance Professionnel
 
-**Version** : 1.8.0  
-**Date** : 14 Octobre 2026  
-**Status** : Production-Ready ✅
+DMP aide les utilisateurs de **Debian GNU/Linux**, même débutants, à comprendre, suivre et entretenir leur machine.
 
----
+Chaque page suit le même cycle : **observation → compréhension → explication → décision de l'utilisateur**. DMP observe et explique en langage simple. Il ne modifie jamais le système de lui-même.
 
-## 📋 Table des matières
+## Fonctionnement
 
-1. [Vue d'ensemble](#vue-densemble)
-2. [Installation](#installation)
-3. [Utilisation](#utilisation)
-4. [Architecture](#architecture)
-5. [Collecteurs](#collecteurs)
-6. [Support](#support)
+Chaque page affiche quatre blocs :
 
----
+1. **Comprendre** : de quoi on parle, en mots simples
+2. **Ce qu'on voit** : les données réelles de votre machine, avec le pourquoi
+3. **Ce que ça veut dire** : l'interprétation
+4. **Infos techniques** : commandes et valeurs brutes (« DMP uniquement »)
 
-## 🎯 Vue d'ensemble
+## Sections
 
-DMP est une **plateforme pédagogique** pour comprendre et gérer Debian.
+| Section | Contenu |
+|---------|---------|
+| A | Matériel : processeur, mémoire, disques, réseau, carte graphique, USB, alimentation… |
+| B | Activité en temps réel : disponibilité, utilisation, services, processus, démarrage, sécurité |
+| C | Maintenance : mises à jour, paquets, entretien, noyau |
+| D | Aide à la décision : recherche, suppression prudente, bénéfices |
+| E | Résumé, score, analyse, rapports et données graphiques |
+| F | Contrôle qualité, sauvegarde, benchmark, historique |
 
-**Philosophie** : Transformer l'information technique en compréhension utile.
+## Prérequis
 
-**Structure** : 4 niveaux pour chaque donnée :
-- **Comprendre** : Explication humaine
-- **Observations** : Résultats observés
-- **Résultat** : Interprétation
-- **Infos techniques** : JSON brut
-
----
-
-## ⚡ Installation rapide
-
-### Prérequis
-- Debian 13+ 
+- Debian 13 (testé)
 - Python 3
-- Bash
+- `bash`
+- Optionnel : `smartctl` (paquet `smartmontools`) pour l'état de santé des disques
 
-### Démarrage
+## Installation
 
 ```bash
-cd /home/thierry/DMP-FINAL/web/server
-python3 dmp_web_server.py
+git clone https://github.com/MchCvs/DMP.git
+cd DMP
+bash setup.sh
 ```
 
-Puis ouvre : **http://127.0.0.1:8765/menu.html**
+Puis ouvrir : <http://127.0.0.1:8765/>
 
----
+Le serveur écoute uniquement en local (`127.0.0.1`).
 
-## 🌐 Utilisation
+## Structure
 
-### Web
-- Menu principal : http://127.0.0.1:8765/menu.html
-- Pages A1-A9 : http://127.0.0.1:8765/a1-processeur.html
-- Pages B1-B9 : http://127.0.0.1:8765/b1-etat-general.html
-- Pages E3+ : http://127.0.0.1:8765/e3-1-preparer.html
-
-### CLI
-```bash
-# Tester une API
-curl http://127.0.0.1:8765/api/a1 | jq
-
-# Lancer un collecteur
-/home/thierry/DMP-FINAL/modules/collecteurs/a1.sh
+```
+modules/collecteurs/   scripts bash qui collectent les données (JSON)
+web/server/            serveur Python (API)
+web/html/              pages web
 ```
 
----
+## Sécurité et vie privée
 
-## 🏗️ Architecture
+- Lecture seule : aucune action cachée, aucune modification du système
+- Aucune donnée envoyée sur Internet : tout reste sur votre machine
+- Serveur accessible uniquement depuis votre ordinateur
 
----
+## Licence
 
-## 🔧 Collecteurs (42 total)
+[PolyForm Noncommercial 1.0.0](LICENSE) : usage non commercial libre, mention de l'auteur obligatoire.
 
-### Section A — Découverte (9)
-CPU, RAM, Disques, Réseau, GPU, Mère, Debian, USB, Alimentation
+## Auteur
 
-### Section B — Activité (9)
-Général, CPU%, RAM%, Disque%, Réseau, Services, Processus, Boot, Sécurité
-
-### Section C — Maintenance (4)
-Mises à jour, Paquets, Entretien, Technique
-
-### Section D — Décision (3)
-Recherche, Suppression, Bénéfices
-
-### Section E — Rapports (9)
-Résumé, Score, Analyse
-
-### Section F — Contrôle (8)
-Contrôle, Résultats, Anomalies, Benchmark, Historique
-
----
-
-## 📊 Données
-
-Chaque collecteur retourne JSON :
-```json
-{
-  "comprendre": "Explication pédagogique",
-  "observations": "Données observées",
-  "resultat": "Interprétation",
-  "informations_techniques": { ... }
-}
-```
-
----
-
-## 🚀 Prochaines étapes
-
-- [ ] Graphiques E4 (Chart.js)
-- [ ] Base de données historique
-- [ ] Refactoriser serveur (Flask)
-- [ ] Interface graphique avancée
-- [ ] Mobile responsive
-
----
-
-## 📞 Support
-
-Documentation : `/home/thierry/DMP-FINAL/docs/`  
-TODO : `/home/thierry/DMP-FINAL/TODO_PROCHAINES_SESSIONS.md`  
-
----
-
-**Créé par Thierry | Réunion 🏝️**
+Créé par Thierry CHEVASSUS, Piton Sainte Rose, île de la Réunion, France.
