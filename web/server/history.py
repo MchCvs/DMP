@@ -1,5 +1,5 @@
 import sqlite3
-# Copyright Thierry CHEVASSUS — PolyForm Noncommercial 1.0.0 — voir LICENSE
+# Copyright (C) 2026 Thierry CHEVASSUS — GPL-3.0-or-later — voir LICENSE
 from datetime import datetime
 from pathlib import Path
 

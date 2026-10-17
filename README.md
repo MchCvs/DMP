@@ -59,7 +59,7 @@ web/html/              pages web
 
 ## Licence
 
-[PolyForm Noncommercial 1.0.0](LICENSE) : usage non commercial libre, mention de l'auteur obligatoire.
+[GPL-3.0-or-later](LICENSE) : logiciel libre, gratuit, modifiable et redistribuable sous la même licence, avec mention de l'auteur.
 
 ## Auteur
 

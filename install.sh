@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright Thierry CHEVASSUS — PolyForm Noncommercial 1.0.0 — voir LICENSE
+# Copyright (C) 2026 Thierry CHEVASSUS — GPL-3.0-or-later — voir LICENSE
 # Installation permanente de DMP : démarrage automatique à l'ouverture de session.
 # Sans droits administrateur. Désinstaller : bash install.sh --desinstaller
 set -e
