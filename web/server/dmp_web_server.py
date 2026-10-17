@@ -6,7 +6,7 @@ import subprocess
 import json
 import os
 
-DMP_ROOT = Path.home() / "DMP-FINAL"
+DMP_ROOT = Path(__file__).resolve().parents[2]
 WEB_ROOT = DMP_ROOT / "web" / "html"
 COLLECTORS = DMP_ROOT / "modules" / "collecteurs"
 
