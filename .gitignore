@@ -18,3 +18,8 @@ reports/
 *.db
 *.sqlite
 *.tar.gz
+SUMMARY.txt
+SESSION_COMPLETE_*.txt
+RECAP_*.md
+TODO_*.md
+FINAL_STATUS_*.md
