@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright Thierry CHEVASSUS — PolyForm Noncommercial 1.0.0 — voir LICENSE
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 import subprocess

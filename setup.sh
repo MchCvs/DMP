@@ -1,15 +1,17 @@
 #!/bin/bash
+# Copyright Thierry CHEVASSUS — PolyForm Noncommercial 1.0.0 — voir LICENSE
+DMP_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "🚀 DMP Setup"
 
 echo "1. Vérifier Python"
 python3 --version || { echo "❌ Erreur"; exit 1; }
 
 echo "2. Vérifier collecteurs"
-COUNT=$(ls /home/thierry/DMP-FINAL/modules/collecteurs/*.sh 2>/dev/null | wc -l)
+COUNT=$(ls $DMP_ROOT/modules/collecteurs/*.sh 2>/dev/null | wc -l)
 echo "   $COUNT collecteurs trouvés"
 
 echo "3. Démarrer serveur"
-cd /home/thierry/DMP-FINAL/web/server
+cd $DMP_ROOT/web/server
 python3 dmp_simple.py > /tmp/dmp.log 2>&1 &
 DMP_PID=$!
 sleep 2

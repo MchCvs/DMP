@@ -2,7 +2,7 @@
 
 ## Origine du projet
 
-Debian Maintenance Professional (DMP) est un projet initié par Thierry.
+Debian Maintenance Professional (DMP) est un projet initié par Thierry CHEVASSUS.
 
 Le projet est né d'un constat simple :
 

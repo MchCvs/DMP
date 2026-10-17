@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+# Copyright Thierry CHEVASSUS — PolyForm Noncommercial 1.0.0 — voir LICENSE
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
+DMP_ROOT = Path(__file__).resolve().parents[2]
 import subprocess
 import os
 
@@ -9,7 +11,7 @@ class DMPHandler(SimpleHTTPRequestHandler):
         # Routes API
         if self.path.startswith('/api/'):
             api_key = self.path.split('/')[-1]
-            script = f'/home/thierry/DMP-FINAL/modules/collecteurs/{api_key}.sh'
+            script = f'{DMP_ROOT}/modules/collecteurs/{api_key}.sh'
             
             if Path(script).exists():
                 try:
@@ -28,9 +30,9 @@ class DMPHandler(SimpleHTTPRequestHandler):
         if self.path == '/':
             self.path = '/menu.html'
         
-        # Servir depuis /home/thierry/DMP-FINAL/web/html/
+        # Servir depuis web/html/
         try:
-            file_path = Path('/home/thierry/DMP-FINAL/web/html') / self.path.lstrip('/')
+            file_path = (DMP_ROOT / 'web' / 'html') / self.path.lstrip('/')
             
             if file_path.is_file():
                 with open(file_path, 'rb') as f:
@@ -50,7 +52,7 @@ class DMPHandler(SimpleHTTPRequestHandler):
         except Exception as e:
             self.send_error(500, str(e))
 
-os.chdir('/home/thierry/DMP-FINAL/web/html')
+os.chdir(DMP_ROOT / 'web' / 'html')
 server = HTTPServer(('127.0.0.1', 8765), DMPHandler)
 print('✅ DMP Server: http://127.0.0.1:8765/')
 server.serve_forever()
