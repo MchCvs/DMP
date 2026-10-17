@@ -24,12 +24,13 @@ Chaque page affiche quatre blocs :
 | E | Résumé, score, analyse, rapports et données graphiques |
 | F | Contrôle qualité, sauvegarde, benchmark, historique |
 
-## Prérequis
+## Prérequis et compatibilité
 
-- Debian 13 (testé)
-- Python 3
-- `bash`
-- Optionnel : `smartctl` (paquet `smartmontools`) pour l'état de santé des disques
+- **Testé** : Debian 13 (Python 3.13)
+- **Compatibles en principe, non testés** : Debian 11 et 12, Ubuntu et dérivés (`apt`, `dpkg`, `systemd`)
+- **Non compatibles** : Windows, macOS, Fedora, Arch (DMP s'appuie sur `apt`, `dpkg` et `systemd`)
+- Python 3 et les outils courants (`lsblk`, `df`, `ip`, `ss`, `free`, `journalctl`), présents par défaut
+- `lspci` et `lsusb` : si absents, `sudo apt install pciutils usbutils`
 
 ## Installation
 
