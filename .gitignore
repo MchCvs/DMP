@@ -12,3 +12,9 @@ SUMMARY.txt
 SESSION_COMPLETE*.txt
 modules/reports/
 modules/memory_snapshots/
+logs/
+backups/
+reports/
+*.db
+*.sqlite
+*.tar.gz
