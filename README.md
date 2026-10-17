@@ -34,14 +34,13 @@ Chaque page affiche quatre blocs :
 ## Installation
 
 ```bash
-git clone https://github.com/MchCvs/DMP.git
-cd DMP
-bash setup.sh
+git clone https://github.com/MchCvs/DMP.git ~/DMP
+bash ~/DMP/install.sh
 ```
 
-Puis ouvrir : <http://127.0.0.1:8765/>
+DMP démarre ensuite automatiquement à chaque session. Ouvrir : <http://127.0.0.1:8765/> ou l'icône **DMP** du menu des applications.
 
-Le serveur écoute uniquement en local (`127.0.0.1`).
+Ne supprimez pas le dossier `~/DMP`. Mise à jour : `cd ~/DMP && git pull && systemctl --user restart dmp.service`. Désinstallation : `bash ~/DMP/install.sh --desinstaller`.
 
 ## Structure
 
