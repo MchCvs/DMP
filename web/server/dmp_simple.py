@@ -15,7 +15,7 @@ class DMPHandler(SimpleHTTPRequestHandler):
             
             if Path(script).exists():
                 try:
-                    result = subprocess.run(['bash', script], capture_output=True, text=True, timeout=5)
+                    result = subprocess.run(['bash', script], capture_output=True, text=True, timeout=90)
                     self.send_response(200)
                     self.send_header('Content-Type', 'application/json')
                     self.end_headers()
