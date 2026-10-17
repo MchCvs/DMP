@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — C4.3 — Évaluer leur intérêt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="c-menu.html">C — Prendre soin de ma machine</a>
+    <span>›</span>
+    <strong>C4.3 — Évaluer leur intérêt</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>C4.3 — Évaluer leur intérêt</h1>
+
+    <p>
+      Cette page permet d'évaluer l'intérêt réel
+      d'une recommandation DMP avant toute décision.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Comprendre</h2>
+
+      <p>
+        Une recommandation peut être techniquement possible
+        sans être réellement utile dans la situation actuelle.
+      </p>
+
+      <p>
+        DMP évalue donc son intérêt à partir du problème observé,
+        du bénéfice attendu, des conséquences possibles
+        et des limites connues.
+      </p>
+
+      <p>
+        Si le bénéfice n'est pas suffisamment établi,
+        DMP ne recommande pas l'action.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Évaluation actuelle</h2>
+
+      <div class="detail">
+
+        <h3>Intérêt de la recommandation</h3>
+
+        <p class="value" id="c4-interest">
+          Information non disponible
+        </p>
+
+        <p>
+          DMP ne dispose actuellement d'aucune recommandation
+          suffisamment documentée pour évaluer son intérêt.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Bénéfice attendu</h3>
+
+        <p class="value" id="c4-benefit">
+          Information non disponible
+        </p>
+
+        <p>
+          Aucun bénéfice n'est présenté sans mesure
+          ou observation permettant de l'établir.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Conclusion DMP</h3>
+
+        <p class="value" id="c4-conclusion">
+          Aucune décision recommandée
+        </p>
+
+        <p>
+          L'utilisateur conserve la décision d'agir
+          après compréhension de la recommandation.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Éléments pris en compte</h3>
+
+      <pre><code>Observation à l'origine de la recommandation
+Bénéfice potentiel
+Conséquences possibles
+Niveau de confiance
+Limites de l'analyse</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre><code id="c4-technical-result">Aucune recommandation actuellement disponible.</code></pre>
+
+    </div>
+
+  </section>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="c4-4-technique.html">
+      Suivant C4.4
+      <span class="next-page-tooltip">
+        Informations techniques
+      </span>
+    </a>
+
+    <a class="back" href="c4-2-comprendre.html">
+      Retour C4.2
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+
+<script>
+async function loadC4() {
+    try {
+        const response = await fetch("/api/c4", { cache: "no-store" });
+
+        if (!response.ok) {
+            throw new Error("API C4 indisponible");
+        }
+
+        const data = await response.json();
+
+        document.getElementById("c4-interest").textContent =
+            data.recommendation_title ?? "Information indisponible";
+
+        document.getElementById("c4-benefit").textContent =
+            data.recommendation_level === 1
+                ? "Aucun bénéfice d'une intervention n'est actuellement établi."
+                : (data.recommendation_text ?? "Information indisponible");
+
+        document.getElementById("c4-conclusion").textContent =
+            data.decision_text ?? "Information indisponible";
+
+        document.getElementById("c4-technical-result").textContent =
+            "Score santé : " +
+                (data.score ?? "Information indisponible") + "\n" +
+            "État de santé : " +
+                (data.health ?? "Information indisponible") + "\n" +
+            "Recommandation : " +
+                (data.recommendation_title ?? "Information indisponible") + "\n" +
+            "Niveau interne DMP : " +
+                (data.recommendation_level ?? "Information indisponible") + "\n" +
+            "Signification : " +
+                (data.recommendation_title ?? "Information indisponible") + "\n" +
+            "Historique : " +
+                (data.history_count ?? "Information indisponible") + " mesures\n" +
+            "Démarrage initial : " +
+                (data.boot_initial !== null && data.boot_initial !== undefined
+                    ? data.boot_initial + " s"
+                    : "Information indisponible") + "\n" +
+            "Démarrage actuel : " +
+                (data.boot_current !== null && data.boot_current !== undefined
+                    ? data.boot_current + " s"
+                    : "Information indisponible") + "\n" +
+            "Variation du démarrage : " +
+                (data.boot_delta !== null && data.boot_delta !== undefined
+                    ? (data.boot_status === "DEGRADATION"
+                        ? "dégradation de " + Math.abs(data.boot_delta) + " s"
+                        : data.boot_status === "AMELIORATION"
+                            ? "amélioration de " + Math.abs(data.boot_delta) + " s"
+                            : "évolution non significative")
+                    : "Information indisponible") + "\n" +
+            "Température initiale : " +
+                (data.temperature_initial !== null && data.temperature_initial !== undefined
+                    ? data.temperature_initial + " °C"
+                    : "Information indisponible") + "\n" +
+            "Température actuelle : " +
+                (data.temperature_current !== null && data.temperature_current !== undefined
+                    ? data.temperature_current + " °C"
+                    : "Information indisponible") + "\n" +
+            "Variation de température : " +
+                (data.temperature_delta !== null && data.temperature_delta !== undefined
+                    ? (data.temperature_status === "BAISSE"
+                        ? "baisse de " + Math.abs(data.temperature_delta) + " °C"
+                        : data.temperature_status === "HAUSSE"
+                            ? "hausse de " + Math.abs(data.temperature_delta) + " °C"
+                            : data.temperature_delta < 0
+                                ? "baisse de " + Math.abs(data.temperature_delta) + " °C — évolution non significative"
+                                : data.temperature_delta > 0
+                                    ? "hausse de " + Math.abs(data.temperature_delta) + " °C — évolution non significative"
+                                    : "variation nulle — évolution non significative")
+                    : "Information indisponible");
+
+    } catch (error) {
+        document.getElementById("c4-interest").textContent =
+            "Information indisponible";
+
+        document.getElementById("c4-benefit").textContent =
+            "Information indisponible";
+
+        document.getElementById("c4-conclusion").textContent =
+            "Information indisponible";
+
+        document.getElementById("c4-technical-result").textContent =
+            "Information indisponible";
+    }
+}
+
+loadC4();
+</script>
+
+</body>
+</html>

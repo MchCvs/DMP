@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMP — D2 Supprimer</title><style>
+body{font-family:Arial;margin:0;background:#f8f9fa}
+header{background:#2c3e50;color:white;padding:15px 20px}
+nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-decoration:none}
+.container{max-width:900px;margin:20px auto;background:white;padding:20px;border-radius:5px}
+.breadcrumb{color:#7f8c8d;font-size:12px;margin-bottom:20px}.breadcrumb a{color:#3498db;text-decoration:none}
+.block{margin:20px 0;padding:15px;background:#ecf0f1;border-radius:5px}
+.nav-section{margin-top:30px;padding-top:20px;border-top:2px solid #ecf0f1;display:flex;justify-content:space-between}
+.btn{padding:10px 20px;background:#3498db;color:white;text-decoration:none;border-radius:3px}.btn:hover{background:#2980b9}
+</style><style>#obs{white-space:pre-line;line-height:1.7}</style></head><body>
+<header><h1>📊 DMP — Maintenance Debian</h1></header>
+<nav><a href=menu.html>Menu</a> | <a href=aide.html>Aide</a></nav>
+<div class=container>
+<div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>D2 Supprimer</strong></div>
+<h1>📌 D2 Supprimer</h1>
+
+<div id=dmp-danger style="border:4px solid #c0392b;background:#fdedec;border-radius:6px;padding:16px;margin:20px 0;display:flex;gap:14px;align-items:flex-start"><div style="font-size:44px;line-height:1">⛔</div><div style="color:#922b21;font-size:18px;line-height:1.6"><b>DANGER — EN CAS DE DOUTE, NE SUPPRIMEZ PAS.</b><br><b>Un logiciel peut sembler anodin et être vital :</b> le chargeur de démarrage (GRUB), les correctifs du processeur (microcode), les pilotes internes (firmware) ou les réglages de langue (locales). Les retirer peut empêcher l'ordinateur de démarrer, laisser des failles de sécurité ouvertes ou casser l'affichage. Avant toute suppression, lisez la liste que propose apt et cherchez le nom sur internet.</div></div>
+<div class=block><h2>Comprendre</h2><p id=comp>Chargement...</p></div>
+<div class=block><h2>Ce qu'on voit</h2><p id=obs>Chargement...</p></div>
+<div class=block><h2>Ce que ça veut dire</h2><p id=res>Chargement...</p></div>
+<div class=block><h2>Infos techniques</h2><pre id=tech>Chargement...</pre></div>
+
+<div class=nav-section>
+<a href=d1.html class=btn>← Précédent</a>
+<a href=menu.html class=btn>Menu</a>
+<a href=d3.html class=btn>Suivant →</a>
+</div></div>
+
+<script>
+async function load(){
+  let r=await fetch('/api/d2');
+  let d=await r.json();
+  document.getElementById('comp').textContent=d.comprendre||'N/A';
+  document.getElementById('obs').textContent=d.observations||'N/A';
+  document.getElementById('res').textContent=d.resultat||'N/A';
+  document.getElementById('tech').textContent=JSON.stringify(d.informations_techniques,null,2);
+}
+load();
+</script>
+</body></html>

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Debian Maintenance Professional
+GenericName=Maintenance Debian
+Comment=Outil de diagnostic et maintenance Debian
+Exec=/usr/local/bin/dmp
+Icon=dmp
+Terminal=true
+Type=Application
+Categories=Utility;
+Keywords=Debian;Maintenance;Diagnostic;Linux;
+StartupNotify=true

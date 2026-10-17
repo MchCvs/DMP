@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — C3.3 — Appliquer une optimisation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="c-menu.html">C — Prendre soin de ma machine</a>
+    <span>›</span>
+    <strong>C3.3 — Appliquer une optimisation</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>C3.3 — Appliquer une optimisation</h1>
+
+    <p>
+      Cette page permet d'appliquer volontairement
+      une optimisation préalablement identifiée et expliquée.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Avant d'agir</h2>
+
+      <p>
+        Une optimisation ne doit être appliquée que lorsque
+        son objectif, son fonctionnement et son bénéfice attendu
+        sont clairement compris.
+      </p>
+
+      <p>
+        DMP présente l'action concernée avant toute modification.
+        L'utilisateur conserve la décision d'appliquer ou non
+        l'optimisation.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Optimisation identifiée</h2>
+
+      <div class="detail">
+
+        <h3>Action proposée</h3>
+
+        <p class="value" id="c3-action">
+          Analyse en cours…
+        </p>
+
+        <p id="c3-action-explanation">
+          DMP recherche une amélioration qui pourrait
+          être appliquée après ta décision.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Effet attendu</h3>
+
+        <p class="value" id="c3-effect">
+          Analyse en cours…
+        </p>
+
+        <p id="c3-effect-explanation">
+          DMP expliquera le résultat attendu avant toute modification.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Application</h2>
+
+      <p>
+        Aucune modification n'est effectuée automatiquement
+        sur cette page tant qu'une optimisation précise
+        n'a pas été identifiée et volontairement sélectionnée.
+      </p>
+
+      <p>
+        Après une optimisation, DMP doit pouvoir vérifier
+        le résultat obtenu.
+      </p>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Éléments techniques concernés</h3>
+
+      <pre><code>Possibilité d'amélioration identifiée
+Action choisie par l'utilisateur
+Éléments concernés
+Résultat attendu</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre id="c3-technical-result"><code>Analyse en cours…</code></pre>
+
+    </div>
+
+  </section>
+
+
+<script>
+async function loadC3() {
+  const action = document.getElementById("c3-action");
+  const actionExplanation =
+    document.getElementById("c3-action-explanation");
+
+  const effect = document.getElementById("c3-effect");
+  const effectExplanation =
+    document.getElementById("c3-effect-explanation");
+
+  const technicalResult =
+    document.querySelector("#c3-technical-result code");
+
+  try {
+    const response = await fetch("/api/c3");
+
+    if (!response.ok) {
+      throw new Error("Réponse API C3 invalide");
+    }
+
+    const data = await response.json();
+
+    const cleanup = data.possibilities?.cleanup || {};
+    const updates = data.possibilities?.updates || {};
+    const autoremove = data.possibilities?.autoremove || {};
+
+    if (cleanup.detected) {
+
+      action.textContent =
+        "Tu peux récupérer " +
+        cleanup.apt_cache_human +
+        " sur le disque dur";
+
+      actionExplanation.textContent =
+        "Debian a conservé des données provenant de " +
+        "téléchargements utilisés pour installer ou mettre " +
+        "à jour des logiciels. Tu peux choisir de les supprimer.";
+
+      effect.textContent =
+        "Récupérer " +
+        cleanup.apt_cache_human +
+        " d'espace";
+
+      effectExplanation.textContent =
+        "Les logiciels installés resteraient en place. " +
+        "DMP n'effectue pas cette suppression sans ton choix.";
+
+    } else if (updates.detected) {
+
+      action.textContent =
+        updates.count +
+        " mise(s) à jour disponible(s)";
+
+      actionExplanation.textContent =
+        "Des mises à jour sont disponibles. " +
+        "DMP ne les installe pas automatiquement.";
+
+      effect.textContent =
+        "Mettre les logiciels à jour";
+
+      effectExplanation.textContent =
+        "Les mises à jour peuvent apporter des corrections " +
+        "et des améliorations.";
+
+    } else if (autoremove.detected) {
+
+      action.textContent =
+        autoremove.count +
+        " élément(s) peuvent être examinés";
+
+      actionExplanation.textContent =
+        "DMP a trouvé des éléments qui peuvent éventuellement " +
+        "être supprimés. Ils doivent être vérifiés avant toute suppression.";
+
+      effect.textContent =
+        "Libérer de l'espace sur le disque dur";
+
+      effectExplanation.textContent =
+        "La suppression ne doit être effectuée qu'après " +
+        "avoir vérifié que ces éléments ne sont plus nécessaires.";
+
+    } else {
+
+      action.textContent =
+        "Aucune amélioration à appliquer actuellement";
+
+      actionExplanation.textContent =
+        "DMP n'a identifié aucune action qui apporte " +
+        "actuellement un bénéfice suffisamment clair.";
+
+      effect.textContent =
+        "Aucun changement nécessaire";
+
+      effectExplanation.textContent =
+        "Aucune modification n'est proposée.";
+    }
+
+    technicalResult.textContent =
+      JSON.stringify(data, null, 2);
+
+  } catch (error) {
+
+    action.textContent =
+      "Information non disponible";
+
+    actionExplanation.textContent =
+      "DMP ne peut pas actuellement récupérer " +
+      "le résultat de l'analyse.";
+
+    effect.textContent =
+      "Information non disponible";
+
+    effectExplanation.textContent =
+      "L'effet attendu ne peut pas être déterminé.";
+
+    technicalResult.textContent =
+      "Impossible de récupérer les résultats du collecteur C3.";
+  }
+}
+
+loadC3();
+</script>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="c3-4-verification.html">
+      Suivant C3.4
+      <span class="next-page-tooltip">
+        Vérifier le résultat
+      </span>
+    </a>
+
+    <a class="back" href="c3-2-comprendre.html">
+      Retour C3.2
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+</body>
+</html>

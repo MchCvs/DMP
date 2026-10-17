@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — D1.3 — Consulter les résultats précédents</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="d-menu.html">D — Suivre les évolutions de mon système</a>
+    <span>›</span>
+    <strong>D1.3 — Consulter les résultats précédents</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>D1.3 — Consulter les résultats précédents</h1>
+
+    <p>
+      Cette page permet de consulter les résultats obtenus
+      lors des analyses précédentes de votre système.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Comprendre</h2>
+
+      <p>
+        Les résultats précédents permettent de retrouver
+        les conclusions produites par DMP lors d'une analyse
+        antérieure.
+      </p>
+
+      <p>
+        Ils constituent une référence pour comprendre l'état
+        du système à différents moments.
+      </p>
+
+      <p>
+        Un résultat historique est conservé comme une information
+        correspondant à l'analyse réalisée à cette date.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Résultats précédents</h2>
+
+      <div class="detail">
+
+        <h3>Dernier résultat enregistré</h3>
+
+        <p class="value" id="d1-3-last-result">
+          Information non disponible
+        </p>
+
+        <p id="d1-3-result-explanation">
+          Aucun résultat historique DMP n'est actuellement disponible.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Date du résultat</h3>
+
+        <p class="value" id="d1-3-last-date">
+          Information non disponible
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Conclusion DMP</h3>
+
+        <p class="value" id="d1-3-conclusion">
+          Information indisponible
+        </p>
+
+        <p id="d1-3-conclusion-explanation">
+          Aucune conclusion explicite n'est enregistrée dans le rapport historique.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Données conservées</h3>
+
+      <pre><code>Date de l'analyse
+Observations réalisées
+Résultats obtenus
+Conclusion produite par DMP</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre><code id="d1-3-technical-result">Aucun résultat historique actuellement disponible.</code></pre>
+
+    </div>
+
+  </section>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="d1-4-technique.html">
+      Suivant D1.4
+      <span class="next-page-tooltip">
+        Informations techniques
+      </span>
+    </a>
+
+    <a class="back" href="d1-2-actions.html">
+      Retour D1.2
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+
+<script>
+async function loadD1_3() {
+  try {
+    const response = await fetch("/api/d1_3", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error("API D1.3 indisponible");
+    }
+
+    const data = await response.json();
+
+    document.getElementById("d1-3-last-result").textContent =
+      data.last_result || "Information indisponible";
+
+    document.getElementById("d1-3-last-date").textContent =
+      data.last_date || "Information indisponible";
+
+    document.getElementById("d1-3-conclusion").textContent =
+      data.conclusion || "Information indisponible";
+
+    document.getElementById("d1-3-result-explanation").textContent =
+      data.explanation ||
+      "Aucun résultat historique DMP n'est actuellement disponible.";
+
+    document.getElementById("d1-3-conclusion-explanation").textContent =
+      data.conclusion === "Information indisponible"
+        ? "Aucune conclusion explicite n'est enregistrée dans le rapport historique."
+        : "La conclusion correspond à celle réellement enregistrée par DMP.";
+
+    document.getElementById("d1-3-technical-result").textContent =
+      data.technical_result ||
+      "Aucun résultat historique actuellement disponible.";
+
+  } catch (error) {
+    document.getElementById("d1-3-last-result").textContent =
+      "Information indisponible";
+
+    document.getElementById("d1-3-last-date").textContent =
+      "Information indisponible";
+
+    document.getElementById("d1-3-conclusion").textContent =
+      "Information indisponible";
+
+    document.getElementById("d1-3-result-explanation").textContent =
+      "Les résultats historiques sont actuellement indisponibles.";
+
+    document.getElementById("d1-3-conclusion-explanation").textContent =
+      "La conclusion historique est actuellement indisponible.";
+
+    document.getElementById("d1-3-technical-result").textContent =
+      "Information indisponible";
+  }
+}
+
+loadD1_3();
+</script>
+
+</body>
+</html>

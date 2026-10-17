@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — C3.1 — Identifier les possibilités d'amélioration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="c-menu.html">C — Prendre soin de ma machine</a>
+    <span>›</span>
+    <strong>C3.1 — Identifier les possibilités d'amélioration</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>C3.1 — Identifier les possibilités d'amélioration</h1>
+
+    <p>
+      Cette page permet d'identifier les éléments du système
+      pour lesquels une amélioration peut être envisagée.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Comprendre</h2>
+
+      <p>
+        Une optimisation consiste à améliorer un fonctionnement
+        existant sans modifier inutilement le système.
+      </p>
+
+      <p>
+        DMP commence par observer le fonctionnement actuel
+        afin d'identifier les possibilités d'amélioration
+        réellement pertinentes.
+      </p>
+
+      <p>
+        Une optimisation n'est pas proposée uniquement
+        parce qu'une modification est techniquement possible.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Informations complémentaires</h2>
+
+      <div class="detail">
+
+        <h3>Améliorations possibles</h3>
+
+        <p class="value" id="c3-improvements">
+          Analyse en cours…
+        </p>
+
+        <p id="c3-improvements-explanation">
+          DMP analyse actuellement les possibilités d'amélioration
+          réellement pertinentes pour le système.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Priorité</h3>
+
+        <p class="value" id="c3-priority">
+          Analyse en cours…
+        </p>
+
+        <p id="c3-priority-explanation">
+          La priorité est déterminée à partir des résultats
+          réellement observés par DMP.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Éléments examinés</h3>
+
+      <pre><code>Mises à jour disponibles
+Paquets pouvant être supprimés
+Cache APT pouvant être nettoyé</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre id="c3-technical-result"><code>Analyse en cours…</code></pre>
+
+    </div>
+
+  </section>
+
+<script>
+async function loadC3() {
+  const improvements = document.getElementById("c3-improvements");
+  const improvementsExplanation =
+    document.getElementById("c3-improvements-explanation");
+  const priority = document.getElementById("c3-priority");
+  const priorityExplanation =
+    document.getElementById("c3-priority-explanation");
+  const technicalResult =
+    document.querySelector("#c3-technical-result code");
+
+  try {
+    const response = await fetch("/api/c3");
+
+    if (!response.ok) {
+      throw new Error("Réponse API C3 invalide");
+    }
+
+    const data = await response.json();
+
+    const possibilities = data.possibilities || {};
+    const detected = [];
+
+    if (possibilities.updates?.detected) {
+      detected.push(
+        possibilities.updates.count + " mise(s) à jour disponible(s)"
+      );
+    }
+
+    if (possibilities.autoremove?.detected) {
+      detected.push(
+        possibilities.autoremove.count +
+        " paquet(s) pouvant être examinés pour suppression"
+      );
+    }
+
+    if (possibilities.cleanup?.detected) {
+      detected.push(
+        "nettoyage du cache APT (" +
+        possibilities.cleanup.apt_cache_human +
+        ")"
+      );
+    }
+
+    if (detected.length > 0) {
+      improvements.textContent = detected.join(" ; ");
+      improvementsExplanation.textContent =
+        "DMP a identifié des possibilités d'amélioration " +
+        "à examiner avant toute action.";
+    } else {
+      improvements.textContent = "Aucune amélioration nécessaire actuellement.";
+      improvementsExplanation.textContent =
+        "DMP n'a identifié aucune possibilité d'amélioration " +
+        "nécessitant une action actuellement.";
+    }
+
+    if (possibilities.updates?.detected) {
+      priority.textContent = "À traiter en priorité";
+      priorityExplanation.textContent =
+        "Des mises à jour sont disponibles pour le système.";
+    } else if (possibilities.autoremove?.detected) {
+      priority.textContent = "À examiner";
+      priorityExplanation.textContent =
+        "Des paquets peuvent être examinés avant toute suppression.";
+    } else if (possibilities.cleanup?.detected) {
+      priority.textContent = "À envisager";
+      priorityExplanation.textContent =
+        "Le cache APT occupe actuellement " +
+        possibilities.cleanup.apt_cache_human +
+        ".";
+    } else {
+      priority.textContent = "Aucune priorité";
+      priorityExplanation.textContent =
+        "Aucune action d'amélioration n'est actuellement nécessaire.";
+    }
+
+    technicalResult.textContent = JSON.stringify(data, null, 2);
+
+  } catch (error) {
+    improvements.textContent = "Information non disponible";
+    improvementsExplanation.textContent =
+      "DMP ne peut pas actuellement récupérer le résultat de l'analyse.";
+
+    priority.textContent = "Information non disponible";
+    priorityExplanation.textContent =
+      "La priorité ne peut pas être déterminée sans résultat d'analyse.";
+
+    technicalResult.textContent =
+      "Impossible de récupérer les résultats du collecteur C3.";
+  }
+}
+
+loadC3();
+</script>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="c3-2-comprendre.html">
+      Suivant C3.2
+      <span class="next-page-tooltip">
+        Comprendre les améliorations proposées
+      </span>
+    </a>
+
+    <a class="back" href="c-menu.html">
+      Retour C
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+</body>
+</html>

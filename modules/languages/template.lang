@@ -1,0 +1,50 @@
+# ==================================================
+# DMP Translation Template
+# Debian Maintenance Professional
+# Version 1.5.1
+#
+# Copy this file and translate the values only.
+# Do not modify variable names.
+# ==================================================
+
+APP_TITLE=""
+
+MENU_DIAGNOSTIC=""
+
+MENU_SSD=""
+
+MENU_MAINTENANCE=""
+
+MENU_CLEANUP=""
+
+MENU_REPORT=""
+
+MENU_SCORE=""
+
+MENU_OPTIMIZE=""
+
+MENU_RECOMMEND=""
+
+MENU_PERFORMANCE=""
+
+MENU_HISTORY=""
+
+MENU_HISTORY_ANALYSIS=""
+
+MENU_HTML_REPORT=""
+
+MENU_GRAPHS=""
+
+MENU_SETTINGS=""
+
+MENU_EXIT=""
+
+PROMPT_CHOICE=""
+
+MSG_WELCOME=""
+
+MSG_DONE=""
+
+MSG_ERROR=""
+
+MSG_EXIT=""

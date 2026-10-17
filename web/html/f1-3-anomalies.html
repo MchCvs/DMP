@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F1-3 Anomalies</title></head><body style=margin:20px>
+<h1>⚠️ F1-3: Anomalies Détectées</h1>
+<div id=alerts></div>
+<script>
+async function load(){
+  let r=await fetch('/api/f1_3'');
+  let d=await r.json();
+  let html='<ul>';
+  d.anomalies?.forEach(a=>{html+=`<li>${a}</li>`});
+  html+='</ul>';
+  document.getElementById('alerts').innerHTML=html||'<p>Aucune anomalie</p>';
+}
+load();
+</script>
+</body></html>

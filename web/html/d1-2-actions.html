@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — D1.2 — Consulter les actions réalisées</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="d-menu.html">D — Suivre les évolutions de mon système</a>
+    <span>›</span>
+    <strong>D1.2 — Consulter les actions réalisées</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>D1.2 — Consulter les actions réalisées</h1>
+
+    <p>
+      Cette page permet de consulter les actions réalisées
+      sur votre système dans le cadre de DMP.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Comprendre</h2>
+
+      <p>
+        DMP peut conserver la trace des actions réalisées
+        afin de permettre leur consultation ultérieure.
+      </p>
+
+      <p>
+        Cette information permet de distinguer ce qui a été
+        observé de ce qui a réellement été modifié sur le système.
+      </p>
+
+      <p>
+        Une action enregistrée doit être associée à une date
+        et à une description permettant de comprendre ce qui
+        a été effectué.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Actions réalisées</h2>
+
+      <div class="detail">
+
+        <h3>Dernière action enregistrée</h3>
+
+        <p class="value" id="d1-2-last-action">
+          Information non disponible
+        </p>
+
+        <p id="d1-2-action-explanation">
+          Aucune action historique générale n'est actuellement enregistrée par DMP.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Date de l'action</h3>
+
+        <p class="value" id="d1-2-last-date">
+          Information non disponible
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Description</h3>
+
+        <p class="value" id="d1-2-description">
+          Information non disponible
+        </p>
+
+        <p id="d1-2-description-explanation">
+          La description sera présentée lorsqu'une action aura été enregistrée.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Données conservées</h3>
+
+      <pre><code>Date de l'action
+Action réalisée
+Éléments concernés
+Résultat de l'action</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre><code id="d1-2-technical-result">Aucune action historique actuellement disponible.</code></pre>
+
+    </div>
+
+  </section>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="d1-3-resultats.html">
+      Suivant D1.3
+      <span class="next-page-tooltip">
+        Consulter les résultats précédents
+      </span>
+    </a>
+
+    <a class="back" href="d1-1-observations.html">
+      Retour D1.1
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+
+<script>
+async function loadD1_2() {
+  try {
+    const response = await fetch("/api/d1_2", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error("API D1.2 indisponible");
+    }
+
+    const data = await response.json();
+
+    document.getElementById("d1-2-last-action").textContent =
+      data.last_action || "Information indisponible";
+
+    document.getElementById("d1-2-last-date").textContent =
+      data.last_date || "Information indisponible";
+
+    document.getElementById("d1-2-description").textContent =
+      data.description || "Information indisponible";
+
+    document.getElementById("d1-2-action-explanation").textContent =
+      data.explanation ||
+      "Aucune action historique générale n'est actuellement enregistrée par DMP.";
+
+    document.getElementById("d1-2-description-explanation").textContent =
+      data.action_available
+        ? "La description correspond à l'action réellement enregistrée par DMP."
+        : "La description sera présentée lorsqu'une action aura été enregistrée.";
+
+    document.getElementById("d1-2-technical-result").textContent =
+      data.technical_result ||
+      "Aucune action historique actuellement disponible.";
+
+  } catch (error) {
+    document.getElementById("d1-2-last-action").textContent =
+      "Information indisponible";
+
+    document.getElementById("d1-2-last-date").textContent =
+      "Information indisponible";
+
+    document.getElementById("d1-2-description").textContent =
+      "Information indisponible";
+
+    document.getElementById("d1-2-action-explanation").textContent =
+      "Les données historiques des actions sont actuellement indisponibles.";
+
+    document.getElementById("d1-2-description-explanation").textContent =
+      "La description de l'action est actuellement indisponible.";
+
+    document.getElementById("d1-2-technical-result").textContent =
+      "Information indisponible";
+  }
+}
+
+loadD1_2();
+</script>
+
+</body>
+</html>

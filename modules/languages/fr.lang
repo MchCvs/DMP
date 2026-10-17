@@ -1,0 +1,270 @@
+APP_TITLE="Debian Maintenance Professional"
+
+MENU_DIAGNOSTIC="Diagnostic système"
+MENU_SSD="Diagnostic SSD / SMART"
+MENU_MAINTENANCE="Maintenance Debian"
+MENU_CLEANUP="Nettoyage système"
+MENU_SETTINGS="Paramètres"
+MENU_EXIT="Quitter"
+
+MSG_WELCOME="Bienvenue dans DMP"
+MSG_DONE="Opération terminée avec succès."
+MSG_ERROR="Une erreur est survenue."
+
+MENU_REPORT="Rapport complet"
+MENU_SCORE="Score santé DMP"
+MENU_OPTIMIZE="Optimisation système"
+MENU_RECOMMEND="Optimisations recommandées"
+MENU_PERFORMANCE="Analyse performances"
+MENU_HISTORY="Historique machine"
+MENU_HISTORY_ANALYSIS="Analyse historique"
+MENU_HTML_REPORT="Rapport HTML"
+MENU_GRAPHS="Graphiques historiques"
+
+PROMPT_CHOICE="Votre choix :"
+MSG_EXIT="Fermeture de DMP..."
+MENU_QUALITY="Contrôle qualité DMP"
+MENU_PLUGINS="Gestionnaire de plugins"
+
+# Accueil et première découverte
+MSG_WELCOME_TITLE1="Bienvenue dans"
+MSG_WELCOME_TITLE2="Debian Maintenance Professionnel"
+MSG_WELCOME_TEXT1="DMP vous accompagne pour comprendre"
+MSG_WELCOME_TEXT2="et entretenir votre machine Debian."
+MSG_WELCOME_SAFE1="Cette première découverte ne modifie"
+MSG_WELCOME_SAFE2="aucun élément de votre ordinateur."
+PROMPT_START_DISCOVERY="Commencer la découverte ? Appuyez sur Entrée..."
+
+MSG_ORIENTATION_TITLE="Comment souhaitez-vous continuer ?"
+MENU_DISCOVER_AGAIN="Découvrir à nouveau ma machine"
+MENU_ACCESS_TOOLS="Accéder aux outils DMP"
+
+MSG_WELCOME_DISCOVERY1="Pour commencer, DMP va découvrir votre"
+MSG_WELCOME_DISCOVERY2="machine et vous expliquer ses principaux"
+MSG_WELCOME_DISCOVERY3="éléments."
+
+# Découverte de la machine
+
+DISCOVERY_TITLE="Découvrons ensemble votre machine Debian"
+
+DISCOVERY_SYSTEM_DETECTED="Système détecté"
+DISCOVERY_SYSTEM_TITLE="Votre système Debian"
+DISCOVERY_SYSTEM_TEXT1="DMP a identifié le système Debian utilisé"
+DISCOVERY_SYSTEM_TEXT2="par votre ordinateur."
+DISCOVERY_SYSTEM_TEXT3="Cette information permet à DMP"
+DISCOVERY_SYSTEM_TEXT4="d'adapter ses explications à votre environnement."
+
+DISCOVERY_HARDWARE_TITLE="Votre matériel"
+DISCOVERY_HARDWARE_PROCESSOR="Processeur"
+DISCOVERY_HARDWARE_CORES="Nombre de cœurs"
+DISCOVERY_HARDWARE_MEMORY="Mémoire vive"
+DISCOVERY_HARDWARE_TEXT1="DMP a identifié les caractéristiques"
+DISCOVERY_HARDWARE_TEXT2="principales de votre ordinateur."
+DISCOVERY_HARDWARE_TEXT3="Ces informations permettent de mieux"
+DISCOVERY_HARDWARE_TEXT4="comprendre les capacités de votre machine."
+DISCOVERY_MEMORY_TEXT1="La mémoire vive permet à Debian"
+DISCOVERY_MEMORY_TEXT2="d'utiliser les programmes actuellement ouverts."
+
+DISCOVERY_STORAGE_TITLE="Votre stockage"
+DISCOVERY_STORAGE_DISK="Disque"
+DISCOVERY_STORAGE_SIZE="Taille"
+DISCOVERY_STORAGE_ROLE="Rôle"
+DISCOVERY_STORAGE_USAGE="Usage"
+DISCOVERY_ROLE_MAIN="disque principal Debian"
+DISCOVERY_ROLE_DATA="stockage de données"
+DISCOVERY_ROLE_STORAGE="disque de stockage"
+DISCOVERY_USAGE_BOOT="démarrage de l'ordinateur"
+DISCOVERY_USAGE_SYSTEM="système Debian principal"
+DISCOVERY_USAGE_DATA="données Linux"
+DISCOVERY_USAGE_SHARED="espace de fichiers partagé"
+DISCOVERY_STORAGE_TEXT1="DMP a identifié les espaces de stockage"
+DISCOVERY_STORAGE_TEXT2="présents sur votre ordinateur."
+DISCOVERY_STORAGE_TEXT3="Ces informations permettent de comprendre"
+DISCOVERY_STORAGE_TEXT4="l'organisation générale de votre système."
+
+DISCOVERY_END_TEXT1="La découverte de votre machine Debian"
+DISCOVERY_END_TEXT2="est terminée."
+DISCOVERY_END_TEXT3="DMP a maintenant identifié les éléments"
+DISCOVERY_END_TEXT4="principaux de votre système."
+DISCOVERY_END_TEXT5="Vous pouvez choisir la suite"
+DISCOVERY_END_TEXT6="de votre accompagnement."
+
+# Gestion de la langue
+
+MSG_LANGUAGE_TITLE="Choisissez votre langue"
+MSG_LANGUAGE_SAVED="Langue enregistrée :"
+
+MENU_CHANGE_LANGUAGE="Changer la langue"
+
+MSG_INVALID_CHOICE="Choix incorrect"
+
+# Menu principal
+
+MENU_MAIN_MACHINE="Comprendre ma machine Debian"
+MENU_MAIN_SYSTEM_STATE="Comprendre l'état actuel de mon système Debian"
+MENU_MAIN_MAINTENANCE="Prendre soin de ma machine"
+MENU_MAIN_EVOLUTION="Suivre les évolutions de mon système"
+MENU_MAIN_RESULTS="Consulter mes résultats DMP"
+MENU_MAIN_ADVANCED="Accéder aux fonctions avancées"
+
+
+# Menu comprendre
+
+MENU_UNDERSTAND_TITLE="Comprendre ma machine Debian"
+MENU_UNDERSTAND_GENERAL="Voir les informations générales de ma machine"
+MENU_BACK_MAIN="Retour au menu principal"
+MENU_RETURN="Retour"
+
+# Menu état système
+
+MENU_SYSTEM_STATE_TITLE="Comprendre l'état actuel de mon système Debian"
+MENU_SYSTEM_STATE_DISKS="Vérifier l'état de mes disques"
+MENU_SYSTEM_STATE_PERFORMANCE="Vérifier les performances du système"
+
+
+# Menu maintenance
+
+MENU_MAINTENANCE_TITLE="Prendre soin de ma machine"
+MENU_MAINTENANCE_SYSTEM="Entretenir mon système Debian"
+MENU_MAINTENANCE_CLEANUP="Nettoyer les éléments inutiles"
+MENU_MAINTENANCE_OPTIMIZE="Optimiser le fonctionnement du système"
+MENU_MAINTENANCE_RECOMMEND="Consulter les recommandations DMP"
+
+
+# Menu évolution
+
+MENU_EVOLUTION_TITLE="Suivre les évolutions de mon système"
+MENU_EVOLUTION_HISTORY="Consulter l'historique de mon système"
+MENU_EVOLUTION_ANALYSIS="Analyser les évolutions détectées"
+
+
+# Menu résultats
+
+MENU_RESULTS_TITLE="Consulter mes résultats DMP"
+MENU_RESULTS_REPORT="Consulter le rapport DMP"
+MENU_RESULTS_SCORE="Consulter le score santé du système"
+MENU_RESULTS_HTML="Générer un rapport HTML"
+MENU_RESULTS_CHART="Préparer les données des graphiques"
+
+
+# Menu avancé
+
+MENU_ADVANCED_TITLE="Accéder aux fonctions avancées"
+MENU_ADVANCED_CHECK="Effectuer un contrôle qualité DMP"
+MENU_ADVANCED_PLUGINS="Gérer les extensions et plugins"
+
+
+# Navigation commune
+
+MENU_BACK="Retour"
+PROMPT_RETURN="Appuyez sur Entrée pour revenir..."
+
+
+# Performance
+
+MSG_PERFORMANCE_TITLE="Comprendre les performances de votre système"
+MSG_PROCESSOR_TITLE="Votre processeur"
+MSG_CPU_USAGE="Utilisation actuelle du processeur"
+MSG_CPU_USAGE_EXPLAIN="Cette valeur indique la part de capacité du processeur actuellement utilisée."
+MSG_MEMORY_USAGE="Utilisation actuelle de la mémoire"
+MSG_MEMORY_USAGE_EXPLAIN="Cette valeur indique la part de mémoire utilisée par Debian et les programmes actifs."
+MSG_TOP_CPU="Programme utilisant actuellement le plus le processeur"
+MSG_TOP_CPU_USAGE="Utilisation du processeur"
+MSG_TOP_MEMORY="Programme utilisant actuellement le plus de mémoire"
+MSG_TOP_MEMORY_USAGE="Utilisation de la mémoire"
+
+
+# Discovery
+
+MSG_CONTINUE="Appuyez sur Entrée pour continuer..."
+MSG_DISCOVERY_TITLE="Découvrons ensemble votre machine Debian"
+MSG_MEMORY_TITLE="Votre mémoire"
+MSG_RAM_TITLE="Mémoire vive"
+MSG_SYSTEM_DETECTED="Système détecté"
+MSG_HARDWARE_TITLE="Votre matériel"
+MSG_HARDWARE_INTRO1="DMP a identifié les caractéristiques principales de votre ordinateur."
+MSG_HARDWARE_INTRO2="Ces informations permettent de mieux comprendre les capacités de votre machine."
+MSG_PROCESSOR="Processeur"
+MSG_CORES="Nombre de cœurs"
+MSG_DISKS_TITLE="Vos disques"
+
+
+# Storage discovery
+
+MSG_MAIN_DISK="Disque principal Debian"
+MSG_DATA_DISK="Disque de données"
+MSG_EXTRA_DISK="Disque supplémentaire"
+MSG_ADVERTISED_CAPACITY="Capacité annoncée"
+MSG_VISIBLE_CAPACITY="Capacité visible par Debian"
+
+MSG_WHY_CAPACITY_TITLE="Pourquoi ces deux valeurs ?"
+MSG_MANUFACTURER_UNIT="Le fabricant annonce les capacités en Go (gigaoctets)."
+MSG_SYSTEM_UNIT="Debian affiche les capacités en Gio (gibioctets)."
+MSG_GO_VALUE="1 Go = 1 000 000 000 octets."
+MSG_GIO_VALUE="1 Gio = 1 073 741 824 octets."
+MSG_GIO_EXPLANATION="Le Gio représente donc une quantité de données plus grande que le Go."
+MSG_DISK_EXAMPLE1="C'est pourquoi un disque annoncé comme 120 Go apparaît comme environ 111,8 Gio dans Debian."
+MSG_DISK_EXAMPLE2="Les deux valeurs correspondent au même disque et à la même quantité réelle de données."
+
+
+# Maintenance
+
+MSG_MAINTENANCE_TITLE="MAINTENANCE DEBIAN"
+MSG_PACKAGE_CHECK="Vérification des paquets"
+MSG_BROKEN_PACKAGES="Paquets cassés : aucun"
+MSG_DEPENDENCY_CHECK="Vérification des dépendances"
+MSG_PACKAGE_CONFIG_OK="Configuration des paquets : OK"
+MSG_PACKAGE_CONFIG_ERROR="Configuration des paquets : PROBLÈME"
+
+MSG_REPOSITORY_UPDATE="Mise à jour des dépôts"
+MSG_REPOSITORY_OK="Tous vos dépôts sont déjà à jour."
+MSG_REPOSITORY_ERROR="La mise à jour des dépôts a rencontré un problème."
+
+MSG_AVAILABLE_UPDATES="Mises à jour disponibles"
+MSG_NO_UPDATES="Aucune mise à jour n'est disponible."
+MSG_SYSTEM_UPDATED="Votre système Debian est déjà à jour."
+MSG_INSTALL_UPDATES="Installer les mises à jour maintenant ? (o/N) :"
+MSG_INSTALLING_UPDATES="Installation des mises à jour..."
+MSG_INSTALL_DONE="Installation terminée."
+MSG_VERIFY_AFTER_INSTALL="Vérification après installation..."
+MSG_INSTALL_ERROR="Installation des mises à jour : PROBLÈME"
+MSG_INSTALL_CANCELLED="Installation des mises à jour annulée."
+
+
+# Maintenance nettoyage
+
+MSG_LIGHT_CLEANUP="Nettoyage léger"
+MSG_REMOVABLE_PACKAGES="%s paquet(s) inutile(s) peuvent être supprimé(s)."
+MSG_CLEANUP_PROPOSAL="DMP peut vous proposer leur suppression."
+MSG_REMOVE_PACKAGES="Supprimer ces paquets inutiles ? (o/N) :"
+MSG_REMOVING_PACKAGES="Suppression des paquets inutiles..."
+MSG_REMOVAL_ERROR="Suppression des paquets inutiles : PROBLÈME"
+MSG_REMOVAL_CANCELLED="Suppression des paquets inutiles annulée."
+MSG_NO_UNUSED_PACKAGES="Aucun paquet inutile n'a été trouvé."
+
+MSG_CACHE_TITLE="Le cache des téléchargements de Debian"
+MSG_CACHE_OCCUPIES="occupe actuellement"
+MSG_FILES_CAN_REMOVE="%s fichier(s) de paquet peuvent réellement être supprimé(s)."
+MSG_CACHE_RECOMMEND="DMP recommande ce nettoyage car ces fichiers ne sont plus nécessaires à APT pour les paquets actuellement disponibles."
+MSG_CLEAN_CACHE="Nettoyer ces fichiers ? (o/N) :"
+MSG_CLEANING_CACHE="Nettoyage du cache des téléchargements..."
+MSG_CACHE_DONE="Nettoyage terminé."
+MSG_SPACE_RELEASED="Espace réellement libéré :"
+MSG_NO_SPACE_RELEASED="Aucun espace n'a finalement été libéré."
+MSG_CACHE_ERROR="Nettoyage du cache APT : PROBLÈME"
+MSG_CACHE_CANCELLED="Nettoyage du cache non effectué."
+MSG_NO_CHANGE="Aucune modification n'a été apportée."
+
+MSG_MAINTENANCE_DONE="MAINTENANCE TERMINÉE"
+
+
+# Maintenance cache final
+
+MSG_CACHE_CHECKED="DMP a vérifié ce cache avec APT."
+MSG_NO_CACHE_CLEANUP="Aucun nettoyage du cache n'est proposé."
+MSG_CACHE_EMPTY="Le cache des téléchargements de Debian est vide."
+MSG_CACHE_NO_CLEAN_REQUIRED="Aucun nettoyage du cache n'est nécessaire."
+
+
+MSG_CACHE_REMOVED_AUTOMATICALLY="supprimé par un nettoyage automatique."
+

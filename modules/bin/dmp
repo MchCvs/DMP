@@ -1,0 +1,101 @@
+#!/bin/bash
+
+# ==================================================
+# Debian Maintenance Professional
+# Version 1.3.0
+# ==================================================
+
+BASE_DIR="$(dirname "$(dirname "$(realpath "$0")")")"
+
+source "$BASE_DIR/config/dmp.conf"
+
+source "$BASE_DIR/lib/language_select.sh"
+
+# Vérification de la langue configurée
+
+if [ -z "${LANGUAGE:-}" ]; then
+    choose_language
+fi
+
+# Chargement du système de langue
+source "$BASE_DIR/lib/language.sh"
+source "$BASE_DIR/lib/ui_status.sh"
+source "$BASE_DIR/lib/system.sh"
+source "$BASE_DIR/lib/smart.sh"
+source "$BASE_DIR/lib/cleanup.sh"
+source "$BASE_DIR/lib/report.sh"
+source "$BASE_DIR/lib/score.sh"
+source "$BASE_DIR/lib/optimize.sh"
+source "$BASE_DIR/lib/recommend.sh"
+source "$BASE_DIR/lib/performance.sh"
+source "$BASE_DIR/lib/history.sh"
+source "$BASE_DIR/lib/history_view.sh"
+source "$BASE_DIR/lib/decision_history.sh"
+source "$BASE_DIR/lib/decision_history_view.sh"
+source "$BASE_DIR/lib/decision_analysis.sh"
+source "$BASE_DIR/lib/decision_validation.sh"
+source "$BASE_DIR/lib/html_report.sh"
+source "$BASE_DIR/lib/chart.sh"
+source "$BASE_DIR/lib/plugins.sh"
+source "$BASE_DIR/lib/verification.sh"
+source "$BASE_DIR/lib/maintenance.sh"
+source "$BASE_DIR/lib/discovery.sh"
+source "$BASE_DIR/lib/network.sh"
+source "$BASE_DIR/lib/interaction.sh"
+source "$BASE_DIR/lib/menu_comprendre.sh"
+source "$BASE_DIR/lib/menu_etat_systeme.sh"
+source "$BASE_DIR/lib/menu_maintenance.sh"
+source "$BASE_DIR/lib/menu_evolution.sh"
+source "$BASE_DIR/lib/menu_resultats.sh"
+source "$BASE_DIR/lib/menu_avance.sh"
+source "$BASE_DIR/lib/menu.sh"
+
+# ==================================================
+# Aide DMP
+# ==================================================
+
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]
+then
+
+echo
+echo "=============================================="
+echo "Debian Maintenance Professional"
+echo
+echo "Utilisation :"
+echo
+echo "  dmp              Lancer le menu principal"
+echo "  dmp --version    Afficher la version"
+echo "  dmp --help       Afficher cette aide"
+echo
+echo "Projet :"
+echo "  $DMP_AUTHOR"
+echo "  $DMP_ORIGIN"
+echo
+echo "=============================================="
+echo
+
+exit 0
+
+fi
+
+# ==================================================
+# Informations version
+# ==================================================
+
+if [ "$1" = "--version" ] || [ "$1" = "-v" ]
+then
+
+echo
+echo "=============================================="
+echo "$DMP_NAME"
+echo
+echo "Version  : $DMP_VERSION"
+echo "Créateur : $DMP_AUTHOR"
+echo "Origine  : $DMP_ORIGIN"
+echo "=============================================="
+echo
+
+exit 0
+
+fi
+dmp_start

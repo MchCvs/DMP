@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+  body { margin: 10px; font-size: 14px; }
+  .container { padding: 15px; }
+  h1 { font-size: 20px; }
+  .charts { grid-template-columns: 1fr; }
+  .links { grid-template-columns: 1fr; gap: 8px; }
+  button { padding: 8px 12px; font-size: 12px; }
+  .section { margin: 10px 0; padding: 15px; }
+  select, input { width: 100%; padding: 8px; }
+}
+
+@media (max-width: 480px) {
+  body { margin: 5px; font-size: 12px; }
+  h1 { font-size: 18px; }
+  .container { padding: 10px; }
+  a { padding: 8px 10px; font-size: 12px; }
+  canvas { height: 250px; }
+}

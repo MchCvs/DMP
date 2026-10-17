@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F1-2 Résultats</title></head><body style=margin:20px>
+<h1>📋 F1-2: Résultats Contrôle</h1>
+<div id=data></div>
+<script>
+async function load(){
+  let r=await fetch('/api/f1_2'');
+  let d=await r.json();
+  document.getElementById('data').innerHTML='<pre>'+JSON.stringify(d,null,2)+'</pre>';
+}
+load();
+</script>
+</body></html>

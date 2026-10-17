@@ -1,0 +1,14 @@
+bak/
+bak-coll*/
+*.bak
+*.bak.html
+*.backup
+*.tgz
+*.db
+*.log
+__pycache__/
+backups/
+SUMMARY.txt
+SESSION_COMPLETE*.txt
+modules/reports/
+modules/memory_snapshots/

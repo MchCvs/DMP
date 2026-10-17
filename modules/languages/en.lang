@@ -1,0 +1,270 @@
+APP_TITLE="Debian Maintenance Professional"
+
+MENU_DIAGNOSTIC="System Diagnostics"
+MENU_SSD="SSD / SMART Diagnostics"
+MENU_MAINTENANCE="Debian Maintenance"
+MENU_CLEANUP="System Cleanup"
+MENU_SETTINGS="Settings"
+MENU_EXIT="Exit"
+
+MSG_WELCOME="Welcome to DMP"
+MSG_DONE="Operation completed successfully."
+MSG_ERROR="An error has occurred."
+
+MENU_REPORT="Complete Report"
+MENU_SCORE="DMP Health Score"
+MENU_OPTIMIZE="System Optimization"
+MENU_RECOMMEND="Recommended Optimizations"
+MENU_PERFORMANCE="Performance Analysis"
+MENU_HISTORY="Machine History"
+MENU_HISTORY_ANALYSIS="History Analysis"
+MENU_HTML_REPORT="HTML Report"
+MENU_GRAPHS="Historical Charts"
+
+PROMPT_CHOICE="Your choice:"
+MSG_EXIT="Closing DMP..."
+MENU_QUALITY="DMP Quality Check"
+MENU_PLUGINS="Plugin Manager"
+
+# Welcome and first discovery
+MSG_WELCOME_TITLE1="Welcome to Debian"
+MSG_WELCOME_TITLE2="Maintenance Professional"
+MSG_WELCOME_TEXT1="DMP helps you understand"
+MSG_WELCOME_TEXT2="and maintain your Debian machine."
+MSG_WELCOME_SAFE1="This first discovery does not modify"
+MSG_WELCOME_SAFE2="any element of your computer."
+PROMPT_START_DISCOVERY="Start the discovery? Press Enter..."
+
+MSG_ORIENTATION_TITLE="How would you like to continue?"
+MENU_DISCOVER_AGAIN="Discover my machine again"
+MENU_ACCESS_TOOLS="Access DMP tools"
+
+MSG_WELCOME_DISCOVERY1="To begin, DMP will discover your"
+MSG_WELCOME_DISCOVERY2="machine and explain its main"
+MSG_WELCOME_DISCOVERY3="elements."
+
+# Machine discovery
+
+DISCOVERY_TITLE="Let's discover your Debian machine"
+
+DISCOVERY_SYSTEM_DETECTED="Detected system"
+DISCOVERY_SYSTEM_TITLE="Your Debian system"
+DISCOVERY_SYSTEM_TEXT1="DMP identified the Debian system used"
+DISCOVERY_SYSTEM_TEXT2="by your computer."
+DISCOVERY_SYSTEM_TEXT3="This information allows DMP"
+DISCOVERY_SYSTEM_TEXT4="to adapt its explanations to your environment."
+
+DISCOVERY_HARDWARE_TITLE="Your hardware"
+DISCOVERY_HARDWARE_PROCESSOR="Processor"
+DISCOVERY_HARDWARE_CORES="Number of cores"
+DISCOVERY_HARDWARE_MEMORY="Memory"
+DISCOVERY_HARDWARE_TEXT1="DMP identified the main characteristics"
+DISCOVERY_HARDWARE_TEXT2="of your computer."
+DISCOVERY_HARDWARE_TEXT3="This information helps you better"
+DISCOVERY_HARDWARE_TEXT4="understand your machine's capabilities."
+DISCOVERY_MEMORY_TEXT1="Memory allows Debian"
+DISCOVERY_MEMORY_TEXT2="to run the programs currently open."
+
+DISCOVERY_STORAGE_TITLE="Your storage"
+DISCOVERY_STORAGE_DISK="Disk"
+DISCOVERY_STORAGE_SIZE="Size"
+DISCOVERY_STORAGE_ROLE="Role"
+DISCOVERY_STORAGE_USAGE="Use"
+DISCOVERY_ROLE_MAIN="main Debian disk"
+DISCOVERY_ROLE_DATA="data storage"
+DISCOVERY_ROLE_STORAGE="storage disk"
+DISCOVERY_USAGE_BOOT="computer startup"
+DISCOVERY_USAGE_SYSTEM="main Debian system"
+DISCOVERY_USAGE_DATA="Linux data"
+DISCOVERY_USAGE_SHARED="shared file space"
+DISCOVERY_STORAGE_TEXT1="DMP identified the storage spaces"
+DISCOVERY_STORAGE_TEXT2="present on your computer."
+DISCOVERY_STORAGE_TEXT3="This information helps you understand"
+DISCOVERY_STORAGE_TEXT4="the general organization of your system."
+
+DISCOVERY_END_TEXT1="The discovery of your Debian machine"
+DISCOVERY_END_TEXT2="is complete."
+DISCOVERY_END_TEXT3="DMP has now identified the main"
+DISCOVERY_END_TEXT4="elements of your system."
+DISCOVERY_END_TEXT5="You can now choose how"
+DISCOVERY_END_TEXT6="you would like to continue."
+
+# Language management
+
+MSG_LANGUAGE_TITLE="Choose your language"
+MSG_LANGUAGE_SAVED="Language saved:"
+
+MENU_CHANGE_LANGUAGE="Change language"
+
+MSG_INVALID_CHOICE="Invalid choice"
+
+# Main menu
+
+MENU_MAIN_MACHINE="Understand my Debian machine"
+MENU_MAIN_SYSTEM_STATE="Understand the current state of my Debian system"
+MENU_MAIN_MAINTENANCE="Take care of my machine"
+MENU_MAIN_EVOLUTION="Follow my system evolution"
+MENU_MAIN_RESULTS="View my DMP results"
+MENU_MAIN_ADVANCED="Access advanced functions"
+
+
+# Understand menu
+
+MENU_UNDERSTAND_TITLE="Understand my Debian machine"
+MENU_UNDERSTAND_GENERAL="View general information about my machine"
+MENU_BACK_MAIN="Back to main menu"
+MENU_RETURN="Back"
+
+# System state menu
+
+MENU_SYSTEM_STATE_TITLE="Understand the current state of my Debian system"
+MENU_SYSTEM_STATE_DISKS="Check my disk status"
+MENU_SYSTEM_STATE_PERFORMANCE="Check system performance"
+
+
+# Maintenance menu
+
+MENU_MAINTENANCE_TITLE="Take care of my machine"
+MENU_MAINTENANCE_SYSTEM="Maintain my Debian system"
+MENU_MAINTENANCE_CLEANUP="Clean unnecessary elements"
+MENU_MAINTENANCE_OPTIMIZE="Optimize system operation"
+MENU_MAINTENANCE_RECOMMEND="View DMP recommendations"
+
+
+# Evolution menu
+
+MENU_EVOLUTION_TITLE="Follow my system evolution"
+MENU_EVOLUTION_HISTORY="View my system history"
+MENU_EVOLUTION_ANALYSIS="Analyze detected changes"
+
+
+# Results menu
+
+MENU_RESULTS_TITLE="View my DMP results"
+MENU_RESULTS_REPORT="View the DMP report"
+MENU_RESULTS_SCORE="View system health score"
+MENU_RESULTS_HTML="Generate an HTML report"
+MENU_RESULTS_CHART="Prepare chart data"
+
+
+# Advanced menu
+
+MENU_ADVANCED_TITLE="Access advanced functions"
+MENU_ADVANCED_CHECK="Perform a DMP quality check"
+MENU_ADVANCED_PLUGINS="Manage extensions and plugins"
+
+
+# Common navigation
+
+MENU_BACK="Back"
+PROMPT_RETURN="Press Enter to return..."
+
+
+# Performance
+
+MSG_PERFORMANCE_TITLE="Understand system performance"
+MSG_PROCESSOR_TITLE="Your processor"
+MSG_CPU_USAGE="Current processor usage"
+MSG_CPU_USAGE_EXPLAIN="This value shows the share of processor capacity currently being used."
+MSG_MEMORY_USAGE="Current memory usage"
+MSG_MEMORY_USAGE_EXPLAIN="This value shows the share of memory currently used by Debian and programs."
+MSG_TOP_CPU="Program currently using the most processor"
+MSG_TOP_CPU_USAGE="Processor usage"
+MSG_TOP_MEMORY="Program currently using the most memory"
+MSG_TOP_MEMORY_USAGE="Memory usage"
+
+
+# Discovery
+
+MSG_CONTINUE="Press Enter to continue..."
+MSG_DISCOVERY_TITLE="Let's discover your Debian machine together"
+MSG_MEMORY_TITLE="Your memory"
+MSG_RAM_TITLE="RAM"
+MSG_SYSTEM_DETECTED="Detected system"
+MSG_HARDWARE_TITLE="Your hardware"
+MSG_HARDWARE_INTRO1="DMP identified the main characteristics of your computer."
+MSG_HARDWARE_INTRO2="This information helps better understand your machine capabilities."
+MSG_PROCESSOR="Processor"
+MSG_CORES="Number of cores"
+MSG_DISKS_TITLE="Your disks"
+
+
+# Storage discovery
+
+MSG_MAIN_DISK="Main Debian disk"
+MSG_DATA_DISK="Data disk"
+MSG_EXTRA_DISK="Additional disk"
+MSG_ADVERTISED_CAPACITY="Advertised capacity"
+MSG_VISIBLE_CAPACITY="Capacity visible by Debian"
+
+MSG_WHY_CAPACITY_TITLE="Why these two values?"
+MSG_MANUFACTURER_UNIT="Manufacturers advertise capacities in GB (gigabytes)."
+MSG_SYSTEM_UNIT="Debian displays capacities in GiB (gibibytes)."
+MSG_GO_VALUE="1 GB = 1,000,000,000 bytes."
+MSG_GIO_VALUE="1 GiB = 1,073,741,824 bytes."
+MSG_GIO_EXPLANATION="A GiB therefore represents a larger amount of data than a GB."
+MSG_DISK_EXAMPLE1="This is why a disk advertised as 120 GB appears as about 111.8 GiB in Debian."
+MSG_DISK_EXAMPLE2="Both values refer to the same disk and the same actual amount of data."
+
+
+# Maintenance
+
+MSG_MAINTENANCE_TITLE="DEBIAN MAINTENANCE"
+MSG_PACKAGE_CHECK="Package check"
+MSG_BROKEN_PACKAGES="Broken packages: none"
+MSG_DEPENDENCY_CHECK="Dependency check"
+MSG_PACKAGE_CONFIG_OK="Package configuration: OK"
+MSG_PACKAGE_CONFIG_ERROR="Package configuration: ERROR"
+
+MSG_REPOSITORY_UPDATE="Repository update"
+MSG_REPOSITORY_OK="All your repositories are already up to date."
+MSG_REPOSITORY_ERROR="Repository update encountered a problem."
+
+MSG_AVAILABLE_UPDATES="Available updates"
+MSG_NO_UPDATES="No updates are available."
+MSG_SYSTEM_UPDATED="Your Debian system is already up to date."
+MSG_INSTALL_UPDATES="Install updates now? (y/N):"
+MSG_INSTALLING_UPDATES="Installing updates..."
+MSG_INSTALL_DONE="Installation completed."
+MSG_VERIFY_AFTER_INSTALL="Checking after installation..."
+MSG_INSTALL_ERROR="Update installation: ERROR"
+MSG_INSTALL_CANCELLED="Update installation cancelled."
+
+
+# Maintenance cleanup
+
+MSG_LIGHT_CLEANUP="Light cleanup"
+MSG_REMOVABLE_PACKAGES="%s unnecessary package(s) can be removed."
+MSG_CLEANUP_PROPOSAL="DMP can suggest their removal."
+MSG_REMOVE_PACKAGES="Remove these unnecessary packages? (y/N):"
+MSG_REMOVING_PACKAGES="Removing unnecessary packages..."
+MSG_REMOVAL_ERROR="Removing unnecessary packages: ERROR"
+MSG_REMOVAL_CANCELLED="Removal of unnecessary packages cancelled."
+MSG_NO_UNUSED_PACKAGES="No unnecessary package was found."
+
+MSG_CACHE_TITLE="Debian download cache"
+MSG_CACHE_OCCUPIES="currently uses"
+MSG_FILES_CAN_REMOVE="%s package file(s) can actually be removed."
+MSG_CACHE_RECOMMEND="DMP recommends this cleanup because these files are no longer needed by APT for currently available packages."
+MSG_CLEAN_CACHE="Clean these files? (y/N):"
+MSG_CLEANING_CACHE="Cleaning download cache..."
+MSG_CACHE_DONE="Cleanup completed."
+MSG_SPACE_RELEASED="Actually released space:"
+MSG_NO_SPACE_RELEASED="No space was finally released."
+MSG_CACHE_ERROR="APT cache cleanup: ERROR"
+MSG_CACHE_CANCELLED="Cache cleanup not performed."
+MSG_NO_CHANGE="No changes were made."
+
+MSG_MAINTENANCE_DONE="MAINTENANCE COMPLETED"
+
+
+# Maintenance cache final
+
+MSG_CACHE_CHECKED="DMP checked this cache with APT."
+MSG_NO_CACHE_CLEANUP="No cache cleanup is proposed."
+MSG_CACHE_EMPTY="The Debian download cache is empty."
+MSG_CACHE_NO_CLEAN_REQUIRED="No cache cleanup is required."
+
+
+MSG_CACHE_REMOVED_AUTOMATICALLY="removed by an automatic cleanup."
+

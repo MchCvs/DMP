@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — C3.2 — Comprendre les améliorations proposées</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="c-menu.html">C — Prendre soin de ma machine</a>
+    <span>›</span>
+    <strong>C3.2 — Comprendre les améliorations proposées</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>C3.2 — Comprendre les améliorations proposées</h1>
+
+    <p>
+      Cette page explique les améliorations que DMP peut
+      proposer pour le fonctionnement de votre système Debian.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Comprendre</h2>
+
+      <p>
+        Une amélioration proposée par DMP doit être liée
+        à un élément réellement observé sur le système.
+      </p>
+
+      <p>
+        DMP explique ce qui peut être amélioré, pourquoi
+        cette amélioration est proposée et ce qu'elle
+        peut changer dans le fonctionnement du système.
+      </p>
+
+      <p>
+        Une possibilité technique n'est donc pas présentée
+        automatiquement comme une action à effectuer.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Améliorations proposées</h2>
+
+      <div class="detail">
+
+        <h3>Amélioration identifiée</h3>
+
+        <p class="value" id="c3-improvement">
+          Analyse en cours…
+        </p>
+
+        <p id="c3-improvement-explanation">
+          DMP recherche une possibilité d'amélioration
+          réellement identifiée sur le système.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Bénéfice attendu</h3>
+
+        <p class="value" id="c3-benefit">
+          Analyse en cours…
+        </p>
+
+        <p id="c3-benefit-explanation">
+          Le bénéfice est expliqué uniquement lorsqu'une
+          possibilité d'amélioration est réellement détectée.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Si tu veux récupérer cet espace</h3>
+
+        <p class="value" id="c3-action">
+          Aucune action proposée
+        </p>
+
+        <p id="c3-action-explanation">
+          DMP n'exécute et ne propose aucune modification
+          automatiquement.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Éléments techniques examinés</h3>
+
+      <pre><code>Mises à jour disponibles
+Paquets pouvant être supprimés
+Cache APT pouvant être nettoyé</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre id="c3-technical-result"><code>Analyse en cours…</code></pre>
+
+    </div>
+
+  </section>
+
+<script>
+async function loadC3() {
+  const improvement = document.getElementById("c3-improvement");
+  const improvementExplanation =
+    document.getElementById("c3-improvement-explanation");
+  const benefit = document.getElementById("c3-benefit");
+  const benefitExplanation =
+    document.getElementById("c3-benefit-explanation");
+  const action = document.getElementById("c3-action");
+  const actionExplanation =
+    document.getElementById("c3-action-explanation");
+  const technicalResult =
+    document.querySelector("#c3-technical-result code");
+
+  try {
+    const response = await fetch("/api/c3");
+
+    if (!response.ok) {
+      throw new Error("Réponse API C3 invalide");
+    }
+
+    const data = await response.json();
+    const cleanup = data.possibilities?.cleanup || {};
+    const updates = data.possibilities?.updates || {};
+    const autoremove = data.possibilities?.autoremove || {};
+
+    if (cleanup.detected) {
+      improvement.textContent =
+        cleanup.apt_cache_human +
+        " occupent actuellement de l'espace sur le disque dur";
+
+      improvementExplanation.textContent =
+        "Ces données proviennent de téléchargements utilisés " +
+        "par Debian pour installer ou mettre à jour des logiciels. " +
+        "Elles peuvent être supprimées pour récupérer cet espace.";
+
+      benefit.textContent =
+        "Récupérer " + cleanup.apt_cache_human + " d'espace";
+
+      benefitExplanation.textContent =
+        "Le nettoyage permettrait de récupérer l'espace " +
+        "actuellement occupé par ces données.";
+
+      action.textContent = "Tu peux supprimer ces données";
+
+      actionExplanation.textContent =
+        "Cela permettrait de récupérer " +
+        cleanup.apt_cache_human +
+        " sur le disque dur. " +
+        "Les logiciels installés resteraient en place.";
+    } else if (updates.detected) {
+      improvement.textContent =
+        updates.count + " mise(s) à jour disponible(s)";
+
+      improvementExplanation.textContent =
+        "DMP a identifié des mises à jour disponibles.";
+
+      benefit.textContent =
+        "Maintenir le système à jour";
+
+      benefitExplanation.textContent =
+        "Les mises à jour peuvent apporter des corrections, " +
+        "des améliorations ou des corrections de sécurité.";
+
+      action.textContent = "Aucune action automatique";
+
+      actionExplanation.textContent =
+        "DMP identifie les mises à jour disponibles sans " +
+        "les installer automatiquement.";
+    } else if (autoremove.detected) {
+      improvement.textContent =
+        autoremove.count +
+        " élément(s) peuvent être examinés";
+
+      improvementExplanation.textContent =
+        "DMP a trouvé des éléments qui peuvent éventuellement " +
+        "être supprimés. Ils doivent être vérifiés avant toute suppression.";
+
+      benefit.textContent =
+        "Libérer de l'espace sur le disque dur";
+
+      benefitExplanation.textContent =
+        "Si ces éléments ne sont plus nécessaires, leur suppression " +
+        "peut libérer l'espace qu'ils occupent.";
+
+      action.textContent = "Vérifier avant de supprimer";
+
+      actionExplanation.textContent =
+        "DMP ne supprime aucun élément automatiquement.";
+    } else {
+      improvement.textContent =
+        "Aucune amélioration identifiée actuellement";
+
+      improvementExplanation.textContent =
+        "DMP n'a identifié aucune possibilité d'amélioration " +
+        "nécessitant une action actuellement.";
+
+      benefit.textContent = "Aucun bénéfice à rechercher actuellement";
+
+      benefitExplanation.textContent =
+        "Aucune amélioration n'ayant été identifiée, " +
+        "aucun bénéfice particulier n'est à présenter.";
+
+      action.textContent = "Aucune action proposée";
+
+      actionExplanation.textContent =
+        "DMP ne propose aucune modification sans possibilité " +
+        "d'amélioration réellement identifiée.";
+    }
+
+    technicalResult.textContent = JSON.stringify(data, null, 2);
+
+  } catch (error) {
+    improvement.textContent = "Information non disponible";
+    improvementExplanation.textContent =
+      "DMP ne peut pas actuellement récupérer le résultat de l'analyse.";
+
+    benefit.textContent = "Information non disponible";
+    benefitExplanation.textContent =
+      "Le bénéfice ne peut pas être déterminé sans résultat d'analyse.";
+
+    action.textContent = "Aucune action proposée";
+    actionExplanation.textContent =
+      "La décision ne peut pas être déterminée sans résultat d'analyse.";
+
+    technicalResult.textContent =
+      "Impossible de récupérer les résultats du collecteur C3.";
+  }
+}
+
+loadC3();
+</script>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="c3-3-optimisation.html">
+      Suivant C3.3
+      <span class="next-page-tooltip">
+        Appliquer une optimisation
+      </span>
+    </a>
+
+    <a class="back" href="c3-1-possibilites.html">
+      Retour C3.1
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+</body>
+</html>

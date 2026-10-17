@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — D2.3 — Identifier les tendances</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="d-menu.html">D — Suivre les évolutions de mon système</a>
+    <span>›</span>
+    <strong>D2.3 — Identifier les tendances</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>D2.3 — Identifier les tendances</h1>
+
+    <p>
+      Cette page permet d'identifier les évolutions répétées
+      observées dans le temps sur votre système Debian.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Comprendre</h2>
+
+      <p>
+        Une tendance correspond à une évolution qui se répète
+        ou qui se confirme au fil de plusieurs observations.
+      </p>
+
+      <p>
+        Une seule variation ne suffit généralement pas
+        à établir une tendance.
+      </p>
+
+      <p>
+        DMP s'appuie donc sur plusieurs observations comparables
+        avant de présenter une évolution comme une tendance.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Tendances détectées</h2>
+
+      <div class="detail">
+
+        <h3>Tendance actuelle</h3>
+
+        <p class="value" id="d2-3-trend">
+          Information non disponible
+        </p>
+
+        <p id="d2-3-trend-explanation">
+          DMP ne dispose actuellement pas d'un nombre suffisant
+          d'observations historiques pour identifier une tendance.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Élément concerné</h3>
+
+        <p class="value" id="d2-3-element">
+          Information non disponible
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Évolution observée</h3>
+
+        <p class="value" id="d2-3-evolution">
+          Information non disponible
+        </p>
+
+        <p id="d2-3-evolution-explanation">
+          Une tendance sera présentée lorsque plusieurs
+          observations comparables permettront de l'établir.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Données utilisées</h3>
+
+      <pre><code>Observations successives
+Dates des observations
+Valeurs mesurées
+Écarts successifs
+Évolution dans le temps</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre><code id="d2-3-technical-result">Chargement des informations techniques...</code></pre>
+
+    </div>
+
+  </section>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="d2-4-technique.html">
+      Suivant D2.4
+      <span class="next-page-tooltip">
+        Informations techniques
+      </span>
+    </a>
+
+    <a class="back" href="d2-2-comprendre.html">
+      Retour D2.2
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+
+<script>
+async function loadD2_3() {
+  const trend = document.getElementById("d2-3-trend");
+  const trendExplanation = document.getElementById("d2-3-trend-explanation");
+  const element = document.getElementById("d2-3-element");
+  const evolution = document.getElementById("d2-3-evolution");
+  const evolutionExplanation = document.getElementById("d2-3-evolution-explanation");
+  const technicalResult = document.getElementById("d2-3-technical-result");
+
+  try {
+    const response = await fetch("/api/d2_3", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error("API D2.3 indisponible");
+    }
+
+    const data = await response.json();
+
+    if (data.collected && data.trend_available) {
+      trend.textContent = data.trend;
+      trendExplanation.textContent = data.explanation;
+      element.textContent = data.element;
+      evolution.textContent = data.evolution;
+      evolutionExplanation.textContent =
+        "La tendance présentée est fondée sur les observations comparées par DMP.";
+      technicalResult.textContent = data.technical_result;
+    } else {
+      trend.textContent =
+        data.trend || "Information indisponible";
+      trendExplanation.textContent =
+        data.explanation ||
+        "Aucune tendance suffisamment établie n'est actuellement disponible.";
+      element.textContent =
+        data.element || "Information indisponible";
+      evolution.textContent =
+        data.evolution || "Information indisponible";
+      evolutionExplanation.textContent =
+        "DMP ne présente pas de tendance lorsqu'une direction suffisamment répétée ne peut pas être établie.";
+      technicalResult.textContent =
+        data.technical_result ||
+        "Aucune tendance historique actuellement disponible.";
+    }
+  } catch (error) {
+    trend.textContent = "Information indisponible";
+    trendExplanation.textContent =
+      "Aucune tendance historique exploitable n'est actuellement disponible.";
+    element.textContent = "Information indisponible";
+    evolution.textContent = "Information indisponible";
+    evolutionExplanation.textContent =
+      "DMP ne peut pas présenter de tendance sans données historiques disponibles.";
+    technicalResult.textContent =
+      "Informations techniques historiques indisponibles.";
+  }
+}
+
+loadD2_3();
+</script>
+
+</body>
+</html>

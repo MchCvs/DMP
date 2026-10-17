@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMP — Aide et API</title><style>
+body{font-family:Arial;margin:0;background:#f8f9fa}
+header{background:#2c3e50;color:white;padding:15px 20px}
+nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-decoration:none}
+.container{max-width:900px;margin:20px auto;background:white;padding:20px;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.breadcrumb{color:#7f8c8d;font-size:12px;margin-bottom:20px}.breadcrumb a{color:#3498db;text-decoration:none}
+.block{margin:20px 0;padding:15px;background:#ecf0f1;border-radius:5px}
+.nav-section{margin-top:30px;padding-top:20px;border-top:2px solid #ecf0f1;display:flex;justify-content:space-between}
+.btn{padding:10px 20px;background:#3498db;color:white;text-decoration:none;border-radius:3px}.btn:hover{background:#2980b9}
+</style><style>#obs{white-space:pre-line;line-height:1.7}</style></head><body>
+<header><h1>📊 DMP — Maintenance Debian</h1></header>
+<nav><a href=menu.html>Menu</a> | <a href=aide.html>Aide</a></nav>
+<div class=container>
+<div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>Aide et API</strong></div><h1>Aide et API</h1>
+<div class=block><h2>Comprendre</h2><p>DMP est un logiciel qui examine votre ordinateur et vous l'explique en mots simples. Chaque page (A1 à B9) a deux visages : la page que vous lisez, et ses données brutes, que l'on appelle API, lisibles par d'autres logiciels. Cette page liste les deux.</p></div>
+<div class=block><h2>Ce qu'on voit</h2><div id=obs>Chargement…</div></div>
+<div class=block><h2>Ce que ça veut dire</h2><p id=res>Chargement…</p></div>
+<div class=nav-section><a href=verification-sante.html class=btn>← Vérification santé</a><a href=menu.html class=btn>Menu →</a></div></div><script>
+const N={a1:'Processeur',a2:'Mémoire',a3:'Disque (capacité)',a4:'Réseau',a5:'Carte graphique',a6:'Carte mère',a7:'Système Debian',a8:'Périphériques USB',a9:'Alimentation / batterie',b1:'Disponibilité',b2:'Processeur %',b3:'Mémoire %',b4:'Disque % et santé',b5:'Réseau en direct',b6:'Services',b7:'Programmes',b8:'Démarrage',b9:'Sécurité'};
+const IC=['✅','🟡','🔴','➖'],CO=['#27ae60','#e67e22','#c0392b','#7f8c8d'];
+const get=async k=>{try{return await (await fetch('/api/'+k)).json()}catch(e){return {}}};
+const all=async ks=>{const r=await Promise.all(ks.map(get)),o={};ks.forEach((k,i)=>o[k]=r[i]);return o};
+const niv=t=>/Non disponible|non identifiée|Ordinateur fixe|Aucun appareil/i.test(t)?3:/défaillance|Surchargé|presque plein|Failles|mauvaise qualité|Non connecté|ne répond pas|à traiter|pas d'internet|à libérer/i.test(t)?2:/surveiller|regarder|conseillé|instable|lent|améliorer|beaucoup de mémoire|sollicite|zombies|indisponible|longtemps|se remplit/i.test(t)?1:0;
+const sp=r=>{r=r||'Pas de réponse';const i=r.indexOf('. ');return i<0?[r,'']:[r.slice(0,i),r.slice(i+2)]};
+const E=(t,s,x)=>{const e=document.createElement(t);if(s)e.style.cssText=s;if(x!==undefined)e.textContent=x;return e};
+const card=(k,d,m)=>{const[v,x]=sp(d.resultat),n=d.resultat?niv(v):3,c=E('div','border:1px solid #ddd;border-left:6px solid '+CO[n]+';border-radius:5px;padding:12px;margin:10px 0;background:#fff');
+c.appendChild(E('div','font-size:17px;font-weight:bold',IC[n]+' '+N[k]+' : '+v));
+if(x&&m)c.appendChild(E('div','margin-top:6px;line-height:1.6','Ce que ça veut dire : '+x));
+if(m&&d.observations){const t=E('details','margin-top:8px');t.open=m===2;t.appendChild(E('summary','cursor:pointer;color:#3498db','Voir le détail'));t.appendChild(E('div','margin-top:8px;padding:10px;background:#f4f6f7;border-radius:4px;line-height:1.6',d.observations));c.appendChild(t)}
+const a=E('a','display:inline-block;margin-top:8px;color:#3498db','Page complète →');a.href=k+'.html';c.appendChild(a);return{c,n}};
+const res=ns=>{const m=[0,0,0,0];ns.forEach(n=>m[n]++);const r=document.getElementById('res');
+r.textContent=m[2]?'🔴 '+m[2]+' point(s) à corriger en priorité, '+m[1]+' à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant rouge signale un risque réel (panne proche, ralentissement fort ou faille de sécurité). Commencez par les cartes rouges, puis passez aux jaunes.':m[1]?'🟡 '+m[1]+' point(s) à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant jaune n\'est pas une panne, c\'est une invitation à regarder sans urgence. Ouvrez la carte concernée : elle explique quoi faire.':'✅ Tout est en bon état ('+m[0]+' points vérifiés, '+m[3]+' sans objet). Pourquoi : aucun composant ne signale de problème. Les ➖ sont des éléments que votre ordinateur n\'a pas (par exemple une batterie sur un ordinateur fixe), ce qui est normal.'};
+(()=>{const o=document.getElementById('obs');o.textContent='';const t=E('table','width:100%;border-collapse:collapse'),r=(a,h)=>{const tr=E('tr');a.forEach(x=>{const c=E(h?'th':'td','text-align:left;padding:8px;border-bottom:1px solid #ccc');if(x instanceof Node)c.appendChild(x);else c.textContent=x;tr.appendChild(c)});t.appendChild(tr)};
+r(['Page','Sujet','Données brutes (API)'],1);
+Object.keys(N).forEach(k=>{const p=E('a','color:#3498db',k.toUpperCase());p.href=k+'.html';const a=E('a','color:#3498db','/api/'+k);a.href='/api/'+k;r([p,N[k],a])});
+o.appendChild(t);
+document.getElementById('res').textContent='Les pages servent à lire, les adresses « API » servent aux logiciels. Pourquoi : si un jour vous voulez relier DMP à un autre outil (alerte, graphique, tableau), il lui suffit de lire ces adresses. Dans un terminal : curl http://127.0.0.1:8765/api/a1 . Les mots-clés « comprendre », « observations » et « resultat » correspondent exactement aux trois blocs des pages.'})();
+</script></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B7</title><style>body{font-family:Arial;margin:20px}select{width:100%;height:300px;padding:8px}pre{background:#f5f5f5;padding:10px;overflow:auto;max-height:200px}</style><style>#obs{white-space:pre-line;line-height:1.7}</style></head><body>
+<h1>B7 — Programmes en cours</h1>
+<p id=obs></p>
+<h3>📋 Tous les programmes (50+ affichés)</h3>
+<select id=procs multiple></select>
+<p style=font-size:11px>Commandes utilisées par DMP: <code>ps aux</code></p>
+<script>
+async function load(){
+  let r=await fetch('/api/b7');
+  let d=await r.json();
+  document.getElementById('obs').textContent=d.observations;
+  let procs=d.informations_techniques.top50.split('|');
+  let sel=document.getElementById('procs');
+  procs.forEach(p=>{if(p.trim()){let o=document.createElement('option');o.textContent=p.trim();sel.appendChild(o)}});
+}
+load();
+</script>
+</body></html>

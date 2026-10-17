@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMP — D2.2 — Comprendre les changements</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span>›</span>
+    <a href="d-menu.html">D — Suivre les évolutions de mon système</a>
+    <span>›</span>
+    <strong>D2.2 — Comprendre les changements</strong>
+  </nav>
+
+  <header class="page-header">
+
+    <div class="page-icon" aria-hidden="true">
+      <span class="screen"></span>
+      <span class="stand"></span>
+      <span class="base"></span>
+    </div>
+
+    <h1>D2.2 — Comprendre les changements</h1>
+
+    <p>
+      Cette page explique les changements observés
+      entre deux analyses de votre système Debian.
+    </p>
+
+  </header>
+
+  <section class="page-content">
+
+    <div class="information-block">
+
+      <h2>Comprendre</h2>
+
+      <p>
+        DMP distingue le changement réellement mesuré
+        de l'interprétation que l'on peut en faire.
+      </p>
+
+      <p>
+        Un changement peut être normal, attendu, temporaire
+        ou nécessiter une attention particulière selon
+        l'élément concerné et son évolution.
+      </p>
+
+      <p>
+        DMP explique donc d'abord ce qui a changé,
+        puis indique ce que cette évolution peut signifier
+        lorsque les informations disponibles le permettent.
+      </p>
+
+    </div>
+
+
+    <div class="information-block">
+
+      <h2>Changement actuel</h2>
+
+      <div class="detail">
+
+        <h3>Élément concerné</h3>
+
+        <p class="value" id="d2-2-element">
+          Information non disponible
+        </p>
+
+        <p id="d2-2-element-explanation">
+          Aucun changement historique n'est actuellement
+          disponible pour être expliqué.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Changement mesuré</h3>
+
+        <p class="value" id="d2-2-change">
+          Information non disponible
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <h3>Interprétation</h3>
+
+        <p class="value" id="d2-2-interpretation">
+          Information non disponible
+        </p>
+
+
+
+      </div>
+
+    </div>
+
+
+    <div class="information-block technical">
+
+      <h2>Informations techniques complémentaires</h2>
+
+      <p>
+        Ces informations sont utilisées automatiquement par DMP.
+        Elles ne sont pas à exécuter ici.
+      </p>
+
+      <h3>Éléments utilisés pour l'explication</h3>
+
+      <pre><code>Valeur précédente
+Valeur actuelle
+Écart mesuré
+Élément concerné
+Contexte de l'observation
+Interprétation éventuelle</code></pre>
+
+      <h3>Résultat technique</h3>
+
+      <pre><code id="d2-2-technical-result">Aucun changement historique actuellement disponible.</code></pre>
+
+    </div>
+
+  </section>
+
+
+  <footer class="page-actions">
+
+    <button type="button">Imprimer</button>
+    <button type="button">Exporter</button>
+    <button type="button">Enregistrer</button>
+
+    <div class="page-navigation">
+
+    <a class="next-page" href="d2-3-tendances.html">
+      Suivant D2.3
+      <span class="next-page-tooltip">
+        Identifier les tendances
+      </span>
+    </a>
+
+    <a class="back" href="d2-1-evolutions.html">
+      Retour D2.1
+    </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+
+<script>
+async function loadD2_2() {
+  const element = document.getElementById("d2-2-element");
+  const elementExplanation = document.getElementById("d2-2-element-explanation");
+  const change = document.getElementById("d2-2-change");
+  const interpretation = document.getElementById("d2-2-interpretation");
+  const technicalResult = document.getElementById("d2-2-technical-result");
+
+  try {
+    const response = await fetch("/api/d2_1", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error("API D2.1 indisponible");
+    }
+
+    const data = await response.json();
+
+    if (data.collected && data.evolution_available) {
+      element.textContent = data.element;
+
+      elementExplanation.textContent =
+        "Les éléments présentés correspondent aux mesures réellement comparées par DMP.";
+
+      change.innerHTML =
+        `Température CPU : ${data.temperature_previous} → ${data.temperature_current} °C<br>` +
+        `RAM disponible : ${data.ram_previous} → ${data.ram_current}<br>` +
+        `Disque utilisé : ${data.disk_previous} → ${data.disk_current}<br>` +
+        `Démarrage : ${data.boot_previous} → ${data.boot_current}`;
+
+      interpretation.textContent =
+        "DMP constate les variations mesurées, mais ne peut pas établir leur cause à partir de ces seules observations.";
+
+      technicalResult.textContent =
+        data.technical_result;
+    } else {
+      element.textContent = "Information indisponible";
+
+      elementExplanation.textContent =
+        "Aucune comparaison historique exploitable n'est actuellement disponible.";
+
+      change.textContent = "Information indisponible";
+
+      interpretation.textContent =
+        "DMP ne fournit pas d'interprétation sans données suffisantes pour l'établir.";
+
+      technicalResult.textContent =
+        data.technical_result ||
+        "Aucun changement historique actuellement disponible.";
+    }
+  } catch (error) {
+    element.textContent = "Information indisponible";
+
+    elementExplanation.textContent =
+      "Aucune comparaison historique exploitable n'est actuellement disponible.";
+
+    change.textContent = "Information indisponible";
+
+    interpretation.textContent =
+      "DMP ne fournit pas d'interprétation sans données suffisantes pour l'établir.";
+
+    technicalResult.textContent =
+      "Informations techniques historiques indisponibles.";
+  }
+}
+
+loadD2_2();
+</script>
+
+</body>
+</html>
