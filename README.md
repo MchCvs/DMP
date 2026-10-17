@@ -4,6 +4,20 @@ DMP aide les utilisateurs de **Debian GNU/Linux**, même débutants, à comprend
 
 Chaque page suit le même cycle : **observation → compréhension → explication → décision de l'utilisateur**. DMP observe et explique en langage simple. Il ne modifie jamais le système de lui-même.
 
+## Aperçu
+
+**Le menu d'accueil** : toutes les sections d'un coup d'œil.
+
+![Menu d'accueil de DMP](web/assets/captures/menu-accueil.png)
+
+**Chaque page explique** : ce que c'est, ce que DMP voit sur votre machine, et ce que cela veut dire.
+
+![Page explicative de DMP](web/assets/captures/page-explicative.png)
+
+**Un score sur 100** qui résume l'état de votre machine.
+
+![Score de DMP](web/assets/captures/score.png)
+
 ## Fonctionnement
 
 Chaque page affiche quatre blocs :
