@@ -42,8 +42,8 @@
     }
   };
   var PAT = {
-    en: [[/^Section (\S+)$/, 'Section $1'], [/^Suivant : (.+) →$/, 'Next: $1 →']],
-    de: [[/^Section (\S+)$/, 'Bereich $1'], [/^Suivant : (.+) →$/, 'Weiter: $1 →']]
+    en: [[/^Section (\S+)$/, 'Section $1'], [/^Suivant : (.+) →$/, 'Next: $1 →'], [/^Précédent : (.+)$/, 'Previous: $1']],
+    de: [[/^Section (\S+)$/, 'Bereich $1'], [/^Suivant : (.+) →$/, 'Weiter: $1 →'], [/^Précédent : (.+)$/, 'Zurück: $1']]
   };
 
   function tr(txt) {
