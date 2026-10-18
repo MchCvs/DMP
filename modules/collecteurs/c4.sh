@@ -1,4 +1,11 @@
 #!/bin/bash
+if [ -z "$XDG_CURRENT_DESKTOP" ] || [ -z "$XDG_SESSION_TYPE" ]; then
+  _E=$(systemctl --user show-environment 2>/dev/null)
+  : "${XDG_CURRENT_DESKTOP:=$(echo "$_E" | sed -n 's/^XDG_CURRENT_DESKTOP=//p')}"
+  : "${XDG_SESSION_TYPE:=$(echo "$_E" | sed -n 's/^XDG_SESSION_TYPE=//p')}"
+  _S=$(loginctl list-sessions --no-legend 2>/dev/null | awk -v u="$(id -un)" '$3==u{print $1; exit}')
+  : "${XDG_SESSION_TYPE:=$(loginctl show-session "$_S" -p Type --value 2>/dev/null)}"
+fi
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C; . /etc/os-release
 d=/sys/class/dmi/id; MOD="$(cat $d/sys_vendor 2>/dev/null) $(cat $d/product_name 2>/dev/null)"
 case $(uname -m) in x86_64) AR="64 bits : le standard actuel, capable d'utiliser plus de 4 Go de mémoire";; i?86) AR="32 bits : ancien, limité à 4 Go de mémoire";; *) AR="$(uname -m)";; esac
