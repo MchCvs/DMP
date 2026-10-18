@@ -2,6 +2,7 @@
 # Copyright (C) 2026 Thierry CHEVASSUS — GPL-3.0-or-later — voir LICENSE
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
+from urllib.parse import urlparse, parse_qs
 DMP_ROOT = Path(__file__).resolve().parents[2]
 import subprocess
 import os
@@ -10,12 +11,17 @@ class DMPHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         # Routes API
         if self.path.startswith('/api/'):
-            api_key = self.path.split('/')[-1]
+            u = urlparse(self.path)
+            api_key = u.path.split('/')[-1]
+            lang = parse_qs(u.query).get('lang', ['fr'])[0]
+            if lang not in ('fr', 'en', 'de'):
+                lang = 'fr'
             script = f'{DMP_ROOT}/modules/collecteurs/{api_key}.sh'
             
             if Path(script).exists():
                 try:
-                    result = subprocess.run(['bash', script], capture_output=True, text=True, timeout=90)
+                    result = subprocess.run(['bash', script], capture_output=True, text=True, timeout=90,
+                                            env=dict(os.environ, DMP_LANG=lang))
                     self.send_response(200)
                     self.send_header('Content-Type', 'application/json')
                     self.end_headers()
