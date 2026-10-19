@@ -30,6 +30,17 @@
       'Ce que ça veut dire': 'What it means',
       'Infos techniques (pour experts)': 'Technical info (for experts)',
       'Chargement...': 'Loading...',
+      "Infos techniques": "Technical info",
+      "A1 — Le processeur de votre ordinateur": "A1 — The processor of your computer",
+      "A1 Processeur": "A1 Processor",
+      "A2 Mémoire vive": "A2 Memory (RAM)",
+      "A3 Disques": "A3 Disks",
+      "A4 Réseau": "A4 Network",
+      "A5 Carte graphique": "A5 Graphics card",
+      "A6 Carte mère": "A6 Motherboard",
+      "A7 Système Debian": "A7 Debian system",
+      "A8 Ports USB": "A8 USB ports",
+      "A9 Alimentation électrique": "A9 Power supply",
       'DMP — Maintenance Debian': 'DMP — Debian Maintenance'
     },
     de: {
@@ -38,6 +49,17 @@
       'Ce que ça veut dire': 'Was das bedeutet',
       'Infos techniques (pour experts)': 'Technische Infos (für Experten)',
       'Chargement...': 'Lädt...',
+      "Infos techniques": "Technische Infos",
+      "A1 — Le processeur de votre ordinateur": "A1 — Der Prozessor Ihres Computers",
+      "A1 Processeur": "A1 Prozessor",
+      "A2 Mémoire vive": "A2 Arbeitsspeicher",
+      "A3 Disques": "A3 Datenträger",
+      "A4 Réseau": "A4 Netzwerk",
+      "A5 Carte graphique": "A5 Grafikkarte",
+      "A6 Carte mère": "A6 Mainboard",
+      "A7 Système Debian": "A7 Debian-System",
+      "A8 Ports USB": "A8 USB-Anschlüsse",
+      "A9 Alimentation électrique": "A9 Stromversorgung",
       'DMP — Maintenance Debian': 'DMP — Debian-Wartung'
     }
   };
