@@ -1,11 +1,11 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/c2.sh" ] || LG=fr
+. "$I18/$LG/c2.sh"
 TBL=$(dpkg-query -Wf '${db:Status-Abbrev}\t${Installed-Size}\t${Package}\t${binary:Summary}\n' 2>/dev/null | awk -F'\t' '$1~/^ii/')
 NI=$(echo "$TBL" | grep -c .); TOT=$(echo "$TBL" | awk -F'\t' '{s+=$2}END{printf "%.1f",s/1048576}')
 MAN=$(apt-mark showmanual | wc -l); HOLD=$(apt-mark showhold | wc -l); BRK=$(dpkg --audit 2>/dev/null | grep -c .); RC=$(dpkg -l | grep -c '^rc')
-BIG=$(echo "$TBL" | sort -t$'\t' -k2 -nr | head -10 | awk -F'\t' '{printf "%d) %s : %.0f Mo\n   • Rôle : %s\n",NR,$3,$2/1024,$4}')
-O="📦 Paquets installés : $NI${NL}   Pourquoi : un paquet est un logiciel prêt à installer (comme une appli sur un téléphone). Debian en regroupe des dizaines de milliers.${NL}${NL}💽 Place occupée par tous les paquets : $TOT Go${NL}   Pourquoi : c'est la taille de tous les programmes installés, sans vos fichiers personnels.${NL}${NL}🙋 Installés volontairement : $MAN${NL}🔗 Installés automatiquement (dépendances) : $((NI-MAN))${NL}   Pourquoi : certains logiciels ont besoin d'autres pour fonctionner. Ces derniers s'installent seuls, et on peut les retirer quand plus rien n'en a besoin (voir page C3).${NL}${NL}🧱 Paquets bloqués volontairement : $HOLD${NL}   Pourquoi : un paquet « bloqué » est exclu des mises à jour. Zéro est la situation normale.${NL}${NL}🔧 Paquets cassés ou mal installés : $BRK${NL}   Pourquoi : un paquet interrompu en cours d'installation peut gêner les futures mises à jour. Zéro est attendu.${NL}${NL}🗑️ Restes de configuration de logiciels supprimés : $RC${NL}   Pourquoi : à la suppression d'un logiciel, Debian garde ses réglages au cas où vous le réinstalleriez. Ils occupent très peu de place.${NL}${NL}🏋️ Les 10 paquets les plus lourds${NL}   Pourquoi : savoir ce qui occupe le plus de place avant de vouloir en libérer.${NL}$BIG"
-if [ $BRK -gt 0 ]; then R="Paquets à réparer"; X="Des paquets sont mal installés. Tapez « sudo apt --fix-broken install » : cela termine les installations interrompues. À faire avant toute mise à jour."
-elif [ $HOLD -gt 0 ]; then R="Des paquets sont bloqués"; X="$HOLD paquet(s) ne seront pas mis à jour. Si ce n'est pas voulu, tapez « sudo apt-mark unhold nom_du_paquet »."
-else R="Paquets en bon état"; X="Aucun paquet cassé ni bloqué : le système de logiciels est sain, les mises à jour pourront s'installer sans accroc."; fi
-export X; j "Un paquet est un logiciel rangé dans la bibliothèque de Debian, prêt à être installé ou retiré proprement. Cette page fait l'inventaire de cette bibliothèque. Pourquoi : savoir ce qui est installé et en bon état évite les conflits." "$O" "$R" "dpkg-query, apt-mark, dpkg --audit (DMP uniquement)"
+BIG=$(echo "$TBL" | sort -t$'\t' -k2 -nr | head -10 | awk -F'\t' -v f="$T_BIGFMT" '{printf f,NR,$3,$2/1024,$4}')
+if [ $BRK -gt 0 ]; then HL=brk; elif [ $HOLD -gt 0 ]; then HL=hold; else HL=ok; fi
+T_O
+export X; j "$T_COMP" "$O" "$R" "$T_CMD"

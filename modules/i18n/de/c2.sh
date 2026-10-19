@@ -1,0 +1,11 @@
+T_COMP="Ein Paket ist eine Software, die in der Bibliothek von Debian abgelegt ist und bereit, sauber installiert oder entfernt zu werden. Diese Seite macht eine Bestandsaufnahme dieser Bibliothek. Warum: Zu wissen, was installiert und in gutem Zustand ist, vermeidet Konflikte."
+T_CMD="dpkg-query, apt-mark, dpkg --audit (DMP uniquement)"
+T_BIGFMT='%d) %s: %.0f MB\n   • Aufgabe: %s\n'
+T_O() {
+O="📦 Installierte Pakete: $NI${NL}   Warum: Ein Paket ist eine installationsfertige Software (wie eine App auf einem Handy). Debian fasst Zehntausende davon zusammen.${NL}${NL}💽 Von allen Paketen belegter Platz: $TOT GB${NL}   Warum: Das ist die Größe aller installierten Programme, ohne Ihre persönlichen Dateien.${NL}${NL}🙋 Absichtlich installiert: $MAN${NL}🔗 Automatisch installiert (Abhängigkeiten): $((NI-MAN))${NL}   Warum: Manche Software braucht andere Software, um zu funktionieren. Diese wird von selbst installiert und kann entfernt werden, wenn sie nicht mehr gebraucht wird (siehe Seite C3).${NL}${NL}🧱 Absichtlich zurückgehaltene Pakete: $HOLD${NL}   Warum: Ein „gehaltenes“ Paket ist von Updates ausgeschlossen. Null ist der Normalfall.${NL}${NL}🔧 Defekte oder schlecht installierte Pakete: $BRK${NL}   Warum: Ein bei der Installation unterbrochenes Paket kann künftige Updates stören. Null wird erwartet.${NL}${NL}🗑️ Konfigurationsreste entfernter Software: $RC${NL}   Warum: Wenn eine Software entfernt wird, behält Debian ihre Einstellungen, falls Sie sie neu installieren. Sie belegen sehr wenig Platz.${NL}${NL}🏋️ Die 10 größten Pakete${NL}   Warum: Man sollte wissen, was am meisten Platz belegt, bevor man welchen freigeben will.${NL}$BIG"
+case $HL in
+brk) R="Pakete müssen repariert werden"; X="Einige Pakete sind schlecht installiert. Geben Sie „sudo apt --fix-broken install“ ein: Das schließt unterbrochene Installationen ab. Tun Sie das vor jedem Update.";;
+hold) R="Einige Pakete sind zurückgehalten"; X="$HOLD Paket(e) werden nicht aktualisiert. Wenn das nicht gewollt ist, geben Sie „sudo apt-mark unhold Paketname“ ein.";;
+*) R="Pakete in gutem Zustand"; X="Kein defektes oder gehaltenes Paket: Das Softwaresystem ist gesund, Updates lassen sich ohne Probleme installieren.";;
+esac
+}
