@@ -8,15 +8,15 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 .block{margin:20px 0;padding:15px;background:#ecf0f1;border-radius:5px}
 .nav-section{margin-top:30px;padding-top:20px;border-top:2px solid #ecf0f1;display:flex;justify-content:space-between}
 .btn{padding:10px 20px;background:#3498db;color:white;text-decoration:none;border-radius:3px}.btn:hover{background:#2980b9}
-</style><style>#obs{white-space:pre-line;line-height:1.7}</style></head><body>
+</style><style>#obs{white-space:pre-line;line-height:1.7}</style><script src=i18n.js></script></head><body>
 <header><h1>📊 DMP — Maintenance Debian</h1></header>
 <nav><a href=menu.html>Menu</a> | <a href=aide.html>Aide</a></nav>
 <div class=container>
 <div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>D1 Recherche</strong></div><h1>🔍 D1 — Recherche</h1>
-<div class=block><h2>Comprendre</h2><p>Rechercher, c'est retrouver un sujet sans parcourir toutes les pages : vous tapez un mot dans la case ci-dessous et DMP cherche ce mot dans toutes ses pages, puis vous montre les passages concernés. Pourquoi : gagner du temps quand on cherche une information précise.</p></div>
+<div class=block><h2>Comprendre</h2><p id=comp>Rechercher, c'est retrouver un sujet sans parcourir toutes les pages : vous tapez un mot dans la case ci-dessous et DMP cherche ce mot dans toutes ses pages, puis vous montre les passages concernés. Pourquoi : gagner du temps quand on cherche une information précise.</p></div>
 <div class=block><h2>Ce qu'on voit</h2><div id=obs>Chargement…</div></div>
 <div class=block><h2>Ce que ça veut dire</h2><p id=res>Tapez un mot et cliquez sur « Chercher » (ou touche Entrée).</p></div>
-<div class=nav-section><a href=c4.html class=btn>← C4</a><a href=d2.html class=btn>Suivant : D2 →</a></div></div><script>
+<div class=nav-section><a href=c4.html class=btn>← Précédent : C4</a><a href=d2.html class=btn>Suivant : D2 →</a></div></div><script>
 const N={a1:'Processeur',a2:'Mémoire',a3:'Disque (capacité)',a4:'Réseau',a5:'Carte graphique',a6:'Carte mère',a7:'Système Debian',a8:'Périphériques USB',a9:'Alimentation / batterie',b1:'Disponibilité',b2:'Processeur %',b3:'Mémoire %',b4:'Disque % et santé',b5:'Réseau en direct',b6:'Services',b7:'Programmes',b8:'Démarrage',b9:'Sécurité'};
 const IC=['✅','🟡','🔴','➖'],CO=['#27ae60','#e67e22','#c0392b','#7f8c8d'];
 const get=async k=>{try{return await (await fetch('/api/'+k)).json()}catch(e){return {}}};
@@ -32,18 +32,36 @@ const a=E('a','display:inline-block;margin-top:8px;color:#3498db','Page complèt
 const res=ns=>{const m=[0,0,0,0];ns.forEach(n=>m[n]++);const r=document.getElementById('res');
 r.textContent=m[2]?'🔴 '+m[2]+' point(s) à corriger en priorité, '+m[1]+' à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant rouge signale un risque réel (panne proche, ralentissement fort ou faille de sécurité). Commencez par les cartes rouges, puis passez aux jaunes.':m[1]?'🟡 '+m[1]+' point(s) à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant jaune n\'est pas une panne, c\'est une invitation à regarder sans urgence. Ouvrez la carte concernée : elle explique quoi faire.':'✅ Tout est en bon état ('+m[0]+' points vérifiés, '+m[3]+' sans objet). Pourquoi : aucun composant ne signale de problème. Les ➖ sont des éléments que votre ordinateur n\'a pas (par exemple une batterie sur un ordinateur fixe), ce qui est normal.'};
 Object.assign(N,{c1:'Mises à jour',c2:'Paquets',c3:'Entretien',c4:'Infos techniques'});
+const LN=window.DMP_LANG||'fr',TX={fr:{},
+en:{N:{a1:'Processor',a2:'Memory',a3:'Disk (capacity)',a4:'Network',a5:'Graphics card',a6:'Motherboard',a7:'Debian system',a8:'USB devices',a9:'Power / battery',b1:'Availability',b2:'Processor %',b3:'Memory %',b4:'Disk % and health',b5:'Live network',b6:'Services',b7:'Programs',b8:'Startup',b9:'Security',c1:'Updates',c2:'Packages',c3:'Maintenance',c4:'Technical info'},
+chips:['disk','network','memory','security','update','startup','battery','usb'],
+ph:'Type a word: disk, network, battery…',btn:'🔍 Search',
+min:'Type at least 2 letters, or click one of the words above.',open:'Open the page →',
+comp:'Searching means finding a topic without browsing every page: you type a word in the box below and DMP looks for that word in all its pages, then shows you the passages concerned. Why: to save time when looking for specific information.',
+start:'Type a word and click “Search” (or press Enter).',
+found:(n,w)=>n+' page(s) mention “'+w+'”. Why: each card shows the sentences that contain your word, and the link opens the full page so you can understand everything.',
+none:w=>'No page mentions “'+w+'”. Try a simpler or shorter word (for example “disk” instead of “partition”).'},
+de:{N:{a1:'Prozessor',a2:'Arbeitsspeicher',a3:'Datenträger (Kapazität)',a4:'Netzwerk',a5:'Grafikkarte',a6:'Hauptplatine',a7:'Debian-System',a8:'USB-Geräte',a9:'Stromversorgung / Akku',b1:'Verfügbarkeit',b2:'Prozessor %',b3:'Arbeitsspeicher %',b4:'Datenträger % und Zustand',b5:'Netzwerk live',b6:'Dienste',b7:'Programme',b8:'Systemstart',b9:'Sicherheit',c1:'Aktualisierungen',c2:'Pakete',c3:'Wartung',c4:'Technische Infos'},
+chips:['Datenträger','Netzwerk','Speicher','Sicherheit','Aktualisierung','Systemstart','Akku','usb'],
+ph:'Wort eingeben: Datenträger, Netzwerk, Akku…',btn:'🔍 Suchen',
+min:'Geben Sie mindestens 2 Buchstaben ein oder klicken Sie auf eines der Wörter oben.',open:'Seite öffnen →',
+comp:'Suchen heißt, ein Thema wiederzufinden, ohne alle Seiten durchzublättern: Sie geben unten ein Wort ein, DMP sucht dieses Wort auf allen seinen Seiten und zeigt Ihnen dann die betreffenden Stellen. Warum: um Zeit zu sparen, wenn Sie eine bestimmte Information suchen.',
+start:'Geben Sie ein Wort ein und klicken Sie auf „Suchen“ (oder drücken Sie die Eingabetaste).',
+found:(n,w)=>n+' Seite(n) erwähnen „'+w+'“. Warum: Jede Karte zeigt die Sätze, die Ihr Wort enthalten, und der Link öffnet die vollständige Seite, damit Sie alles verstehen.',
+none:w=>'Keine Seite erwähnt „'+w+'“. Versuchen Sie ein einfacheres oder kürzeres Wort (zum Beispiel „Datenträger“ statt „Partition“).'}};
+if(LN!=='fr'){Object.assign(N,TX[LN].N);document.getElementById('comp').textContent=TX[LN].comp;document.getElementById('res').textContent=TX[LN].start}
 const norm=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();let DATA=null;
 const o=document.getElementById('obs');o.textContent='';
-const q=E('input','padding:10px;font-size:16px;width:60%;max-width:420px;border:1px solid #bbb;border-radius:4px');q.id='q';q.placeholder='Tapez un mot : disque, réseau, batterie…';
-const b=E('button','padding:10px 18px;margin-left:8px;font-size:16px;background:#3498db;color:#fff;border:0;border-radius:4px;cursor:pointer','🔍 Chercher');
-const ch=E('div','margin:12px 0');['disque','réseau','mémoire','sécurité','mise à jour','démarrage','batterie','usb'].forEach(w=>{const s=E('span','display:inline-block;margin:3px;padding:5px 10px;background:#ecf0f1;border-radius:14px;cursor:pointer',w);s.onclick=()=>{q.value=w;go()};ch.appendChild(s)});
+const q=E('input','padding:10px;font-size:16px;width:60%;max-width:420px;border:1px solid #bbb;border-radius:4px');q.id='q';q.placeholder=(LN==='fr'?'Tapez un mot : disque, réseau, batterie…':TX[LN].ph);
+const b=E('button','padding:10px 18px;margin-left:8px;font-size:16px;background:#3498db;color:#fff;border:0;border-radius:4px;cursor:pointer',(LN==='fr'?'🔍 Chercher':TX[LN].btn));
+const ch=E('div','margin:12px 0');(LN==='fr'?['disque','réseau','mémoire','sécurité','mise à jour','démarrage','batterie','usb']:TX[LN].chips).forEach(w=>{const s=E('span','display:inline-block;margin:3px;padding:5px 10px;background:#ecf0f1;border-radius:14px;cursor:pointer',w);s.onclick=()=>{q.value=w;go()};ch.appendChild(s)});
 const out=E('div');o.append(q,b,ch,out);
 const go=async()=>{const t=norm(q.value.trim());out.textContent='';const r=document.getElementById('res');
-if(t.length<2){r.textContent='Tapez au moins 2 lettres, ou cliquez sur un mot ci-dessus.';return}
+if(t.length<2){r.textContent=LN==='fr'?'Tapez au moins 2 lettres, ou cliquez sur un mot ci-dessus.':TX[LN].min;return}
 if(!DATA)DATA=await all(Object.keys(N));let n=0;
 Object.keys(N).forEach(k=>{const d=DATA[k]||{},L=[d.comprendre,d.observations,d.resultat].join('\n').split('\n').filter(l=>norm(l).includes(t));if(!L.length)return;n++;
 const c=E('div','border:1px solid #ddd;border-left:6px solid #3498db;border-radius:5px;padding:12px;margin:10px 0;background:#fff');c.appendChild(E('div','font-weight:bold','📄 '+N[k]));
-L.slice(0,6).forEach(l=>c.appendChild(E('div','margin-top:6px;line-height:1.6',l)));const a=E('a','display:inline-block;margin-top:8px;color:#3498db','Ouvrir la page →');a.href=k+'.html';c.appendChild(a);out.appendChild(c)});
-r.textContent=n?n+' page(s) mentionnent « '+q.value+' ». Pourquoi : chaque carte montre les phrases qui contiennent votre mot, et le lien ouvre la page complète pour tout comprendre.':'Aucune page ne mentionne « '+q.value+' ». Essayez un mot plus simple ou plus court (par exemple « disque » au lieu de « partition »).'};
+L.slice(0,6).forEach(l=>c.appendChild(E('div','margin-top:6px;line-height:1.6',l)));const a=E('a','display:inline-block;margin-top:8px;color:#3498db',(LN==='fr'?'Ouvrir la page →':TX[LN].open));a.href=k+'.html';c.appendChild(a);out.appendChild(c)});
+r.textContent=LN==='fr'?(n?n+' page(s) mentionnent « '+q.value+' ». Pourquoi : chaque carte montre les phrases qui contiennent votre mot, et le lien ouvre la page complète pour tout comprendre.':'Aucune page ne mentionne « '+q.value+' ». Essayez un mot plus simple ou plus court (par exemple « disque » au lieu de « partition »).'):(n?TX[LN].found(n,q.value):TX[LN].none(q.value))};
 b.onclick=go;q.onkeydown=e=>{if(e.key==='Enter')go()};
 </script></body></html>

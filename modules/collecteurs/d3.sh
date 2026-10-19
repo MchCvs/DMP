@@ -1,9 +1,12 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C; S=0
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/d3.sh" ] || LG=fr
+. "$I18/$LG/d3.sh"
 read DF DP <<< $(df -h --output=avail,pcent / | tail -1); [ ${DP%\%} -lt 75 ] && { E1="✅"; S=$((S+1)); } || E1="🟡"
 MA=$(awk '/MemAvailable/{a=$2}/MemTotal/{t=$2}END{printf "%d %.1f",a*100/t,a/1048576}' /proc/meminfo); MP=${MA% *}; MG=${MA#* }; [ $MP -ge 30 ] && { E2="✅"; S=$((S+1)); } || E2="🟡"
 UP=$(apt list --upgradable 2>/dev/null | tail -n +2 | wc -l); [ $UP -eq 0 ] && { E3="✅"; S=$((S+1)); } || E3="🟡"
-{ systemctl is-active --quiet ufw || grep -qi "^ENABLED=yes" /etc/ufw/ufw.conf; } && { FW="actif"; E4="✅"; S=$((S+1)); } || { FW="inactif"; E4="🟡"; }
-O="Voici ce que vous avez gagné aujourd'hui grâce à un ordinateur suivi et entretenu :${NL}${NL}$E1 Place libre : $DF disponibles ($DP utilisés)${NL}   Pourquoi : un disque qui n'est pas plein reste rapide et peut recevoir mises à jour et nouveaux fichiers.${NL}${NL}$E2 Mémoire disponible : $MG Go ($MP % libres)${NL}   Pourquoi : plus la mémoire libre est grande, plus les programmes s'ouvrent vite sans ralentir.${NL}${NL}$E3 Logiciels à jour : $([ $UP -eq 0 ] && echo 'tous' || echo "$UP en attente")${NL}   Pourquoi : un logiciel à jour n'a plus les failles déjà connues, c'est votre meilleure protection.${NL}${NL}$E4 Pare-feu : $FW${NL}   Pourquoi : il refuse les connexions venues de l'extérieur que vous n'avez pas autorisées.${NL}${NL}🎁 En résumé : DMP surveille 18 sujets pour vous et traduit chaque chiffre en mots simples, avec le pourquoi. Vous gagnez du temps, de la sécurité et une machine qui dure plus longtemps."
-export X="Plus il y a de ✅, plus vous profitez des bénéfices d'un entretien régulier. Un 🟡 n'est pas une panne : c'est un gain encore possible, expliqué sur la page concernée. Pourquoi : quelques minutes d'entretien par semaine évitent les pannes et les mauvaises surprises."
-j "Les bénéfices sont ce que vous gagnez à bien entretenir votre ordinateur : il reste rapide, sûr et il dure plus longtemps. Cette page mesure ce que vous avez déjà gagné aujourd'hui." "$O" "$S bénéfice(s) acquis sur 4" "df, /proc/meminfo, apt, systemctl"
+[ $UP -eq 0 ] && UPT="$T_ALL" || UPT="$UP $T_PEND"
+{ systemctl is-active --quiet ufw || grep -qi "^ENABLED=yes" /etc/ufw/ufw.conf; } && { FW="$T_ON"; E4="✅"; S=$((S+1)); } || { FW="$T_OFF"; E4="🟡"; }
+T_O
+export X="$T_X"
+j "$T_COMP" "$O" "$R" "$T_CMD"
