@@ -56,7 +56,7 @@
       "A3 Disques": "A3 Datenträger",
       "A4 Réseau": "A4 Netzwerk",
       "A5 Carte graphique": "A5 Grafikkarte",
-      "A6 Carte mère": "A6 Mainboard",
+      "A6 Carte mère": "A6 Hauptplatine",
       "A7 Système Debian": "A7 Debian-System",
       "A8 Ports USB": "A8 USB-Anschlüsse",
       "A9 Alimentation électrique": "A9 Stromversorgung",
