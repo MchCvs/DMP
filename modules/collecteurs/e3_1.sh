@@ -1,3 +1,6 @@
 #!/bin/bash
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e3_1.sh" ] || LG=fr
+. "$I18/$LG/e3_1.sh"
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
-echo "{\"comprendre\":\"Preparer = organiser les infos avant de faire un rapport. Comme ranger son bureau avant d'ecrire.\",\"observations\":\"Date: $DATE | Rapport pret a generer\",\"resultat\":\"Pret a generer rapport\",\"informations_techniques\":{\"cmd\":\"date (DMP uniquement)\",\"date\":\"$DATE\",\"status\":\"ready\"}}"
+T_O
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"date\":\"$DATE\",\"status\":\"ready\"}}"

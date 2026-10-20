@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "{\"comprendre\":\"Vérifier = s'assurer que les chiffres sont corrects avant de les afficher. Comme relire avant d'envoyer.\",\"observations\":\"Tous les chiffres sont valides et cohérents\",\"resultat\":\"Données sûres à afficher\",\"informations_techniques\":{\"cmd\":\"Validation données (DMP uniquement)\",\"status\":\"valid\"}}"
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e4_2.sh" ] || LG=fr
+. "$I18/$LG/e4_2.sh"
+T_O
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"status\":\"valid\"}}"

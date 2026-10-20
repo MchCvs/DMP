@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "{\"comprendre\":\"Consulter = lire les anciens rapports pour voir l'évolution. Comme relire ses vieux journaux.\",\"observations\":\"Historique de 10 derniers rapports disponible\",\"resultat\":\"Archives accessibles\",\"informations_techniques\":{\"cmd\":\"Lecture historique (DMP uniquement)\",\"records\":10,\"status\":\"available\"}}"
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e3_3.sh" ] || LG=fr
+. "$I18/$LG/e3_3.sh"
+T_O
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"records\":10,\"status\":\"available\"}}"
