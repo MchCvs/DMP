@@ -5,7 +5,7 @@
 <script>
 async function load(){
   for(let i=0;i<5;i++){
-    let r=await fetch('/api/e4_2'');
+    let r=await fetch('/api/e4_2');
     let d=await r.json();
     if(d.status==='valid'){document.body.innerHTML+='<p>✅ Données valides</p>';break;}
     await new Promise(r=>setTimeout(r,1000));

@@ -4,7 +4,7 @@
 <table id=reports><tr><th>Date</th><th>Statut</th><th>Score</th></tr></table>
 <script>
 async function load(){
-  let r=await fetch('/api/e3_3'');
+  let r=await fetch('/api/e3_3');
   let d=await r.json();
   let table=document.getElementById('reports');
   d.reports?.forEach(rep=>{

@@ -7,7 +7,7 @@
 <script>
 async function generate(){
   document.getElementById('status').textContent='Génération...';
-  let r=await fetch('/api/e3_2'');
+  let r=await fetch('/api/e3_2');
   let d=await r.json();
   document.getElementById('status').innerHTML='<pre>'+JSON.stringify(d,null,2)+'</pre>';
 }
