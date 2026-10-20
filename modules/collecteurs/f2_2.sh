@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "{\"comprendre\":\"Ajouter = installer une nouvelle extension pour faire plus de choses. Comme ajouter un nouveau service.\",\"observations\":\"Extension ajoutée avec succès\",\"resultat\":\"Installation terminée\",\"informations_techniques\":{\"cmd\":\"Installation extension (DMP uniquement)\",\"status\":\"success\"}}"
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/f2_2.sh" ] || LG=fr
+. "$I18/$LG/f2_2.sh"
+T_O
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"status\":\"success\"}}"

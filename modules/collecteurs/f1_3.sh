@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "{\"comprendre\":\"Anomalies = les choses bizarres. Comme trouver une porte mal fermée chez soi.\",\"observations\":\"Aucune anomalie détectée. Votre système est normal.\",\"resultat\":\"Tous les feux sont verts\",\"informations_techniques\":{\"cmd\":\"Détection anomalies (DMP uniquement)\",\"count\":0,\"status\":\"clean\"}}"
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/f1_3.sh" ] || LG=fr
+. "$I18/$LG/f1_3.sh"
+T_O
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"count\":0,\"status\":\"clean\"}}"

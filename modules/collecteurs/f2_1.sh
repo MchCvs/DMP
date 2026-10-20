@@ -1,14 +1,17 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/f2_1.sh" ] || LG=fr
+. "$I18/$LG/f2_1.sh"
 T=""; for t in timeshift borg restic rsnapshot rsync deja-dup pika-backup; do command -v $t >/dev/null && T="$T $t"; done; command -v flatpak >/dev/null && flatpak list --app 2>/dev/null | grep -qi pika && T="$T pika-backup(flatpak)"
 SN=$(ls -d /timeshift/snapshots/*/* 2>/dev/null | tail -1)
-BK=$(ls -t /var/backups/*.gz 2>/dev/null | head -1); [ -n "$BK" ] && BKD=$(date -r "$BK" +%d/%m/%Y) || BKD="aucune"
+BK=$(ls -t /var/backups/*.gz 2>/dev/null | head -1); [ -n "$BK" ] && BKD=$(date -r "$BK" +%d/%m/%Y) || BKD="$T_NOBK"
 EXT=$(lsblk -dno RM,TYPE 2>/dev/null | awk '$1==1&&$2=="disk"' | wc -l)
-O="💾 Une sauvegarde est une copie de vos fichiers rangée ailleurs, à l'abri. Pourquoi : un disque finit toujours par tomber en panne, et une erreur de manipulation ou un virus peut tout effacer. Sans copie, ces fichiers sont perdus pour toujours.${NL}${NL}🧰 Outils de sauvegarde installés : ${T:-aucun}${NL}   Pourquoi : il faut un outil pour copier régulièrement sans y penser (timeshift : copie du système ; borg et restic : copies de fichiers ; rsync : copie simple).${NL}${NL}📸 Dernier instantané du système : ${SN:-aucun trouvé}${NL}   Pourquoi : il permet de revenir à un état précédent si une mise à jour tourne mal.${NL}${NL}🗃️ Copie automatique des réglages de Debian (/var/backups) : $BKD${NL}   Pourquoi : Debian garde seul la liste de ses logiciels et de ses comptes. Cela ne contient PAS vos documents ni vos photos.${NL}${NL}🔌 Disques externes branchés (clé, disque USB) : $EXT${NL}   Pourquoi : une sauvegarde doit être sur un autre support que l'ordinateur ; sur le même disque, elle disparaît avec lui."
+T_O1
 BR=$(find /media /run/media -maxdepth 5 -name "hints.*" 2>/dev/null | head -1); [ -n "$BR" ] && { BRD=$(date -r "$BR" +%d/%m/%Y); BAGE=$(( ($(date +%s)-$(stat -c %Y "$BR"))/86400 )); }
-O="$O${NL}${NL}🗄️ Dernière sauvegarde Borg (Pika Backup) sur un support branché : ${BRD:-aucune trouvée}${NL}   Pourquoi : Pika Backup range ses copies dans un dépôt Borg. DMP retrouve ce dépôt s'il est sur un disque ou une clé branché et lit la date de la dernière copie (le contenu, chiffré, reste illisible)."
-if [ -n "$BR" ]; then if [ $BAGE -gt 7 ]; then R="Dernière sauvegarde ancienne ($BRD) : à surveiller"; X="La dernière copie date de $BAGE jours. Plus elle est ancienne, plus vous perdez de travail en cas de panne. Lancez une sauvegarde Pika et programmez-la (au minimum une par semaine)."; else R="Sauvegarde récente trouvée ($BRD)"; X="Une copie Pika Backup date de $BAGE jour(s) : vos fichiers sont protégés. Branchez le support de temps en temps pour que DMP puisse la vérifier."; fi
-elif [ -z "$T" ] && [ -z "$SN" ]; then R="Aucune sauvegarde de vos fichiers : à surveiller"; X="DMP ne trouve ni outil ni copie de vos documents. Règle simple : trois copies, sur deux supports différents, dont une ailleurs. Pour commencer : sudo apt install timeshift (copies du système), puis copiez vos documents sur un disque externe avec rsync."
-elif [ -z "$SN" ]; then R="Outil installé, aucune copie trouvée : à surveiller"; X="Un outil sans copie ne protège rien. Lancez une première sauvegarde et programmez-la."
-else R="Sauvegarde du système présente"; X="Un instantané existe. Vérifiez aussi que vos documents personnels sont copiés sur un autre support."; fi
-export X; j "La sauvegarde est l'assurance de vos fichiers : elle ne sert à rien jusqu'au jour où l'on en a besoin, et ce jour-là elle sauve tout." "$O" "$R" "command -v, /timeshift, /var/backups, lsblk"
+T_O2
+if [ -n "$BR" ]; then if [ $BAGE -gt 7 ]; then ST=old; else ST=recent; fi
+elif [ -z "$T" ] && [ -z "$SN" ]; then ST=none
+elif [ -z "$SN" ]; then ST=tool
+else ST=ok; fi
+T_RX
+export X; j "$T_COMP" "$O" "$R" "$T_CMD"
