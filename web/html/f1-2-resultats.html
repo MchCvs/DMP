@@ -4,7 +4,7 @@
 <div id=data></div>
 <script>
 async function load(){
-  let r=await fetch('/api/f1_2'');
+  let r=await fetch('/api/f1_2');
   let d=await r.json();
   document.getElementById('data').innerHTML='<pre>'+JSON.stringify(d,null,2)+'</pre>';
 }
