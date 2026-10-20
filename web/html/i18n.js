@@ -30,6 +30,17 @@
       'Ce que ça veut dire': 'What it means',
       'Infos techniques (pour experts)': 'Technical info (for experts)',
       'Chargement...': 'Loading...',
+      "F1-3 Anomalies": "F1-3 Anomalies",
+      "Menu principal": "Main menu", "F — Accéder aux fonctions avancées": "F — Access advanced functions",
+      "Accédez aux fonctions destinées aux utilisateurs qui souhaitent aller plus loin dans l'analyse de leur système Debian.": "Access the functions intended for users who want to go further in analysing their Debian system.",
+      "F1 — Contrôler mon système": "F1 — Check my system",
+      "Lancez un contrôle, consultez ses résultats et comprenez les éventuelles anomalies détectées.": "Run a check, view its results and understand any anomalies detected.",
+      "F2 — Gérer les extensions": "F2 — Manage extensions",
+      "Consultez les extensions présentes, ajoutez-en et gérez celles déjà installées.": "View the extensions present, add some and manage those already installed.",
+      "F1.4 — Informations techniques": "F1.4 — Technical information", "F2.4 — Informations techniques": "F2.4 — Technical information",
+      "Consultez les informations techniques utilisées pour effectuer le contrôle de votre système.": "View the technical information used to check your system.",
+      "Consultez les informations techniques utilisées pour gérer les extensions de votre système.": "View the technical information used to manage your system’s extensions.",
+      "Imprimer": "Print", "Exporter": "Export", "Enregistrer": "Save", "Retour": "Back",
       "F2 Monitoring et sauvegarde": "F2 Monitoring and backup", "F3-F4 Vitesse et historique": "F3-F4 Speed and history",
       "F1-1: Contrôle Système": "F1-1: System check", "F1-2: Résultats Contrôle": "F1-2: Check results", "F1-3: Anomalies Détectées": "F1-3: Anomalies detected",
       "Vérifier Maintenant": "Check now", "Menu →": "Menu →",
@@ -75,6 +86,17 @@
       'Ce que ça veut dire': 'Was das bedeutet',
       'Infos techniques (pour experts)': 'Technische Infos (für Experten)',
       'Chargement...': 'Lädt...',
+      "F1-3 Anomalies": "F1-3 Auffälligkeiten",
+      "Menu principal": "Hauptmenü", "F — Accéder aux fonctions avancées": "F — Erweiterte Funktionen aufrufen",
+      "Accédez aux fonctions destinées aux utilisateurs qui souhaitent aller plus loin dans l'analyse de leur système Debian.": "Rufen Sie die Funktionen auf, die für Nutzer gedacht sind, die bei der Analyse ihres Debian-Systems weiter gehen möchten.",
+      "F1 — Contrôler mon système": "F1 — Mein System kontrollieren",
+      "Lancez un contrôle, consultez ses résultats et comprenez les éventuelles anomalies détectées.": "Starten Sie eine Kontrolle, sehen Sie sich die Ergebnisse an und verstehen Sie die möglicherweise erkannten Auffälligkeiten.",
+      "F2 — Gérer les extensions": "F2 — Erweiterungen verwalten",
+      "Consultez les extensions présentes, ajoutez-en et gérez celles déjà installées.": "Sehen Sie sich die vorhandenen Erweiterungen an, fügen Sie neue hinzu und verwalten Sie die bereits installierten.",
+      "F1.4 — Informations techniques": "F1.4 — Technische Informationen", "F2.4 — Informations techniques": "F2.4 — Technische Informationen",
+      "Consultez les informations techniques utilisées pour effectuer le contrôle de votre système.": "Sehen Sie sich die technischen Informationen an, die für die Kontrolle Ihres Systems verwendet werden.",
+      "Consultez les informations techniques utilisées pour gérer les extensions de votre système.": "Sehen Sie sich die technischen Informationen an, die zur Verwaltung der Erweiterungen Ihres Systems verwendet werden.",
+      "Imprimer": "Drucken", "Exporter": "Exportieren", "Enregistrer": "Speichern", "Retour": "Zurück",
       "F2 Monitoring et sauvegarde": "F2 Monitoring und Datensicherung", "F3-F4 Vitesse et historique": "F3-F4 Geschwindigkeit und Verlauf",
       "F1-1: Contrôle Système": "F1-1: Systemkontrolle", "F1-2: Résultats Contrôle": "F1-2: Kontrollergebnisse", "F1-3: Anomalies Détectées": "F1-3: Erkannte Auffälligkeiten",
       "Vérifier Maintenant": "Jetzt prüfen", "Menu →": "Menü →",
@@ -124,7 +146,7 @@
     if (LANG === 'fr') return txt;
     var m = txt.match(/^([^\p{L}\p{N}]*)([\s\S]*?)(\s*)$/u);
     if (!m) return txt;
-    var core = m[2], out = (DICT[LANG] || {})[core];
+    var core = m[2].replace(/\s+/g, ' '), out = (DICT[LANG] || {})[core];
     if (out === undefined) {
       var pats = PAT[LANG] || [];
       for (var i = 0; i < pats.length; i++) {
