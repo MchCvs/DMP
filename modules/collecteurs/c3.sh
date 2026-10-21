@@ -8,4 +8,10 @@ KE=$(dpkg -l 'linux-image-[0-9]*' 2>/dev/null | grep -c '^ii'); RC=$(dpkg -l | g
 REC=$((CA+TR))
 if [ $REC -ge 2000 ] || [ $AR -gt 5 ] || [ $KE -gt 3 ]; then CL=big; elif [ $REC -ge 500 ] || [ $AR -gt 0 ]; then CL=some; else CL=ok; fi
 T_O
+case "$LG" in en) NOP="Nothing to do.";; de) NOP="Nichts zu tun.";; *) NOP="Rien à faire.";; esac
+O=$(printf '%s\n' "$O" | awk -v msg="$NOP" '
+/^[0-9]+\) /{n=$0;sub(/\).*/,"",n);n+=0;z=($0 ~ /: 0( [A-Za-z]+)?$/);said=0}
+$0==""{z=0}
+z && /^   • / && (n==4 || /sudo/){if(!said){print "   • " msg;said=1};next}
+{print}')
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"
