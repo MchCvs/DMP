@@ -9,7 +9,7 @@ BIG=$(echo "$TBL" | sort -t$'\t' -k2 -nr | head -10 | awk -F'\t' -v f="$T_BIGFMT
 re='^[0-9]+\) ([^ ]+) '; BIG2=""
 rb='^(   • [^:]*: ?)(.*)$'; PK=""
 while IFS= read -r ln; do
-  if [[ $ln =~ $re ]]; then PK="${BASH_REMATCH[1]}"; BIG2="$BIG2$ln${NL}   $(vline pkg "$PK")${NL}"; continue; fi
+  if [[ $ln =~ $re ]]; then PK="${BASH_REMATCH[1]}"; BIG2="$BIG2${NL}$ln${NL}   $(vline pkg "$PK")${NL}"; continue; fi
   if [ -n "$PK" ] && [[ $ln =~ $rb ]]; then ln="${BASH_REMATCH[1]}$(vrole "$PK" "${BASH_REMATCH[2]}")"; PK=""; fi
   BIG2="$BIG2$ln${NL}"
 done <<< "$BIG"
