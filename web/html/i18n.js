@@ -382,6 +382,21 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     walk(document.body);
+    if (LANG !== 'fr') {
+      new MutationObserver(function (ms) {
+        ms.forEach(function (m) {
+          m.addedNodes.forEach(function (n) {
+            if (n.nodeType === 3) {
+              var p = n.parentNode ? n.parentNode.nodeName : '';
+              if (p !== 'SCRIPT' && p !== 'STYLE' && n.nodeValue.trim()) {
+                var v = tr(n.nodeValue);
+                if (v !== n.nodeValue) n.nodeValue = v;
+              }
+            } else if (n.nodeType === 1) { walk(n); }
+          });
+        });
+      }).observe(document.body, { childList: true, subtree: true });
+    }
     var nav = document.querySelector('nav') || document.querySelector('header');
     if (!nav) return;
     var box = document.createElement('span');
