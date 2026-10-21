@@ -56,12 +56,14 @@ const q=E('input','padding:10px;font-size:16px;width:60%;max-width:420px;border:
 const b=E('button','padding:10px 18px;margin-left:8px;font-size:16px;background:#3498db;color:#fff;border:0;border-radius:4px;cursor:pointer',(LN==='fr'?'🔍 Chercher':TX[LN].btn));
 const ch=E('div','margin:12px 0');(LN==='fr'?['disque','réseau','mémoire','sécurité','mise à jour','démarrage','batterie','usb']:TX[LN].chips).forEach(w=>{const s=E('span','display:inline-block;margin:3px;padding:5px 10px;background:#ecf0f1;border-radius:14px;cursor:pointer',w);s.onclick=()=>{q.value=w;go()};ch.appendChild(s)});
 const out=E('div');o.append(q,b,ch,out);
+let P=null;const load=()=>P||(P=all(Object.keys(N)).then(d=>{DATA=d}));q.onfocus=load;
 const go=async()=>{const t=norm(q.value.trim());out.textContent='';const r=document.getElementById('res');
 if(t.length<2){r.textContent=LN==='fr'?'Tapez au moins 2 lettres, ou cliquez sur un mot ci-dessus.':TX[LN].min;return}
-if(!DATA)DATA=await all(Object.keys(N));let n=0;
+b.disabled=true;b.style.opacity='.6';r.textContent=LN==='fr'?'⏳ Recherche en cours…':LN==='en'?'⏳ Searching…':'⏳ Suche läuft…';
+try{await load()}catch(e){}finally{b.disabled=false;b.style.opacity='1'}DATA=DATA||{};let n=0;
 Object.keys(N).forEach(k=>{const d=DATA[k]||{},L=[d.comprendre,d.observations,d.resultat].join('\n').split('\n').filter(l=>norm(l).includes(t));if(!L.length)return;n++;
 const c=E('div','border:1px solid #ddd;border-left:6px solid #3498db;border-radius:5px;padding:12px;margin:10px 0;background:#fff');c.appendChild(E('div','font-weight:bold','📄 '+N[k]));
 L.slice(0,6).forEach(l=>c.appendChild(E('div','margin-top:6px;line-height:1.6',l)));const a=E('a','display:inline-block;margin-top:8px;color:#3498db',(LN==='fr'?'Ouvrir la page →':TX[LN].open));a.href=k+'.html';c.appendChild(a);out.appendChild(c)});
 r.textContent=LN==='fr'?(n?n+' page(s) mentionnent « '+q.value+' ». Pourquoi : chaque carte montre les phrases qui contiennent votre mot, et le lien ouvre la page complète pour tout comprendre.':'Aucune page ne mentionne « '+q.value+' ». Essayez un mot plus simple ou plus court (par exemple « disque » au lieu de « partition »).'):(n?TX[LN].found(n,q.value):TX[LN].none(q.value))};
-b.onclick=go;q.onkeydown=e=>{if(e.key==='Enter')go()};
+b.onclick=go;b.onmousedown=()=>{b.style.transform='scale(.95)'};b.onmouseup=b.onmouseleave=()=>{b.style.transform=''};q.onkeydown=e=>{if(e.key==='Enter')go()};
 </script></body></html>
