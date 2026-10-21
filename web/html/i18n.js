@@ -25,6 +25,12 @@
 
   var DICT = {
     en: {
+      "Aide et API": "Help and API",
+      "DMP est un logiciel qui examine votre ordinateur et vous l'explique en mots simples. Chaque page (A1 à B9) a deux visages : la page que vous lisez, et ses données brutes, que l'on appelle API, lisibles par d'autres logiciels. Cette page liste les deux.": "DMP is software that examines your computer and explains it in plain words. Each page (A1 to B9) has two faces: the page you read, and its raw data, called the API, readable by other software. This page lists both.",
+      "Menu →": "Menu →",
+      "Page": "Page",
+      "Sujet": "Subject",
+      "Données brutes (API)": "Raw data (API)",
       "Tableau de bord": "Dashboard",
       "Vérification santé": "Health check",
       "Chargement…": "Loading…",
@@ -195,6 +201,12 @@
       'DMP — Maintenance Debian': 'DMP — Debian Maintenance'
     },
     de: {
+      "Aide et API": "Hilfe und API",
+      "DMP est un logiciel qui examine votre ordinateur et vous l'explique en mots simples. Chaque page (A1 à B9) a deux visages : la page que vous lisez, et ses données brutes, que l'on appelle API, lisibles par d'autres logiciels. Cette page liste les deux.": "DMP ist eine Software, die Ihren Computer untersucht und ihn Ihnen in einfachen Worten erklärt. Jede Seite (A1 bis B9) hat zwei Gesichter: die Seite, die Sie lesen, und ihre Rohdaten, API genannt, die von anderer Software gelesen werden können. Diese Seite listet beide auf.",
+      "Menu →": "Menü →",
+      "Page": "Seite",
+      "Sujet": "Thema",
+      "Données brutes (API)": "Rohdaten (API)",
       "Tableau de bord": "Dashboard",
       "Vérification santé": "Gesundheitscheck",
       "Chargement…": "Wird geladen…",
