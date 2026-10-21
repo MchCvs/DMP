@@ -27,6 +27,7 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 </div></div>
 
 <script>
+{const t={en:"DMP — D3 Benefits",de:"DMP — D3 Vorteile"}[window.DMP_LANG];if(t)document.title=t}
 async function load(){
   let r=await fetch('/api/d3');
   let d=await r.json();

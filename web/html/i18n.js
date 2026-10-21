@@ -25,6 +25,12 @@
 
   var DICT = {
     en: {
+      "D2 Supprimer": "D2 Delete",
+      "D3 Bénéfices": "D3 Benefits",
+      "Infos techniques": "Technical info",
+      "DANGER — EN CAS DE DOUTE, NE SUPPRIMEZ PAS.": "DANGER — IF IN DOUBT, DO NOT DELETE.",
+      "Un logiciel peut sembler anodin et être vital :": "A piece of software may look harmless and be vital:",
+      "le chargeur de démarrage (GRUB), les correctifs du processeur (microcode), les pilotes internes (firmware) ou les réglages de langue (locales). Les retirer peut empêcher l'ordinateur de démarrer, laisser des failles de sécurité ouvertes ou casser l'affichage. Avant toute suppression, lisez la liste que propose apt et cherchez le nom sur internet.": "the bootloader (GRUB), the processor fixes (microcode), the internal drivers (firmware) or the language settings (locales). Removing them can stop the computer from starting, leave security holes open or break the display. Before deleting anything, read the list apt proposes and look the name up online.",
       "Aide et API": "Help and API",
       "DMP est un logiciel qui examine votre ordinateur et vous l'explique en mots simples. Chaque page (A1 à B9) a deux visages : la page que vous lisez, et ses données brutes, que l'on appelle API, lisibles par d'autres logiciels. Cette page liste les deux.": "DMP is software that examines your computer and explains it in plain words. Each page (A1 to B9) has two faces: the page you read, and its raw data, called the API, readable by other software. This page lists both.",
       "Menu →": "Menu →",
@@ -201,6 +207,12 @@
       'DMP — Maintenance Debian': 'DMP — Debian Maintenance'
     },
     de: {
+      "D2 Supprimer": "D2 Löschen",
+      "D3 Bénéfices": "D3 Vorteile",
+      "Infos techniques": "Technische Infos",
+      "DANGER — EN CAS DE DOUTE, NE SUPPRIMEZ PAS.": "ACHTUNG — IM ZWEIFEL NICHT LÖSCHEN.",
+      "Un logiciel peut sembler anodin et être vital :": "Eine Software kann harmlos wirken und trotzdem lebenswichtig sein:",
+      "le chargeur de démarrage (GRUB), les correctifs du processeur (microcode), les pilotes internes (firmware) ou les réglages de langue (locales). Les retirer peut empêcher l'ordinateur de démarrer, laisser des failles de sécurité ouvertes ou casser l'affichage. Avant toute suppression, lisez la liste que propose apt et cherchez le nom sur internet.": "der Bootloader (GRUB), die Prozessor-Korrekturen (Microcode), die internen Treiber (Firmware) oder die Spracheinstellungen (Locales). Wer sie entfernt, kann verhindern, dass der Computer startet, Sicherheitslücken offen lassen oder die Anzeige beschädigen. Lesen Sie vor jedem Löschen die von apt vorgeschlagene Liste und suchen Sie den Namen im Internet.",
       "Aide et API": "Hilfe und API",
       "DMP est un logiciel qui examine votre ordinateur et vous l'explique en mots simples. Chaque page (A1 à B9) a deux visages : la page que vous lisez, et ses données brutes, que l'on appelle API, lisibles par d'autres logiciels. Cette page liste les deux.": "DMP ist eine Software, die Ihren Computer untersucht und ihn Ihnen in einfachen Worten erklärt. Jede Seite (A1 bis B9) hat zwei Gesichter: die Seite, die Sie lesen, und ihre Rohdaten, API genannt, die von anderer Software gelesen werden können. Diese Seite listet beide auf.",
       "Menu →": "Menü →",

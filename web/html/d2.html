@@ -28,6 +28,7 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 </div></div>
 
 <script>
+{const t={en:"DMP — D2 Delete",de:"DMP — D2 Löschen"}[window.DMP_LANG];if(t)document.title=t}
 async function load(){
   let r=await fetch('/api/d2');
   let d=await r.json();
