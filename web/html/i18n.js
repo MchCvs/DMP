@@ -25,6 +25,13 @@
 
   var DICT = {
     en: {
+      "Tableau de bord": "Dashboard",
+      "Vérification santé": "Health check",
+      "Chargement…": "Loading…",
+      "Le tableau de bord est le tableau de commande d'une voiture : d'un seul coup d'œil, un voyant par sujet. Vert : tout va bien. Jaune : à regarder sans urgence. Rouge : à traiter en priorité. Gris : cet élément n'existe pas sur votre ordinateur (normal). Pourquoi cette page : voir tout de suite si quelque chose cloche, sans ouvrir 18 pages.": "The dashboard works like a car's instrument panel: at a glance, one indicator per subject. Green: all is well. Yellow: take a look, no rush. Red: handle first. Grey: this item does not exist on your computer (normal). Why this page: see right away if something is wrong, without opening 18 pages.",
+      "La vérification santé est le bilan complet de votre ordinateur, comme une visite chez le médecin : chaque composant et chaque périphérique branché est examiné, avec un verdict clair et l'explication. Pourquoi cette page : un périphérique en mauvais état (disque fatigué, câble réseau abîmé, port USB muet) passe souvent inaperçu jusqu'à la panne.": "The health check is a full checkup of your computer, like a visit to the doctor: every component and every connected device is examined, with a clear verdict and an explanation. Why this page: a device in poor condition (tired disk, damaged network cable, silent USB port) often goes unnoticed until it fails.",
+      "Suivant : Vérification santé →": "Next: Health check →",
+      "Aide et API →": "Help and API →",
       'Menu': 'Menu', 'Aide': 'Help', 'Accueil': 'Home',
       'Comprendre': 'Understand', "Ce qu'on voit": 'What we see',
       'Ce que ça veut dire': 'What it means',
@@ -188,6 +195,13 @@
       'DMP — Maintenance Debian': 'DMP — Debian Maintenance'
     },
     de: {
+      "Tableau de bord": "Dashboard",
+      "Vérification santé": "Gesundheitscheck",
+      "Chargement…": "Wird geladen…",
+      "Le tableau de bord est le tableau de commande d'une voiture : d'un seul coup d'œil, un voyant par sujet. Vert : tout va bien. Jaune : à regarder sans urgence. Rouge : à traiter en priorité. Gris : cet élément n'existe pas sur votre ordinateur (normal). Pourquoi cette page : voir tout de suite si quelque chose cloche, sans ouvrir 18 pages.": "Das Dashboard ist wie die Armaturentafel eines Autos: auf einen Blick eine Kontrollleuchte pro Thema. Grün: alles in Ordnung. Gelb: ohne Eile ansehen. Rot: vorrangig beheben. Grau: Dieses Element gibt es auf Ihrem Computer nicht (normal). Warum diese Seite: sofort sehen, ob etwas nicht stimmt, ohne 18 Seiten zu öffnen.",
+      "La vérification santé est le bilan complet de votre ordinateur, comme une visite chez le médecin : chaque composant et chaque périphérique branché est examiné, avec un verdict clair et l'explication. Pourquoi cette page : un périphérique en mauvais état (disque fatigué, câble réseau abîmé, port USB muet) passe souvent inaperçu jusqu'à la panne.": "Der Gesundheitscheck ist die vollständige Untersuchung Ihres Computers, wie ein Arztbesuch: Jede Komponente und jedes angeschlossene Gerät wird geprüft, mit klarem Urteil und Erklärung. Warum diese Seite: Ein Gerät in schlechtem Zustand (ermüdete Festplatte, beschädigtes Netzwerkkabel, stummer USB-Anschluss) bleibt oft unbemerkt, bis es ausfällt.",
+      "Suivant : Vérification santé →": "Weiter: Gesundheitscheck →",
+      "Aide et API →": "Hilfe und API →",
       'Menu': 'Menü', 'Aide': 'Hilfe', 'Accueil': 'Startseite',
       'Comprendre': 'Verstehen', "Ce qu'on voit": 'Was wir sehen',
       'Ce que ça veut dire': 'Was das bedeutet',
