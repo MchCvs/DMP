@@ -67,7 +67,7 @@ web/html/              pages web
 
 ## Sécurité et vie privée
 
-- Lecture seule : aucune action cachée, aucune modification du système
+- Lecture seule : aucune action cachée, aucune modification durable du système (le test de vitesse écrit 64 Mo temporaires dans votre dossier personnel, supprimés aussitôt)
 - Aucune donnée envoyée sur Internet : tout reste sur votre machine
 - Serveur accessible uniquement depuis votre ordinateur
 
