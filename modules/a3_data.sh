@@ -1,4 +1,17 @@
 #!/usr/bin/env bash
+lsblk_parse() {
+    local line="$1" re='([A-Z][A-Z_]*)="([^"]*)"' key val
+    NAME="" SIZE="" TYPE="" FSTYPE="" PARTTYPENAME="" MOUNTPOINTS="" PKNAME="" MODEL="" TRAN=""
+    while [[ $line =~ $re ]]; do
+        key=${BASH_REMATCH[1]}
+        val=${BASH_REMATCH[2]}
+        case "$key" in
+            NAME|SIZE|TYPE|FSTYPE|PARTTYPENAME|MOUNTPOINTS|PKNAME|MODEL|TRAN)
+                printf -v "$key" '%s' "$val" ;;
+        esac
+        line=${line#*"${BASH_REMATCH[0]}"}
+    done
+}
 
 set -u
 
@@ -17,7 +30,7 @@ printf '  "disks": ['
 first_disk=1
 
 while IFS= read -r line; do
-    eval "$line"
+    lsblk_parse "$line"
 
     [ "${TYPE:-}" = "disk" ] || continue
 
@@ -48,7 +61,7 @@ while IFS= read -r line; do
     first_partition=1
 
     while IFS= read -r partition_line; do
-        eval "$partition_line"
+        lsblk_parse "$partition_line"
 
         [ "${TYPE:-}" = "part" ] || continue
         [ "${PKNAME:-}" = "$disk_name" ] || continue

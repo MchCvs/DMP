@@ -1,4 +1,17 @@
 #!/bin/bash
+lsblk_parse() {
+    local line="$1" re='([A-Z][A-Z_]*)="([^"]*)"' key val
+    NAME="" SIZE="" TYPE="" FSTYPE="" PARTTYPENAME="" MOUNTPOINTS="" PKNAME="" MODEL="" TRAN=""
+    while [[ $line =~ $re ]]; do
+        key=${BASH_REMATCH[1]}
+        val=${BASH_REMATCH[2]}
+        case "$key" in
+            NAME|SIZE|TYPE|FSTYPE|PARTTYPENAME|MOUNTPOINTS|PKNAME|MODEL|TRAN)
+                printf -v "$key" '%s' "$val" ;;
+        esac
+        line=${line#*"${BASH_REMATCH[0]}"}
+    done
+}
 
 # ==================================================
 # DMP - Découverte utilisateur
@@ -192,7 +205,7 @@ discover_storage()
 
     while IFS= read -r LINE
     do
-        eval "$LINE"
+        lsblk_parse "$LINE"
 
         if [ "$TYPE" = "disk" ]; then
 
