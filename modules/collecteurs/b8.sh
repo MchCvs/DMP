@@ -30,5 +30,5 @@ KP=$(awk -v k=$kernel -v i=$initrd 'BEGIN{printf "%.1f",k+i}'); TT=${total%.*}
 BIGC=$(awk -v a=$firmware -v b=$loader -v c=$KP -v d=$userspace 'BEGIN{m=a;n="fw";if(b>m){m=b;n="loader"};if(c>m){m=c;n="kernel"};if(d>m){m=d;n="svc"};print n}')
 DB=$(uptime -s)
 T_O
-[ "$BIGC" = fw ] && X="$X${NL}$V_FW"
+vx
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

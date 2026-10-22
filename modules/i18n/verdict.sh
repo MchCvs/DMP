@@ -54,3 +54,39 @@ vrole() {
     if [ "$L" = de ]; then echo "$s (auf Englisch)"; else echo "$s (en anglais)"; fi
   fi
 }
+
+# Conclusion de B8 : remplace X selon la durée totale (TT) et l'étape la plus longue (BIGC)
+vx() {
+  local L=${LG:-fr} N A S
+  case "$L:$BIGC" in
+    en:fw) N="the firmware (BIOS/UEFI)";; en:loader) N="the bootloader";; en:kernel) N="kernel loading";; en:*) N="service startup";;
+    de:fw) N="die Firmware (BIOS/UEFI)";; de:loader) N="der Bootloader";; de:kernel) N="das Laden des Kernels";; de:*) N="der Start der Dienste";;
+    *:fw) N="le firmware (BIOS/UEFI)";; *:loader) N="le chargeur de démarrage";; *:kernel) N="le chargement du noyau";; *) N="le lancement des services";;
+  esac
+  case "$L" in
+  en) if [ "$TT" -lt 30 ]; then X="Under 30 seconds is a good result: nothing to improve. The longest step is $N."; return; fi
+      if [ "$TT" -lt 60 ]; then X="Between 30 and 60 seconds is acceptable. The longest step is $N."
+      else X="Beyond one minute, something is slowing down startup. The longest step is $N. Look at the 8 slowest services and check the disk health (Disk page B4): a tired disk is a common cause."; fi
+      case $BIGC in
+        fw) X="$X It depends on your machine, not on Debian: the firmware cannot be uninstalled. Only a BIOS/UEFI setting (fast boot, disk order) can shorten it.";;
+        loader) X="$X Shortening the wait in the boot menu (GRUB) would shorten this step.";;
+        svc) X="$X To save time among the slow services above, only those marked 🟠 can be disabled if you do not use them; those marked ⛔ must be kept.";;
+      esac;;
+  de) if [ "$TT" -lt 30 ]; then X="Unter 30 Sekunden ist ein gutes Ergebnis: nichts zu verbessern. Der längste Schritt ist $N."; return; fi
+      if [ "$TT" -lt 60 ]; then X="Zwischen 30 und 60 Sekunden ist akzeptabel. Der längste Schritt ist $N."
+      else X="Über einer Minute verzögert etwas den Systemstart. Der längste Schritt ist $N. Sehen Sie sich die 8 langsamsten Dienste an und prüfen Sie den Zustand der Festplatte (Seite Festplatte B4): Eine ermüdete Festplatte ist eine häufige Ursache."; fi
+      case $BIGC in
+        fw) X="$X Er hängt von Ihrem Rechner ab, nicht von Debian: Die Firmware lässt sich nicht deinstallieren. Nur eine BIOS/UEFI-Einstellung (Schnellstart, Festplattenreihenfolge) kann ihn verkürzen.";;
+        loader) X="$X Eine kürzere Wartezeit im Startmenü (GRUB) würde diesen Schritt verkürzen.";;
+        svc) X="$X Um Zeit zu sparen: Von den oben genannten langsamen Diensten dürfen nur die mit 🟠 markierten deaktiviert werden, wenn Sie sie nicht nutzen; die mit ⛔ markierten müssen bleiben.";;
+      esac;;
+  *)  if [ "$TT" -lt 30 ]; then X="Moins de 30 secondes est un bon résultat : rien à améliorer. Le plus long est $N."; return; fi
+      if [ "$TT" -lt 60 ]; then X="Entre 30 et 60 secondes est acceptable. L'étape la plus longue est $N."
+      else X="Au-delà d'une minute, quelque chose retarde le démarrage. L'étape la plus longue est $N. Regardez les 8 services les plus lents, et vérifiez la santé du disque (page Disque B4) : un disque fatigué est une cause fréquente."; fi
+      case $BIGC in
+        fw) X="$X Elle dépend de votre machine, pas de Debian : le firmware ne se désinstalle pas. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut la raccourcir.";;
+        loader) X="$X Réduire l'attente du menu de démarrage (GRUB) raccourcirait cette étape.";;
+        svc) X="$X Pour gagner du temps parmi les services lents ci-dessus : seuls ceux marqués 🟠 peuvent être désactivés s'ils ne vous servent pas ; ceux marqués ⛔ sont à garder.";;
+      esac;;
+  esac
+}
