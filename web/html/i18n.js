@@ -438,12 +438,12 @@
     var nav = document.querySelector('nav') || document.querySelector('header');
     if (!nav) return;
     var box = document.createElement('span');
-    box.style.cssText = 'float:right;margin-right:10px';
+    box.style.cssText = 'float:right;margin-right:10px;display:inline-flex;flex-direction:row;align-items:center;white-space:nowrap;';
     SUP.forEach(function (l) {
       var a = document.createElement('a');
       a.href = '#';
       a.textContent = l.toUpperCase();
-      a.style.cssText = 'color:white;margin:0 6px;text-decoration:none;' +
+      a.style.cssText = 'display:inline-block;color:white;margin:0 6px;text-decoration:none;' +
         (l === LANG ? 'font-weight:bold;text-decoration:underline;' : '');
       a.onclick = function (e) {
         e.preventDefault();
