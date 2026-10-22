@@ -14,4 +14,8 @@ O=$(printf '%s\n' "$O" | awk -v msg="$NOP" '
 $0==""{z=0}
 z && /^   • / && (n==4 || /sudo/){if(!said){print "   • " msg;said=1};next}
 {print}')
+UP=$(apt-get -s upgrade 2>/dev/null | grep -c '^Inst'); case "$LG" in fr) MU=Mo;; *) MU=MB;; esac
+POSS=$(python3 -c 'import json,sys
+ar,up,ca,mu=int(sys.argv[1] or 0),int(sys.argv[2] or 0),int(sys.argv[3] or 0),sys.argv[4]
+print(json.dumps({"updates":{"detected":up>0,"count":up},"autoremove":{"detected":ar>0,"count":ar},"cleanup":{"detected":ca>0,"apt_cache_mb":ca,"apt_cache_human":"%d %s"%(ca,mu)}}))' "$AR" "$UP" "$CA" "$MU"); export POSS
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"
