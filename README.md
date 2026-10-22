@@ -35,7 +35,7 @@ Chaque page affiche quatre blocs :
 | B | Activité en temps réel : disponibilité, utilisation, services, processus, démarrage, sécurité |
 | C | Maintenance : mises à jour, paquets, entretien, noyau |
 | D | Aide à la décision : recherche, suppression prudente, bénéfices |
-| E | Résumé, score, analyse, rapports et données graphiques |
+| E | Résumé, score et analyse |
 | F | Contrôle qualité, sauvegarde, benchmark, historique |
 
 ## Prérequis et compatibilité
