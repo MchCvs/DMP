@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMP — C2.2 — Comprendre ce qui peut être supprimé</title>
   <link rel="stylesheet" href="styles.css">
-</head>
+<script src=i18n.js></script><script src=i18n-c.js></script></head>
 
 <body>
 
@@ -247,21 +247,21 @@ async function loadC22Data() {
     const data = await response.json();
 
     if (!data.collected) {
-      aptValue.textContent = "Information indisponible";
-      thumbnailsValue.textContent = "Information indisponible";
-      packagesValue.textContent = "Information indisponible";
+      aptValue.textContent = _t("Information indisponible");
+      thumbnailsValue.textContent = _t("Information indisponible");
+      packagesValue.textContent = _t("Information indisponible");
 
       aptExplanation.textContent =
-        "DMP ne dispose pas actuellement des informations nécessaires " +
-        "pour examiner les fichiers téléchargés par Debian.";
+        _t("DMP ne dispose pas actuellement des informations nécessaires ") +
+        _t("pour examiner les fichiers téléchargés par Debian.");
 
       thumbnailsExplanation.textContent =
-        "DMP ne dispose pas actuellement des informations nécessaires " +
-        "pour examiner les petites images.";
+        _t("DMP ne dispose pas actuellement des informations nécessaires ") +
+        _t("pour examiner les petites images.");
 
       packagesExplanation.textContent =
-        "DMP ne dispose pas actuellement des informations nécessaires " +
-        "pour examiner les paquets proposés par Debian.";
+        _t("DMP ne dispose pas actuellement des informations nécessaires ") +
+        _t("pour examiner les paquets proposés par Debian.");
 
       technical.textContent = JSON.stringify(data, null, 2);
       return;
@@ -274,66 +274,66 @@ async function loadC22Data() {
     aptValue.textContent = data.apt_cache_human;
 
     aptExplanation.textContent =
-      "Debian conserve actuellement " +
+      _t("Debian conserve actuellement ") +
       data.apt_cache_human +
-      " de fichiers téléchargés pour installer ou mettre à jour " +
-      "des programmes.";
+      _t(" de fichiers téléchargés pour installer ou mettre à jour ") +
+      _t("des programmes.");
 
     thumbnailsValue.textContent = data.thumbnails_human;
 
     thumbnailsExplanation.textContent =
-      "Le gestionnaire de fichiers conserve actuellement " +
+      _t("Le gestionnaire de fichiers conserve actuellement ") +
       data.thumbnails_human +
-      " de petites images utilisées pour afficher plus rapidement " +
-      "certains fichiers.";
+      _t(" de petites images utilisées pour afficher plus rapidement ") +
+      _t("certains fichiers.");
 
     if (unusedPackages === 0) {
-      packagesValue.textContent = "Aucun détecté";
+      packagesValue.textContent = _t("Aucun détecté");
 
       packagesExplanation.textContent =
-        "DMP n'a actuellement relevé aucun paquet proposé " +
-        "par Debian dans le cadre d'une suppression automatique.";
+        _t("DMP n'a actuellement relevé aucun paquet proposé ") +
+        _t("par Debian dans le cadre d'une suppression automatique.");
     } else {
       packagesValue.textContent =
         unusedPackages === 1
-          ? "1 paquet proposé"
-          : unusedPackages + " paquets proposés";
+          ? _t("1 paquet proposé")
+          : unusedPackages + _t(" paquets proposés");
 
       packagesExplanation.textContent =
-        "DMP a relevé " +
+        _t("DMP a relevé ") +
         unusedPackages +
-        " paquet(s) que Debian propose dans le cadre " +
-        "d'une suppression automatique. Cette observation " +
-        "ne signifie pas qu'une suppression doit être effectuée.";
+        _t(" paquet(s) que Debian propose dans le cadre ") +
+        _t("d'une suppression automatique. Cette observation ") +
+        _t("ne signifie pas qu'une suppression doit être effectuée.");
     }
 
     technical.textContent =
       "module : " + data.module + "\n" +
       "element : " + data.element + "\n" +
       "collected : " + data.collected + "\n\n" +
-      "Cache APT : " + data.apt_cache_human +
+      _t("Cache APT : ") + data.apt_cache_human +
       " (" + aptBytes + " octets)\n\n" +
-      "Miniatures utilisateur : " + data.thumbnails_human +
+      _t("Miniatures utilisateur : ") + data.thumbnails_human +
       " (" + thumbnailsBytes + " octets)\n\n" +
-      "Paquets proposés par autoremove : " + unusedPackages;
+      _t("Paquets proposés par autoremove : ") + unusedPackages;
 
   } catch (error) {
 
-    aptValue.textContent = "Information indisponible";
-    thumbnailsValue.textContent = "Information indisponible";
-    packagesValue.textContent = "Information indisponible";
+    aptValue.textContent = _t("Information indisponible");
+    thumbnailsValue.textContent = _t("Information indisponible");
+    packagesValue.textContent = _t("Information indisponible");
 
     aptExplanation.textContent =
-      "DMP n'a pas pu obtenir les informations concernant " +
-      "les fichiers téléchargés par Debian.";
+      _t("DMP n'a pas pu obtenir les informations concernant ") +
+      _t("les fichiers téléchargés par Debian.");
 
     thumbnailsExplanation.textContent =
-      "DMP n'a pas pu obtenir les informations concernant " +
-      "les petites images.";
+      _t("DMP n'a pas pu obtenir les informations concernant ") +
+      _t("les petites images.");
 
     packagesExplanation.textContent =
-      "DMP n'a pas pu obtenir les informations concernant " +
-      "les paquets proposés par Debian.";
+      _t("DMP n'a pas pu obtenir les informations concernant ") +
+      _t("les paquets proposés par Debian.");
 
     technical.textContent =
       "Erreur lors de la collecte C2.1:\n" +

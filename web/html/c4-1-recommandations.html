@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMP — C4.1 — Voir les recommandations</title>
   <link rel="stylesheet" href="styles.css">
-</head>
+<script src=i18n.js></script><script src=i18n-c.js></script></head>
 
 <body>
 
@@ -161,63 +161,63 @@ async function loadC4() {
         const data = await response.json();
 
         document.getElementById("c4-recommendation").textContent =
-            data.recommendation_title || "Information indisponible";
+            data.recommendation_title || _t("Information indisponible");
 
         document.getElementById("c4-state").textContent =
-            data.decision_text || "Information indisponible";
+            data.decision_text || _t("Information indisponible");
 
         document.getElementById("c4-technical-result").textContent =
-            "Score santé : " + (data.score ?? "Information indisponible") + "\n" +
-            "État de santé : " + (data.health ?? "Information indisponible") + "\n" +
-            "Historique : " + (data.history_count ?? "Information indisponible") + " mesures\n" +
-            "Niveau de recommandation : " +
-                (data.recommendation_title ?? "Information indisponible") + "\n" +
-            "Niveau interne DMP : " +
-                (data.recommendation_level ?? "Information indisponible") + "\n" +
-            "Signification : " +
-                (data.recommendation_title ?? "Information indisponible") + "\n" +
-            "Démarrage initial : " +
+            _t("Score santé : ") + (data.score ?? _t("Information indisponible")) + "\n" +
+            _t("État de santé : ") + (data.health ?? _t("Information indisponible")) + "\n" +
+            _t("Historique : ") + (data.history_count ?? _t("Information indisponible")) + " mesures\n" +
+            _t("Niveau de recommandation : ") +
+                (data.recommendation_title ?? _t("Information indisponible")) + "\n" +
+            _t("Niveau interne DMP : ") +
+                (data.recommendation_level ?? _t("Information indisponible")) + "\n" +
+            _t("Signification : ") +
+                (data.recommendation_title ?? _t("Information indisponible")) + "\n" +
+            _t("Démarrage initial : ") +
                 (data.boot_initial !== null && data.boot_initial !== undefined
                     ? data.boot_initial + " s"
-                    : "Information indisponible") + "\n" +
-            "Démarrage actuel : " +
+                    : _t("Information indisponible")) + "\n" +
+            _t("Démarrage actuel : ") +
                 (data.boot_current !== null && data.boot_current !== undefined
                     ? data.boot_current + " s"
-                    : "Information indisponible") + "\n" +
-            "Variation du démarrage : " +
+                    : _t("Information indisponible")) + "\n" +
+            _t("Variation du démarrage : ") +
                 (data.boot_delta !== null && data.boot_delta !== undefined
                     ? (data.boot_status === "DEGRADATION"
-                        ? "dégradation de " + Math.abs(data.boot_delta) + " s"
+                        ? _t("dégradation de ") + Math.abs(data.boot_delta) + " s"
                         : data.boot_status === "AMELIORATION"
-                            ? "amélioration de " + Math.abs(data.boot_delta) + " s"
-                            : "stable (" + Math.abs(data.boot_delta) + " s)")
-                    : "Information indisponible") + "\n" +
-            "Température initiale : " +
+                            ? _t("amélioration de ") + Math.abs(data.boot_delta) + " s"
+                            : _t("stable (") + Math.abs(data.boot_delta) + " s)")
+                    : _t("Information indisponible")) + "\n" +
+            _t("Température initiale : ") +
                 (data.temperature_initial !== null && data.temperature_initial !== undefined
                     ? data.temperature_initial + " °C"
-                    : "Information indisponible") + "\n" +
-            "Température actuelle : " +
+                    : _t("Information indisponible")) + "\n" +
+            _t("Température actuelle : ") +
                 (data.temperature_current !== null && data.temperature_current !== undefined
                     ? data.temperature_current + " °C"
-                    : "Information indisponible") + "\n" +
-            "Variation de température : " +
+                    : _t("Information indisponible")) + "\n" +
+            _t("Variation de température : ") +
                 (data.temperature_delta !== null && data.temperature_delta !== undefined
                     ? (data.temperature_status === "BAISSE"
-                        ? "baisse de " + Math.abs(data.temperature_delta) + " °C"
+                        ? _t("baisse de ") + Math.abs(data.temperature_delta) + " °C"
                         : data.temperature_status === "HAUSSE"
-                            ? "hausse de " + Math.abs(data.temperature_delta) + " °C"
-                            : "baisse de " + Math.abs(data.temperature_delta) + " °C — évolution non significative")
-                    : "Information indisponible");
+                            ? _t("hausse de ") + Math.abs(data.temperature_delta) + " °C"
+                            : _t("baisse de ") + Math.abs(data.temperature_delta) + _t(" °C — évolution non significative"))
+                    : _t("Information indisponible"));
 
     } catch (error) {
         document.getElementById("c4-recommendation").textContent =
-            "Information indisponible";
+            _t("Information indisponible");
 
         document.getElementById("c4-state").textContent =
-            "Information indisponible";
+            _t("Information indisponible");
 
         document.getElementById("c4-technical-result").textContent =
-            "Information indisponible";
+            _t("Information indisponible");
     }
 }
 

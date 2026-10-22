@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMP — C3.2 — Comprendre les améliorations proposées</title>
   <link rel="stylesheet" href="styles.css">
-</head>
+<script src=i18n.js></script><script src=i18n-c.js></script></head>
 
 <body>
 
@@ -166,104 +166,104 @@ async function loadC3() {
     if (cleanup.detected) {
       improvement.textContent =
         cleanup.apt_cache_human +
-        " occupent actuellement de l'espace sur le disque dur";
+        _t(" occupent actuellement de l'espace sur le disque dur");
 
       improvementExplanation.textContent =
-        "Ces données proviennent de téléchargements utilisés " +
-        "par Debian pour installer ou mettre à jour des logiciels. " +
-        "Elles peuvent être supprimées pour récupérer cet espace.";
+        _t("Ces données proviennent de téléchargements utilisés ") +
+        _t("par Debian pour installer ou mettre à jour des logiciels. ") +
+        _t("Elles peuvent être supprimées pour récupérer cet espace.");
 
       benefit.textContent =
         "Récupérer " + cleanup.apt_cache_human + " d'espace";
 
       benefitExplanation.textContent =
-        "Le nettoyage permettrait de récupérer l'espace " +
-        "actuellement occupé par ces données.";
+        _t("Le nettoyage permettrait de récupérer l'espace ") +
+        _t("actuellement occupé par ces données.");
 
-      action.textContent = "Tu peux supprimer ces données";
+      action.textContent = _t("Tu peux supprimer ces données");
 
       actionExplanation.textContent =
-        "Cela permettrait de récupérer " +
+        _t("Cela permettrait de récupérer ") +
         cleanup.apt_cache_human +
-        " sur le disque dur. " +
-        "Les logiciels installés resteraient en place.";
+        _t(" sur le disque dur. ") +
+        _t("Les logiciels installés resteraient en place.");
     } else if (updates.detected) {
       improvement.textContent =
-        updates.count + " mise(s) à jour disponible(s)";
+        updates.count + _t(" mise(s) à jour disponible(s)");
 
       improvementExplanation.textContent =
-        "DMP a identifié des mises à jour disponibles.";
+        _t("DMP a identifié des mises à jour disponibles.");
 
       benefit.textContent =
-        "Maintenir le système à jour";
+        _t("Maintenir le système à jour");
 
       benefitExplanation.textContent =
-        "Les mises à jour peuvent apporter des corrections, " +
-        "des améliorations ou des corrections de sécurité.";
+        _t("Les mises à jour peuvent apporter des corrections, ") +
+        _t("des améliorations ou des corrections de sécurité.");
 
-      action.textContent = "Aucune action automatique";
+      action.textContent = _t("Aucune action automatique");
 
       actionExplanation.textContent =
-        "DMP identifie les mises à jour disponibles sans " +
-        "les installer automatiquement.";
+        _t("DMP identifie les mises à jour disponibles sans ") +
+        _t("les installer automatiquement.");
     } else if (autoremove.detected) {
       improvement.textContent =
         autoremove.count +
-        " élément(s) peuvent être examinés";
+        _t(" élément(s) peuvent être examinés");
 
       improvementExplanation.textContent =
-        "DMP a trouvé des éléments qui peuvent éventuellement " +
-        "être supprimés. Ils doivent être vérifiés avant toute suppression.";
+        _t("DMP a trouvé des éléments qui peuvent éventuellement ") +
+        _t("être supprimés. Ils doivent être vérifiés avant toute suppression.");
 
       benefit.textContent =
-        "Libérer de l'espace sur le disque dur";
+        _t("Libérer de l'espace sur le disque dur");
 
       benefitExplanation.textContent =
-        "Si ces éléments ne sont plus nécessaires, leur suppression " +
-        "peut libérer l'espace qu'ils occupent.";
+        _t("Si ces éléments ne sont plus nécessaires, leur suppression ") +
+        _t("peut libérer l'espace qu'ils occupent.");
 
-      action.textContent = "Vérifier avant de supprimer";
+      action.textContent = _t("Vérifier avant de supprimer");
 
       actionExplanation.textContent =
-        "DMP ne supprime aucun élément automatiquement.";
+        _t("DMP ne supprime aucun élément automatiquement.");
     } else {
       improvement.textContent =
-        "Aucune amélioration identifiée actuellement";
+        _t("Aucune amélioration identifiée actuellement");
 
       improvementExplanation.textContent =
-        "DMP n'a identifié aucune possibilité d'amélioration " +
-        "nécessitant une action actuellement.";
+        _t("DMP n'a identifié aucune possibilité d'amélioration ") +
+        _t("nécessitant une action actuellement.");
 
-      benefit.textContent = "Aucun bénéfice à rechercher actuellement";
+      benefit.textContent = _t("Aucun bénéfice à rechercher actuellement");
 
       benefitExplanation.textContent =
-        "Aucune amélioration n'ayant été identifiée, " +
-        "aucun bénéfice particulier n'est à présenter.";
+        _t("Aucune amélioration n'ayant été identifiée, ") +
+        _t("aucun bénéfice particulier n'est à présenter.");
 
-      action.textContent = "Aucune action proposée";
+      action.textContent = _t("Aucune action proposée");
 
       actionExplanation.textContent =
-        "DMP ne propose aucune modification sans possibilité " +
-        "d'amélioration réellement identifiée.";
+        _t("DMP ne propose aucune modification sans possibilité ") +
+        _t("d'amélioration réellement identifiée.");
     }
 
     technicalResult.textContent = JSON.stringify(data, null, 2);
 
   } catch (error) {
-    improvement.textContent = "Information non disponible";
+    improvement.textContent = _t("Information non disponible");
     improvementExplanation.textContent =
-      "DMP ne peut pas actuellement récupérer le résultat de l'analyse.";
+      _t("DMP ne peut pas actuellement récupérer le résultat de l'analyse.");
 
-    benefit.textContent = "Information non disponible";
+    benefit.textContent = _t("Information non disponible");
     benefitExplanation.textContent =
-      "Le bénéfice ne peut pas être déterminé sans résultat d'analyse.";
+      _t("Le bénéfice ne peut pas être déterminé sans résultat d'analyse.");
 
-    action.textContent = "Aucune action proposée";
+    action.textContent = _t("Aucune action proposée");
     actionExplanation.textContent =
-      "La décision ne peut pas être déterminée sans résultat d'analyse.";
+      _t("La décision ne peut pas être déterminée sans résultat d'analyse.");
 
     technicalResult.textContent =
-      "Impossible de récupérer les résultats du collecteur C3.";
+      _t("Impossible de récupérer les résultats du collecteur C3.");
   }
 }
 

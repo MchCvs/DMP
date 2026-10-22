@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMP — C2.1 — Rechercher les éléments inutiles</title>
   <link rel="stylesheet" href="styles.css">
-</head>
+<script src=i18n.js></script><script src=i18n-c.js></script></head>
 
 <body>
 
@@ -174,16 +174,16 @@ async function loadC21Data() {
     const data = await response.json();
 
     if (!data.collected) {
-      elements.textContent = "Information indisponible";
-      space.textContent = "Information indisponible";
+      elements.textContent = _t("Information indisponible");
+      space.textContent = _t("Information indisponible");
 
       elementsExplanation.textContent =
-        "DMP ne dispose pas actuellement des informations nécessaires " +
-        "pour rechercher les éléments pouvant être nettoyés.";
+        _t("DMP ne dispose pas actuellement des informations nécessaires ") +
+        _t("pour rechercher les éléments pouvant être nettoyés.");
 
       spaceExplanation.textContent =
-        "DMP ne peut pas actuellement déterminer l'espace " +
-        "qui pourrait être récupéré.";
+        _t("DMP ne peut pas actuellement déterminer l'espace ") +
+        _t("qui pourrait être récupéré.");
 
       technical.textContent = JSON.stringify(data, null, 2);
       return;
@@ -199,54 +199,54 @@ async function loadC21Data() {
       data.apt_cache_human;
 
     elementsExplanation.textContent =
-      "Debian conserve actuellement " +
+      _t("Debian conserve actuellement ") +
       data.apt_cache_human +
-      " de fichiers téléchargés pour installer ou mettre à jour des programmes. " +
-      "Ces fichiers peuvent rester sur le disque après leur utilisation.";
+      _t(" de fichiers téléchargés pour installer ou mettre à jour des programmes. ") +
+      _t("Ces fichiers peuvent rester sur le disque après leur utilisation.");
 
     space.textContent =
       data.thumbnails_human;
 
     spaceExplanation.textContent =
-      "Le gestionnaire de fichiers conserve actuellement " +
+      _t("Le gestionnaire de fichiers conserve actuellement ") +
       data.thumbnails_human +
-      " de petites images pour afficher plus rapidement certains de vos fichiers.";
+      _t(" de petites images pour afficher plus rapidement certains de vos fichiers.");
 
     if (totalBytes > 0) {
       spaceExplanation.textContent +=
-        " Leur présence ne signifie pas qu'ils doivent être supprimés.";
+        _t(" Leur présence ne signifie pas qu'ils doivent être supprimés.");
     } else {
       spaceExplanation.textContent =
-        "DMP n'a actuellement mesuré aucun espace occupé par ces fichiers.";
+        _t("DMP n'a actuellement mesuré aucun espace occupé par ces fichiers.");
     }
 
     technical.textContent =
-      "Cache APT : " +
+      _t("Cache APT : ") +
       data.apt_cache_human +
       " (" +
       data.apt_cache_bytes +
       " octets)\n\n" +
 
-      "Miniatures utilisateur : " +
+      _t("Miniatures utilisateur : ") +
       data.thumbnails_human +
       " (" +
       data.thumbnails_bytes +
       " octets)\n\n" +
 
-      "Paquets inutiles détectés : " +
+      _t("Paquets inutiles détectés : ") +
       data.unused_packages;
 
   } catch (error) {
-    elements.textContent = "Information indisponible";
-    space.textContent = "Information indisponible";
+    elements.textContent = _t("Information indisponible");
+    space.textContent = _t("Information indisponible");
 
     elementsExplanation.textContent =
-      "DMP n'a pas pu obtenir les informations nécessaires " +
-      "pour examiner les éléments pouvant être nettoyés.";
+      _t("DMP n'a pas pu obtenir les informations nécessaires ") +
+      _t("pour examiner les éléments pouvant être nettoyés.");
 
     spaceExplanation.textContent =
-      "DMP ne peut pas actuellement déterminer l'espace " +
-      "qui pourrait être récupéré.";
+      _t("DMP ne peut pas actuellement déterminer l'espace ") +
+      _t("qui pourrait être récupéré.");
 
     technical.textContent =
       "Erreur lors de la collecte C2.1:\n" + error.message;

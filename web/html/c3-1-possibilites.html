@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMP — C3.1 — Identifier les possibilités d'amélioration</title>
   <link rel="stylesheet" href="styles.css">
-</head>
+<script src=i18n.js></script><script src=i18n-c.js></script></head>
 
 <body>
 
@@ -147,20 +147,20 @@ async function loadC3() {
 
     if (possibilities.updates?.detected) {
       detected.push(
-        possibilities.updates.count + " mise(s) à jour disponible(s)"
+        possibilities.updates.count + _t(" mise(s) à jour disponible(s)")
       );
     }
 
     if (possibilities.autoremove?.detected) {
       detected.push(
         possibilities.autoremove.count +
-        " paquet(s) pouvant être examinés pour suppression"
+        _t(" paquet(s) pouvant être examinés pour suppression")
       );
     }
 
     if (possibilities.cleanup?.detected) {
       detected.push(
-        "nettoyage du cache APT (" +
+        _t("nettoyage du cache APT (") +
         possibilities.cleanup.apt_cache_human +
         ")"
       );
@@ -169,48 +169,48 @@ async function loadC3() {
     if (detected.length > 0) {
       improvements.textContent = detected.join(" ; ");
       improvementsExplanation.textContent =
-        "DMP a identifié des possibilités d'amélioration " +
-        "à examiner avant toute action.";
+        _t("DMP a identifié des possibilités d'amélioration ") +
+        _t("à examiner avant toute action.");
     } else {
-      improvements.textContent = "Aucune amélioration nécessaire actuellement.";
+      improvements.textContent = _t("Aucune amélioration nécessaire actuellement.");
       improvementsExplanation.textContent =
-        "DMP n'a identifié aucune possibilité d'amélioration " +
-        "nécessitant une action actuellement.";
+        _t("DMP n'a identifié aucune possibilité d'amélioration ") +
+        _t("nécessitant une action actuellement.");
     }
 
     if (possibilities.updates?.detected) {
-      priority.textContent = "À traiter en priorité";
+      priority.textContent = _t("À traiter en priorité");
       priorityExplanation.textContent =
-        "Des mises à jour sont disponibles pour le système.";
+        _t("Des mises à jour sont disponibles pour le système.");
     } else if (possibilities.autoremove?.detected) {
-      priority.textContent = "À examiner";
+      priority.textContent = _t("À examiner");
       priorityExplanation.textContent =
-        "Des paquets peuvent être examinés avant toute suppression.";
+        _t("Des paquets peuvent être examinés avant toute suppression.");
     } else if (possibilities.cleanup?.detected) {
-      priority.textContent = "À envisager";
+      priority.textContent = _t("À envisager");
       priorityExplanation.textContent =
-        "Le cache APT occupe actuellement " +
+        _t("Le cache APT occupe actuellement ") +
         possibilities.cleanup.apt_cache_human +
         ".";
     } else {
-      priority.textContent = "Aucune priorité";
+      priority.textContent = _t("Aucune priorité");
       priorityExplanation.textContent =
-        "Aucune action d'amélioration n'est actuellement nécessaire.";
+        _t("Aucune action d'amélioration n'est actuellement nécessaire.");
     }
 
     technicalResult.textContent = JSON.stringify(data, null, 2);
 
   } catch (error) {
-    improvements.textContent = "Information non disponible";
+    improvements.textContent = _t("Information non disponible");
     improvementsExplanation.textContent =
-      "DMP ne peut pas actuellement récupérer le résultat de l'analyse.";
+      _t("DMP ne peut pas actuellement récupérer le résultat de l'analyse.");
 
-    priority.textContent = "Information non disponible";
+    priority.textContent = _t("Information non disponible");
     priorityExplanation.textContent =
-      "La priorité ne peut pas être déterminée sans résultat d'analyse.";
+      _t("La priorité ne peut pas être déterminée sans résultat d'analyse.");
 
     technicalResult.textContent =
-      "Impossible de récupérer les résultats du collecteur C3.";
+      _t("Impossible de récupérer les résultats du collecteur C3.");
   }
 }
 
