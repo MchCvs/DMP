@@ -20,6 +20,7 @@ case "$M" in
 esac
 O="$O $E"
 R="Fonctionne bien"; awk "BEGIN{exit !($L>$C)}" && R="Surchargé en ce moment : trop de tâches en attente"
+NV=0; awk "BEGIN{exit !($L>$C)}" && NV=2
 Y=""
 if [[ "$M" =~ i[3579]-([0-9]{4,5}) ]]; then n=${BASH_REMATCH[1]}
  if [ ${#n} -eq 5 ] || [ "${n:0:1}" = 1 ]; then g=${n:0:2}; else g=${n:0:1}; fi; Y=$((2009+g))
@@ -34,4 +35,4 @@ if [ -n "$Y" ]; then A=$(( $(date +%Y) - Y ))
  AG="Âge : c'est un processeur $D, sorti vers $Y. Pourquoi cela compte : un processeur récent est plus rapide et consomme moins d'énergie ; un ancien reste utilisable tant que vos usages sont simples, mais il finit par ralentir avec des logiciels de plus en plus exigeants."
 else AG="Son âge n'a pas pu être déterminé automatiquement : plus le numéro dans son nom est grand, plus il est récent."; fi
 R="$R. $U $AG"
-printf '{"comprendre":"C'\''est le cerveau de votre ordinateur. Il pense et fait les calculs. Plus il est rapide, plus vos programmes vont vite.","observations":"%s","resultat":"%s","informations_techniques":{"cores":%s,"load":%s,"model":"%s","cmd":"nproc, lscpu, /proc/loadavg (DMP uniquement)"}}\n' "$O" "$R" "$C" "$L" "$M"
+printf '{"niveau":%s,"comprendre":"C'\''est le cerveau de votre ordinateur. Il pense et fait les calculs. Plus il est rapide, plus vos programmes vont vite.","observations":"%s","resultat":"%s","informations_techniques":{"cores":%s,"load":%s,"model":"%s","cmd":"nproc, lscpu, /proc/loadavg (DMP uniquement)"}}\n' "$NV" "$O" "$R" "$C" "$L" "$M"
