@@ -270,7 +270,7 @@ dmp_calculate_score()
             DMP_TECH_SMART_CONTRIBUTION="0"
 
         elif printf '%s\n' "$DMP_TECH_SMART_RAW" |
-             grep -qiE "FAILED|FAIL"; then
+             grep -qE "overall-health self-assessment test result: FAILED"; then
 
             DMP_SMART="PROBLEME"
             DMP_SCORE=$((DMP_SCORE - 20))
