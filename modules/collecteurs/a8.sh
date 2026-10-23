@@ -24,7 +24,8 @@ for d in /sys/bus/usb/devices/*; do
  esac
  N=$((N+1)); O="$O"$'\n\n'"🔌 Appareil $N : « $nom »"$'\n'"   • Type : $T"$'\n'"   • Rôle : $E"$'\n'"   • Connexion : $V"
 done
-if [ "$N" -eq 0 ]; then
+if [ "$N" -eq 0 ]; then dmp_niveau 3;
  j "Les périphériques sont tout ce que vous branchez à l'ordinateur : clavier, souris, clé USB, webcam, imprimante." "Aucun appareil USB n'est détecté pour l'instant. Pourquoi : rien n'est branché, ou vos clavier et souris passent par un autre type de connexion. Ce n'est pas un problème." "Aucun appareil USB" "/sys/bus/usb/devices"; exit; fi
+dmp_niveau 0
 export X="Cette liste suffit à vérifier que tout ce que vous avez branché est reconnu, donc prêt à servir. Si un appareil manque, essayez un autre câble ou un autre port, car le système ne peut utiliser que ce qu'il reconnaît. Astuce : pour un disque ou une clé, privilégiez un port marqué USB 3.0 (souvent bleu), car la copie y est bien plus rapide."
 j "Les périphériques sont tout ce que vous branchez à l'ordinateur : clavier, souris, clé USB, webcam, imprimante. Chacun passe par un port USB, la prise standard." "Votre ordinateur reconnaît $N appareil(s) USB :$O" "$N appareil(s) reconnu(s)" "/sys/bus/usb/devices"
