@@ -45,6 +45,7 @@ Chaque page affiche quatre blocs :
 - **Non compatibles** : Windows, macOS, Fedora, Arch (DMP s'appuie sur `apt`, `dpkg` et `systemd`)
 - Python 3 et les outils courants (`lsblk`, `df`, `ip`, `ss`, `free`, `journalctl`), présents par défaut
 - `lspci` et `lsusb` : si absents, `sudo apt install pciutils usbutils`
+- `smartmontools` (santé des disques) : `sudo apt install smartmontools`, puis la règle sudo décrite dans « Santé des disques (SMART) » ci-dessous
 
 ## Installation
 
@@ -64,6 +65,20 @@ modules/collecteurs/   scripts bash qui collectent les données (JSON)
 web/server/            serveur Python (API)
 web/html/              pages web
 ```
+
+### Santé des disques (SMART)
+
+La page de santé des disques lit les données SMART, fournies par `smartmontools`.
+Lire ces données demande les droits administrateur, mais DMP ne demande jamais
+de mot de passe : il utilise `sudo -n`, qui échoue au lieu de bloquer.
+
+Autorisez uniquement la lecture SMART, avec `sudo visudo` ou un fichier dans
+`/etc/sudoers.d/` :
+
+    votre_utilisateur ALL=(root) NOPASSWD: /usr/sbin/smartctl
+
+Sans cette règle, la page signale que les données SMART sont indisponibles.
+Ce n'est pas une panne du disque, c'est un problème d'accès.
 
 ## Sécurité et vie privée
 
