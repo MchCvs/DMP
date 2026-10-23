@@ -48,4 +48,5 @@ if [ "$TMP" -ge 40 ]; then R="Un programme occupe beaucoup de mémoire"; X="Le p
 elif [ "${TCP:-0}" -ge 80 ]; then R="Un programme sollicite fortement le processeur"; X="Un programme travaille intensément. Normal pendant une vidéo ou une installation ; si cela dure sans que vous fassiez rien, fermez-le."
 elif [ "$ZO" -gt 5 ]; then R="Plusieurs zombies détectés"; X="Ils ne gênent pas, mais s'ils s'accumulent, redémarrer le programme parent ou l'ordinateur les fait disparaître."
 else R="Les programmes en cours sont normaux"; X="Aucun programme ne monopolise la mémoire ni le processeur, et le nombre de processus est habituel : rien à faire."; fi
+NV=0; { [ "$TMP" -ge 40 ] || [ "${TCP:-0}" -ge 80 ] || [ "$ZO" -gt 5 ]; } && NV=1; dmp_niveau $NV
 export X; j "Cette page montre tous les programmes qui tournent en ce moment, y compris ceux que vous ne voyez pas, et lesquels pèsent le plus lourd." "$O" "$R" "ps (DMP uniquement)"

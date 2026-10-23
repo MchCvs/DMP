@@ -8,4 +8,5 @@ O="📊 Le processeur travaille à $P % en ce moment.${NL}${NL}Les 3 programmes 
 R="Au repos, tout va bien"; X="Le processeur est peu sollicité : il garde de la marge pour réagir vite quand vous lancez quelque chose."
 if [ $P -ge 85 ]; then R="Très sollicité : l'ordinateur peut ralentir"; X="Un programme lourd est probablement en cours (regardez la liste ci-dessus). Si cela dure alors que vous ne faites rien, c'est anormal, car un ordinateur au repos reste sous 20 %."
 elif [ $P -ge 50 ]; then R="Activité soutenue, normale si vous travaillez"; X="C'est courant pendant une vidéo, un jeu ou une installation. Cela devrait redescendre une fois la tâche finie."; fi
+NV=0; [ $P -ge 85 ] && NV=1; dmp_niveau $NV
 export X; j "Cette page montre à quel point le cerveau de votre ordinateur travaille en ce moment, comme un coureur dont on mesure l'effort." "$O" "$R" "/proc/stat, ps"
