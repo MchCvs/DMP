@@ -10,4 +10,5 @@ O="$O${NL}${NL}🛠️ Comment installer (à taper dans un terminal)${NL}   1) s
 if [ $SU -gt 0 ]; then R="À faire rapidement"; X="$SU mise(s) à jour de sécurité attendent : tant qu'elles ne sont pas installées, des failles connues restent ouvertes. Comme un vaccin, plus tôt c'est fait, mieux vous êtes protégé. Lancez les deux commandes ci-dessus."
 elif [ $UP -gt 0 ]; then R="À faire, sans urgence"; X="Aucune faille de sécurité en attente, seulement des améliorations. Installez-les cette semaine : cela garde le système cohérent et évite l'accumulation."
 else R="Système à jour"; X="Rien à faire. Gardez l'habitude de vérifier chaque semaine, car de nouvelles failles sont corrigées régulièrement."; fi
+NV=0; [ $UP -gt 0 ] && NV=1; [ $SU -gt 0 ] && NV=2; dmp_niveau $NV
 export X; j "Les mises à jour sont des vaccins pour votre ordinateur : chaque fois qu'une faille ou un défaut est découvert dans un logiciel, ses auteurs publient une version corrigée. Pourquoi les installer : un logiciel non mis à jour garde ses failles, et ce sont elles que les pirates et virus exploitent." "$O" "$R" "apt list --upgradable (DMP uniquement)"

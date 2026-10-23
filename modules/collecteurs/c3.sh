@@ -8,4 +8,5 @@ O="🧹 Un entretien régulier garde l'ordinateur léger, comme ranger sa maison
 if [ $REC -ge 2000 ] || [ $AR -gt 5 ] || [ $KE -gt 3 ]; then R="Un nettoyage serait utile"; X="Plus de 2 Go sont récupérables. Commencez par « sudo apt clean » (sûr), puis videz la corbeille. Pourquoi : un disque qui se remplit ralentit le système (voir page B4)."
 elif [ $REC -ge 500 ] || [ $AR -gt 0 ]; then R="Nettoyage possible"; X="Un peu de place est récupérable : « sudo apt autoremove » et « sudo apt clean » suffisent. Rien d'urgent."
 else R="Système propre"; X="Il y a très peu de déchets : rien à faire. Revérifiez après une grosse mise à jour."; fi
+NV=0; { [ $REC -ge 2000 ] || [ $AR -gt 5 ] || [ $KE -gt 3 ]; } && NV=1; dmp_niveau $NV
 export X; j "L'entretien consiste à retirer ce qui ne sert plus : logiciels inutiles, copies de téléchargements, caches. Pourquoi : ces restes s'accumulent en silence, occupent de la place sur le disque et le ralentissent." "$O" "$R" "apt-get -s autoremove, du, dpkg -l, journalctl (DMP uniquement)"

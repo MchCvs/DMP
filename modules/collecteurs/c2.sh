@@ -8,4 +8,5 @@ O="📦 Paquets installés : $NI${NL}   Pourquoi : un paquet est un logiciel pr�
 if [ $BRK -gt 0 ]; then R="Paquets à réparer"; X="Des paquets sont mal installés. Tapez « sudo apt --fix-broken install » : cela termine les installations interrompues. À faire avant toute mise à jour."
 elif [ $HOLD -gt 0 ]; then R="Des paquets sont bloqués"; X="$HOLD paquet(s) ne seront pas mis à jour. Si ce n'est pas voulu, tapez « sudo apt-mark unhold nom_du_paquet »."
 else R="Paquets en bon état"; X="Aucun paquet cassé ni bloqué : le système de logiciels est sain, les mises à jour pourront s'installer sans accroc."; fi
+NV=0; [ $HOLD -gt 0 ] && NV=1; [ $BRK -gt 0 ] && NV=2; dmp_niveau $NV
 export X; j "Un paquet est un logiciel rangé dans la bibliothèque de Debian, prêt à être installé ou retiré proprement. Cette page fait l'inventaire de cette bibliothèque. Pourquoi : savoir ce qui est installé et en bon état évite les conflits." "$O" "$R" "dpkg-query, apt-mark, dpkg --audit (DMP uniquement)"
