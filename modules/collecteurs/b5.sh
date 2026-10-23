@@ -1,7 +1,7 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
 F=$(ip route | awk '/default/{print $5;exit}')
-[ -z "$F" ] && { j "Cette page montre si votre ordinateur est relié à internet et si cette liaison fonctionne bien." "Aucune connexion active n'est détectée. Pourquoi : le câble est débranché, le Wi-Fi est coupé ou la box est éteinte. Sans connexion, impossible de naviguer ou de faire les mises à jour." "Non connecté" "ip route"; exit; }
+[ -z "$F" ] && { dmp_niveau 2; j "Cette page montre si votre ordinateur est relié à internet et si cette liaison fonctionne bien." "Aucune connexion active n'est détectée. Pourquoi : le câble est débranché, le Wi-Fi est coupé ou la box est éteinte. Sans connexion, impossible de naviguer ou de faire les mises à jour." "Non connecté" "ip route"; exit; }
 GW=$(ip route | awk '/default/{print $3;exit}'); IP=$(ip -4 -o addr show "$F" | awk '{print $4}' | head -1)
 DNS=$(awk '/^nameserver/{print $2}' /etc/resolv.conf | head -2 | paste -sd, | sed 's/,/, /g')
 [ -d /sys/class/net/$F/wireless ] && K="Wi-Fi (sans fil)" || K="câble Ethernet"
@@ -38,4 +38,7 @@ elif [ $DN = 0 ]; then R="Internet répond, mais les noms de sites ne sont pas r
 else R="Connexion saine"; X="Chaque maillon répond bien : navigation, vidéos et mises à jour fonctionnent normalement."; fi
 [ $LV -eq 1 ] && X="$X Point d'attention : $DR paquet(s) abandonné(s), soit $PCT % du trafic. Pourquoi surveiller : des paquets perdus doivent être redemandés, ce qui ralentit les pages et saccade les vidéos. Détail dans « Qualité de la liaison »."
 [ $LV -eq 2 ] && { R="Liaison de mauvaise qualité"; X="$X $DR paquet(s) abandonné(s) ($PCT %) et $ER erreur(s) : de vraies données se perdent. Vérifiez le câble (changez-le si possible) ou rapprochez-vous de la box en Wi-Fi."; }
+NV=0; case "$R" in "La box ne répond pas"|"Réseau local correct"*|"Internet répond, mais"*) NV=2;; "Connexion instable") NV=1;; esac
+[ $NV -lt $LV ] && NV=$LV
+dmp_niveau $NV
 export X; j "Cette page montre si la porte de votre ordinateur vers internet fonctionne : la connexion, ce qui y circule, sa qualité et sa vitesse." "$O" "$R" "ip, ping, /sys/class/net, getent (DMP uniquement)"

@@ -1,7 +1,7 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
 L=$(systemd-analyze 2>/dev/null | head -1)
-[ -z "$L" ] && { j "Cette page mesure le temps que met votre ordinateur à démarrer, de l'appui sur le bouton jusqu'au bureau prêt." "La mesure n'est pas disponible. Pourquoi : l'outil systemd-analyze est absent, ou le démarrage n'est pas terminé." "Mesure indisponible" "systemd-analyze"; exit; }
+[ -z "$L" ] && { dmp_niveau 3; j "Cette page mesure le temps que met votre ordinateur à démarrer, de l'appui sur le bouton jusqu'au bureau prêt." "La mesure n'est pas disponible. Pourquoi : l'outil systemd-analyze est absent, ou le démarrage n'est pas terminé." "Mesure indisponible" "systemd-analyze"; exit; }
 eval "$(python3 - "$L" <<'P'
 import re,sys
 l=sys.argv[1]
@@ -47,4 +47,5 @@ O="Démarrer un ordinateur se fait en 5 étapes, comme préparer un restaurant a
 if [ "$TT" -lt 30 ]; then R="Démarrage rapide"; X="Moins de 30 secondes est un bon résultat : rien à améliorer. Le plus long est $BIG."
 elif [ "$TT" -lt 60 ]; then R="Démarrage correct"; X="Entre 30 et 60 secondes est acceptable. L'étape la plus longue est $BIG : c'est là qu'on gagnerait du temps. Si l'un des services lents ci-dessus ne vous sert pas, il peut être désactivé."
 else R="Démarrage lent"; X="Au-delà d'une minute, quelque chose retarde le démarrage. L'étape la plus longue est $BIG. Regardez les 8 services les plus lents, et vérifiez la santé du disque (page Disque B4) : un disque fatigué est une cause fréquente."; fi
+NV=0; [ "$TT" -ge 30 ] && NV=1; [ "$TT" -ge 60 ] && NV=2; dmp_niveau $NV
 export X; j "Cette page mesure combien de temps votre ordinateur met à démarrer, de l'appui sur le bouton jusqu'au bureau prêt, et ce qui prend du temps." "$O" "$R" "systemd-analyze, systemd-analyze blame (DMP uniquement)"

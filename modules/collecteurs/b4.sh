@@ -30,4 +30,5 @@ R="Espace largement suffisant"; X="Aucune partition n'est proche d'être pleine,
 [ $W -ge 90 ] && { R="Une partition est presque pleine : à libérer vite"; X="Au-dessus de 90 %, l'ordinateur ralentit et risque de ne plus pouvoir enregistrer. Libérez de la place maintenant."; }
 [ $HN -ge 2 ] && { R="Un disque montre des signes de défaillance : sauvegardez vos fichiers maintenant"; X="$X Les signes relevés dans la section santé indiquent un vrai risque de panne : copiez vos fichiers importants sur un autre support dès aujourd'hui."; }
 [ $HN -eq 1 ] && [ $W -lt 90 ] && { R="Un disque est à surveiller"; X="$X Un indicateur de santé est à surveiller : faites une sauvegarde de vos fichiers importants par précaution."; }
+NV=0; { [ $W -ge 75 ] || [ $HN -eq 1 ]; } && NV=1; { [ $W -ge 90 ] || [ $HN -ge 2 ]; } && NV=2; dmp_niveau $NV
 export X; j "Cette page montre combien chaque espace de rangement de votre ordinateur est rempli, et à quoi il sert." "$O" "$R" "lsblk, df -h"

@@ -7,4 +7,5 @@ O="🧠 Mémoire utilisée : $P % sur $T Go (il reste $A Go disponibles)${NL}${N
 R="Mémoire à l'aise"; X="Il reste beaucoup de place : les programmes s'ouvrent vite."
 [ $P -ge 85 ] && { R="Mémoire presque pleine"; X="Fermez des onglets ou des programmes (surtout ceux de la liste), sinon l'ordinateur va ralentir en utilisant le disque comme secours."; }
 [ $P -ge 60 ] && [ $P -lt 85 ] && { R="Mémoire bien utilisée, encore correcte"; X="C'est normal : Linux garde volontairement de la mémoire pour accélérer, et la rend dès qu'un programme en a besoin."; }
+NV=0; [ $P -ge 85 ] && NV=2; dmp_niveau $NV
 export X; j "Cette page montre combien le bureau de travail de votre ordinateur (la mémoire) est rempli en ce moment, et par quoi." "$O" "$R" "/proc/meminfo, ps"

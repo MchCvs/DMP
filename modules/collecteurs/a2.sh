@@ -11,5 +11,6 @@ elif [ "$I" -ge 8 ]; then XU="Elle est suffisante pour un usage courant (interne
 elif [ "$I" -ge 4 ]; then XU="Elle suffit pour internet et la bureautique, mais devient juste avec beaucoup d'onglets, car les navigateurs récents sont gourmands."
 else XU="Elle est faible : l'ordinateur sera lent dès qu'on ouvre plusieurs choses, car le bureau est trop petit."; fi
 if [ "$P" -lt 60 ]; then XE="En ce moment vous n'en utilisez qu'une partie ($P %) : vous avez de la marge."; elif [ "$P" -lt 85 ]; then XE="Elle est assez utilisée ($P %) mais reste correcte."; else XE="Elle est presque pleine ($P %) : fermez des programmes ou des onglets."; fi
+dmp_niveau 0; [ "$P" -ge 85 ] && dmp_niveau 2
 export X="$XU $XE"
 j "La mémoire (RAM) est le bureau de travail de votre ordinateur : tout ce que vous ouvrez y est posé pour être utilisé très vite. Quand vous éteignez, le bureau est vidé." "Votre ordinateur a $T Go de mémoire, $Q. En ce moment $P % est occupé et il reste $D Go libres. Pourquoi c'est important : quand le bureau est plein, l'ordinateur doit ranger des choses sur le disque, qui est bien plus lent, et tout ralentit. Tant qu'il reste de la place libre, tout reste fluide." "$R" "/proc/meminfo"
