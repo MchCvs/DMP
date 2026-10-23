@@ -78,3 +78,12 @@ La regex ne sert plus qu'en secours, pour les collecteurs qui n'ont pas encore
 - Lots 1 à 6 commités sur `correctif-score-niveau`.
 - Étape 4 : 4 faux positifs regex (a1, a2, a4, b6) confirmés — niveau déclaré correct.
 - Aucune correction de collecteur nécessaire.
+
+## Clôture — score à niveaux explicites
+
+- Étapes 1 à 5 : terminées (`30615d7` à `d7c916b`), publiées sur `main` (`42756c0`).
+- Pages lisant le niveau déclaré : D1, E1, E5, F1-1 à F1-3, F2, F3-F4 (`9b411e4`).
+- Bouton « Chercher » avec retour « en cours » restauré (`c30915f`).
+- Phrase E5 sans point à traiter corrigée (`70ffcc6`, fusionnée en `9dbe9f1`).
+
+Reste hors périmètre : `e2.sh` obsolète ; traduction `i18n-pilote` (48 commits, en attente de relecture de l'allemand) ; phrase de B8 « services lents ci-dessus » sans liste visible.
