@@ -24,7 +24,7 @@ const all=async ks=>{const r=await Promise.all(ks.map(get)),o={};ks.forEach((k,i
 const niv=t=>/Non disponible|non identifiée|Ordinateur fixe|Aucun appareil/i.test(t)?3:/défaillance|Surchargé|presque plein|Failles|rapidement|réparer|mauvaise qualité|Non connecté|ne répond pas|à traiter|pas d'internet|à libérer/i.test(t)?2:/surveiller|regarder|conseillé|instable|lent|améliorer|beaucoup de mémoire|sollicite|zombies|indisponible|longtemps|urgence|ettoyage|bloqués|se remplit/i.test(t)?1:0;
 const sp=r=>{r=r||'Pas de réponse';const i=r.indexOf('. ');return i<0?[r,'']:[r.slice(0,i),r.slice(i+2)]};
 const E=(t,s,x)=>{const e=document.createElement(t);if(s)e.style.cssText=s;if(x!==undefined)e.textContent=x;return e};
-const card=(k,d,m)=>{const[v,x]=sp(d.resultat),n=d.resultat?niv(v):3,c=E('div','border:1px solid #ddd;border-left:6px solid '+CO[n]+';border-radius:5px;padding:12px;margin:10px 0;background:#fff');
+const card=(k,d,m)=>{const[v,x]=sp(d.resultat),n=Number.isInteger(d.niveau)&&d.niveau>=0&&d.niveau<=3?d.niveau:3,c=E('div','border:1px solid #ddd;border-left:6px solid '+CO[n]+';border-radius:5px;padding:12px;margin:10px 0;background:#fff');
 c.appendChild(E('div','font-size:17px;font-weight:bold',IC[n]+' '+N[k]+' : '+v));
 if(x&&m)c.appendChild(E('div','margin-top:6px;line-height:1.6','Ce que ça veut dire : '+x));
 if(m&&d.observations){const t=E('details','margin-top:8px');t.open=m===2;t.appendChild(E('summary','cursor:pointer;color:#3498db','Voir le détail'));t.appendChild(E('div','margin-top:8px;padding:10px;background:#f4f6f7;border-radius:4px;line-height:1.6',d.observations));c.appendChild(t)}
@@ -32,7 +32,7 @@ const a=E('a','display:inline-block;margin-top:8px;color:#3498db','Page complèt
 const res=ns=>{const m=[0,0,0,0];ns.forEach(n=>m[n]++);const r=document.getElementById('res');
 r.textContent=m[2]?'🔴 '+m[2]+' point(s) à corriger en priorité, '+m[1]+' à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant rouge signale un risque réel (panne proche, ralentissement fort ou faille de sécurité). Commencez par les cartes rouges, puis passez aux jaunes.':m[1]?'🟡 '+m[1]+' point(s) à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant jaune n\'est pas une panne, c\'est une invitation à regarder sans urgence. Ouvrez la carte concernée : elle explique quoi faire.':'✅ Tout est en bon état ('+m[0]+' points vérifiés, '+m[3]+' sans objet). Pourquoi : aucun composant ne signale de problème. Les ➖ sont des éléments que votre ordinateur n\'a pas (par exemple une batterie sur un ordinateur fixe), ce qui est normal.'};
 Object.assign(N,{c1:'Mises à jour',c2:'Paquets',c3:'Entretien',c4:'Infos techniques'});
-const KS=Object.keys(N),lv=d=>d&&d.resultat?niv(sp(d.resultat)[0]):3,SC=[100,60,20],
+const KS=Object.keys(N),lv=d=>d&&Number.isInteger(d.niveau)&&d.niveau>=0&&d.niveau<=3?d.niveau:3,SC=[100,60,20],
 DOM=[['Matériel',['a1','a2','a5','a6','a9'],'les composants de la machine et leur état'],['Performance',['b1','b2','b3','b7','b8'],'la rapidité et la fluidité au quotidien'],['Stockage',['a3','b4'],'la place disponible et la santé des disques'],['Réseau',['a4','b5'],'la liaison avec internet'],['Sécurité et entretien',['b9','b6','c1','c2','c3'],'les protections, les mises à jour et la propreté du système']],
 dscore=(D,ks)=>{const v=ks.map(k=>lv(D[k])).filter(n=>n<3);return v.length?Math.round(v.reduce((s,n)=>s+SC[n],0)/v.length):null},
 dom=D=>DOM.map(([n,ks,w])=>[n,ks,w,dscore(D,ks)]).filter(x=>x[3]!==null),
