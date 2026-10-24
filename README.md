@@ -82,7 +82,17 @@ Ce n'est pas une panne du disque, c'est un problème d'accès.
 
 ## Sécurité et vie privée
 
-- Lecture seule : aucune action cachée, aucune modification durable du système (le test de vitesse écrit 64 Mo temporaires dans votre dossier personnel, supprimés aussitôt)
+- Mode web (`127.0.0.1:8765`) : lecture seule. Aucune action sur le système, sauf le test de vitesse, qui écrit 64 Mo temporaires dans votre dossier personnel et les supprime aussitôt.
+- Mode terminal (`modules/bin/dmp`) : peut agir sur le système, uniquement après votre confirmation. Chaque action demande un « o » explicite, avec « N » par défaut :
+  - réparer les paquets interrompus (`sudo dpkg --configure -a`) ;
+  - rafraîchir la liste des paquets (`sudo apt update`) ;
+  - installer les mises à jour (`sudo apt upgrade`) ;
+  - supprimer les paquets inutiles (`sudo apt autoremove`) ;
+  - vider le cache des paquets (`sudo apt autoclean`) ;
+  - réduire les journaux à 30 jours (`sudo journalctl --vacuum-time=30d`) ;
+  - supprimer les miniatures du dossier `~/.cache/thumbnails`.
+  Les droits administrateur sont demandés par `sudo`, avec votre mot de passe.
+  La lecture de l'état des disques (SMART) ne modifie rien : elle demande seulement les droits administrateur, sans question supplémentaire.
 - Aucune donnée envoyée sur Internet : tout reste sur votre machine
 - Serveur accessible uniquement depuis votre ordinateur
 
