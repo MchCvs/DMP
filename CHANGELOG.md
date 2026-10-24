@@ -4,6 +4,22 @@ Toutes les évolutions importantes de Debian Maintenance Professional.
 
 ---
 
+## Version 1.8.3 - 24 octobre 2026
+
+- Paquet Debian `dmp` (lanceur, service utilisateur, icône et entrée de menu)
+- Score fondé sur des niveaux explicites déclarés par chaque collecteur
+- Sécurité : validation des noms de collecteurs et des chemins web, échappement du rapport HTML, plus de `eval` sur `lsblk`
+- Données utilisateur dans les dossiers XDG, benchmark disque réduit à 64 Mo
+- Confirmations avant les actions de maintenance, tests des collecteurs
+
+## Version 1.8.2 - 17 octobre 2026
+
+- Passage à la licence GPL-3.0-or-later
+
+## Version 1.8.1 - 17 octobre 2026
+
+- Délai des collecteurs porté à 90 s (machines lentes)
+
 ## Version 1.7.0 - 15 juillet 2026
 
 ### Ajouts

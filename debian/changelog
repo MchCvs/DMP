@@ -1,3 +1,9 @@
+dmp (1.8.3-1) unstable; urgency=medium
+
+  * New upstream release 1.8.3.
+
+ -- Thierry CHEVASSUS <thierry.chevassus@laposte.net>  Sat, 24 Oct 2026 13:14:03 +0400
+
 dmp (1.8.2-1) unstable; urgency=medium
 
   * Align packaging with upstream version 1.8.2.
