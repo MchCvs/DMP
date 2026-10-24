@@ -4,7 +4,7 @@ mbs(){ awk '/copied/{v=$(NF-1);u=$NF;if(u=="GB/s")v*=1000;if(u=="kB/s")v/=1000;p
 S=$(date +%s.%N); python3 -c 'x=0
 for i in range(5000000): x+=i*i'; E=$(date +%s.%N); CT=$(awk -v a=$S -v b=$E 'BEGIN{printf "%.2f",b-a}'); CI=$(awk -v t=$CT 'BEGIN{printf "%d",t*100}')
 MM=$(dd if=/dev/zero of=/dev/null bs=1M count=3000 2>&1 | mbs); MM=${MM:-0}
-F=$HOME/.dmp-bench; FREE=$(df -B1 --output=avail "$HOME" | tail -1); if [ "${FREE:-0}" -ge 1073741824 ]; then DW=$(dd if=/dev/zero of=$F bs=1M count=64 conv=fdatasync 2>&1 | mbs); else DW=0; fi; rm -f $F; DW=${DW:-0}
+CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/dmp"; mkdir -p "$CACHE" && F="$CACHE/bench.tmp"; FREE=$(df -B1 --output=avail "$CACHE" | tail -1); if [ "${FREE:-0}" -ge 1073741824 ]; then DW=$(dd if=/dev/zero of=$F bs=1M count=64 conv=fdatasync 2>&1 | mbs); else DW=0; fi; rm -f $F; DW=${DW:-0}
 dev=$(lsblk -no PKNAME "$(findmnt -no SOURCE /)" 2>/dev/null | head -1); DK="type non lisible"; [ -r /sys/block/$dev/queue/rotational ] && { [ "$(cat /sys/block/$dev/queue/rotational)" = 0 ] && DK="SSD" || DK="disque dur mécanique"; }
 lv(){ [ $1 -lt $2 ] && echo 0 || { [ $1 -lt $3 ] && echo 1 || echo 2; }; }
 LC=$(lv $CI 80 160); LM=$([ $MM -ge 4000 ] && echo 0 || { [ $MM -ge 1500 ] && echo 1 || echo 2; }); LD=$([ $DW -ge 300 ] && echo 0 || { [ $DW -ge 100 ] && echo 1 || echo 2; })
