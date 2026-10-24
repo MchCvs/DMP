@@ -39,11 +39,14 @@ maintenance_debian()
     echo " $MSG_DEPENDENCY_CHECK"
     echo "----------------------------------------------"
 
-    if sudo dpkg --configure -a; then
+    read -r -p "Réparer les paquets interrompus avec sudo ? (o/N) : " REP
+if [[ "$REP" =~ ^[oOyY]$ ]] && sudo dpkg --configure -a; then
         dmp_status_good \
             "Configuration des paquets — CONFORME" \
             "La configuration des paquets s’est terminée correctement."
 
+    elif [[ ! "$REP" =~ ^[oOyY]$ ]]; then
+        echo "Ignoré à votre demande."
     else
         dmp_status_problem \
             "Configuration des paquets — PROBLÈME" \
@@ -56,11 +59,14 @@ echo "----------------------------------------------"
 echo " $MSG_REPOSITORY_UPDATE"
 echo "----------------------------------------------"
 
-if sudo apt update >/tmp/dmp_apt_update.log 2>&1; then
+read -r -p "Rafraîchir la liste des paquets avec sudo ? (o/N) : " REP
+if [[ "$REP" =~ ^[oOyY]$ ]] && sudo apt update >/tmp/dmp_apt_update.log 2>&1; then
     dmp_status_good \
         "Dépôts Debian — ACCESSIBLES" \
         "Les dépôts configurés ont été contactés correctement."
 
+elif [[ ! "$REP" =~ ^[oOyY]$ ]]; then
+    echo "Ignoré à votre demande."
 else
     dmp_status_problem \
         "Dépôts Debian — PROBLÈME" \
