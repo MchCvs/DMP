@@ -440,11 +440,11 @@ SIZE="${SIZE%G} Gio"
     OTHER_DISKS="${OTHER_DISKS}
 <h3>$ROLE</h3>
 <p>
-$MODEL
+$(html_esc "$MODEL")
 </p>
 <p>
 <span class="label">Capacité :</span>
-$SIZE
+$(html_esc "$SIZE")
 </p>
 "
 done
