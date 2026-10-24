@@ -27,11 +27,11 @@ RAM_AVAILABLE=$(free -h | awk '/Mem:/ {print $7}' | sed 's/iB//')
 
 # Domaine Q — Réseau et Connectivité V1
 
-NETWORK_INTERFACE=$(get_network_active_interface)
+NETWORK_INTERFACE=$(html_esc "$(get_network_active_interface)")
 NETWORK_IPV4=$(get_network_ipv4 | head -n 1)
 NETWORK_IPV6=$(get_network_ipv6)
 NETWORK_GATEWAY=$(get_network_gateway)
-NETWORK_DNS=$(get_network_dns)
+NETWORK_DNS=$(html_esc "$(get_network_dns)")
 NETWORK_LOCAL_STATUS=$(get_network_local_status)
 NETWORK_INTERNET_STATUS=$(get_network_internet_status)
 
@@ -1300,7 +1300,7 @@ une synthèse de l'état actuel de votre système.
 
 <p>
 <span class="label">Machine :</span>
-$(hostname)
+$(html_esc "$(hostname)")
 </p>
 
 <p>
