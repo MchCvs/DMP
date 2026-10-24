@@ -12,8 +12,9 @@ HTML="$REPORT_DIR/dashboard.html"
 
 DATE=$(date "+%d/%m/%Y à %H:%M")
 
-OS=$(grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '"')
-CPU=$(lscpu | grep -m1 "Nom de modèle" | cut -d: -f2 | xargs)
+html_esc(){ printf "%s" "$1" | sed "s/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/\"/\&quot;/g"; }
+OS=$(html_esc "$(grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '"')")
+CPU=$(html_esc "$(lscpu | grep -m1 "Nom de modèle" | cut -d: -f2 | xargs)")
 
 case "$CPU" in
     Intel*)
@@ -398,7 +399,7 @@ ROOT_SOURCE=$(findmnt -no SOURCE / 2>/dev/null)
 ROOT_DEVICE=$(lsblk -no PKNAME "$ROOT_SOURCE" 2>/dev/null)
 
 if [ -n "$ROOT_DEVICE" ] && [ -b "/dev/$ROOT_DEVICE" ]; then
-    DISK_MODEL=$(lsblk -ndo MODEL "/dev/$ROOT_DEVICE" 2>/dev/null | xargs)
+    DISK_MODEL=$(html_esc "$(lsblk -ndo MODEL "/dev/$ROOT_DEVICE" 2>/dev/null | xargs)")
 else
     DISK_MODEL=""
 fi
