@@ -4,3 +4,4 @@ modules usr/share/dmp
 debian/bin/dmp usr/bin
 debian/systemd-user/dmp.service usr/lib/systemd/user
 debian/dmp.desktop usr/share/applications
+web/assets/dmp.png usr/share/icons/hicolor/512x512/apps
