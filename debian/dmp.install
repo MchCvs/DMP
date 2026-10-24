@@ -1,0 +1,3 @@
+web/server/dmp_simple.py usr/share/dmp/web/server
+web/html usr/share/dmp/web
+modules usr/share/dmp

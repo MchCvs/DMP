@@ -24,3 +24,11 @@ RECAP_*.md
 TODO_*.md
 FINAL_STATUS_*.md
 bak-*/
+debian/.debhelper/
+debian/dmp/
+debian/debhelper-build-stamp
+debian/dmp.substvars
+debian/files
+*.deb
+*.buildinfo
+*.changes

@@ -1,0 +1,17 @@
+Source: dmp
+Section: admin
+Priority: optional
+Maintainer: Thierry CHEVASSUS <thierry@example.invalid>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/MchCvs/DMP
+
+Package: dmp
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3, procps, iproute2, lsb-release, libjs-chart.js
+Recommends: smartmontools, pciutils, usbutils
+Description: maintenance Debian expliquée simplement
+ DMP examine votre ordinateur Debian et explique en mots simples l'état
+ du matériel, des performances, du stockage, du réseau et de la sécurité.
+ Le serveur écoute uniquement sur 127.0.0.1 : aucune donnée n'est envoyée
+ sur Internet. Le mode web est en lecture seule.
