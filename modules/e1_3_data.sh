@@ -1,4 +1,5 @@
 #!/bin/bash
+DMP_DATA="${DMP_DATA:-${XDG_DATA_HOME:-$HOME/.local/share}/dmp}"
 
 # ==================================================
 # DMP V2 — Collecteur E1.3
@@ -10,7 +11,7 @@ set -u
 export LC_ALL=C
 
 DMP_ROOT="${DMP_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
-REPORT_DIR="${DMP_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}/reports"
+REPORT_DIR="${DMP_DATA}/reports"
 HISTORY_FILE="$REPORT_DIR/history.csv"
 
 HISTORY_COUNT=0

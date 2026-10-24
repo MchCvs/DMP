@@ -1,4 +1,5 @@
 #!/bin/bash
+DMP_DATA="${DMP_DATA:-${XDG_DATA_HOME:-$HOME/.local/share}/dmp}"
 
 # ==================================================
 # DMP - Dashboard HTML
@@ -363,7 +364,7 @@ fi
 # Lecture du dernier état de santé mesuré
 # ----------------------------------------------
 
-HEALTH_SCORE_FILE="${REPORT_DIR:-${DMP_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}/reports}/health_score.txt"
+HEALTH_SCORE_FILE="${REPORT_DIR:-${DMP_DATA}/reports}/health_score.txt"
 
 SCORE="N/A"
 HEALTH="Indisponible"

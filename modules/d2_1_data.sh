@@ -1,4 +1,5 @@
 #!/bin/bash
+DMP_DATA="${DMP_DATA:-${XDG_DATA_HOME:-$HOME/.local/share}/dmp}"
 
 # ==================================================
 # DMP — Collecteur D2.1
@@ -19,7 +20,7 @@ if [ -f "$CONFIG" ]; then
     . "$CONFIG"
 fi
 
-REPORT_DIR="${REPORT_DIR:-${DMP_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}/reports}"
+REPORT_DIR="${REPORT_DIR:-${DMP_DATA}/reports}"
 HISTORY_FILE="$REPORT_DIR/history.csv"
 
 escape_json()

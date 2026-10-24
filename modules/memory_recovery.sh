@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+DMP_DATA="${DMP_DATA:-${XDG_DATA_HOME:-$HOME/.local/share}/dmp}"
 
 set -u
 
-HISTORY="${DMP_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}/memory_snapshots/history.csv"
+HISTORY="${DMP_DATA}/memory_snapshots/history.csv"
 
 RECOVERY_LIMIT=5
 PARTIAL_LIMIT=20

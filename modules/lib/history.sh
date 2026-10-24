@@ -1,4 +1,5 @@
 #!/bin/bash
+DMP_DATA="${DMP_DATA:-${XDG_DATA_HOME:-$HOME/.local/share}/dmp}"
 
 # ==================================================
 # DMP - Historique machine
@@ -15,7 +16,7 @@ echo "=============================================="
 echo " HISTORIQUE MACHINE DMP"
 echo "=============================================="
 
-REPORT_DIR="${REPORT_DIR:-${DMP_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}/reports}"
+REPORT_DIR="${REPORT_DIR:-${DMP_DATA}/reports}"
 HISTORY="$REPORT_DIR/history.csv"
 
 mkdir -p "$REPORT_DIR"
