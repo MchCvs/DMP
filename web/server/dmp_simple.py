@@ -48,6 +48,10 @@ class DMPHandler(SimpleHTTPRequestHandler):
         self.send_body('application/json; charset=utf-8', result.stdout.encode())
 
     def handle_static(self, path):
+        # Fichiers fournis par un autre paquet Debian (liste blanche, pas de chemin libre)
+        PAQUETS = {'/vendor/chart.min.js': Path('/usr/share/javascript/chart.js/Chart.min.js')}
+        if path in PAQUETS and PAQUETS[path].is_file():
+            return self.send_body('application/javascript; charset=utf-8', PAQUETS[path].read_bytes())
         target = (HTML_ROOT / path.lstrip('/')).resolve()
         if not target.is_relative_to(HTML_ROOT) or not target.is_file():
             return self.send_error(404, 'Page introuvable')

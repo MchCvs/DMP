@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: DMP
+Source: https://github.com/MchCvs/DMP
+
+Files: *
+Copyright: 2026 Thierry CHEVASSUS
+License: GPL-3.0-or-later
+ Ce programme est un logiciel libre : vous pouvez le redistribuer et/ou le
+ modifier selon les termes de la GNU General Public License, version 3 ou
+ ultérieure. Le texte complet est dans /usr/share/common-licenses/GPL-3.
