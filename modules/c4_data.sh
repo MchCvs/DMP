@@ -1,4 +1,5 @@
 #!/bin/bash
+DMP_DATA="${DMP_DATA:-${XDG_DATA_HOME:-$HOME/.local/share}/dmp}"
 
 # ==================================================
 # DMP V2 — Collecteur C4
@@ -7,7 +8,7 @@
 
 set -u
 
-REPORT_DIR="${REPORT_DIR:-${DMP_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}/reports}"
+REPORT_DIR="${REPORT_DIR:-${DMP_DATA}/reports}"
 
 HEALTH_SCORE_FILE="$REPORT_DIR/health_score.txt"
 HISTORY_FILE="$REPORT_DIR/history.csv"
