@@ -425,17 +425,7 @@ SIZE="${SIZE%G} Gio"
         continue
     fi
 
-    case "$MODEL" in
-        "M3 Portable")
-            ROLE="Disque de données"
-            ;;
-        "Samsung SSD 840 EVO 120GB")
-            ROLE="Disque supplémentaire"
-            ;;
-        *)
-            ROLE="Disque détecté"
-            ;;
-    esac
+    ROLE="Disque supplémentaire"
 
     OTHER_DISKS="${OTHER_DISKS}
 <h3>$ROLE</h3>
