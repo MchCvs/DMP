@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python3 /usr/share/dmp/web/server/dmp_simple.py "$@"

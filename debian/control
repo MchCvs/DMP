@@ -8,7 +8,7 @@ Homepage: https://github.com/MchCvs/DMP
 
 Package: dmp
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends}, python3, procps, iproute2, lsb-release, libjs-chart.js
+Depends: ${misc:Depends}, python3, xdg-utils, python3, procps, iproute2, lsb-release, libjs-chart.js
 Recommends: smartmontools, pciutils, usbutils
 Description: maintenance Debian expliquée simplement
  DMP examine votre ordinateur Debian et explique en mots simples l'état

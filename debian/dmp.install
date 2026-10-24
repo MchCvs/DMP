@@ -1,3 +1,6 @@
 web/server/dmp_simple.py usr/share/dmp/web/server
 web/html usr/share/dmp/web
 modules usr/share/dmp
+debian/bin/dmp usr/bin
+debian/systemd-user/dmp.service usr/lib/systemd/user
+debian/dmp.desktop usr/share/applications

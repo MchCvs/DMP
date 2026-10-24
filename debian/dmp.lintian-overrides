@@ -1,0 +1,3 @@
+dmp: desktop-command-not-in-package xdg-open [usr/share/applications/dmp.desktop]
+dmp: no-manual-page [usr/bin/dmp]
+dmp: initial-upload-closes-no-bugs [usr/share/doc/dmp/changelog.Debian.gz:1]

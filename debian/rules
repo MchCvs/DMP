@@ -4,3 +4,7 @@
 
 override_dh_install:
 	dh_install --exclude=bak --exclude=template-zero-flou.sh
+override_dh_fixperms:
+	dh_fixperms
+	find debian/dmp/usr/share/dmp -name "*.md" -exec chmod 644 {} +
+	find debian/dmp/usr/share/dmp -name "*.sh" -exec sh -c 'if head -c2 "$$1" | grep -q "#!"; then chmod 755 "$$1"; else chmod 644 "$$1"; fi' _ {} \;
