@@ -32,3 +32,9 @@ debian/files
 *.deb
 *.buildinfo
 *.changes
+debian/*.debhelper
+debian/*.substvars
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/dmp/
