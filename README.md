@@ -58,6 +58,21 @@ DMP démarre ensuite automatiquement à chaque session. Ouvrir : <http://127.0.0
 
 Ne supprimez pas le dossier `~/DMP`. Mise à jour : `cd ~/DMP && git pull && systemctl --user restart dmp.service`. Désinstallation : `bash ~/DMP/uninstall.sh`.
 
+### Méthode B : paquet Debian (.deb)
+
+Téléchargez `dmp_1.8.3-1_all.deb` depuis la [page des releases](https://github.com/MchCvs/DMP/releases/latest), puis :
+
+```
+sudo apt install ./dmp_1.8.3-1_all.deb
+systemctl --user enable --now dmp.service
+```
+
+Ouvrir : http://127.0.0.1:8765/ ou l'icône DMP du menu des applications.
+Mise à jour : installez le nouveau `.deb` de la même façon, puis `systemctl --user restart dmp.service`.
+Désinstallation : `systemctl --user disable --now dmp.service && sudo apt remove dmp`. Vos données dans `~/.local/share/dmp` sont conservées.
+
+Choisissez la méthode A (git, ci-dessus) ou la méthode B, pas les deux.
+
 ## Structure
 
 ```
