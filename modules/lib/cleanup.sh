@@ -237,7 +237,7 @@ if [ "$THUMB_BEFORE" -gt 0 ]; then
 
     if [[ "$REP" =~ ^[Oo]$ ]]; then
 
-        if rm -rf ~/.cache/thumbnails/*; then
+        if find "$HOME/.cache/thumbnails" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} + 2>/dev/null; then
 
             THUMB_AFTER=$(dmp_measure_thumbnails)
 
