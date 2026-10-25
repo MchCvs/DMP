@@ -3,7 +3,7 @@ source "$(dirname "$0")/lib.sh"; NL=$'\n'
 D=""; ND=0
 while read -r n s r ty m; do [ "$ty" = disk ] || continue; [[ "$n" == zram* ]] && continue
  RMV=$(cat /sys/block/$n/removable 2>/dev/null); TR=$(lsblk -dno TRAN /dev/$n 2>/dev/null)
- if [ "$RMV" = 1 ] || [ "$TR" = usb ]; then K="support USB amovible (une clé USB est en mémoire flash, sans pièce mobile ; un disque dur externe contient un plateau qui tourne, et DMP ne peut pas les distinguer par cette voie)"; elif [ "$r" = 0 ]; then K="SSD (sans pièce mobile : rapide, silencieux, résistant aux chocs)"; else K="disque dur mécanique (un plateau tourne : plus lent, et il s'use avec les années)"; fi
+ if [ "$RMV" = 1 ] || [ "$TR" = usb ]; then K="support USB amovible (peut être une clé USB sans pièces mobiles ou un disque dur externe avec un plateau qui tourne ; DMP ne peut pas les distinguer)"; elif [ "$r" = 0 ]; then K="SSD (sans pièce mobile : rapide, silencieux, résistant aux chocs)"; else K="disque dur mécanique (un plateau tourne : plus lent, et il s'use avec les années)"; fi
  ND=$((ND+1)); D="$D${NL}💽 Disque « $n » : ${m:-modèle inconnu}${NL}   • Capacité : $s${NL}   • Type : $K${NL}"; done < <(LC_ALL=C lsblk -dno NAME,SIZE,ROTA,TYPE,MODEL)
 SA=""; HN=0
 for dk in $(LC_ALL=C lsblk -dno NAME,TYPE | awk '$2=="disk" && $1!~/^zram/{print $1}'); do
