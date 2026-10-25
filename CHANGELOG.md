@@ -4,6 +4,11 @@ Toutes les évolutions importantes de Debian Maintenance Professional.
 
 ---
 
+## Version 1.8.4 - 25 octobre 2026
+
+- Paquet Debian : le service n'est plus activé pour tous les utilisateurs (il démarrait aussi à l'écran de connexion et occupait le port 8765) ; chacun l'active avec `systemctl --user enable --now dmp.service`
+- Paquet Debian : délai de 3 s entre deux tentatives de démarrage
+
 ## Version 1.8.3 - 24 octobre 2026
 
 - Paquet Debian `dmp` (lanceur, service utilisateur, icône et entrée de menu)
