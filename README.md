@@ -111,6 +111,10 @@ Ce n'est pas une panne du disque, c'est un problème d'accès.
 - Aucune donnée envoyée sur Internet : tout reste sur votre machine
 - Serveur accessible uniquement depuis votre ordinateur
 
+## Contribuer
+
+DMP est un projet communautaire. Les contributions sont bienvenues : bug reports, features, traductions, documentation. Lis [CONTRIBUTING.md](CONTRIBUTING.md) pour commencer.
+
 ## Licence
 
 [GPL-3.0-or-later](LICENSE) : logiciel libre, gratuit, modifiable et redistribuable sous la même licence, avec mention de l'auteur.
