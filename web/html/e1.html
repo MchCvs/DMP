@@ -41,7 +41,7 @@ lnk=k=>{const a=E('a','color:#3498db','Page complète →');a.href=k+'.html';ret
 row=(k,D,wx)=>{const d=D[k]||{},n=lv(d),p=sp(d.resultat),c=E('div','border-left:6px solid '+CO[n]+';padding:8px 12px;margin:8px 0;background:#fff;border-radius:4px;line-height:1.6');c.appendChild(E('b','',IC[n]+' '+N[k]+' : '+p[0]));if(wx&&p[1])c.appendChild(E('div','margin-top:4px','→ '+p[1]));c.appendChild(lnk(k));return c};
 (async()=>{const D=await all(KS),o=document.getElementById('obs'),r=document.getElementById('res');o.textContent='';
 const g=(k,rx)=>{const m=((D[k]||{}).observations||'').match(rx);return m?m[1].trim():'non lu'};
-[['🖥️ Machine',g('c4',/Machine : ([^\n(]*)/)],['🐧 Système',g('c4',/Système : ([^\n]*)/)],['⚙️ Processeur',g('a1',/un «\s*([^»]*?)\s*»/)+' ('+g('a1',/possède (\d+) cœurs/)+' cœurs)'],['🧠 Mémoire',g('a2',/a ([\d.,]+) Go de mémoire/)+' Go'],['💾 Disque',g('a3',/capacité de (\S+)\. Il/)+', occupé à '+g('a3',/occupé à (\d+%)/)],['⏱️ Allumé depuis',g('b1',/Allumé depuis : ([^(\n]*)/)]].forEach(([a,b])=>{const d=E('div','padding:8px 0;border-bottom:1px solid #eee;line-height:1.6');d.appendChild(E('b','',a+' : '));d.appendChild(document.createTextNode(b));o.appendChild(d)});
+['💾 Disque',g('a3',/capacité de (\S+)\. Il/)+', '+(g('a3',/occupé à ([^(]*)\(/)||'non lisible')]
 const t=[0,0,0,0];KS.forEach(k=>t[lv(D[k])]++);
 o.appendChild(E('h3','margin:18px 0 6px','📊 Bilan de '+KS.length+' sujets'));o.appendChild(E('div','line-height:1.8','✅ '+t[0]+' en bon état    🟡 '+t[1]+' à surveiller    🔴 '+t[2]+' à corriger    ➖ '+t[3]+' sans objet'));
 const pr=KS.filter(k=>lv(D[k])>0&&lv(D[k])<3).sort((a,b)=>lv(D[b])-lv(D[a]));
