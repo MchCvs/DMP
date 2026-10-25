@@ -29,6 +29,7 @@ echo "              $MSG_LANGUAGE_TITLE"
 echo
 echo "              🇫🇷  1 - Français"
 echo "              🇬🇧  2 - English"
+echo "              🇩🇪  3 - Deutsch"
 echo
 echo "              0 - $MENU_BACK"
 echo
@@ -48,13 +49,15 @@ LANGUAGE="fr"
 LANGUAGE="en"
 ;;
 
+3)
+LANGUAGE="de"
+;;
+
 *)
 LANGUAGE="fr"
 ;;
 
 esac
-
-
 if grep -q "^LANGUAGE=" "$CONFIG_FILE"
 then
     sed -i "s/^LANGUAGE=.*/LANGUAGE=\"$LANGUAGE\"/" "$CONFIG_FILE"
