@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DMP — E5 Analyse</title><style>
+<title>DMP — E2 Résumé</title><style>
 body{font-family:Arial;margin:0;background:#f8f9fa}
 header{background:#2c3e50;color:white;padding:15px 20px}
 nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-decoration:none}
@@ -12,11 +12,11 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 <header><h1>📊 DMP — Maintenance Debian</h1></header>
 <nav><a href=menu.html>Menu</a> | <a href=aide.html>Aide</a></nav>
 <div class=container>
-<div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>E5 Analyse</strong></div><h1>E5 Analyse</h1>
-<div class=block><h2>Comprendre</h2><p>L'analyse relie les constats entre eux et les classe par priorité, comme un médecin qui ne se contente pas de lister les symptômes mais cherche ce qui les relie. Pourquoi : traiter la bonne cause en premier règle souvent plusieurs problèmes d'un coup.</p></div>
+<div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>E2 Résumé</strong></div><h1>E2 Résumé</h1>
+<div class=block><h2>Comprendre</h2><p>Le résumé est la première page à lire : il rassemble en un coup d'œil l'identité de votre machine, le nombre de sujets en bon état ou à traiter, et ce qu'il faut faire en premier. Pourquoi : on gagne du temps en ne lisant le détail que là où c'est nécessaire.</p></div>
 <div class=block><h2>Ce qu'on voit</h2><div id=obs>Chargement…</div></div>
 <div class=block><h2>Ce que ça veut dire</h2><div id=res style="white-space:pre-line;line-height:1.7">Chargement…</div></div>
-<div class=nav-section><a href=e4-1-preparer-donnees.html class=btn>← E4 Graphiques</a><a href=f1-1.html class=btn>Suivant : F1 Contrôle →</a></div></div><script>
+<div class=nav-section><a href=d3.html class=btn>← D3 Bénéfices</a><a href=e3-score.html class=btn>Suivant : E3 Score →</a></div></div><script>
 const N={a1:'Processeur',a2:'Mémoire',a3:'Disque (capacité)',a4:'Réseau',a5:'Carte graphique',a6:'Carte mère',a7:'Système Debian',a8:'Périphériques USB',a9:'Alimentation / batterie',b1:'Disponibilité',b2:'Processeur %',b3:'Mémoire %',b4:'Disque % et santé',b5:'Réseau en direct',b6:'Services',b7:'Programmes',b8:'Démarrage',b9:'Sécurité'};
 const IC=['✅','🟡','🔴','➖'],CO=['#27ae60','#e67e22','#c0392b','#7f8c8d'];
 const get=async k=>{try{return await (await fetch('/api/'+k)).json()}catch(e){return {}}};
@@ -40,14 +40,12 @@ gl=s=>s>=85?0:s>=60?1:2,
 lnk=k=>{const a=E('a','color:#3498db','Page complète →');a.href=k+'.html';return a},
 row=(k,D,wx)=>{const d=D[k]||{},n=lv(d),p=sp(d.resultat),c=E('div','border-left:6px solid '+CO[n]+';padding:8px 12px;margin:8px 0;background:#fff;border-radius:4px;line-height:1.6');c.appendChild(E('b','',IC[n]+' '+N[k]+' : '+p[0]));if(wx&&p[1])c.appendChild(E('div','margin-top:4px','→ '+p[1]));c.appendChild(lnk(k));return c};
 (async()=>{const D=await all(KS),o=document.getElementById('obs'),r=document.getElementById('res');o.textContent='';
-const bad=k=>lv(D[k])>0&&lv(D[k])<3,pr=KS.filter(bad).sort((a,b)=>lv(D[b])-lv(D[a]));
-o.appendChild(E('h3','margin:6px 0','🎯 Ordre de traitement ('+pr.length+' point(s))'));
-if(!pr.length)o.appendChild(E('div','','Aucun point à traiter.'));
-pr.forEach((k,i)=>{const c=row(k,D,1);c.insertBefore(E('span','font-weight:bold;margin-right:6px',(i+1)+'.'),c.firstChild);o.appendChild(c)});
-const R=[[['a3','b4'],['c3'],'Le disque se remplit et des déchets sont récupérables : commencez par le nettoyage (page Entretien C3), c\'est le gain le plus rapide.'],[['b9'],['c1'],'Des points de sécurité sont à traiter et des mises à jour attendent : installer les mises à jour (page C1) corrige d\'abord les failles connues.'],[['b2','b3','b7'],['b8'],'Le système ralentit et le démarrage est lent : regardez les programmes les plus lourds (page B7), ce sont les premiers suspects.'],[['a4','b5'],['b6'],'Le réseau et un service sont en cause ensemble : redémarrez la box, puis relancez le service signalé (page B6).']];
-o.appendChild(E('h3','margin:20px 0 6px','🔗 Liens entre les constats'));let n=0;
-R.forEach(([a,b,t])=>{if(a.some(bad)&&b.some(bad)){n++;o.appendChild(E('div','padding:10px;margin:6px 0;background:#fef9e7;border-radius:4px;line-height:1.6','👉 '+t))}});
-const aTraiter=KS.filter(k=>lv(D[k])<3&&lv(D[k])>0).length;if(aTraiter===0)o.appendChild(E('div','line-height:1.6','Rien à faire, tout est bon !'));else if(!n)o.appendChild(E('div','line-height:1.6','Aucun lien détecté entre les constats : vous pouvez les traiter un par un.'));
-const ok=KS.filter(k=>lv(D[k])===0);o.appendChild(E('h3','margin:20px 0 6px','💪 Points forts ('+ok.length+')'));o.appendChild(E('div','line-height:1.8',ok.map(k=>N[k]).join(' · ')||'Aucun pour l\'instant.'));
-r.textContent='Comment lire : les points sont classés du plus grave (🔴) au moins grave (🟡). Traitez-les dans cet ordre.\n\nLes « liens » indiquent quand un problème en provoque un autre : régler la cause évite de traiter les deux séparément.\n\nPourquoi cette analyse : '+(pr.length?pr.length+' point(s) demandent de l\'attention, dont '+pr.filter(k=>lv(D[k])===2).length+' prioritaire(s).':'tout est en bon état, rien à faire.')+' Refaites cette analyse après chaque action pour vérifier qu\'elle a bien réglé le problème.'})();
+const g=(k,rx)=>{const m=((D[k]||{}).observations||'').match(rx);return m?m[1].trim():'non lu'};
+['💾 Disque',g('a3',/capacité de (\S+)\. Il/)+', '+(g('a3',/occupé à ([^(]*)\(/)||'non lisible')]
+const t=[0,0,0,0];KS.forEach(k=>t[lv(D[k])]++);
+o.appendChild(E('h3','margin:18px 0 6px','📊 Bilan de '+KS.length+' sujets'));o.appendChild(E('div','line-height:1.8','✅ '+t[0]+' en bon état    🟡 '+t[1]+' à surveiller    🔴 '+t[2]+' à corriger    ➖ '+t[3]+' sans objet'));
+const pr=KS.filter(k=>lv(D[k])>0&&lv(D[k])<3).sort((a,b)=>lv(D[b])-lv(D[a]));
+o.appendChild(E('h3','margin:18px 0 6px','🎯 À traiter en priorité'));
+if(!pr.length)o.appendChild(E('div','','Rien à traiter : tous les sujets sont en bon état.'));pr.slice(0,5).forEach(k=>o.appendChild(row(k,D,1)));
+r.textContent=(t[2]?'🔴 '+t[2]+' sujet(s) demandent une action rapide : ils sont listés en premier ci-dessus. ':t[1]?'🟡 Aucun point urgent, mais '+t[1]+' sujet(s) à surveiller. ':'✅ Votre ordinateur est en bon état sur tous les sujets. ')+'\n\nPourquoi cette page : elle sert de point de départ. Si tout est vert, inutile d\'aller plus loin. Sinon, cliquez sur « Page complète » du sujet concerné : il explique la cause et la marche à suivre.\nLes ➖ sont des éléments que votre ordinateur n\'a pas (par exemple la batterie sur un ordinateur fixe ; le Bluetooth et le Wi-Fi absents sont détaillés en page B6) : ce n\'est pas un défaut.'})();
 </script></body></html>
