@@ -13,7 +13,16 @@ a:hover{background:#2980b9}
 .section.highlight h2{color:#27ae60}
 .section.highlight a{background:#27ae60}
 .section.highlight a:hover{background:#1e8449}
-</style></head><body>
+</style></head><script>
+document.querySelectorAll('a[href^="?lang="]').forEach(a => {
+  a.onclick = function(e) {
+    e.preventDefault();
+    const lang = new URLSearchParams(this.href.split('?')[1]).get('lang');
+    localStorage.setItem('dmp_lang', lang);
+    window.location.href = window.location.pathname + '?lang=' + lang;
+  };
+});
+</script><body>
 <header><h1>📊 DMP — Debian Maintenance Professionnel</h1></header>
 <div class=container>
 <div class=section style=text-align:center>
@@ -22,7 +31,7 @@ a:hover{background:#2980b9}
 <a href=verification-sante.html>🏥 Vérification santé</a>
 <a href=aide.html>📚 API Docs</a>
 </div>
-
+<div style="position:fixed;top:20px;right:20px;display:flex;gap:15px;z-index:1000"><a href="?lang=fr" style="background:none;color:#3498db;font-size:28px;text-decoration:none;cursor:pointer">🇫🇷</a><a href="?lang=en" style="background:none;color:#3498db;font-size:28px;text-decoration:none;cursor:pointer">🇬🇧</a><a href="?lang=de" style="background:none;color:#3498db;font-size:28px;text-decoration:none;cursor:pointer">🇩🇪</a></div>
 <div class=section>
 <h2>🔍 Section A — Découverte</h2>
 <div class=links>
@@ -75,4 +84,13 @@ a:hover{background:#2980b9}
 </div>
 </div>
 </div>
-<style>body{padding-bottom:44px}</style><div id=dmp-sign style="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#2c3e50;color:#fff;text-align:center;padding:7px 10px;font-size:14px">Créé par Thierry CHEVASSUS, Piton Sainte Rose, île de la Réunion, France</div></body></html>
+<style>body{padding-bottom:44px}</style><div id=dmp-sign style="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#2c3e50;color:#fff;text-align:center;padding:7px 10px;font-size:14px">Créé par Thierry CHEVASSUS, Piton Sainte Rose, île de la Réunion, France</div><script>
+document.querySelectorAll('a[href^="?lang="]').forEach(a => {
+  a.onclick = function(e) {
+    e.preventDefault();
+    const lang = new URLSearchParams(this.href.split('?')[1]).get('lang');
+    localStorage.setItem('dmp_lang', lang);
+    window.location.href = 'tableau-bord.html?lang=' + lang;
+  };
+});
+</script></body></html>
