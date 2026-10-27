@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DMP — E2 Résumé</title><style>
+<title>DMP — E1 Résumé</title><style>
 body{font-family:Arial;margin:0;background:#f8f9fa}
 header{background:#2c3e50;color:white;padding:15px 20px}
 nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-decoration:none}
@@ -12,11 +12,11 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 <header><h1>📊 DMP — Maintenance Debian</h1></header>
 <nav><a href=menu.html>Menu</a> | <a href=aide.html>Aide</a></nav>
 <div class=container>
-<div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>E2 Résumé</strong></div><h1>E2 Résumé</h1>
-<div class=block><h2>Comprendre</h2><p>Le résumé est la première page à lire : il rassemble en un coup d'œil l'identité de votre machine, le nombre de sujets en bon état ou à traiter, et ce qu'il faut faire en premier. Pourquoi : on gagne du temps en ne lisant le détail que là où c'est nécessaire.</p></div>
+<div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>E1 Résumé</strong></div><h1>E1 Résumé</h1>
+<div class=block><h2>Comprendre</h2><p id=comp>Le résumé est la première page à lire : il rassemble en un coup d'œil l'identité de votre machine, le nombre de sujets en bon état ou à traiter, et ce qu'il faut faire en premier. Pourquoi : on gagne du temps en ne lisant le détail que là où c'est nécessaire.</p></div>
 <div class=block><h2>Ce qu'on voit</h2><div id=obs>Chargement…</div></div>
 <div class=block><h2>Ce que ça veut dire</h2><div id=res style="white-space:pre-line;line-height:1.7">Chargement…</div></div>
-<div class=nav-section><a href=d3.html class=btn>← D3 Bénéfices</a><a href=e3-score.html class=btn>Suivant : E3 Score →</a></div></div><script>
+<div class=nav-section><a href=menu.html class=btn>← Menu</a><a href=e2.html class=btn>Suivant : E2 →</a></div></div><script>
 const N={a1:'Processeur',a2:'Mémoire',a3:'Disque (capacité)',a4:'Réseau',a5:'Carte graphique',a6:'Carte mère',a7:'Système Debian',a8:'Périphériques USB',a9:'Alimentation / batterie',b1:'Disponibilité',b2:'Processeur %',b3:'Mémoire %',b4:'Disque % et santé',b5:'Réseau en direct',b6:'Services',b7:'Programmes',b8:'Démarrage',b9:'Sécurité'};
 const IC=['✅','🟡','🔴','➖'],CO=['#27ae60','#e67e22','#c0392b','#7f8c8d'];
 const get=async k=>{try{return await (await fetch('/api/'+k)).json()}catch(e){return {}}};
@@ -24,28 +24,51 @@ const all=async ks=>{const r=await Promise.all(ks.map(get)),o={};ks.forEach((k,i
 const niv=t=>/Non disponible|non identifiée|Ordinateur fixe|Aucun appareil/i.test(t)?3:/défaillance|Surchargé|presque plein|Failles|rapidement|réparer|mauvaise qualité|Non connecté|ne répond pas|à traiter|pas d'internet|à libérer/i.test(t)?2:/surveiller|regarder|conseillé|instable|lent|améliorer|beaucoup de mémoire|sollicite|zombies|indisponible|longtemps|urgence|ettoyage|bloqués|se remplit/i.test(t)?1:0;
 const sp=r=>{r=r||'Pas de réponse';const i=r.indexOf('. ');return i<0?[r,'']:[r.slice(0,i),r.slice(i+2)]};
 const E=(t,s,x)=>{const e=document.createElement(t);if(s)e.style.cssText=s;if(x!==undefined)e.textContent=x;return e};
-const card=(k,d,m)=>{const[v,x]=sp(d.resultat),n=Number.isInteger(d.niveau)&&d.niveau>=0&&d.niveau<=3?d.niveau:3,c=E('div','border:1px solid #ddd;border-left:6px solid '+CO[n]+';border-radius:5px;padding:12px;margin:10px 0;background:#fff');
+const card=(k,d,m)=>{const[v,x]=sp(d.resultat),n=d.resultat?niv(v):3,c=E('div','border:1px solid #ddd;border-left:6px solid '+CO[n]+';border-radius:5px;padding:12px;margin:10px 0;background:#fff');
 c.appendChild(E('div','font-size:17px;font-weight:bold',IC[n]+' '+N[k]+' : '+v));
 if(x&&m)c.appendChild(E('div','margin-top:6px;line-height:1.6','Ce que ça veut dire : '+x));
 if(m&&d.observations){const t=E('details','margin-top:8px');t.open=m===2;t.appendChild(E('summary','cursor:pointer;color:#3498db','Voir le détail'));t.appendChild(E('div','margin-top:8px;padding:10px;background:#f4f6f7;border-radius:4px;line-height:1.6',d.observations));c.appendChild(t)}
-const a=E('a','display:inline-block;margin-top:8px;color:#3498db','Page complète →');a.href=k+'.html';c.appendChild(a);return{c,n}};
+const a=E('a','display:inline-block;margin-top:8px;color:#3498db',(LN==='fr'?'Page complète →':TX[LN].full));a.href=k+'.html';c.appendChild(a);return{c,n}};
 const res=ns=>{const m=[0,0,0,0];ns.forEach(n=>m[n]++);const r=document.getElementById('res');
 r.textContent=m[2]?'🔴 '+m[2]+' point(s) à corriger en priorité, '+m[1]+' à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant rouge signale un risque réel (panne proche, ralentissement fort ou faille de sécurité). Commencez par les cartes rouges, puis passez aux jaunes.':m[1]?'🟡 '+m[1]+' point(s) à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant jaune n\'est pas une panne, c\'est une invitation à regarder sans urgence. Ouvrez la carte concernée : elle explique quoi faire.':'✅ Tout est en bon état ('+m[0]+' points vérifiés, '+m[3]+' sans objet). Pourquoi : aucun composant ne signale de problème. Les ➖ sont des éléments que votre ordinateur n\'a pas (par exemple une batterie sur un ordinateur fixe), ce qui est normal.'};
 Object.assign(N,{c1:'Mises à jour',c2:'Paquets',c3:'Entretien',c4:'Infos techniques'});
-const KS=Object.keys(N),lv=d=>d&&Number.isInteger(d.niveau)&&d.niveau>=0&&d.niveau<=3?d.niveau:3,SC=[100,60,20],
+const LN=window.DMP_LANG||'fr',UN={en:[['week','weeks'],['day','days'],['hour','hours'],['minute','minutes'],['month','months'],['year','years']],de:[['Woche','Wochen'],['Tag','Tage'],['Stunde','Stunden'],['Minute','Minuten'],['Monat','Monate'],['Jahr','Jahre']]},
+TX={fr:{},
+en:{N:{a1:'Processor',a2:'Memory',a3:'Disk (capacity)',a4:'Network',a5:'Graphics card',a6:'Motherboard',a7:'Debian system',a8:'USB devices',a9:'Power / battery',b1:'Availability',b2:'Processor %',b3:'Memory %',b4:'Disk % and health',b5:'Live network',b6:'Services',b7:'Programs',b8:'Startup',b9:'Security',c1:'Updates',c2:'Packages',c3:'Maintenance',c4:'Technical info'},
+lab:{'Machine':'Machine','Système':'System','Processeur':'Processor','Mémoire':'Memory','Disque':'Disk','Allumé depuis':'Running for'},
+unread:'not read',cores:'cores',gb:'GB',occ:', used: ',and:'and',
+comp:'The summary is the first page to read: it gathers at a glance your machine’s identity, how many topics are in good shape or need attention, and what to do first. Why: you save time by reading the detail only where it is needed.',
+bilan:n=>'📊 Overview of '+n+' topics',
+cnt:t=>'✅ '+t[0]+' in good condition    🟡 '+t[1]+' to watch    🔴 '+t[2]+' to fix    ➖ '+t[3]+' not applicable',
+prio:'🎯 To handle first',none:'Nothing to handle: all topics are in good condition.',full:'Full page →',
+concl:t=>(t[2]?'🔴 '+t[2]+' topic(s) need quick action: they are listed first above. ':t[1]?'🟡 Nothing urgent, but '+t[1]+' topic(s) to watch. ':'✅ Your computer is in good condition on all topics. ')+'\n\nWhy this page: it is the starting point. If everything is green, there is no need to go further. Otherwise, click “Full page” for the topic concerned: it explains the cause and what to do.\nThe ➖ are items your computer does not have (for example the battery on a desktop computer; missing Bluetooth and Wi-Fi are detailed on page B6): this is not a fault.'},
+de:{N:{a1:'Prozessor',a2:'Arbeitsspeicher',a3:'Datenträger (Kapazität)',a4:'Netzwerk',a5:'Grafikkarte',a6:'Hauptplatine',a7:'Debian-System',a8:'USB-Geräte',a9:'Stromversorgung / Akku',b1:'Verfügbarkeit',b2:'Prozessor %',b3:'Arbeitsspeicher %',b4:'Datenträger % und Zustand',b5:'Netzwerk live',b6:'Dienste',b7:'Programme',b8:'Systemstart',b9:'Sicherheit',c1:'Aktualisierungen',c2:'Pakete',c3:'Wartung',c4:'Technische Infos'},
+lab:{'Machine':'Maschine','Système':'System','Processeur':'Prozessor','Mémoire':'Arbeitsspeicher','Disque':'Datenträger','Allumé depuis':'Läuft seit'},
+unread:'nicht gelesen',cores:'Kerne',gb:'GB',occ:', belegt: ',and:'und',
+comp:'Die Zusammenfassung ist die erste Seite, die Sie lesen sollten: Sie fasst auf einen Blick die Identität Ihrer Maschine zusammen, wie viele Themen in gutem Zustand sind oder bearbeitet werden müssen und was zuerst zu tun ist. Warum: Sie sparen Zeit, wenn Sie die Einzelheiten nur dort lesen, wo es nötig ist.',
+bilan:n=>'📊 Überblick über '+n+' Themen',
+cnt:t=>'✅ '+t[0]+' in gutem Zustand    🟡 '+t[1]+' zu beobachten    🔴 '+t[2]+' zu beheben    ➖ '+t[3]+' nicht zutreffend',
+prio:'🎯 Zuerst zu erledigen',none:'Nichts zu erledigen: Alle Themen sind in gutem Zustand.',full:'Vollständige Seite →',
+concl:t=>(t[2]?'🔴 '+t[2]+' Thema/Themen erfordern schnelles Handeln: Sie stehen oben an erster Stelle. ':t[1]?'🟡 Nichts Dringendes, aber '+t[1]+' Thema/Themen zu beobachten. ':'✅ Ihr Computer ist bei allen Themen in gutem Zustand. ')+'\n\nWarum diese Seite: Sie ist der Ausgangspunkt. Ist alles grün, müssen Sie nicht weiter nachsehen. Andernfalls klicken Sie beim betreffenden Thema auf „Vollständige Seite“: Dort stehen die Ursache und das weitere Vorgehen.\nDie ➖ sind Dinge, die Ihr Computer nicht hat (zum Beispiel der Akku bei einem Desktop-Computer; fehlendes Bluetooth und WLAN werden auf Seite B6 erläutert): Das ist kein Fehler.'}};
+let DF=null;const allfr=async ks=>{const r=await Promise.all(ks.map(async k=>{try{return await (await fetch('/api/'+k+'?lang=fr')).json()}catch(e){return {}}})),o={};ks.forEach((k,i)=>o[k]=r[i]);return o};
+const FXL=(a,b)=>{const T=TX[LN],c=a.replace(/^[^\p{L}]+/u,''),p=(a.match(/^[^\p{L}]+/u)||[''])[0];b=b.replace(/non lu/g,T.unread).replace(/ cœurs\)/,' '+T.cores+')').replace(/ Go$/,' '+T.gb).replace(', occupé à ',T.occ);
+if(c==='Allumé depuis'){const UA={en:['wk','d','h','min','mo','y'],de:['Wo.','T','Std.','Min.','Mon.','J.']};b=b.replace(/(\d+)\s*(semaines?|jours?|heures?|minutes?|mois|ans?|j|h|min)(?!\p{L})/gu,(m,n,u)=>{const k=/^sem/.test(u)?0:/^j/.test(u)?1:/^h/.test(u)?2:/^min/.test(u)?3:u==='mois'?4:5;return n+' '+(/^(j|h|min)$/.test(u)?UA[LN][k]:UN[LN][k][+n===1?0:1])}).replace(/ et /g,' '+T.and+' ')}
+return [p+(T.lab[c]||c),b]};
+if(LN!=='fr'){Object.assign(N,TX[LN].N);document.getElementById('comp').textContent=TX[LN].comp}
+const KS=Object.keys(N),lv=d=>d&&d.resultat?niv(sp(d.resultat)[0]):3,SC=[100,60,20],
 DOM=[['Matériel',['a1','a2','a5','a6','a9'],'les composants de la machine et leur état'],['Performance',['b1','b2','b3','b7','b8'],'la rapidité et la fluidité au quotidien'],['Stockage',['a3','b4'],'la place disponible et la santé des disques'],['Réseau',['a4','b5'],'la liaison avec internet'],['Sécurité et entretien',['b9','b6','c1','c2','c3'],'les protections, les mises à jour et la propreté du système']],
 dscore=(D,ks)=>{const v=ks.map(k=>lv(D[k])).filter(n=>n<3);return v.length?Math.round(v.reduce((s,n)=>s+SC[n],0)/v.length):null},
 dom=D=>DOM.map(([n,ks,w])=>[n,ks,w,dscore(D,ks)]).filter(x=>x[3]!==null),
 gl=s=>s>=85?0:s>=60?1:2,
-lnk=k=>{const a=E('a','color:#3498db','Page complète →');a.href=k+'.html';return a},
-row=(k,D,wx)=>{const d=D[k]||{},n=lv(d),p=sp(d.resultat),c=E('div','border-left:6px solid '+CO[n]+';padding:8px 12px;margin:8px 0;background:#fff;border-radius:4px;line-height:1.6');c.appendChild(E('b','',IC[n]+' '+N[k]+' : '+p[0]));if(wx&&p[1])c.appendChild(E('div','margin-top:4px','→ '+p[1]));c.appendChild(lnk(k));return c};
-(async()=>{const D=await all(KS),o=document.getElementById('obs'),r=document.getElementById('res');o.textContent='';
-const g=(k,rx)=>{const m=((D[k]||{}).observations||'').match(rx);return m?m[1].trim():'non lu'};
-['💾 Disque',g('a3',/capacité de (\S+)\. Il/)+', '+(g('a3',/occupé à ([^(]*)\(/)||'non lisible')]
-const t=[0,0,0,0];KS.forEach(k=>t[lv(D[k])]++);
-o.appendChild(E('h3','margin:18px 0 6px','📊 Bilan de '+KS.length+' sujets'));o.appendChild(E('div','line-height:1.8','✅ '+t[0]+' en bon état    🟡 '+t[1]+' à surveiller    🔴 '+t[2]+' à corriger    ➖ '+t[3]+' sans objet'));
-const pr=KS.filter(k=>lv(D[k])>0&&lv(D[k])<3).sort((a,b)=>lv(D[b])-lv(D[a]));
-o.appendChild(E('h3','margin:18px 0 6px','🎯 À traiter en priorité'));
-if(!pr.length)o.appendChild(E('div','','Rien à traiter : tous les sujets sont en bon état.'));pr.slice(0,5).forEach(k=>o.appendChild(row(k,D,1)));
-r.textContent=(t[2]?'🔴 '+t[2]+' sujet(s) demandent une action rapide : ils sont listés en premier ci-dessus. ':t[1]?'🟡 Aucun point urgent, mais '+t[1]+' sujet(s) à surveiller. ':'✅ Votre ordinateur est en bon état sur tous les sujets. ')+'\n\nPourquoi cette page : elle sert de point de départ. Si tout est vert, inutile d\'aller plus loin. Sinon, cliquez sur « Page complète » du sujet concerné : il explique la cause et la marche à suivre.\nLes ➖ sont des éléments que votre ordinateur n\'a pas (par exemple la batterie sur un ordinateur fixe ; le Bluetooth et le Wi-Fi absents sont détaillés en page B6) : ce n\'est pas un défaut.'})();
+lnk=k=>{const a=E('a','color:#3498db',(LN==='fr'?'Page complète →':TX[LN].full));a.href=k+'.html';return a},
+row=(k,D,wx)=>{const d=D[k]||{},n=lv((DF&&DF[k])||d),p=sp(d.resultat),c=E('div','border-left:6px solid '+CO[n]+';padding:8px 12px;margin:8px 0;background:#fff;border-radius:4px;line-height:1.6');c.appendChild(E('b','',IC[n]+' '+N[k]+' : '+p[0]));if(wx&&p[1])c.appendChild(E('div','margin-top:4px','→ '+p[1]));c.appendChild(lnk(k));return c};
+(async()=>{const D=await all(KS),DL=LN==='fr'?D:await allfr(KS),o=document.getElementById('obs'),r=document.getElementById('res');o.textContent='';DF=LN==='fr'?null:DL;
+const g=(k,rx)=>{const m=((DL[k]||{}).observations||'').match(rx);return m?m[1].trim():'non lu'};
+[['🖥️ Machine',g('c4',/Machine : ([^\n(]*)/)],['🐧 Système',g('c4',/Système : ([^\n]*)/)],['⚙️ Processeur',g('a1',/un «\s*([^»]*?)\s*»/)+' ('+g('a1',/possède (\d+) cœurs/)+' cœurs)'],['🧠 Mémoire',g('a2',/a ([\d.,]+) Go de mémoire/)+' Go'],['💾 Disque',g('a3',/capacité (\S+?),/)+', occupé à '+g('a3',/occupé à (\d+%)/)],['⏱️ Allumé depuis',g('b1',/Allumé depuis : ([^(\n]*)/)]].forEach(([a,b])=>{if(LN!=='fr')[a,b]=FXL(a,b);const d=E('div','padding:8px 0;border-bottom:1px solid #eee;line-height:1.6');d.appendChild(E('b','',a+' : '));d.appendChild(document.createTextNode(b));o.appendChild(d)});
+const t=[0,0,0,0];KS.forEach(k=>t[lv(DL[k])]++);
+o.appendChild(E('h3','margin:18px 0 6px',(LN==='fr'?'📊 Bilan de '+KS.length+' sujets':TX[LN].bilan(KS.length))));o.appendChild(E('div','line-height:1.8',(LN==='fr'?'✅ '+t[0]+' en bon état    🟡 '+t[1]+' à surveiller    🔴 '+t[2]+' à corriger    ➖ '+t[3]+' sans objet':TX[LN].cnt(t))));
+const pr=KS.filter(k=>lv(DL[k])>0&&lv(DL[k])<3).sort((a,b)=>lv(DL[b])-lv(DL[a]));
+o.appendChild(E('h3','margin:18px 0 6px',(LN==='fr'?'🎯 À traiter en priorité':TX[LN].prio)));
+if(!pr.length)o.appendChild(E('div','',(LN==='fr'?'Rien à traiter : tous les sujets sont en bon état.':TX[LN].none)));pr.slice(0,5).forEach(k=>o.appendChild(row(k,D,1)));
+r.textContent=LN==='fr'?((t[2]?'🔴 '+t[2]+' sujet(s) demandent une action rapide : ils sont listés en premier ci-dessus. ':t[1]?'🟡 Aucun point urgent, mais '+t[1]+' sujet(s) à surveiller. ':'✅ Votre ordinateur est en bon état sur tous les sujets. ')+'\n\nPourquoi cette page : elle sert de point de départ. Si tout est vert, inutile d\'aller plus loin. Sinon, cliquez sur « Page complète » du sujet concerné : il explique la cause et la marche à suivre.\nLes ➖ sont des éléments que votre ordinateur n\'a pas (par exemple la batterie sur un ordinateur fixe ; le Bluetooth et le Wi-Fi absents sont détaillés en page B6) : ce n\'est pas un défaut.'):TX[LN].concl(t)})();
 </script></body></html>

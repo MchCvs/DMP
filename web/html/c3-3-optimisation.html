@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMP — C3.3 — Appliquer une optimisation</title>
   <link rel="stylesheet" href="styles.css">
-</head>
+<script src=i18n.js></script><script src=i18n-c.js></script></head>
 
 <body>
 
@@ -72,7 +72,7 @@
 
         <p id="c3-action-explanation">
           DMP recherche une amélioration qui pourrait
-          être appliquée après ta décision.
+          être appliquée après votre décision.
         </p>
 
       </div>
@@ -166,14 +166,14 @@ async function loadC3() {
     if (cleanup.detected) {
 
       action.textContent =
-        "Tu peux récupérer " +
+        _t("Tu peux récupérer ") +
         cleanup.apt_cache_human +
-        " sur le disque dur";
+        _t(" sur le disque dur");
 
       actionExplanation.textContent =
-        "Debian a conservé des données provenant de " +
-        "téléchargements utilisés pour installer ou mettre " +
-        "à jour des logiciels. Tu peux choisir de les supprimer.";
+        _t("Debian a conservé des données provenant de ") +
+        _t("téléchargements utilisés pour installer ou mettre ") +
+        _t("à jour des logiciels. Tu peux choisir de les supprimer.");
 
       effect.textContent =
         "Récupérer " +
@@ -181,57 +181,57 @@ async function loadC3() {
         " d'espace";
 
       effectExplanation.textContent =
-        "Les logiciels installés resteraient en place. " +
-        "DMP n'effectue pas cette suppression sans ton choix.";
+        _t("Les logiciels installés resteraient en place. ") +
+        _t("DMP n'effectue pas cette suppression sans votre choix.");
 
     } else if (updates.detected) {
 
       action.textContent =
         updates.count +
-        " mise(s) à jour disponible(s)";
+        _t(" mise(s) à jour disponible(s)");
 
       actionExplanation.textContent =
-        "Des mises à jour sont disponibles. " +
-        "DMP ne les installe pas automatiquement.";
+        _t("Des mises à jour sont disponibles. ") +
+        _t("DMP ne les installe pas automatiquement.");
 
       effect.textContent =
-        "Mettre les logiciels à jour";
+        _t("Mettre les logiciels à jour");
 
       effectExplanation.textContent =
-        "Les mises à jour peuvent apporter des corrections " +
-        "et des améliorations.";
+        _t("Les mises à jour peuvent apporter des corrections ") +
+        _t("et des améliorations.");
 
     } else if (autoremove.detected) {
 
       action.textContent =
         autoremove.count +
-        " élément(s) peuvent être examinés";
+        _t(" élément(s) peuvent être examinés");
 
       actionExplanation.textContent =
-        "DMP a trouvé des éléments qui peuvent éventuellement " +
-        "être supprimés. Ils doivent être vérifiés avant toute suppression.";
+        _t("DMP a trouvé des éléments qui peuvent éventuellement ") +
+        _t("être supprimés. Ils doivent être vérifiés avant toute suppression.");
 
       effect.textContent =
-        "Libérer de l'espace sur le disque dur";
+        _t("Libérer de l'espace sur le disque dur");
 
       effectExplanation.textContent =
-        "La suppression ne doit être effectuée qu'après " +
-        "avoir vérifié que ces éléments ne sont plus nécessaires.";
+        _t("La suppression ne doit être effectuée qu'après ") +
+        _t("avoir vérifié que ces éléments ne sont plus nécessaires.");
 
     } else {
 
       action.textContent =
-        "Aucune amélioration à appliquer actuellement";
+        _t("Aucune amélioration à appliquer actuellement");
 
       actionExplanation.textContent =
-        "DMP n'a identifié aucune action qui apporte " +
-        "actuellement un bénéfice suffisamment clair.";
+        _t("DMP n'a identifié aucune action qui apporte ") +
+        _t("actuellement un bénéfice suffisamment clair.");
 
       effect.textContent =
-        "Aucun changement nécessaire";
+        _t("Aucun changement nécessaire");
 
       effectExplanation.textContent =
-        "Aucune modification n'est proposée.";
+        _t("Aucune modification n'est proposée.");
     }
 
     technicalResult.textContent =
@@ -240,20 +240,20 @@ async function loadC3() {
   } catch (error) {
 
     action.textContent =
-      "Information non disponible";
+      _t("Information non disponible");
 
     actionExplanation.textContent =
-      "DMP ne peut pas actuellement récupérer " +
-      "le résultat de l'analyse.";
+      _t("DMP ne peut pas actuellement récupérer ") +
+      _t("le résultat de l'analyse.");
 
     effect.textContent =
-      "Information non disponible";
+      _t("Information non disponible");
 
     effectExplanation.textContent =
-      "L'effet attendu ne peut pas être déterminé.";
+      _t("L'effet attendu ne peut pas être déterminé.");
 
     technicalResult.textContent =
-      "Impossible de récupérer les résultats du collecteur C3.";
+      _t("Impossible de récupérer les résultats du collecteur C3.");
   }
 }
 

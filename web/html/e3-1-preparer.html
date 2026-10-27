@@ -19,7 +19,7 @@
 </div>
 <script>
 async function loadE3(){
-  let r=await fetch('/api/e3_1'');
+  let r=await fetch('/api/e3_1');
   let d=await r.json();
   document.getElementById('e3-comprendre').textContent=d.comprendre||'N/A';
   document.getElementById('e3-observations').textContent=d.observations||'N/A';

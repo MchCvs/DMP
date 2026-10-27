@@ -1,7 +1,11 @@
 #!/bin/bash
-CPU_USAGE=$(ps aux | awk '{sum+=$3} END {print int(sum)}')
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e2.sh" ] || LG=fr
+. "$I18/$LG/e2.sh"
+CPU_USAGE=$(a=$(awk '/^cpu /{print $2+$3+$4+$5+$6+$7+$8,$5+$6}' /proc/stat); sleep 1; b=$(awk '/^cpu /{print $2+$3+$4+$5+$6+$7+$8,$5+$6}' /proc/stat); echo "$a $b" | awk '{dt=$3-$1; di=$4-$2; print (dt>0)?int(100*(dt-di)/dt):0}')
 MEM_USAGE=$(free | grep "^Mem:" | awk '{print int(($3/$2)*100)}')
 DISK_USAGE=$(df / | tail -1 | awk '{print int(($3/$2)*100)}')
 SCORE=$((100 - (CPU_USAGE + MEM_USAGE + DISK_USAGE) / 3))
 SCORE=$([[ $SCORE -lt 0 ]] && echo 0 || echo $SCORE)
-echo "{\"comprendre\":\"Score = une note de santé globale (0-100). Comme un bulletin du médecin pour votre ordinateur.\",\"observations\":\"CPU: $CPU_USAGE% | RAM: $MEM_USAGE% | Disque: $DISK_USAGE% | Score final: $SCORE/100\",\"resultat\":\"$([[ $SCORE -gt 80 ]] && echo 'Excellent' || [[ $SCORE -gt 60 ]] && echo 'Bon' || echo 'À améliorer')\",\"informations_techniques\":{\"cmd\":\"ps aux + free + df (DMP uniquement)\",\"cpu\":$CPU_USAGE,\"mem\":$MEM_USAGE,\"disk\":$DISK_USAGE,\"score\":$SCORE,\"note\":\"Score >80 = Excellent | 60-80 = Bon | <60 = Nettoyage recommandé\"}}"
+if [[ $SCORE -gt 80 ]]; then RES="$T_EXC"; elif [[ $SCORE -gt 60 ]]; then RES="$T_GOOD"; else RES="$T_IMP"; fi
+T_O
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$RES\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"cpu\":$CPU_USAGE,\"mem\":$MEM_USAGE,\"disk\":$DISK_USAGE,\"score\":$SCORE,\"note\":\"$T_NOTE\"}}"

@@ -1,12 +1,12 @@
 <!DOCTYPE html><html><head><meta charset=UTF-8><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>F1-1 Contrôle</title></head><body style=margin:20px>
+<title>F1-1 Contrôle</title><script src=i18n.js></script></head><body style=margin:20px>
 <h1>🔍 F1-1: Contrôle Système</h1>
 <button onclick="check()">Vérifier Maintenant</button>
 <div id=results style=margin-top:20px></div>
 <script>
 async function check(){
-  document.getElementById('results').textContent='Vérification...';
-  let r=await fetch('/api/f1_1'');
+  document.getElementById('results').textContent=({en:'Checking...',de:'Prüfung läuft...'}[window.DMP_LANG]||'Vérification...');
+  let r=await fetch('/api/f1_1');
   let d=await r.json();
   document.getElementById('results').innerHTML='<pre>'+JSON.stringify(d,null,2)+'</pre>';
 }

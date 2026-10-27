@@ -1,4 +1,7 @@
 #!/bin/bash
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e5.sh" ] || LG=fr
+. "$I18/$LG/e5.sh"
 UPTIME=$(uptime -p 2>/dev/null | sed 's/up //')
 LOAD=$(cat /proc/loadavg | awk '{print $1}')
-echo "{\"comprendre\":\"Analyse = regarder tous les détails en microscope. Utile si vous avez un problème à diagnostiquer.\",\"observations\":\"Système actif depuis: $UPTIME | Charge moyenne (dernière minute): $LOAD (0-4 sur 4 cœurs c'est normal)\",\"resultat\":\"Diagnostic complet disponible\",\"informations_techniques\":{\"cmd\":\"uptime -p + /proc/loadavg (DMP uniquement)\",\"uptime\":\"$UPTIME\",\"load_avg\":$LOAD,\"note\":\"Si Load > nombre de cœurs: système surchargé. Sinon: c'est bon\"}}"
+T_O
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"uptime\":\"$UPTIME\",\"load_avg\":$LOAD,\"note\":\"$T_NOTE\"}}"

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMP — C2.3 — Évaluer le bénéfice du nettoyage</title>
   <link rel="stylesheet" href="styles.css">
-</head>
+<script src=i18n.js></script><script src=i18n-c.js></script></head>
 
 <body>
 
@@ -198,8 +198,8 @@ Comparaison avec l'espace disponible</code></pre>
 async function chargerC23() {
   try {
     const [c2Response, diskResponse] = await Promise.all([
-      fetch('/api/c2_1'', { cache: 'no-store' }),
-      fetch('/api/b1'', { cache: 'no-store' })
+      fetch('/api/c2_1', { cache: 'no-store' }),
+      fetch('/api/b1', { cache: 'no-store' })
     ]);
 
     const c2 = await c2Response.json();
@@ -225,7 +225,7 @@ async function chargerC23() {
       if (bytes >= 1024)
         return Math.round(bytes / 1024) + ' KB';
 
-      return bytes + ' octets';
+      return bytes + _t(' octets');
     };
 
     const details = document.querySelectorAll('.detail');
@@ -239,11 +239,11 @@ async function chargerC23() {
       const text = details[0].querySelectorAll('p')[1];
       if (text) {
         text.textContent =
-          'DMP a mesuré environ ' +
+          _t('DMP a mesuré environ ') +
           humanBytes(aptBytes) +
-          ' de fichiers téléchargés par Debian et ' +
+          _t(' de fichiers téléchargés par Debian et ') +
           humanBytes(thumbnailsBytes) +
-          ' de petites images. Ces éléments représentent l’espace actuellement récupérable identifié par DMP.';
+          _t(' de petites images. Ces éléments représentent l’espace actuellement récupérable identifié par DMP.');
       }
     }
 
@@ -261,34 +261,34 @@ async function chargerC23() {
       }
     }
 
-    let benefitStatus = 'INDETERMINE';
+    let benefitStatus = _t('INDETERMINE');
     let benefitExplanation =
-      'DMP ne dispose pas encore de suffisamment d’informations pour déterminer le bénéfice du nettoyage.';
+      _t('DMP ne dispose pas encore de suffisamment d’informations pour déterminer le bénéfice du nettoyage.');
 
-    let recommendation = 'Aucune recommandation';
+    let recommendation = _t('Aucune recommandation');
     let recommendationExplanation =
-      'DMP ne recommande aucune action tant que le bénéfice réel du nettoyage n’est pas établi.';
+      _t('DMP ne recommande aucune action tant que le bénéfice réel du nettoyage n’est pas établi.');
 
     if (recoverableBytes === 0) {
-      benefitStatus = 'AUCUN BENEFICE MESURABLE';
+      benefitStatus = _t('AUCUN BENEFICE MESURABLE');
       benefitExplanation =
-        'Aucun espace récupérable n’a été mesuré. DMP ne recommande donc aucun nettoyage.';
+        _t('Aucun espace récupérable n’a été mesuré. DMP ne recommande donc aucun nettoyage.');
     } else if (diskUsePercent !== null) {
       benefitStatus =
-        'ESPACE RECUPERABLE : ' + humanBytes(recoverableBytes);
+        _t('ESPACE RECUPERABLE : ') + humanBytes(recoverableBytes);
 
       if (diskUsePercent >= 80) {
-        recommendation = 'Nettoyage potentiellement utile';
+        recommendation = _t('Nettoyage potentiellement utile');
         recommendationExplanation =
-          'Le disque est actuellement fortement utilisé. La récupération d’environ ' +
+          _t('Le disque est actuellement fortement utilisé. La récupération d’environ ') +
           humanBytes(recoverableBytes) +
-          ' peut apporter un bénéfice réel. La suppression reste une décision de l’utilisateur.';
+          _t(' peut apporter un bénéfice réel. La suppression reste une décision de l’utilisateur.');
       } else {
-        recommendation = 'Nettoyage possible, mais non nécessaire actuellement';
+        recommendation = _t('Nettoyage possible, mais non nécessaire actuellement');
         recommendationExplanation =
-          'DMP a identifié environ ' +
+          _t('DMP a identifié environ ') +
           humanBytes(recoverableBytes) +
-          ' pouvant être récupérés, mais l’espace actuellement disponible ne montre pas de besoin immédiat de nettoyage.';
+          _t(' pouvant être récupérés, mais l’espace actuellement disponible ne montre pas de besoin immédiat de nettoyage.');
       }
     }
 
@@ -303,8 +303,8 @@ async function chargerC23() {
 
       if (text) {
         text.textContent =
-          'La quantité d’espace récupérable est comparée à l’espace ' +
-          'actuellement disponible sur le disque.';
+          _t('La quantité d’espace récupérable est comparée à l’espace ') +
+          _t('actuellement disponible sur le disque.');
       }
     }
 
@@ -326,35 +326,35 @@ async function chargerC23() {
 
     if (technicalBlocks[0]) {
       technicalBlocks[0].textContent =
-        'Espace actuellement disponible : mesure du disque système\n' +
-        'Fichiers téléchargés par Debian : ' + humanBytes(aptBytes) + '\n' +
-        'Petites images : ' + humanBytes(thumbnailsBytes) + '\n' +
-        'Paquets inutiles détectés : ' + unusedPackages + '\n' +
-        'Espace récupérable mesuré : environ ' + humanBytes(recoverableBytes);
+        _t('Espace actuellement disponible : mesure du disque système\n') +
+        _t('Fichiers téléchargés par Debian : ') + humanBytes(aptBytes) + '\n' +
+        _t('Petites images : ') + humanBytes(thumbnailsBytes) + '\n' +
+        _t('Paquets inutiles détectés : ') + unusedPackages + '\n' +
+        _t('Espace récupérable mesuré : environ ') + humanBytes(recoverableBytes);
     }
 
     if (technicalBlocks[1]) {
       const nl = String.fromCharCode(10);
 
       const technicalResult =
-        'Évaluation C2.3 réalisée à partir des données C2.1 et B1.' +
+        _t('Évaluation C2.3 réalisée à partir des données C2.1 et B1.') +
         nl + nl +
-        'Espace récupérable : ' +
+        _t('Espace récupérable : ') +
         humanBytes(recoverableBytes) +
         nl +
-        'Utilisation du disque : ' +
+        _t('Utilisation du disque : ') +
         (diskUsePercent !== null
           ? diskUsePercent + ' %'
-          : 'information non disponible') +
+          : _t('information non disponible')) +
         nl +
-        'Espace disponible sur le disque : ' +
+        _t('Espace disponible sur le disque : ') +
         (
           disk && disk.disk_available_kb !== undefined
             ? humanBytes(Number(disk.disk_available_kb) * 1024)
-            : 'information non disponible'
+            : _t('information non disponible')
         ) +
         nl +
-        'Recommandation : ' +
+        _t('Recommandation : ') +
         recommendation;
 
       technicalBlocks[1].textContent = technicalResult;

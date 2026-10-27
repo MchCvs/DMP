@@ -1,12 +1,21 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
+I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/c3.sh" ] || LG=fr
+. "$I18/$LG/c3.sh"
 mb(){ [ -d "$1" ] && du -sm "$1" 2>/dev/null | cut -f1 || echo 0; }
 AR=$(apt-get -s autoremove 2>/dev/null | grep -c '^Remv'); CA=$(mb /var/cache/apt/archives); UC=$(mb ~/.cache); TR=$(mb ~/.local/share/Trash)
 KE=$(dpkg -l 'linux-image-[0-9]*' 2>/dev/null | grep -c '^ii'); RC=$(dpkg -l | grep -c '^rc'); JD=$(journalctl --disk-usage 2>/dev/null | sed -n 's/.*take up \([0-9.]*[KMGB]*\).*/\1/p')
 REC=$((CA+TR))
-O="🧹 Un entretien régulier garde l'ordinateur léger, comme ranger sa maison. Voici ce qui s'accumule, avec le moyen de le retirer.${NL}${NL}1) 📦 Paquets devenus inutiles : $AR${NL}   • Rôle : logiciels installés automatiquement pour en servir d'autres, que plus rien n'utilise.${NL}   • Que faire : sudo apt autoremove (lisez la liste proposée avant de valider).${NL}${NL}2) 🗃️ Copies de paquets téléchargés : $CA Mo${NL}   • Rôle : Debian garde les fichiers d'installation au cas où.${NL}   • Que faire : sudo apt clean (efface ces copies, sans risque : elles se retéléchargent si besoin).${NL}${NL}3) 🗂️ Cache de vos applications : $UC Mo${NL}   • Rôle : fichiers gardés pour accélérer vos programmes (miniatures, navigateur).${NL}   • Que faire : ils ne comptent pas dans l'évaluation de la machine : ils se reconstituent seuls et accélèrent vos programmes. Ne les supprimez que si vous manquez de place.${NL}${NL}4) 🗑️ Corbeille : $TR Mo${NL}   • Que faire : videz-la si vous n'avez plus besoin de ces fichiers (ils sont encore récupérables tant qu'elle est pleine).${NL}${NL}5) 🫀 Noyaux Linux installés : $KE${NL}   • Pourquoi : Debian garde l'ancien noyau en secours si le nouveau pose problème. Deux sont normaux, plus de trois peuvent être nettoyés avec autoremove.${NL}${NL}6) 🕳️ Restes de réglages de logiciels supprimés : $RC${NL}   •    • Que faire : $([ $RC -eq 0 ] && echo "rien à supprimer." || echo "sudo apt purge \$(dpkg -l | awk '/^rc/{print \$2}') les supprime (très peu d'espace gagné).").${NL}${NL}💽 Espace récupérable sans risque (copies de paquets et corbeille) : environ $REC Mo"
-if [ $REC -ge 2000 ] || [ $AR -gt 5 ] || [ $KE -gt 3 ]; then R="Un nettoyage serait utile"; X="Plus de 2 Go sont récupérables. Commencez par « sudo apt clean » (sûr), puis videz la corbeille. Pourquoi : un disque qui se remplit ralentit le système (voir page B4)."
-elif [ $REC -ge 500 ] || [ $AR -gt 0 ]; then R="Nettoyage possible"; X="Un peu de place est récupérable : « sudo apt autoremove » et « sudo apt clean » suffisent. Rien d'urgent."
-else R="Système propre"; X="Il y a très peu de déchets : rien à faire. Revérifiez après une grosse mise à jour."; fi
-NV=0; { [ $REC -ge 2000 ] || [ $AR -gt 5 ] || [ $KE -gt 3 ]; } && NV=1; dmp_niveau $NV
-export X; j "L'entretien consiste à retirer ce qui ne sert plus : logiciels inutiles, copies de téléchargements, caches. Pourquoi : ces restes s'accumulent en silence, occupent de la place sur le disque et le ralentissent." "$O" "$R" "apt-get -s autoremove, du, dpkg -l, journalctl (DMP uniquement)"
+if [ $REC -ge 2000 ] || [ $AR -gt 5 ] || [ $KE -gt 3 ]; then CL=big; elif [ $REC -ge 500 ] || [ $AR -gt 0 ]; then CL=some; else CL=ok; fi
+T_O
+case "$LG" in en) NOP="Nothing to do.";; de) NOP="Nichts zu tun.";; *) NOP="Rien à faire.";; esac
+O=$(printf '%s\n' "$O" | awk -v msg="$NOP" '
+/^[0-9]+\) /{n=$0;sub(/\).*/,"",n);n+=0;z=($0 ~ /: 0( [A-Za-z]+)?$/);said=0}
+$0==""{z=0}
+z && /^   • / && (n==4 || /sudo/){if(!said){print "   • " msg;said=1};next}
+{print}')
+UP=$(apt-get -s upgrade 2>/dev/null | grep -c '^Inst'); case "$LG" in fr) MU=Mo;; *) MU=MB;; esac
+POSS=$(python3 -c 'import json,sys
+ar,up,ca,mu=int(sys.argv[1] or 0),int(sys.argv[2] or 0),int(sys.argv[3] or 0),sys.argv[4]
+print(json.dumps({"updates":{"detected":up>0,"count":up},"autoremove":{"detected":ar>0,"count":ar},"cleanup":{"detected":ca>0,"apt_cache_mb":ca,"apt_cache_human":"%d %s"%(ca,mu)}}))' "$AR" "$UP" "$CA" "$MU"); export POSS
+export X; j "$T_COMP" "$O" "$R" "$T_CMD"
