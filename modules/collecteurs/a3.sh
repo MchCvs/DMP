@@ -6,7 +6,7 @@ read S U A P <<< $(df -h --output=size,used,avail,pcent / | tail -1); NP=${P%\%}
 D=""; N=0
 while read -r n s r ty m; do [ "$ty" = disk ] || continue; [[ "$n" == zram* ]] && continue; N=$((N+1))
  G=$(awk -v b=$s 'BEGIN{printf "%.1f",b/1e9}'); RMV=$(cat /sys/block/$n/removable 2>/dev/null); TR=$(lsblk -dno TRAN /dev/$n 2>/dev/null)
- if [ "$r" = 0 ]; then KT=ssd; elif [ "$RMV" = 1 ] || [ "$TR" = usb ]; then KT=usb; else KT=hdd; fi
+ if [[ "$m" =~ SSD|ssd ]]; then KT=ssd; elif [ "$r" = 0 ]; then KT=ssd; elif [ "$RMV" = 1 ] || [ "$TR" = usb ]; then KT=usb; else KT=hdd; fi
  T_K
  PT=""; while read -r pn ps pf pm; do [ -z "$pm" ] && continue; u=$(df -h --output=used,pcent "$pm" 2>/dev/null | tail -1 | awk '{print $1" ("$2")"}'); T_PART; done < <(lsblk -nrpo NAME,SIZE,FSTYPE,MOUNTPOINT /dev/$n | tail -n +2)
  T_DISK
