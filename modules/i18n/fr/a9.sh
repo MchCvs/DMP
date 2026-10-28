@@ -1,6 +1,6 @@
 # Textes français du collecteur a9. Ne modifier que le texte.
-T_COMP="L'alimentation est ce qui donne l'énergie à l'ordinateur : le courant du mur, ou la batterie quand on débranche."
-T_COMP_NO="L'alimentation est ce qui donne l'énergie à l'ordinateur : le courant du mur, parfois une batterie."
+T_COMP="L'alimentation est ce qui donne l'énergie à l'ordinateur : le courant du réseau électrique, ou la batterie quand on débranche."
+T_COMP_NO="L'alimentation est ce qui donne l'énergie à l'ordinateur : le courant du réseau électrique, parfois une batterie."
 T_NO_O="Aucune batterie détectée : c'est un ordinateur fixe, branché en permanence sur le secteur. Pourquoi : un ordinateur fixe n'a pas de batterie, c'est tout à fait normal."
 T_NO_R="Ordinateur fixe (normal)"
 T_CMD="/sys/class/power_supply"
