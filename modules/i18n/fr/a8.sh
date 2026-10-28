@@ -9,7 +9,7 @@ case $sp in 1.5) V="USB 1.0, très lent";; 12) V="USB 1.1, lent";; 480) V="USB 2
 }
 T_T() {
 case $c in
-03) T="clavier, souris ou manette"; E="C'est ce qui vous permet de commander l'ordinateur. Sans lui, vous ne pourriez ni taper ni cliquer.";;
+03) case $type_device in keyboard) T="clavier"; E="Type : clavier. Rôle : C'est ce qui vous permet de taper. Sans lui, vous ne pourriez pas entrer de commandes.";; mouse) T="souris"; E="Type : souris. Rôle : C'est ce qui vous permet de commander l'ordinateur. Sans lui, vous ne pourriez pas cliquer.";; gamepad) T="manette"; E="Type : manette. Rôle : C'est ce qui vous permet de jouer.";; *) T="clavier, souris ou manette"; E="C'est ce qui vous permet de commander l'ordinateur. Sans lui, vous ne pourriez ni taper ni cliquer.";; esac;;
 08) T="clé USB ou disque externe"; E="C'est un support de stockage amovible, utile pour transporter ou sauvegarder des fichiers. Un port rapide accélère les copies.";;
 0e) T="webcam"; E="C'est la caméra qui filme pour les appels vidéo.";;
 01) T="appareil audio (micro, casque, enceinte)"; E="Il sert à entendre ou à enregistrer du son.";;

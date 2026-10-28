@@ -12,6 +12,12 @@ for d in /sys/bus/usb/devices/*; do
  nom=$(echo "$m $p" | xargs | tr -d '"\\')
  c=$(cat $d/bDeviceClass); [ "$c" = 00 ] && c=$(cat $d/*:1.0/bInterfaceClass 2>/dev/null | head -1)
  sp=$(cat $d/speed 2>/dev/null)
+  case "$nom" in
+   *[Kk]eyboard*) type_device="keyboard";;
+   *[Mm]ouse*) type_device="mouse";;
+   *[Gg]amepad*|*[Jj]oystick*) type_device="gamepad";;
+   *) type_device="generic";;
+  esac
  T_V; T_T
  N=$((N+1)); T_DEV
 done
