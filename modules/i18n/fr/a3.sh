@@ -3,7 +3,7 @@ T_COMP="Les disques sont les armoires de votre ordinateur : c'est là que tout e
 T_CMD="lsblk, df -h"
 T_K() {
 case $KT in
-usb) K="support USB amovible (une clé est en mémoire flash, sans pièce mobile ; un disque dur externe a un plateau qui tourne)";;
+usb) K="support USB amovible (clé USB = mémoire flash ; disque dur externe = flash ou mécanique)";;
 ssd) K="SSD (sans pièce mobile : rapide, silencieux, résistant aux chocs)";;
 *) K="disque dur mécanique (un plateau tourne : plus lent, il s'use avec les années)";;
 esac

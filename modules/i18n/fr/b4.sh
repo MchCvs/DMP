@@ -3,7 +3,7 @@ T_COMP="Cette page montre combien chaque espace de rangement de votre ordinateur
 T_CMD="lsblk, df -h"
 T_K() {
 case $KT in
-usb) K="support USB amovible (une clé USB est en mémoire flash, sans pièce mobile ; un disque dur externe contient un plateau qui tourne, et DMP ne peut pas les distinguer par cette voie)";;
+usb) K="support USB amovible (clé USB = mémoire flash ; disque dur externe = flash ou mécanique)";;
 ssd) K="SSD (sans pièce mobile : rapide, silencieux, résistant aux chocs)";;
 *) K="disque dur mécanique (un plateau tourne : plus lent, et il s'use avec les années)";;
 esac
