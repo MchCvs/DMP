@@ -28,4 +28,11 @@ if [ -n "$Y" ]; then A=$(( $(date +%Y) - Y ))
  if [ $A -le 3 ]; then AC=new; elif [ $A -le 6 ]; then AC=mid; else AC=old; fi
 fi
 T_O
-printf '{"comprendre":"%s","observations":"%s","resultat":"%s","informations_techniques":{"cores":%s,"load":%s,"model":"%s","cmd":"%s"}}\n' "$T_COMP" "$O" "$R" "$C" "$L" "$M" "$T_CMD"
+NV=0
+[[ "$R" =~ "À surveiller" ]] && NV=1
+[[ "$R" =~ "À corriger" ]] && NV=2
+NV=0
+[[ "$R" =~ "À surveiller" ]] && NV=1
+[[ "$R" =~ "À corriger" ]] && NV=2
+printf '{"comprendre":"%s","observations":"%s","resultat":"%s","informations_techniques":{"cores":%s,"load":%s,"model":"%s","cmd":"%s"},"niveau":%s}
+' "$T_COMP" "$O" "$R" "$C" "$L" "$M" "$T_CMD" "$NV"
