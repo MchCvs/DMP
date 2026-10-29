@@ -8,5 +8,5 @@ A=$(ip -4 -o addr show "$F" | awk '{print $4}' | head -1)
 WL=""; [ -d /sys/class/net/$F/wireless ] && WL=1
 T_O
 export X
-export NV=$LV
+export NV=0
 j "$T_COMP" "$O" "$R" "$T_CMD"
