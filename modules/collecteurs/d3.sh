@@ -9,4 +9,5 @@ UP=$(apt list --upgradable 2>/dev/null | tail -n +2 | wc -l); [ $UP -eq 0 ] && {
 { systemctl is-active --quiet ufw || grep -qi "^ENABLED=yes" /etc/ufw/ufw.conf; } && { FW="$T_ON"; E4="✅"; S=$((S+1)); } || { FW="$T_OFF"; E4="🟡"; }
 T_O
 export X="$T_X"
+export NV=$LV
 j "$T_COMP" "$O" "$R" "$T_CMD"

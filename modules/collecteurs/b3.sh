@@ -7,4 +7,5 @@ P=$(awk '/MemTotal/{t=$2}/MemAvailable/{a=$2}END{printf "%d",(t-a)*100/t}' /proc
 RAW=$(ps -eo pmem,comm --sort=-pmem --no-headers | head -3)
 if [ $P -ge 85 ]; then PL=2; elif [ $P -ge 60 ]; then PL=1; else PL=0; fi
 T_O
+export NV=$LV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

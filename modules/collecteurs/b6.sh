@@ -23,4 +23,5 @@ T_SVCS
 T=$((NF+NUF))
 if [ $T -eq 0 ]; then TL=0; elif [ $T -le 2 ]; then TL=1; else TL=2; fi
 T_O
+export NV=$LV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

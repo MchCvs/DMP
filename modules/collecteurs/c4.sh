@@ -16,4 +16,5 @@ I="$(dirname "$0")/../i18n"; L=${DMP_LANG:-fr}; [ -f "$I/$L/c4.sh" ] || L=fr
 case $(uname -m) in x86_64) AR="$T_AR64";; i?86) AR="$T_AR32";; *) AR="$(uname -m)";; esac
 T_O
 export X="$T_X"
+export NV=$LV
 j "$T_COMP" "$O" "$T_TITLE" "uname, /etc/os-release, /sys/class/dmi/id"

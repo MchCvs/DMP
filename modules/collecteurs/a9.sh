@@ -10,4 +10,5 @@ WL=none; W=""
 if [ -n "$full" ] && [ -n "$des" ] && [ "$des" -gt 0 ]; then W=$((full*100/des)); if [ $W -ge 80 ]; then WL=good; elif [ $W -ge 60 ]; then WL=mid; else WL=bad; fi; fi
 T_O
 export X
+export NV=$LV
 j "$T_COMP" "$O" "$R" "$T_CMD"

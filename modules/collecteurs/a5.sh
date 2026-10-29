@@ -20,4 +20,5 @@ if [ -n "$Y" ]; then A=$(( $(date +%Y) - Y ))
 fi
 T_O
 export X
+export NV=$LV
 j "$T_COMP" "$O" "$R" "$T_CMD"

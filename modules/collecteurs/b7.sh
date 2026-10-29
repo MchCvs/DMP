@@ -24,4 +24,5 @@ elif [ "${TCP:-0}" -ge 80 ]; then RL=cpu
 elif [ "$ZO" -gt 5 ]; then RL=zomb
 else RL=ok; fi
 T_O
+export NV=$LV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

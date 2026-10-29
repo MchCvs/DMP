@@ -10,4 +10,5 @@ if [ "$I" -ge 16 ]; then LV=3; elif [ "$I" -ge 8 ]; then LV=2; elif [ "$I" -ge 4
 if [ "$P" -lt 60 ]; then PL=0; elif [ "$P" -lt 85 ]; then PL=1; else PL=2; fi
 T_O
 export X
+export NV=$LV
 j "$T_COMP" "$O" "$R" "$T_CMD"

@@ -9,4 +9,5 @@ yr=${Y##*/}; XA=""
 if [[ "$yr" =~ ^[0-9]{4}$ ]]; then XA=$(( $(date +%Y) - yr )); fi
 T_O
 export X
+export NV=$LV
 j "$T_COMP" "$O" "$R" "$T_CMD"
