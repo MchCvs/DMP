@@ -471,6 +471,7 @@
         });
       }).observe(document.body, { childList: true, subtree: true });
     }
+    if (document.querySelector('.lang-bar')) return;
     var nav = document.querySelector('nav') || document.querySelector('header');
     if (!nav) return;
     var box = document.createElement('span');
