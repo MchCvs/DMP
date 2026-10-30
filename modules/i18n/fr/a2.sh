@@ -14,10 +14,10 @@ XU="Elle est faible : l'ordinateur sera lent dès qu'on ouvre plusieurs choses, 
 esac
 case $PL in
 0) XE="En ce moment vous n'en utilisez qu'une partie ($P %) : vous avez de la marge.";;
-1) XE="Elle est assez utilisée ($P %) mais reste correcte.";;
+1) XE="Elle est assez utilisée ($P %) : elle commence à peser, fermez les programmes dont vous n'avez plus besoin.";;
 *) XE="Elle est presque pleine ($P %) : fermez des programmes ou des onglets.";;
 esac
-R="Mémoire en bonne forme"; [ "$PL" = 2 ] && R="Mémoire presque pleine : l'ordinateur risque de ralentir"
+R="Mémoire en bonne forme"; [ "$PL" = 1 ] && R="Mémoire assez utilisée, à surveiller"; [ "$PL" = 2 ] && R="Mémoire presque pleine : l'ordinateur risque de ralentir"
 X="$XU $XE"
 O="Votre ordinateur a $T Go de mémoire, $Q. En ce moment $P % est occupé et il reste $D Go libres. Pourquoi c'est important : quand le bureau est plein, l'ordinateur doit ranger des choses sur le disque, qui est bien plus lent, et tout ralentit. Tant qu'il reste de la place libre, tout reste fluide."
 }
