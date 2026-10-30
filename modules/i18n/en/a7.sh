@@ -9,5 +9,5 @@ none) XU="Your version is not numbered (testing or unstable): more recent, but l
 esac
 X="$XU For everyday use, Debian is perfectly sufficient: browser, office work and multimedia run without trouble."
 O="You are using $PRETTY_NAME. Its kernel (the core of the system, which talks directly to the hardware) is version $(uname -r), for a $(uname -m) architecture. Why it matters: knowing its version tells you whether it is still supported and updated. Debian is known for its stability."
-R="System recognised"
+R="Debian 13, current version"; [ "$VC" = 12 ] && R="Debian 12, nearing end of life: plan the upgrade"; [ "$VC" = old ] && R="Old Debian version, no more security updates"; [ "$VC" = none ] && R="Debian version not identified"
 }
