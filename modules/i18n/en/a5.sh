@@ -13,7 +13,7 @@ esac
 if [ -n "$Y" ]; then
  case $AC in new) D="recent";; mid) D="mid-aged";; *) D="old";; esac
  AG="Age: judging by its name, this is a $D chip, released around $Y (about $A year(s) ago). Why it matters: a recent chip is faster, uses less energy and can play the latest videos without tiring the processor; an older one remains fine for internet and office work, but struggles with modern videos and recent games."
-else AG="Age: it could not be determined, because the name “${G}” contains no date indication that DMP can read. To find out, type this exact name in a search engine with “release date”."; fi
+else AG=""; fi
 X="$XU $AG"
 O="Your computer uses: “${G}”. $K Why it is useful to know: it tells you whether the computer can handle games or editing, or whether it is rather made for everyday use."
 R="Detected"
