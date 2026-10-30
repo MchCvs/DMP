@@ -41,6 +41,6 @@ unstable) R="Unstable connection"; X="Packets are being lost: this causes dropou
 nodns) R="Internet responds, but website names are not resolved"; X="Websites will not open by name: the directory service (DNS) is down, restart the router.";;
 *) R="Healthy connection"; X="Every link responds well: browsing, videos and updates work normally.";;
 esac
-[ $LV -eq 1 ] && X="$X Point of attention: $DR dropped packet(s), or $PCT % of the traffic. Why keep an eye on it: lost packets have to be requested again, which slows pages and makes videos stutter. Details under “Link quality”."
+[ $LV -eq 1 ] && { R="Connection to watch"; X="Every link responds, but $DR packet(s) out of $TOT were lost on the way ($PCT % of the traffic). Why keep an eye on it: lost packets have to be requested again, which slows pages and makes videos stutter. Details under “Link quality”."; }
 [ $LV -eq 2 ] && { R="Poor link quality"; X="$X $DR dropped packet(s) ($PCT %) and $ER error(s): real data is being lost. Check the cable (replace it if possible) or move closer to the router on Wi-Fi."; }
 }
