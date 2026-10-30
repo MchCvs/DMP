@@ -1,7 +1,7 @@
 T_COMP="Die Stromversorgung liefert dem Computer Energie: der Strom aus der Steckdose oder der Akku, wenn Sie den Stecker ziehen."
 T_COMP_NO="Die Stromversorgung liefert dem Computer Energie: der Strom aus der Steckdose, manchmal ein Akku."
 T_NO_O="Kein Akku erkannt: Das ist ein Desktop-Computer, der dauerhaft am Stromnetz hängt. Warum: Ein Desktop-Computer hat keinen Akku, das ist völlig normal."
-T_NO_R="Desktop-Computer (normal)"
+T_NO_R="Desktop-Computer, keine Batterie erkannt."
 T_CMD="/sys/class/power_supply"
 T_O() {
 case $WL in
