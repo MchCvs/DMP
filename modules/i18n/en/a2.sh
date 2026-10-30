@@ -9,7 +9,7 @@ XU="It is enough for everyday use (internet with many tabs, office work, videos,
 1) Q="a decent amount, but tight if you open many things"
 XU="It is enough for internet and office work, but becomes tight with many tabs, because recent browsers are demanding.";;
 *) Q="a small amount: the computer can quickly slow down"
-XU="It is small: the computer will be slow as soon as you open several things, because the desk is too small.";;
+XU="It is small: it is enough for light use, and runs better with few programs open.";;
 esac
 case $PL in
 0) XE="Right now you are using only part of it ($P %): you have room to spare.";;
