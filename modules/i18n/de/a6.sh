@@ -4,7 +4,7 @@ T_NO_O="Seine Informationen können hier nicht gelesen werden. Warum: Das ist be
 T_NO_R="Nicht verfügbar"
 T_CMD="/sys/class/dmi/id"
 T_O() {
-if [ -n "$XA" ]; then XU="Das Startprogramm stammt aus dem Jahr $yr, also vor etwa $XA Jahr(en): Das gibt eine Vorstellung vom Alter der Hauptplatine. "; else XU=""; fi
+if [ -n "$XA" ]; then [ "$XA" -le 1 ] && S="" || S="e"; XU="Das Startprogramm stammt aus dem Jahr $yr, also vor etwa $XA Jahr$S: Das gibt eine Vorstellung vom Alter der Hauptplatine. "; else XU=""; fi
 X="${XU}Wenn der Computer startet und gut funktioniert, ist nichts zu tun: Ein BIOS-Update birgt ein Risiko, daher macht man es nur, um ein bestimmtes Problem zu beheben."
 O="Ihre Hauptplatine ist eine „${N}“ des Herstellers $V. Sein Startprogramm (BIOS) hat die Version $B und ist vom $Y datiert. Warum das nützlich ist: Das BIOS ist das erste Programm, das startet, wenn Sie den Computer einschalten. Eine sehr alte Version kann Korrekturen vermissen lassen, wird aber nur geändert, wenn es nötig ist."
 R="Identifiziert"
