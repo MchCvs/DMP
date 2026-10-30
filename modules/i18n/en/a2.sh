@@ -16,7 +16,7 @@ case $PL in
 1) XE="It is fairly well used ($P %) but still fine.";;
 *) XE="It is almost full ($P %): close some programs or tabs.";;
 esac
-R="Memory in good shape"; [ "$PL" = 2 ] && R="Memory almost full: the computer may slow down"
+R="Memory in good shape"; [ "$PL" = 1 ] && R="Memory fairly used, to watch"; [ "$PL" = 2 ] && R="Memory almost full: the computer may slow down"
 X="$XU $XE"
 O="Your computer has $T GB of memory, $Q. Right now $P % is in use and $D GB remain free. Why it matters: when the desk is full, the computer has to put things away on the disk, which is much slower, and everything slows down. As long as there is free space, everything stays smooth."
 }
