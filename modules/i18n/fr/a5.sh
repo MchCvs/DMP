@@ -14,7 +14,7 @@ esac
 if [ -n "$Y" ]; then
  case $AC in new) D="récente";; mid) D="d'âge moyen";; *) D="ancienne";; esac
  AG="Âge : d'après son nom, c'est une puce $D, sortie vers $Y (il y a environ $A an(s)). Pourquoi cela compte : une puce récente est plus rapide, consomme moins d'énergie et sait lire les vidéos les plus récentes sans fatiguer le processeur ; une ancienne reste correcte pour internet et la bureautique, mais peine sur les vidéos modernes et les jeux récents."
-else AG="Âge : non déterminé à partir du nom de la carte."; fi
+else AG=""; fi
 X="$XU $AG"
 O="Votre ordinateur utilise : « $G ». $K Pourquoi c'est utile de le savoir : cela vous dit si l'ordinateur peut gérer des jeux ou du montage, ou s'il est plutôt fait pour un usage courant."
 if [ "$GK" = int ]; then R="Carte intégrée au processeur"; else R="Carte dédiée"; fi
