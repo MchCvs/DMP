@@ -13,7 +13,7 @@ esac
 if [ -n "$Y" ]; then
  case $AC in new) D="neu";; mid) D="von mittlerem Alter";; *) D="alt";; esac
  AG="Alter: Dem Namen nach ist der Chip $D, erschienen um $Y (vor etwa $A Jahr(en)). Warum das wichtig ist: Ein neuer Chip ist schneller, verbraucht weniger Energie und kann die neuesten Videos abspielen, ohne den Prozessor zu belasten; ein alter reicht weiterhin für Internet und Büroarbeit, hat aber mit modernen Videos und aktuellen Spielen Mühe."
-else AG="Alter: Es konnte nicht ermittelt werden, da der Name „${G}“ keinen Hinweis auf ein Datum enthält, den DMP lesen kann. Um es herauszufinden, geben Sie genau diesen Namen zusammen mit „Erscheinungsdatum“ in eine Suchmaschine ein."; fi
+else AG=""; fi
 X="$XU $AG"
 O="Ihr Computer verwendet: „${G}“. $K Warum es nützlich ist, das zu wissen: Es zeigt Ihnen, ob der Computer Spiele oder Videoschnitt bewältigen kann oder eher für den normalen Gebrauch gedacht ist."
 R="Erkannt"
