@@ -6,9 +6,9 @@ T_NO_R="Non identifiée"
 T_CMD="lspci"
 T_O() {
 case $GK in
-ded) K="C'est probablement une carte dédiée : une pièce séparée, puissante, pensée pour les jeux et le montage vidéo."
+ded) K="C'est une carte dédiée : une pièce séparée, puissante, pensée pour les jeux et le montage vidéo."
 XU="Elle est suffisante pour les jeux et le montage vidéo, car c'est une pièce dédiée avec sa propre puissance.";;
-*) K="C'est probablement une puce graphique intégrée : elle est dans le processeur, suffit pour internet, la vidéo et la bureautique, mais est moins adaptée aux jeux récents."
+*) K="C'est une puce graphique intégrée : elle est dans le processeur, suffit pour internet, la vidéo et la bureautique, mais est moins adaptée aux jeux récents."
 XU="Elle est suffisante pour internet, les vidéos (même en HD), les photos et la bureautique. Pour les jeux 3D récents ou le montage vidéo lourd elle sera limitée, car elle partage la puissance avec le processeur.";;
 esac
 if [ -n "$Y" ]; then
