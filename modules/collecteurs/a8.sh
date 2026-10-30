@@ -9,7 +9,7 @@ for d in /sys/bus/usb/devices/*; do
  v=$(cat $d/idVendor); [ "$v" = 1d6b ] && continue
  p=$(cat $d/product 2>/dev/null); m=$(cat $d/manufacturer 2>/dev/null)
  [ -z "$p" ] && p=$(LC_ALL=C lsusb -d $v:$(cat $d/idProduct) 2>/dev/null | cut -d' ' -f7-)
- nom=$(echo "$m $p" | xargs | tr -d '"\\')
+nom=$(echo "$m $p" | xargs | tr -d '"\\'); [ -n "$m" ] && [ "$m" = "$p" ] && nom="$p"
  c=$(cat $d/bDeviceClass); [ "$c" = 00 ] && c=$(cat $d/*:1.0/bInterfaceClass 2>/dev/null | head -1)
  sp=$(cat $d/speed 2>/dev/null)
   case "$nom" in
