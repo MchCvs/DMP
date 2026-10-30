@@ -5,9 +5,9 @@ T_NO_R="Not identified"
 T_CMD="lspci"
 T_O() {
 case $GK in
-ded) K="This is probably a dedicated card: a separate, powerful component designed for games and video editing."
+ded) K="This is a dedicated card: a separate, powerful component designed for games and video editing."
 XU="It is enough for games and video editing, because it is a dedicated component with its own power.";;
-*) K="This is probably an integrated graphics chip: it is inside the processor, is enough for internet, video and office work, but is less suited to recent games."
+*) K="This is an integrated graphics chip: it is inside the processor, is enough for internet, video and office work, but is less suited to recent games."
 XU="It is enough for internet, videos (even in HD), photos and office work. For recent 3D games or heavy video editing it will be limited, because it shares power with the processor.";;
 esac
 if [ -n "$Y" ]; then
