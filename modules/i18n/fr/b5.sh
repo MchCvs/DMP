@@ -42,6 +42,6 @@ unstable) R="Connexion instable"; X="Des paquets se perdent : cela cause des cou
 nodns) R="Internet répond, mais les noms de sites ne sont pas résolus"; X="Les sites ne s'ouvriront pas par leur nom : le service d'annuaire (DNS) est en panne, redémarrez la box.";;
 *) R="Connexion saine"; X="Chaque maillon répond bien : navigation, vidéos et mises à jour fonctionnent normalement.";;
 esac
-[ $LV -eq 1 ] && X="$X Point d'attention : $DR paquet(s) abandonné(s), soit $PCT % du trafic. Pourquoi surveiller : des paquets perdus doivent être redemandés, ce qui ralentit les pages et saccade les vidéos. Détail dans « Qualité de la liaison »."
-[ $LV -eq 2 ] && { R="Liaison de mauvaise qualité"; X="$X $DR paquet(s) abandonné(s) ($PCT %) et $ER erreur(s) : de vraies données se perdent. Vérifiez le câble (changez-le si possible) ou rapprochez-vous de la box en Wi-Fi."; }
+[ $LV -eq 1 ] && { R="Connexion à surveiller"; X="Chaque maillon répond, mais $DR paquet(s) sur $TOT ont été perdus en route (soit $PCT % du trafic). Pourquoi surveiller : des paquets perdus doivent être redemandés, ce qui ralentit les pages et saccade les vidéos. Détail dans « Qualité de la liaison »."; }
+[ $LV -eq 2 ] && { R="Liaison de mauvaise qualité"; X="$X $DR paquet(s) abandonné(s) ($PCT %) et $ER erreur(s) : des données utiles se perdent."; if [ "$KW" = 1 ]; then X="$X Rapprochez-vous de la box, ou passez en câble si c'est possible."; else X="$X Redémarrez la box. Si le problème persiste, signalez-le à votre fournisseur d'accès en notant la date et l'heure."; fi; }
 }
