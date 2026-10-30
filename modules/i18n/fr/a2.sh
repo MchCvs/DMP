@@ -10,7 +10,7 @@ XU="Elle est suffisante pour un usage courant (internet avec beaucoup d'onglets,
 1) Q="une quantité correcte mais juste si vous ouvrez beaucoup de choses"
 XU="Elle suffit pour internet et la bureautique, mais devient juste avec beaucoup d'onglets, car les navigateurs récents sont gourmands.";;
 *) Q="une quantité faible : l'ordinateur peut vite ralentir"
-XU="Elle est faible : l'ordinateur sera lent dès qu'on ouvre plusieurs choses, car le bureau est trop petit.";;
+XU="Elle est petite : elle suffit pour un usage léger, et tient mieux avec peu de programmes ouverts.";;
 esac
 case $PL in
 0) XE="En ce moment vous n'en utilisez qu'une partie ($P %) : vous avez de la marge.";;
