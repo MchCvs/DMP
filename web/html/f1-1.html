@@ -16,7 +16,7 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 <div class=block><h2>Comprendre</h2><p id=comp>Le contrôle est une vérification générale de votre ordinateur, comme le contrôle technique d'une voiture : chaque point est examiné l'un après l'autre et reçoit un verdict. Pourquoi : on ne laisse rien passer, et on voit en une page si tout est en ordre.</p></div>
 <div class=block><h2>Ce qu'on voit</h2><div id=obs>Chargement…</div></div>
 <div class=block><h2>Ce que ça veut dire</h2><div id=res style="white-space:pre-line;line-height:1.7">Chargement…</div></div>
-<div class=nav-section><a href=e5-graphiques.html class=btn>← Précédent : E5</a><a href=f1-2.html class=btn>Suivant : F1-2 →</a></div></div><script>
+<div class=nav-section><a href=e5-graphiques.html class=btn>← E5 Graphiques</a><a href=menu.html class=btn>🏠</a><a href=f1-2.html class=btn>Suivant : F1-2 Résultats →</a></div></div><script>
 const N={a1:'Processeur',a2:'Mémoire',a3:'Disque (capacité)',a4:'Réseau',a5:'Carte graphique',a6:'Carte mère',a7:'Système Debian',a8:'Périphériques USB',a9:'Alimentation / batterie',b1:'Disponibilité',b2:'Processeur %',b3:'Mémoire %',b4:'Disque % et santé',b5:'Réseau en direct',b6:'Services',b7:'Programmes',b8:'Démarrage',b9:'Sécurité'};
 const IC=['✅','🟡','🔴','➖'],CO=['#27ae60','#e67e22','#c0392b','#7f8c8d'];
 const get=async k=>{try{return await (await fetch('/api/'+k)).json()}catch(e){return {}}};

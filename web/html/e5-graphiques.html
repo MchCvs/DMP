@@ -16,7 +16,7 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 <div class=block><h2>Comprendre</h2><p>Les graphiques transforment les résultats du rapport en images : une barre longue et verte est bonne, une barre courte ou rouge signale où agir. Pourquoi : l'œil repère un problème dans un dessin bien plus vite que dans un texte.</p></div>
 <div class=block><h2>Ce qu'on voit</h2><div id=obs>Chargement…</div></div>
 <div class=block><h2>Ce que ça veut dire</h2><div id=res style="white-space:pre-line;line-height:1.7">Chargement…</div></div>
-<div class=nav-section><a href=e4-rapport.html class=btn>← E4 Rapport</a><a href=f1-1.html class=btn>Suivant : F1-1 Contrôle →</a></div></div><script>
+<div class=nav-section><a href=e4-rapport.html class=btn>← E4 Rapport</a><a href=menu.html class=btn>🏠</a><a href=f1-1.html class=btn>Suivant : F1-1 Contrôle →</a></div></div><script>
 const N={a1:'Processeur',a2:'Mémoire',a3:'Disque (capacité)',a4:'Réseau',a5:'Carte graphique',a6:'Carte mère',a7:'Système Debian',a8:'Périphériques USB',a9:'Alimentation / batterie',b1:'Disponibilité',b2:'Processeur %',b3:'Mémoire %',b4:'Disque % et santé',b5:'Réseau en direct',b6:'Services',b7:'Programmes',b8:'Démarrage',b9:'Sécurité'};
 const IC=['✅','🟡','🔴','➖'],CO=['#27ae60','#e67e22','#c0392b','#7f8c8d'];
 const get=async k=>{try{return await (await fetch('/api/'+k)).json()}catch(e){return {}}};
