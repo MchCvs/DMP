@@ -31,5 +31,6 @@ BIGC=$(awk -v a=$firmware -v b=$loader -v c=$KP -v d=$userspace 'BEGIN{m=a;n="fw
 DB=$(uptime -s)
 T_O
 vx
-export NV=$LV
+if [ "$TT" -le 60 ]; then NV=0; elif [ "$TT" -le 120 ]; then NV=1; else NV=2; fi
+export NV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

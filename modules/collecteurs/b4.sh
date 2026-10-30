@@ -20,5 +20,6 @@ while read -r s f t u a p tg; do n=${p%\%}; [ "$n" -gt "$W" ] && W=$n
 done < <(LC_ALL=C df -h --output=source,fstype,size,used,avail,pcent,target -x tmpfs -x devtmpfs -x squashfs -x efivarfs -x overlay | tail -n +2)
 if [ $W -ge 90 ]; then WL=2; elif [ $W -ge 75 ]; then WL=1; else WL=0; fi
 T_O
-export NV=$LV
+if [ "$W" -ge 85 ]; then NV=2; elif [ "$W" -ge 50 ]; then NV=1; else NV=0; fi
+export NV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

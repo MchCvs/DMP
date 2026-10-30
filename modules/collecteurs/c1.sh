@@ -6,5 +6,6 @@ L=$(apt list --upgradable 2>/dev/null | tail -n +2); UP=$(echo "$L" | grep -c .)
 ST=/var/lib/apt/periodic/update-success-stamp; [ -f $ST ] && AG=$(( ($(date +%s)-$(stat -c %Y $ST))/86400 )) || AG=-1
 LST=$( (echo "$L" | grep -i security; echo "$L" | grep -vi security) | grep . | head -15 | awk -v sec="$T_SECL" -v ord="$T_ORDL" -v f="$T_LFMT" '{split($1,a,"/");o=$NF;sub(/\]/,"",o);s=($0~/[Ss]ecurity/)?sec:ord;printf f,a[1],o,$2,s}')
 T_O
-export NV=$LV
+if [ "$SU" -gt 0 ]; then NV=2; elif [ "$UP" -gt 0 ]; then NV=1; else NV=0; fi
+export NV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

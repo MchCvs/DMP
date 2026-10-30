@@ -8,5 +8,5 @@ dt=$((t2-t1)); [ $dt -le 0 ] && dt=1; P=$(( (dt-(i2-i1))*100/dt ))
 RAW=$(ps -eo pcpu,comm --sort=-pcpu --no-headers | grep -v '^ *[0-9.]* *ps$' | head -3)
 if [ $P -ge 85 ]; then PL=2; elif [ $P -ge 50 ]; then PL=1; else PL=0; fi
 T_O
-export NV=$LV
+export NV=$PL
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

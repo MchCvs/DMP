@@ -10,5 +10,5 @@ while IFS=$'\t' read -r sz p sec pri; do [ -z "$p" ] && continue; i=$((i+1)); se
 done < <(dpkg-query -Wf '${Installed-Size}\t${Package}\t${Section}\t${Priority}\n' $(apt-mark showmanual) 2>/dev/null | sort -nr | head -12)
 T_O
 export X="$T_X"
-export NV=$LV
+export NV=3   # liste de suggestions : sans objet
 j "$T_COMP" "$O" "$T_R" "$T_CMD"

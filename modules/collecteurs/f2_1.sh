@@ -14,5 +14,6 @@ elif [ -z "$T" ] && [ -z "$SN" ]; then ST=none
 elif [ -z "$SN" ]; then ST=tool
 else ST=ok; fi
 T_RX
-export NV=$LV
+case "$ST" in ok|recent) NV=0;; old|tool) NV=1;; none) NV=2;; *) NV=3;; esac
+export NV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

@@ -23,5 +23,5 @@ SSHC=stopped; if systemctl is-active --quiet ssh 2>/dev/null || systemctl is-act
 AA=$(cat /sys/module/apparmor/parameters/enabled 2>/dev/null); [ "$AA" = Y ] && AAC=1 || AAC=0
 LG=$(last -n 60 -w 2>/dev/null | grep -v -e '^$' -e wtmp -e reboot | head -5 | sed 's/^/   • /')
 T_O
-export NV=$LV
+export NV=$SC
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

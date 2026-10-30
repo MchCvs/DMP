@@ -14,5 +14,6 @@ W=$LC; [ $LM -gt $W ] && W=$LM; [ $LD -gt $W ] && W=$LD
 vd(){ case $1 in 0) echo "$T_V0";; 1) echo "$T_V1";; *) echo "$T_V2";; esac; }
 T_O
 T_RX
-export NV=$LV
+if [ "$DW" -le 0 ]; then NV=3; elif [ "$DW" -ge 150 ]; then NV=0; elif [ "$DW" -ge 50 ]; then NV=1; else NV=2; fi
+export NV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

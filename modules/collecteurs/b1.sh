@@ -7,5 +7,6 @@ L=$(cut -d' ' -f1 /proc/loadavg); C=$(nproc); DEP=$(uptime -s)
 if [ $J -ge 30 ]; then UL=long; elif [ $J -ge 7 ]; then UL=mid; else UL=new; fi
 RB=""; [ -f /var/run/reboot-required ] && RB=1
 T_O
-export NV=$LV
+if [ -n "$RB" ]; then NV=2; else NV=0; fi
+export NV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

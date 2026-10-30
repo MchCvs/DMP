@@ -24,5 +24,5 @@ done
 if [ "$N" -eq 0 ]; then j "$T_COMP_NO" "$T_NO_O" "$T_NO_R" "$T_CMD"; exit; fi
 T_O
 export X
-export NV=$LV
+NV=0; export NV
 j "$T_COMP" "$O" "$R" "$T_CMD"

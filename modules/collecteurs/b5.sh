@@ -35,5 +35,5 @@ elif [ "$IL" -gt 0 ]; then ST=unstable
 elif [ $DN = 0 ]; then ST=nodns
 else ST=ok; fi
 T_O
-export NV=$SQ
+export NV=$LV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"

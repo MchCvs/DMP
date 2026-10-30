@@ -13,5 +13,6 @@ while read -r n s r ty m; do [ "$ty" = disk ] || continue; [[ "$n" == zram* ]] &
 done < <(lsblk -dnbo NAME,SIZE,ROTA,TYPE,MODEL)
 if [ $SG -ge 500 ]; then SL=3; elif [ $SG -ge 200 ]; then SL=2; else SL=1; fi
 T_O
-export NV=$SL
+if [ "$NP" -lt 50 ]; then DL=0; elif [ "$NP" -lt 85 ]; then DL=1; else DL=2; fi
+export NV=$DL
 export X="$SU"; j "$T_COMP" "$O" "$R" "$T_CMD"

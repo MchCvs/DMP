@@ -5,6 +5,7 @@ I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/a5.sh" ] || LG
 G=$(LC_ALL=C lspci 2>/dev/null | grep -iE 'vga|3d|display' | cut -d: -f3- | xargs)
 if [ -z "$G" ]; then j "$T_COMP_NO" "$T_NO_O" "$T_NO_R" "$T_CMD"; exit; fi
 case "$G" in *NVIDIA*|*Radeon\ RX*|*Radeon\ Pro*) GK=ded;; *) GK=int;; esac
+PIL=$(LC_ALL=C lspci -k 2>/dev/null | grep -iA3 -E "vga|3d|display" | grep "Kernel driver in use" | head -1)
 Y=""
 case "$G" in
 *"HD Graphics 2500"*|*"HD Graphics 4000"*|*Ivy*) Y=2012;; *Haswell*|*"HD Graphics 4600"*) Y=2013;; *Broadwell*|*Skylake*) Y=2015;; *Kaby*|*Coffee*|*"UHD Graphics 6"*) Y=2017;; *Comet*|*"Ice Lake"*|*Tiger*|*"Iris Xe"*) Y=2020;; *Alder*|*Raptor*) Y=2022;; *Meteor*|*Arrow*|*Lunar*) Y=2024;;
@@ -20,5 +21,6 @@ if [ -n "$Y" ]; then A=$(( $(date +%Y) - Y ))
 fi
 T_O
 export X
-export NV=$LV
+if [ -n "$PIL" ]; then NV=0; else NV=2; fi
+export NV
 j "$T_COMP" "$O" "$R" "$T_CMD"

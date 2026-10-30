@@ -17,5 +17,6 @@ BIG="   $V_LEG${NL}${BIG2%$NL}"
 if [ $BRK -gt 0 ]; then HL=brk; elif [ $HOLD -gt 0 ]; then HL=hold; else HL=ok; fi
 T_O
 . "$I18/$LG/c2orig.sh" 2>/dev/null || . "$I18/fr/c2orig.sh"; . "$I18/orig.sh"; O="$O${NL}${NL}$(orig_block)"
-export NV=$LV
+case "$HL" in brk) NV=2;; hold) NV=1;; *) NV=0;; esac
+export NV
 export X; j "$T_COMP" "$O" "$R" "$T_CMD"
