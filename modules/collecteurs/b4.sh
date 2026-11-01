@@ -4,10 +4,10 @@ I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/b4.sh" ] || LG
 . "$I18/$LG/b4.sh"
 D=""; ND=0
 while read -r n s r ty m; do [ "$ty" = disk ] || continue; [[ "$n" == zram* ]] && continue
- RMV=$(cat /sys/block/$n/removable 2>/dev/null); TR=$(lsblk -dno TRAN /dev/$n 2>/dev/null)
+ G=$(awk -v b=$s 'BEGIN{printf "%.1f",b/1e9}'); RMV=$(cat /sys/block/$n/removable 2>/dev/null); TR=$(lsblk -dno TRAN /dev/$n 2>/dev/null)
  if [[ "$m" =~ SSD|ssd ]]; then KT=ssd; elif [ "$r" = 0 ]; then KT=ssd; elif [ "$RMV" = 1 ] || [ "$TR" = usb ]; then KT=usb; else KT=hdd; fi
  T_K
- ND=$((ND+1)); T_DISK; done < <(LC_ALL=C lsblk -dno NAME,SIZE,ROTA,TYPE,MODEL)
+ ND=$((ND+1)); T_DISK; done < <(LC_ALL=C lsblk -dnbo NAME,SIZE,ROTA,TYPE,MODEL)
 SA=""; HN=0
 for dk in $(LC_ALL=C lsblk -dno NAME,TYPE | awk '$2=="disk" && $1!~/^zram/{print $1}'); do
  T=$(python3 "$(dirname "$0")/sante.py" "$dk" "$LG"); c=$?

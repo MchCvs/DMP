@@ -8,7 +8,7 @@ ssd) K="SSD (sans pièce mobile : rapide, silencieux, résistant aux chocs)";;
 *) K="disque dur mécanique (un plateau tourne : plus lent, et il s'use avec les années)";;
 esac
 }
-T_DISK() { D="$D${NL}💽 Disque « $n » : ${m:-modèle inconnu}${NL}   • Capacité : $s${NL}   • Type : $K${NL}"; }
+T_DISK() { D="$D${NL}💽 Disque « $n » : ${m:-modèle inconnu}${NL}   • Capacité : $G Go${NL}   • Type : $K${NL}"; }
 T_NOHEALTH() { T="   ℹ️ État non lisible. Pourquoi : l'outil de lecture (smartmontools) n'a pas l'autorisation, ou c'est une clé USB ou un disque virtuel, qui n'ont en général pas de capteurs de santé lisibles."; }
 T_SAD() { SA="$SA${NL}🩺 Disque « $dk »${NL}$T${NL}"; }
 T_FS() {
