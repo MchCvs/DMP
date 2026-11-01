@@ -43,7 +43,7 @@ row=(k,D,wx)=>{const d=D[k]||{},n=lv(d),p=sp(d.resultat),c=E('div','border-left:
 const g=(k,rx)=>{const m=((D[k]||{}).observations||'').match(rx);return m?m[1].trim():'non lu'};
 ['💾 Disque',g('a3',/capacité de (\S+)\. Il/)+', '+(g('a3',/occupé à ([^(]*)\(/)||'non lisible')]
 const t=[0,0,0,0];KS.forEach(k=>t[lv(D[k])]++);
-o.appendChild(E('h3','margin:18px 0 6px','📊 Bilan de '+KS.length+' sujets'));o.appendChild(E('div','line-height:1.8','✅ '+t[0]+' en bon état    🟡 '+t[1]+' à surveiller    🔴 '+t[2]+' à corriger    ➖ '+t[3]+' sans objet'));
+o.appendChild(E('h3','margin:18px 0 6px','📊 Bilan des '+KS.length+' sujets vérifiés (dont '+t[3]+' sans objet, c\'est-à-dire non applicables à votre machine)'));o.appendChild(E('div','line-height:1.8','✅ '+t[0]+' en bon état    🟡 '+t[1]+' à surveiller    🔴 '+t[2]+' à corriger    ➖ '+t[3]+' sans objet'));
 const pr=KS.filter(k=>lv(D[k])>0&&lv(D[k])<3).sort((a,b)=>lv(D[b])-lv(D[a]));
 o.appendChild(E('h3','margin:18px 0 6px','🎯 À traiter en priorité'));
 if(!pr.length)o.appendChild(E('div','','Rien à traiter : tous les sujets sont en bon état.'));pr.slice(0,5).forEach(k=>o.appendChild(row(k,D,1)));
