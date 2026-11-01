@@ -17,7 +17,7 @@ case $PL in
 1) XE="Elle est assez utilisée ($P %) : elle commence à peser, fermez les programmes dont vous n'avez plus besoin.";;
 *) XE="Elle est presque pleine ($P %) : fermez des programmes ou des onglets.";;
 esac
-R="Mémoire en bonne forme"; [ "$PL" = 1 ] && R="Mémoire assez utilisée, à surveiller"; [ "$PL" = 2 ] && R="Mémoire presque pleine : l'ordinateur risque de ralentir"
+R="Mémoire libre, sans gêne"; [ "$PL" = 1 ] && R="Mémoire chargée, à surveiller"; [ "$PL" = 2 ] && R="Mémoire presque pleine, à libérer"
 X="$XU $XE"
 O="Votre ordinateur a $T Go de mémoire, $Q. En ce moment $P % est occupé et il reste $D Go libres. Pourquoi c'est important : quand le bureau est plein, l'ordinateur doit ranger des choses sur le disque, qui est bien plus lent, et tout ralentit. Tant qu'il reste de la place libre, tout reste fluide."
 }
