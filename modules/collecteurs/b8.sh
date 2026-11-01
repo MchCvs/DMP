@@ -21,7 +21,7 @@ for k,v in d.items(): print(f'{k}={v:.1f}')
 P
 )"
 BL=$(systemd-analyze blame --no-pager 2>/dev/null | head -8)
-BLT="${NL}   $V_LEG"; i=0
+BLT="${NL}   $V_LEG${NL}"; i=0
 while read -r t n; do [ -z "$n" ] && continue; i=$((i+1)); T_BLITEM; BLT="$BLT   $(vline svc "$n")${NL}"; done <<< "$BL"
 dev=$(lsblk -no PKNAME "$(findmnt -no SOURCE /)" 2>/dev/null | head -1); DKC=none
 if [ -n "$dev" ] && [ -r /sys/block/$dev/queue/rotational ]; then if [ "$(cat /sys/block/$dev/queue/rotational)" = 0 ]; then DKC=ssd; else DKC=hdd; fi; fi
