@@ -28,6 +28,12 @@ vrole() {
   [ "${LG:-fr}" = en ] && { echo "$s"; return; }
   local L=${LG:-fr}; [ "$L" = de ] || L=fr
   case "$p" in
+    gnome-software) r="boutique d''applications de GNOME : elle installe et met à jour vos logiciels. La fermer ne gêne pas le bureau.";;
+    mutter*) r="gestionnaire de fenêtres de GNOME : il place et affiche les fenêtres à l''écran. Sans lui, pas de bureau graphique.";;
+    xdg-desktop-portal*) r="pont entre les applications et le bureau : il gère l''ouverture de fichiers et les boîtes de dialogue. Utile pour les logiciels récents.";;
+    evolution-alarm*) r="rappels et alarmes du logiciel de messagerie Evolution (agenda). Le fermer supprime les rappels, sans toucher aux courriels.";;
+    evolution-source*) r="gestion des comptes et agendas d''Evolution (messagerie). Le fermer ne supprime rien, mais les comptes se synchronisent moins souvent.";;
+    *Utility*|*utility*) r="processus de service pour une application (souvent le navigateur ou un logiciel de bureau). Ne pas le couper à la main : il redémarre avec l''application.";;
     containerd|containerd.io|runc) r="moteur de conteneurs (utilisé par Docker et certains outils). Retirer ce service peut casser Docker ou des applications qui en dépendent.|Container-Laufzeit (von Docker und manchen Programmen genutzt). Dieses Dienstprogramm zu entfernen kann Docker oder davon abhängige Programme beschädigen.";;
     code|code-*) r="éditeur de code (Visual Studio Code)|Code-Editor (Visual Studio Code)";;
     linux-image*) r="noyau Linux, cœur du système|Linux-Kernel, Kern des Systems";;

@@ -28,6 +28,14 @@ desc(){ case "$1" in
  gvfs*|tracker*|localsearch*) echo "Service de bureau : accès aux fichiers (réseau, clés USB) et recherche dans vos documents.";;
  code|codium) echo "L'éditeur de code Visual Studio Code.";;
  claude*) echo "L'assistant Claude Code utilisé dans le terminal.";;
+ gnome-software*) echo "La boutique d'applications de GNOME : elle installe et met à jour vos logiciels. La fermer ne gêne pas le bureau.";;
+ mutter*) echo "Le gestionnaire de fenêtres de GNOME : il place et affiche les fenêtres à l'écran. Sans lui, pas de bureau graphique.";;
+ xdg-desktop-por*) echo "Le pont entre les applications et le bureau : il gère l'ouverture de fichiers et les boîtes de dialogue.";;
+ evolution-alarm*) echo "Les rappels et alarmes du logiciel de messagerie Evolution. Le fermer supprime les rappels, pas les courriels.";;
+ evolution-sourc*) echo "La gestion des comptes et des agendas d'Evolution. Le fermer ne supprime rien, mais les comptes se synchronisent moins souvent.";;
+ gjs*) echo "Le moteur de scripts de GNOME : il fait tourner les extensions et certains composants du bureau.";;
+ gnome-terminal*) echo "Le terminal graphique : la fenêtre dans laquelle on tape des commandes. Le fermer ferme les commandes en cours.";;
+ gsd-*) echo "Un service de GNOME qui gère les réglages du bureau (son, écran, clavier). Ne pas le couper : le bureau perdrait ces réglages.";;
  *) if [ "$2" = root ]; then echo "Programme du système lancé par l'administrateur (root). Il travaille en arrière-plan pour un service de Debian."; else echo "Programme lancé par vous ou par l'une de vos applications."; fi;;
  esac; }
 T_ITEM() {
