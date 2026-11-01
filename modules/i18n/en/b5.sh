@@ -20,9 +20,8 @@ if [ $SQ -gt 0 ]; then SPT="$SP Mb/s ($SQT)"; else SPT="not measurable (normal o
 }
 T_QL() {
 case $LV in 0) VD="✅ negligible, nothing to do";; 1) VD="🟡 low but worth watching: it may come from harmless ignored messages, or from a slightly fragile link";; *) VD="🔴 too high: real data is being lost";; esac
-if [ "$SK" = delta ]; then SUIV="Tracking: $DD more packet(s) dropped since the previous check ($MN min ago). If this number stays at or near 0, the counted packets date from before and are not worrying; if it climbs quickly while you browse, there is a real problem."
-else SUIV="Tracking: this is the first check. Next time, DMP will tell you whether this number is increasing."; fi
-QL="   • Hardware errors: $ER${NL}      Why: these are packets that arrived damaged (faulty cable, socket or network card). Zero is the expected result.${NL}   • Dropped (lost) packets: $DR out of $TOT packets, or $PCT % of the traffic${NL}      What it is: a packet is a small parcel of data; “dropped” means the computer threw it away without processing it. Two possible causes. Harmless: network broadcast messages that do not concern you, or a protocol you do not use. Problem: the link is of poor quality or saturated, and useful data is lost.${NL}      Why keep an eye on it: a lost packet has to be requested again, which causes slow pages, stuttering videos and dropped calls. Below 0.1 % it is negligible, from 0.1 to 1 % worth watching, beyond that it is a problem.${NL}      Verdict: $VD${NL}      $SUIV"
+if [ "$SK" = delta ]; then SUIV="Tracking: $DD more frame(s) not meant for your computer since the previous check ($MN min ago). This counter does not measure your connection's losses: it is normal traffic from the CPL adapters and the box."; else SUIV="Tracking: this is the first check. Next time, DMP will tell you whether this number goes up."; fi
+QL="   • Hardware errors: $ER${NL}      Why: these are packets that arrived damaged (faulty cable, socket or network card). Zero is the expected result.${NL}   • Frames not meant for your computer: $DR out of $TOT frames, or $PCT % of the traffic${NL}      What it is: network management messages (CPL adapters, box) that your computer receives without expecting them. It discards them. This is not a loss for you: your pages and videos are not affected.${NL}      Measured real losses to the box and to the Internet: box $GL %, Internet $IL %.${NL}      Verdict: $VD${NL}      $SUIV"
 }
 T_O() {
 T_NM; T_SPT; T_QL
@@ -42,5 +41,5 @@ nodns) R="Internet responds, but website names are not resolved"; X="Websites wi
 *) R="Healthy connection"; X="Every link responds well: browsing, videos and updates work normally.";;
 esac
 [ $LV -eq 1 ] && { R="Connection to watch"; X="Every link responds, but $DR packet(s) out of $TOT were lost on the way ($PCT % of the traffic). Why keep an eye on it: lost packets have to be requested again, which slows pages and makes videos stutter. Details under “Link quality”."; }
-[ $LV -eq 2 ] && { R="Poor link quality"; X="$X $DR dropped packet(s) ($PCT %) and $ER error(s): real data is being lost. Check the cable (replace it if possible) or move closer to the router on Wi-Fi."; }
+[ $LV -eq 2 ] && { R="Poor link quality"; X="$X $DR frame(s) not meant for your computer, $PCT % of the traffic, and $ER error(s): real data is being lost. "; if [ "$KW" = 1 ]; then X="$X Move closer to the box, or use a cable if possible."; else X="$X Restart the box. If the problem persists, report it to your Internet provider, noting the date and time."; fi; }
 }
