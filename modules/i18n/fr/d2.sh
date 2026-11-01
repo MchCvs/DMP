@@ -62,10 +62,17 @@ T_SEC(){ case "$1" in
  *) echo "Un logiciel installé sur votre ordinateur (catégorie : $1). Pour sa description officielle, tapez « apt show nom_du_logiciel » (en anglais).";;
  esac; }
 T_SU(){ local p="$1" pri="$2"; case "$p" in
+ firefox*) echo "🟠 Si vous désinstallez Firefox, vous ne pourrez plus naviguer sur le web avec ce navigateur. Gardez-le si vous vous en servez.";;
+ docker*) echo "🟠 Si vous désinstallez Docker, les applications qui tournent dans des conteneurs ne fonctionneront plus. Gardez-le si vous ne savez pas ce qu'il fait.";;
+ gnome-user-docs*) echo "🟠 Si vous désinstallez cette aide, vous n'aurez plus le mode d'emploi de GNOME dans le menu. Sans gravité, mais utile en cas de doute.";;
+ gnome-backgrounds*) echo "🟠 Si vous désinstallez ces fonds d'écran, vous ne pourrez plus choisir les images de bureau fournies avec GNOME. Le bureau fonctionne toujours.";;
+ libreoffice-writer*) echo "🟠 Si vous désinstallez LibreOffice Writer, vous ne pourrez plus ouvrir ni modifier vos documents Word ou OpenDocument.";;
+ libreoffice-help*) echo "🟠 Si vous désinstallez l'aide de LibreOffice, vous n'aurez plus le mode d'emploi intégré. Vos documents restent intacts.";;
  linux-image*) echo "⛔ NON : sans noyau, l'ordinateur ne démarre pas. Debian garde l'ancien en secours, laissez-le faire.";;
  grub*) echo "⛔ NON : GRUB lance Debian à l'allumage. Le retirer peut rendre l'ordinateur impossible à démarrer et empêcher les futures mises à jour du noyau.";;
  intel-microcode|amd64-microcode) echo "⛔ NON : il corrige au démarrage des failles de sécurité du processeur (type Spectre). Sans lui l'ordinateur démarre, mais ces failles restent ouvertes.";;
  firmware-*) echo "⛔ NON : c'est le programme interne dont un composant a besoin pour fonctionner (graphique, Wi-Fi...). Sans lui : écran dégradé ou noir, composant inutilisable.";;
+ locales-all) echo "🟠 Ce paquet installe toutes les langues du système. Vous n'en utilisez qu'une : le retirer libère de la place sans rien casser. Votre langue active reste en place.";;
  locales*) echo "⛔ NON : il gère la langue, les accents et les dates. Sans lui : messages d'erreur, caractères cassés, et de nombreux logiciels cessent de fonctionner.";;
  systemd*|libc6*|apt|dpkg|bash|coreutils|sudo|initramfs-tools*|xserver*|network-manager*|tzdata|ca-certificates|keyboard-configuration|console-setup*|ufw) echo "⛔ NON : élément de base du système, d'autres logiciels en dépendent. Le retirer peut empêcher l'ordinateur de fonctionner.";;
  *) case $pri in required|important) echo "⛔ NON : le système en a besoin pour fonctionner.";; *) echo "🟠 À laisser, sauf si vous savez précisément à quoi il sert et que vous êtes certain de ne pas en avoir besoin. Un nom inconnu n'est PAS une raison de supprimer : beaucoup de logiciels utiles sont invisibles.";; esac;;
