@@ -5,7 +5,7 @@ I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/b4.sh" ] || LG
 D=""; ND=0
 while read -r n s r ty m; do [ "$ty" = disk ] || continue; [[ "$n" == zram* ]] && continue
  RMV=$(cat /sys/block/$n/removable 2>/dev/null); TR=$(lsblk -dno TRAN /dev/$n 2>/dev/null)
- if [ "$RMV" = 1 ] || [ "$TR" = usb ]; then KT=usb; elif [ "$r" = 0 ]; then KT=ssd; else KT=hdd; fi
+ if [[ "$m" =~ SSD|ssd ]]; then KT=ssd; elif [ "$r" = 0 ]; then KT=ssd; elif [ "$RMV" = 1 ] || [ "$TR" = usb ]; then KT=usb; else KT=hdd; fi
  T_K
  ND=$((ND+1)); T_DISK; done < <(LC_ALL=C lsblk -dno NAME,SIZE,ROTA,TYPE,MODEL)
 SA=""; HN=0
