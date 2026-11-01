@@ -20,7 +20,7 @@ esac
 if [ $SQ -gt 0 ]; then SPT="$SP Mb/s ($SQT)"; else SPT="non mesurable (normal en Wi-Fi)"; fi
 }
 T_QL() {
-case $LV in 0) VD="✅ négligeable, rien à faire";; 1) VD="🟡 faible mais à surveiller : cela peut venir de messages ignorés sans gravité, ou d'une liaison un peu fragile";; *) VD="🔴 trop élevé : de vraies données se perdent";; esac
+case $LV in 0) VD="✅ aucune perte, connexion parfaite : rien à faire";; 1) VD="🟡 Quelques paquets perdus : rien de grave pour l'instant, mais la connexion mérite d'être observée.";; *) VD="🔴 Pertes importantes : les pages et les vidéos sont perturbées. $( [ "$KW" = 1 ] && echo "Rapprochez-vous de la box." || echo "Vérifiez le câble et la prise." )";; esac
 if [ "$SK" = delta ]; then SUIV="Suivi : $DD trame(s) non destinée(s) à votre ordinateur de plus depuis la consultation précédente (il y a $MN min). Ce compteur ne mesure pas les pertes de votre connexion : c'est un trafic normal des adaptateurs CPL et de la box."; else SUIV="Suivi : c'est la première consultation. À la prochaine, DMP indiquera si ce nombre augmente."; fi
 QL="   • Erreurs matérielles : $ER${NL}      Pourquoi : ce sont des paquets arrivés abîmés (câble, prise ou carte réseau défectueux). Zéro est le résultat attendu.${NL}   • Trames non destinées à votre ordinateur : $DR sur $TOT trames, soit $PCT % du trafic${NL}      Ce que c'est : ce sont des messages de gestion du réseau (adaptateurs CPL, box) que votre ordinateur reçoit sans les attendre. Il les écarte. Ce n'est pas une perte pour vous : vos pages et vos vidéos ne sont pas touchées.${NL}      Pertes réelles mesurées vers la box et Internet : box $GL %, Internet $IL %.${NL}      Verdict : $VD${NL}      $SUIV"
 }
