@@ -25,7 +25,7 @@ pg "$GW"; GL=$L; GA=$A; pg 1.1.1.1; IL=$L; IA=$A
 getent hosts debian.org >/dev/null 2>&1 && DN=1 || DN=0
 TOT=$((RP+TP)); [ $TOT -lt 1 ] && TOT=1
 PCT=$(awk -v d=$DR -v t=$TOT 'BEGIN{printf "%.2f",d*100/t}')
-LV=0; awk -v p=$PCT 'BEGIN{exit !(p>=0.1)}' && LV=1; awk -v p=$PCT 'BEGIN{exit !(p>=1)}' && LV=2; [ $ER -gt 0 ] && LV=2
+LV=0; if [ "${GL:-0}" -ge 1 ] || [ "${IL:-0}" -ge 1 ] || [ "$ER" -gt 0 ]; then LV=2; elif [ "${GL:-0}" -gt 0 ] || [ "${IL:-0}" -gt 0 ]; then LV=1; fi
 PF=/tmp/dmp-b5-drops; SK=first; DD=0; MN=0
 if [ -f $PF ]; then read PD PT < $PF; if [ "$DR" -ge "$PD" ]; then MN=$(( ($(date +%s)-PT)/60 )); DD=$((DR-PD)); SK=delta; fi; fi
 echo "$DR $(date +%s)" > $PF
