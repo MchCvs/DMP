@@ -17,7 +17,8 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 
 <div class=block><h2>Comprendre</h2><p id=comp>Chargement...</p></div>
 <div class=block><h2>Ce qu'on voit</h2><p id=obs>Chargement...</p></div>
-<div class=block><h2>Ce que ça veut dire</h2><p id=res>Chargement...</p></div>
+<div class=block><h2>Ce que ça veut dire</h2><p id=res>Chargement...</p></div><div style="margin:10px 0"><button onclick="window.print()" style="padding:8px 14px;margin-right:8px;background:#3498db;color:#fff;border:none;border-radius:4px;cursor:pointer">🖨️ Imprimer / enregistrer en PDF</button><button onclick="copierRapport(this)" style="padding:8px 14px;background:#27ae60;color:#fff;border:none;border-radius:4px;cursor:pointer">📋 Copier le rapport</button></div>
+<script>function copierRapport(b){const x=['comp','obs','res','tech'].map(i=>document.getElementById(i).textContent).join('\n\n');navigator.clipboard.writeText(x).then(()=>{b.textContent='✅ Copié';setTimeout(()=>b.textContent='📋 Copier le rapport',2000)})}</script>
 <div class=block><h2>Infos techniques</h2><pre id=tech>Chargement...</pre></div>
 
 
