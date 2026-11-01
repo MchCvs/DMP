@@ -10,6 +10,7 @@ source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C; . /etc/os-release
 d=/sys/class/dmi/id; MOD="$(cat $d/sys_vendor 2>/dev/null) $(cat $d/product_name 2>/dev/null)"
 HOST=$(hostname); KERNEL=$(uname -r); PYV=$(python3 -V | cut -d' ' -f2); BASHV=${BASH_VERSION%%(*}
 DESK=${XDG_CURRENT_DESKTOP:-}; SESS=${XDG_SESSION_TYPE:-}
+ROOTDEV=$(findmnt -no SOURCE / 2>/dev/null); ROOTFS=$(findmnt -no FSTYPE / 2>/dev/null); ROOTSIZE=$(df -h --output=size / | tail -1 | tr -d " "); ROOTUSE=$(df -h --output=pcent / | tail -1 | tr -d " ")
 # Langue : variable DMP_LANG (fr, en, de) ; le français sert de secours
 I="$(dirname "$0")/../i18n"; L=${DMP_LANG:-fr}; [ -f "$I/$L/c4.sh" ] || L=fr
 . "$I/$L/c4.sh"
