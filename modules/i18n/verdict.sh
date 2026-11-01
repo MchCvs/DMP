@@ -86,7 +86,7 @@ vx() {
       case $BIGC in
         fw) X="$X Elle dépend de votre machine, pas de Debian : le firmware ne se désinstalle pas. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut la raccourcir.";;
         loader) X="$X Réduire l'attente du menu de démarrage (GRUB) raccourcirait cette étape.";;
-        svc) X="$X Pour gagner du temps parmi les services lents ci-dessus : seuls ceux marqués 🟠 peuvent être désactivés s'ils ne vous servent pas ; ceux marqués ⛔ sont à garder.";;
+        svc) X="$X Les services lents ci-dessus ne sont pas à désactiver à la légère : ne touchez à aucun service sans avoir compris son rôle. Le temps de démarrage se gagne surtout par les mises à jour et le matériel, pas en retirant des services.";;
       esac;;
   esac
 }
