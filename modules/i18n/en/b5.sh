@@ -19,7 +19,7 @@ esac
 if [ $SQ -gt 0 ]; then SPT="$SP Mb/s ($SQT)"; else SPT="not measurable (normal on Wi-Fi)"; fi
 }
 T_QL() {
-case $LV in 0) VD="✅ negligible, nothing to do";; 1) VD="🟡 low but worth watching: it may come from harmless ignored messages, or from a slightly fragile link";; *) VD="🔴 too high: real data is being lost";; esac
+case $LV in 0) VD="✅ no loss, perfect connection: nothing to do";; 1) VD="🟡 a few packets lost: nothing serious for now, but keep an eye on the connection";; *) VD="🔴 significant losses: pages and videos are disturbed. $( [ "$KW" = 1 ] && echo "Move closer to the box." || echo "Check the cable and the socket." )";; esac
 if [ "$SK" = delta ]; then SUIV="Tracking: $DD more frame(s) not meant for your computer since the previous check ($MN min ago). This counter does not measure your connection's losses: it is normal traffic from the CPL adapters and the box."; else SUIV="Tracking: this is the first check. Next time, DMP will tell you whether this number goes up."; fi
 QL="   • Hardware errors: $ER${NL}      Why: these are packets that arrived damaged (faulty cable, socket or network card). Zero is the expected result.${NL}   • Frames not meant for your computer: $DR out of $TOT frames, or $PCT % of the traffic${NL}      What it is: network management messages (CPL adapters, box) that your computer receives without expecting them. It discards them. This is not a loss for you: your pages and videos are not affected.${NL}      Measured real losses to the box and to the Internet: box $GL %, Internet $IL %.${NL}      Verdict: $VD${NL}      $SUIV"
 }
