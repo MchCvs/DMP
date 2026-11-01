@@ -8,7 +8,7 @@ KT=$(ps -eo pid,ppid --no-headers | awk '$1==2||$2==2' | wc -l)
 MINE=$(ps -u "$ME" --no-headers | wc -l); SYS=$((ALL-KT-MINE))
 ZO=$(ps -eo stat --no-headers | grep -c '^Z')
 SKIP=$(grep -l 'dmp\.service' /proc/[0-9]*/cgroup 2>/dev/null | cut -d/ -f3 | tr '\n' ' ')
-AGG=$(ps -eo user:20,pid,ppid,pcpu,rss,stat,comm --no-headers | awk -v skip=" $SKIP " '{u=$1;pid=$2;pp=$3;cpu=$4;rss=$5;c=$0;for(i=1;i<=6;i++)sub(/^[ \t]*[^ \t]+[ \t]+/,"",c);if(pid==2||pp==2)next;if(index(skip," "pid" "))next;n[c]++;cp[c]+=cpu;m[c]+=rss;us[c]=u}END{for(c in n)printf "%s|%d|%.1f|%d|%s\n",c,n[c],cp[c],m[c],us[c]}')
+AGG=$(ps -eo user:20,pid,ppid,pcpu,rss,stat,comm --no-headers | awk -v skip=" $SKIP " '{u=$1;pid=$2;pp=$3;cpu=$4;rss=$5;c=$0;for(i=1;i<=6;i++)sub(/^[ \t]*[^ \t]+[ \t]+/,"",c);if(pid==2||pp==2)next;if(c~/^ps$/)next;if(index(skip," "pid" "))next;n[c]++;cp[c]+=cpu;m[c]+=rss;us[c]=u}END{for(c in n)printf "%s|%d|%.1f|%d|%s\n",c,n[c],cp[c],m[c],us[c]}')
 NP=$(echo "$AGG" | grep -c .)
 TOP=$(echo "$AGG" | sort -t'|' -k4 -nr | head -20)
 LIST=""; i=0
