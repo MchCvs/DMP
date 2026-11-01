@@ -9,8 +9,8 @@ de) V_STOP="⛔ Behalten: für das System unverzichtbar. Weder deaktivieren noch
     V_LEG="Legende: ⛔ behalten · 🟠 Ihre Entscheidung, je nach Nutzung"
     V_FW="Die Firmware ist auf der Hauptplatine gespeichert: Sie lässt sich nicht deinstallieren und hat nichts mit Debian zu tun. Nur eine BIOS/UEFI-Einstellung (Schnellstart, Festplattenreihenfolge) kann diesen Schritt verkürzen." ;;
 *)  V_STOP="⛔ À garder : indispensable au système. Ne pas désactiver ni retirer."
-    V_JUDGE="🟠 À vous de juger : utile selon votre usage ou votre matériel. Vérifiez avant d'y toucher."
-    V_LEG="Légende : ⛔ à garder · 🟠 à vous de juger selon ce que vous utilisez"
+    V_JUDGE="🟠 Ne pas toucher sans bien comprendre : retirer ce service peut casser un démarrage, une mise à jour ou l'affichage. Si vous hésitez, laissez-le."
+    V_LEG="Légende : ⛔ à garder · 🟠 ne pas toucher sans bien comprendre"
     V_FW="Le firmware est inscrit sur la carte mère : il ne se désinstalle pas et n'a rien à voir avec Debian. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut raccourcir cette étape." ;;
 esac
 vsvc() { case "$1" in
