@@ -26,9 +26,9 @@ a:hover{background:#2980b9}
 <header>
   <h1>📊 DMP — Debian Maintenance Professionnel</h1>
   <div class="lang-bar">
-    <a href="?lang=fr" data-lang="fr">🇫🇷 Français</a>
-    <a href="?lang=en" data-lang="en">🇬🇧 English</a>
-    <a href="?lang=de" data-lang="de">🇩🇪 Deutsch</a>
+    <a href="menu.html?lang=fr" data-lang="fr">🇫🇷 Français</a>
+    <a href="menu.html?lang=en" data-lang="en">🇬🇧 English</a>
+    <a href="menu.html?lang=de" data-lang="de">🇩🇪 Deutsch</a>
   </div>
 </header>
 <div class="container">
@@ -99,8 +99,8 @@ a:hover{background:#2980b9}
 (function(){
   // Langue active : d'après l'URL, sinon la dernière choisie, sinon fr
   const params = new URLSearchParams(window.location.search);
-  const lang = params.get('lang') || localStorage.getItem('dmp-lang') || 'fr';
-  localStorage.setItem('dmp-lang', lang);
+  const lang = params.get('lang') || localStorage.getItem('dmp_lang') || 'fr';
+  localStorage.setItem('dmp_lang', lang);
 
   // Surligne le drapeau actif
   document.querySelectorAll('.lang-bar a').forEach(a => {

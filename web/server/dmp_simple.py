@@ -38,7 +38,7 @@ class DMPHandler(SimpleHTTPRequestHandler):
         
         # Servir depuis web/html/
         try:
-            file_path = (DMP_ROOT / 'web' / 'html') / self.path.lstrip('/')
+            file_path = (DMP_ROOT / 'web' / 'html') / urlparse(self.path).path.lstrip('/')
             
             if file_path.is_file():
                 with open(file_path, 'rb') as f:
