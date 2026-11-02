@@ -9,11 +9,11 @@ XU="Er reicht für den normalen Gebrauch (Internet mit vielen Tabs, Büroarbeit,
 1) Q="eine ordentliche Menge, die aber knapp wird, wenn Sie viele Dinge öffnen"
 XU="Er reicht für Internet und Büroarbeit, wird aber bei vielen Tabs knapp, da aktuelle Browser anspruchsvoll sind.";;
 *) Q="eine geringe Menge: Der Computer kann schnell langsam werden"
-XU="Er ist klein: Er reicht für einen leichten Gebrauch und läuft besser, wenn wenige Programme geöffnet sind.";;
+XU="Er ist klein: Er reicht für den gelegentlichen Gebrauch aus und läuft stabiler, wenn nur wenige Programme geöffnet sind.";;
 esac
 case $PL in
 0) XE="Im Moment nutzen Sie nur einen Teil davon ($P %): Sie haben Spielraum.";;
-1) XE="Er ist ziemlich stark ausgelastet ($P %): Er wird langsam voll, schließen Sie Programme, die Sie nicht mehr brauchen.";;
+1) XE="Er ist ziemlich ausgelastet ($P %): Das System wird langsam, schließen Sie daher Programme, die Sie nicht mehr benötigen.";;
 *) XE="Er ist fast voll ($P %): Schließen Sie einige Programme oder Tabs.";;
 esac
 R="Arbeitsspeicher in guter Verfassung"; [ "$PL" = 1 ] && R="Arbeitsspeicher ziemlich stark ausgelastet, im Auge behalten"; [ "$PL" = 2 ] && R="Arbeitsspeicher fast voll: Der Computer wird möglicherweise langsamer"
