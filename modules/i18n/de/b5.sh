@@ -40,6 +40,6 @@ unstable) R="Instabile Verbindung"; X="Pakete gehen verloren: Das verursacht Unt
 nodns) R="Internet antwortet, aber Webseitennamen werden nicht aufgelöst"; X="Webseiten lassen sich nicht über ihren Namen öffnen: Der Verzeichnisdienst (DNS) ist ausgefallen, starten Sie den Router neu.";;
 *) R="Gesunde Verbindung"; X="Jedes Glied antwortet gut: Surfen, Videos und Updates funktionieren normal.";;
 esac
-[ $LV -eq 1 ] && { R="Verbindung sollte überwacht werden"; X="Jedes Glied antwortet, aber $DR Paket(e) von $TOT sind unterwegs verloren gegangen ($PCT % des Datenverkehrs). Warum beobachten: Verlorene Pakete müssen erneut angefordert werden, was Seiten verlangsamt und Videos ruckeln lässt. Details unter „Qualität der Verbindung“."; }
+[ $LV -eq 1 ] && { R="Verbindung sollte überwacht werden"; X="Jedes Glied reagiert, aber $DR Pakete von $TOT sind unterwegs verloren gegangen (das entspricht $PCT % des Datenverkehrs). Warum dies überwacht werden sollte: Verlorene Pakete müssen erneut angefordert werden, was das Laden von Seiten verlangsamt und zu Rucklern bei Videos führt. Details finden Sie unter „Verbindungsqualität“."; }
 [ $LV -eq 2 ] && { R="Schlechte Verbindung"; X="$X $DR Frame(s) nicht für Ihren Computer bestimmt, $PCT % des Datenverkehrs, und $ER Fehler: Echte Daten gehen verloren. "; if [ "$KW" = 1 ]; then X="$X Rücken Sie näher an den Router oder nutzen Sie, wenn möglich, ein Kabel."; else X="$X Starten Sie den Router neu. Wenn das Problem bleibt, melden Sie es Ihrem Internetanbieter und notieren Sie Datum und Uhrzeit."; fi; }
 }
