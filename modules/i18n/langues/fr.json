@@ -122,5 +122,11 @@
   "f3.moyenne.titre": "Vitesse moyenne : à surveiller",
   "f3.moyenne.texte": "Au moins une mesure est seulement correcte. Rien d'anormal pour un usage courant. Si la machine vous paraît lente, la mesure la plus faible indique la pièce à regarder.",
   "f3.faible.titre": "Vitesse faible : à améliorer",
-  "f3.faible.texte": "Au moins une mesure est faible : c'est la pièce qui limite votre ordinateur. Le disque est le plus facile à améliorer (un SSD change tout). Relancez le test sans autre programme ouvert pour vérifier que ce n'est pas passager."
+  "f3.faible.texte": "Au moins une mesure est faible : c'est la pièce qui limite votre ordinateur. Le disque est le plus facile à améliorer (un SSD change tout). Relancez le test sans autre programme ouvert pour vérifier que ce n'est pas passager.",
+  "b5.qualite.erreurs": "Erreurs matérielles : {er}",
+  "b5.qualite.erreurs_pourquoi": "Pourquoi : ce sont des paquets arrivés abîmés (câble, prise ou carte réseau défectueux). Zéro est le résultat attendu.",
+  "b5.qualite.trames": "Trames non destinées à votre ordinateur : {dr} sur {tot} trames, soit {pct} % du trafic",
+  "b5.qualite.trames_quoi": "Ce que c'est : ce sont des messages de gestion du réseau (adaptateurs CPL, box) que votre ordinateur reçoit sans les attendre. Il les écarte. Ce n'est pas une perte pour vous : vos pages et vos vidéos ne sont pas touchées.",
+  "b5.qualite.reelles": "Pertes réelles mesurées vers la box et Internet : box {gl} %, Internet {il} %.",
+  "b5.qualite.verdict": "Verdict : {verdict}"
 }
