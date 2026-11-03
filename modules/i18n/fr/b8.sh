@@ -4,7 +4,7 @@ T_COMP_NO="Cette page mesure le temps que met votre ordinateur à démarrer, de 
 T_NO_O="La mesure n'est pas disponible. Pourquoi : l'outil systemd-analyze est absent, ou le démarrage n'est pas terminé."
 T_NO_R="Mesure indisponible"
 T_NO_CMD="systemd-analyze"
-T_CMD="systemd-analyze, systemd-analyze blame (DMP uniquement)"
+T_CMD="systemd-analyze, systemd-analyze blame"
 desc(){ case "$1" in
  NetworkManager-wait-online*) echo "attend que le réseau soit prêt avant de continuer. Souvent le plus long, sans gravité : il ne bloque que ce qui a besoin d'internet.";;
  plymouth*) echo "affiche l'écran de démarrage (logo ou animation).";;

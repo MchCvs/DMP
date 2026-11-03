@@ -1,6 +1,6 @@
 # Textes français du collecteur b9. Ne modifier que le texte.
 T_COMP="Cette page vérifie que les portes de votre ordinateur sont bien fermées : mises à jour de sécurité, pare-feu, portes ouvertes, accès à distance."
-T_CMD="apt, ss, systemctl, last (DMP uniquement)"
+T_CMD="apt, ss, systemctl, last"
 T_NOHIST="   • Historique non disponible"
 pd(){ case $1 in 3000) echo "Open WebUI : interface de chat avec des modèles d'IA, lancée par Docker.";; 22) echo "Accès à distance (SSH) : permet de piloter l'ordinateur depuis un autre appareil.";; 631) echo "Impression (CUPS).";; 80|443|8080) echo "Serveur de sites web.";; 8765) echo "Le serveur DMP, qui affiche ces pages.";; 3306) echo "Base de données MySQL/MariaDB.";; 5432) echo "Base de données PostgreSQL.";; 25|587) echo "Service de courrier interne (ici Postfix) : il distribue les messages que le système s'envoie à lui-même, comme les alertes des tâches programmées. Il n'envoie rien sur internet.";; 445|139) echo "Partage de fichiers Windows (Samba).";; 53) echo "Annuaire des noms de sites (DNS) local.";; *) echo "Programme qui attend des connexions sur ce numéro.";; esac; }
 T_PORTL() { PT="$PT${NL}🔒 Porte $p : interne à l'ordinateur${NL}   • Rôle : $(pd $p)${NL}   • Pourquoi sans risque : elle n'écoute que cet ordinateur, personne d'autre ne peut s'y connecter.${NL}"; }
