@@ -78,5 +78,10 @@
   "b4.surveiller.titre": "Une partition se remplit : à surveiller",
   "b4.surveiller.texte": "Au-delà de 75 %, pensez à supprimer ou déplacer des fichiers volumineux (vidéos, téléchargements).",
   "b4.ok.titre": "Espace largement suffisant",
-  "b4.ok.texte": "Aucune partition n'est proche d'être pleine, vous pouvez continuer sans souci."
+  "b4.ok.texte": "Aucune partition n'est proche d'être pleine, vous pouvez continuer sans souci.",
+  "a8.comp": "Les périphériques sont tout ce que vous branchez à l'ordinateur : clavier, souris, clé USB, webcam, imprimante. Chacun passe par un port USB, la prise standard.",
+  "a8.no_o": "Aucun appareil USB n'est détecté pour l'instant. Pourquoi : rien n'est branché, ou vos clavier et souris passent par un autre type de connexion. Ce n'est pas un problème.",
+  "a8.no_r": "Aucun appareil USB",
+  "a8.cmd": "/sys/bus/usb/devices",
+  "a8.liste.texte": "Cette liste suffit à vérifier que tout ce que vous avez branché est reconnu, donc prêt à servir. Si un appareil manque, essayez un autre câble ou un autre port, car le système ne peut utiliser que ce qu'il reconnaît. Astuce : pour un disque ou une clé, privilégiez un port marqué USB 3.0 (souvent bleu), car la copie y est bien plus rapide."
 }
