@@ -95,5 +95,10 @@
   "a1.gamme.tres_haut_de_gamme.nom": "très haut de gamme",
   "a1.gamme.tres_haut_de_gamme.texte": "un i9 est un processeur de grande puissance, pensé pour les usages très lourds",
   "a1.surcharge": "Surchargé en ce moment : trop de tâches en attente",
-  "a1.ok": "Fonctionne bien"
+  "a1.ok": "Fonctionne bien",
+  "a2.comp": "La mémoire (RAM) est le bureau de travail de votre ordinateur : tout ce que vous ouvrez y est posé pour être utilisé très vite. Quand vous éteignez, le bureau est vidé.",
+  "a2.cmd": "/proc/meminfo",
+  "a2.libre": "Mémoire libre, sans gêne",
+  "a2.chargee": "Mémoire chargée, à surveiller",
+  "a2.pleine": "Mémoire presque pleine, à libérer"
 }
