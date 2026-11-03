@@ -23,7 +23,7 @@ esac
 }
 T_DEV() { O="$O${NL}${NL}🔌 Appareil $N : « $nom »${NL}   • Type : $T${NL}   • Rôle : $E${NL}   • Connexion : $V"; }
 T_O() {
-X="Cette liste suffit à vérifier que tout ce que vous avez branché est reconnu, donc prêt à servir. Si un appareil manque, essayez un autre câble ou un autre port, car le système ne peut utiliser que ce qu'il reconnaît. Astuce : pour un disque ou une clé, privilégiez un port marqué USB 3.0 (souvent bleu), car la copie y est bien plus rapide."
+X="$(tr_cle a8.liste.texte)"
 O="Votre ordinateur reconnaît $N appareil(s) USB :$O"
 R="$(tr_cle a8.reconnus.titre n=$N)"
 }
