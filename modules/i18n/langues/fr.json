@@ -130,5 +130,9 @@
   "b5.qualite.reelles": "Pertes réelles mesurées vers la box et Internet : box {gl} %, Internet {il} %.",
   "b5.qualite.verdict": "Verdict : {verdict}",
   "b6.un.titre_t": "{t} service(s) en erreur : à regarder, sans urgence",
-  "b6.plusieurs.titre_t": "{t} services en erreur : à traiter"
+  "b6.plusieurs.titre_t": "{t} services en erreur : à traiter",
+  "f2_1.ancienne.titre": "Dernière sauvegarde ancienne ({date}) : à surveiller",
+  "f2_1.ancienne.texte": "La dernière copie date de {jours} jours. Plus elle est ancienne, plus vous perdez de travail en cas de panne. Lancez une sauvegarde Pika et programmez-la (au minimum une par semaine).",
+  "f2_1.recente.titre": "Sauvegarde récente trouvée ({date})",
+  "f2_1.recente.texte": "Une copie Pika Backup date de {jours} jour(s) : vos fichiers sont protégés. Branchez le support de temps en temps pour que DMP puisse la vérifier."
 }
