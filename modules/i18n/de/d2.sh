@@ -62,6 +62,13 @@ T_SEC(){ case "$1" in
  *) echo "Ein auf Ihrem Computer installiertes Programm (Kategorie: $1). Die offizielle Beschreibung erhalten Sie mit „apt show Programmname“ (auf Englisch).";;
  esac; }
 T_SU(){ local p="$1" pri="$2"; case "$p" in
+ firefox*) echo "🟠 Wenn Sie Firefox deinstallieren, können Sie im Internet mit diesem Browser nicht mehr surfen. Behalten Sie ihn, wenn Sie ihn benutzen.";;
+ docker*) echo "🟠 Wenn Sie Docker deinstallieren, funktionieren die Anwendungen, die in Containern laufen, nicht mehr. Behalten Sie es, wenn Sie nicht wissen, wozu es dient.";;
+ libreoffice-writer*) echo "🟠 Wenn Sie LibreOffice Writer deinstallieren, können Sie Ihre Word- oder OpenDocument-Dateien nicht mehr öffnen oder bearbeiten.";;
+ libreoffice-help*) echo "🟠 Wenn Sie die LibreOffice-Hilfe deinstallieren, steht Ihnen die integrierte Bedienungsanleitung nicht mehr zur Verfügung. Ihre Dokumente bleiben davon unberührt.";;
+ gnome-user-docs*) echo "🟠 Wenn Sie diese Hilfe deinstallieren, wird die GNOME-Anleitung nicht mehr im Menü angezeigt. Das ist zwar kein großes Problem, aber im Zweifelsfall nützlich.";;
+ gnome-backgrounds*) echo "🟠 Wenn Sie diese Hintergrundbilder deinstallieren, können Sie die mit GNOME mitgelieferten Desktop-Hintergrundbilder nicht mehr auswählen. Der Desktop funktioniert weiterhin.";;
+ locales-all) echo "Dieses Paket installiert alle Systemsprachen. Sie verwenden jedoch nur eine davon: Wenn Sie es entfernen, schaffen Sie Speicherplatz, ohne dass dabei etwas zerstört wird. Ihre aktive Sprache bleibt erhalten.";;
  linux-image*) echo "⛔ NEIN: Ohne Kernel startet der Computer nicht. Debian behält den alten als Reserve, lassen Sie es gewähren.";;
  grub*) echo "⛔ NEIN: GRUB startet Debian beim Einschalten. Wird es entfernt, kann der Computer womöglich nicht mehr starten und künftige Kernel-Aktualisierungen scheitern.";;
  intel-microcode|amd64-microcode) echo "⛔ NEIN: Es behebt beim Start Sicherheitslücken des Prozessors (Typ Spectre). Ohne es startet der Computer, aber diese Lücken bleiben offen.";;
