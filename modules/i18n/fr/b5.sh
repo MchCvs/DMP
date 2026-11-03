@@ -42,5 +42,5 @@ nodns) R="Internet répond, mais les noms de sites ne sont pas résolus"; X="Les
 *) R="Connexion saine"; X="Chaque maillon répond bien : navigation, vidéos et mises à jour fonctionnent normalement.";;
 esac
 [ $LV -eq 1 ] && { R="$(tr_cle b5.surveiller.titre)"; X="$(tr_cle b5.surveiller.texte dr=$DR tot=$TOT pct=$PCT)"; }
-[ $LV -eq 2 ] && { R="Liaison de mauvaise qualité"; X="$X $DR paquet(s) abandonné(s) ($PCT %) et $ER erreur(s) : des données utiles se perdent."; if [ "$KW" = 1 ]; then X="$X Rapprochez-vous de la box, ou passez en câble si c'est possible."; else X="$X Redémarrez la box. Si le problème persiste, signalez-le à votre fournisseur d'accès en notant la date et l'heure."; fi; }
+[ $LV -eq 2 ] && { R="$(tr_cle b5.mauvaise.titre)"; X="$(tr_cle b5.mauvaise.texte dr=$DR pct=$PCT er=$ER)"; if [ "$KW" = 1 ]; then X="$X $(tr_cle b5.mauvaise.wifi)"; else X="$X $(tr_cle b5.mauvaise.cable)"; fi; }
 }
