@@ -1,0 +1,6 @@
+{
+  "verdict.stop": "⛔ À garder : indispensable au système. Ne pas désactiver ni retirer.",
+  "verdict.judge": "🟠 Ne pas toucher sans bien comprendre : retirer ce service peut casser un démarrage, une mise à jour ou l'affichage. Si vous hésitez, laissez-le.",
+  "verdict.leg": "Légende : ⛔ à garder · 🟠 ne pas toucher sans bien comprendre",
+  "verdict.firmware": "Le firmware est inscrit sur la carte mère : il ne se désinstalle pas et n'a rien à voir avec Debian. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut raccourcir cette étape."
+}
