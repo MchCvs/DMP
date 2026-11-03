@@ -22,5 +22,11 @@
   "b5.nodns.texte": "Les sites ne s'ouvriront pas par leur nom : le service d'annuaire (DNS) est en panne, redémarrez la box.",
   "b5.saine.titre": "Connexion saine",
   "b5.saine.texte": "Chaque maillon répond bien : navigation, vidéos et mises à jour fonctionnent normalement.",
-  "b5.non_connecte": "Non connecté"
+  "b5.non_connecte": "Non connecté",
+  "b5.surveiller.titre": "Connexion à surveiller",
+  "b5.surveiller.texte": "Chaque maillon répond, mais {dr} paquet(s) sur {tot} ont été perdus en route (soit {pct} % du trafic). Pourquoi surveiller : des paquets perdus doivent être redemandés, ce qui ralentit les pages et saccade les vidéos. Détail dans « Qualité de la liaison ».",
+  "b5.mauvaise.titre": "Liaison de mauvaise qualité",
+  "b5.mauvaise.texte": "{dr} paquet(s) abandonné(s) ({pct} %) et {er} erreur(s) : des données utiles se perdent.",
+  "b5.mauvaise.wifi": "Rapprochez-vous de la box, ou passez en câble si c'est possible.",
+  "b5.mauvaise.cable": "Redémarrez la box. Si le problème persiste, signalez-le à votre fournisseur d'accès en notant la date et l'heure."
 }
