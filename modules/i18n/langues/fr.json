@@ -2,5 +2,14 @@
   "verdict.stop": "⛔ À garder : indispensable au système. Ne pas désactiver ni retirer.",
   "verdict.judge": "🟠 Ne pas toucher sans bien comprendre : retirer ce service peut casser un démarrage, une mise à jour ou l'affichage. Si vous hésitez, laissez-le.",
   "verdict.leg": "Légende : ⛔ à garder · 🟠 ne pas toucher sans bien comprendre",
-  "verdict.firmware": "Le firmware est inscrit sur la carte mère : il ne se désinstalle pas et n'a rien à voir avec Debian. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut raccourcir cette étape."
+  "verdict.firmware": "Le firmware est inscrit sur la carte mère : il ne se désinstalle pas et n'a rien à voir avec Debian. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut raccourcir cette étape.",
+  "d2.noyau": "⛔ NON : sans noyau, l'ordinateur ne démarre pas. Debian garde l'ancien en secours, laissez-le faire.",
+  "d2.firefox": "🟠 Si vous désinstallez Firefox, vous ne pourrez plus naviguer sur le web avec ce navigateur. Gardez-le si vous vous en servez.",
+  "d2.grub": "⛔ NON : GRUB lance Debian à l'allumage. Le retirer peut rendre l'ordinateur impossible à démarrer et empêcher les futures mises à jour du noyau.",
+  "d2.docker": "🟠 Si vous désinstallez Docker, les applications qui tournent dans des conteneurs ne fonctionneront plus. Gardez-le si vous ne savez pas ce qu'il fait.",
+  "d2.gnome_aide": "🟠 Si vous désinstallez cette aide, vous n'aurez plus le mode d'emploi de GNOME dans le menu. Sans gravité, mais utile en cas de doute.",
+  "d2.gnome_fonds": "🟠 Si vous désinstallez ces fonds d'écran, vous ne pourrez plus choisir les images de bureau fournies avec GNOME. Le bureau fonctionne toujours.",
+  "d2.libreoffice_writer": "🟠 Si vous désinstallez LibreOffice Writer, vous ne pourrez plus ouvrir ni modifier vos documents Word ou OpenDocument.",
+  "d2.libreoffice_aide": "🟠 Si vous désinstallez l'aide de LibreOffice, vous n'aurez plus le mode d'emploi intégré. Vos documents restent intacts.",
+  "d2.locales_all": "🟠 Ce paquet installe toutes les langues du système. Vous n'en utilisez qu'une : le retirer libère de la place sans rien casser. Votre langue active reste en place."
 }
