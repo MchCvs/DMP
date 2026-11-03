@@ -83,5 +83,17 @@
   "a8.no_o": "Aucun appareil USB n'est détecté pour l'instant. Pourquoi : rien n'est branché, ou vos clavier et souris passent par un autre type de connexion. Ce n'est pas un problème.",
   "a8.no_r": "Aucun appareil USB",
   "a8.cmd": "/sys/bus/usb/devices",
-  "a8.liste.texte": "Cette liste suffit à vérifier que tout ce que vous avez branché est reconnu, donc prêt à servir. Si un appareil manque, essayez un autre câble ou un autre port, car le système ne peut utiliser que ce qu'il reconnaît. Astuce : pour un disque ou une clé, privilégiez un port marqué USB 3.0 (souvent bleu), car la copie y est bien plus rapide."
+  "a8.liste.texte": "Cette liste suffit à vérifier que tout ce que vous avez branché est reconnu, donc prêt à servir. Si un appareil manque, essayez un autre câble ou un autre port, car le système ne peut utiliser que ce qu'il reconnaît. Astuce : pour un disque ou une clé, privilégiez un port marqué USB 3.0 (souvent bleu), car la copie y est bien plus rapide.",
+  "a1.comp": "C'est le cerveau de votre ordinateur. Il pense et fait les calculs. Plus il est rapide, plus vos programmes vont vite.",
+  "a1.cmd": "nproc, lscpu, /proc/loadavg (DMP uniquement)",
+  "a1.gamme.entree_de_gamme.nom": "entrée de gamme",
+  "a1.gamme.entree_de_gamme.texte": "un i3 suffit pour internet, la bureautique et les vidéos, mais peut peiner si on fait beaucoup de choses à la fois",
+  "a1.gamme.milieu_de_gamme.nom": "milieu de gamme",
+  "a1.gamme.milieu_de_gamme.texte": "un i5 est le choix le plus courant car il offre le meilleur équilibre entre vitesse et prix : il suffit largement pour internet, la bureautique, les vidéos, les photos et les jeux courants",
+  "a1.gamme.haut_de_gamme.nom": "haut de gamme",
+  "a1.gamme.haut_de_gamme.texte": "un i7 est rapide et à l'aise pour le montage vidéo, la création et les jeux exigeants",
+  "a1.gamme.tres_haut_de_gamme.nom": "très haut de gamme",
+  "a1.gamme.tres_haut_de_gamme.texte": "un i9 est un processeur de grande puissance, pensé pour les usages très lourds",
+  "a1.surcharge": "Surchargé en ce moment : trop de tâches en attente",
+  "a1.ok": "Fonctionne bien"
 }
