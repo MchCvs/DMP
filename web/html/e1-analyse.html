@@ -50,4 +50,7 @@ R.forEach(([a,b,t])=>{if(a.some(bad)&&b.some(bad)){n++;o.appendChild(E('div','pa
 const aTraiter=KS.filter(k=>lv(D[k])<3&&lv(D[k])>0).length;if(aTraiter===0)o.appendChild(E('div','line-height:1.6','Rien à faire, tout est bon !'));else if(!n)o.appendChild(E('div','line-height:1.6','Aucun lien détecté entre les constats : vous pouvez les traiter un par un.'));
 const ok=KS.filter(k=>lv(D[k])===0);o.appendChild(E('h3','margin:20px 0 6px','💪 Points forts ('+ok.length+')'));o.appendChild(E('div','line-height:1.8',ok.map(k=>N[k]).join(' · ')||'Aucun pour l\'instant.'));
 r.textContent='Comment lire : les points sont classés du plus grave (🔴) au moins grave (🟡). Traitez-les dans cet ordre.\n\nLes « liens » indiquent quand un problème en provoque un autre : régler la cause évite de traiter les deux séparément.\n\nPourquoi cette analyse : '+(pr.length?pr.length+' point(s) demandent de l\'attention, dont '+pr.filter(k=>lv(D[k])===2).length+' prioritaire(s).':'tout est en bon état, rien à faire.')+' Refaites cette analyse après chaque action pour vérifier qu\'elle a bien réglé le problème.'})();
-</script></body></html>
+</script><script>
+(function(){var L=localStorage.getItem('dmp_lang')||'fr';var T={fr:['Accueil','Comprendre','Ce qu\'on voit','Ce que ça veut dire'],en:['Home','Understand','What we see','What it means'],de:['Startseite','Verstehen','Was wir sehen','Was das bedeutet']}[L]||null;if(!T)return;var F=['Accueil','Comprendre','Ce qu\'on voit','Ce que ça veut dire'];document.querySelectorAll('.breadcrumb a,h2').forEach(function(e){var i=F.indexOf(e.textContent.trim());if(i>=0)e.textContent=T[i]});})();
+</script>
+</body></html>

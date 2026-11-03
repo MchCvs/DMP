@@ -33,7 +33,7 @@ class DMPHandler(SimpleHTTPRequestHandler):
             return
         
         # Fichiers statiques
-        if self.path == '/':
+        if urlparse(self.path).path == '/':
             self.path = '/menu.html'
         
         # Servir depuis web/html/
