@@ -85,7 +85,7 @@ vx() {
       case $BIGC in
         fw) X="$X Er hängt von Ihrem Rechner ab, nicht von Debian: Die Firmware lässt sich nicht deinstallieren. Nur eine BIOS/UEFI-Einstellung (Schnellstart, Festplattenreihenfolge) kann ihn verkürzen.";;
         loader) X="$X Eine kürzere Wartezeit im Startmenü (GRUB) würde diesen Schritt verkürzen.";;
-        svc) X="$X Um Zeit zu sparen: Von den oben genannten langsamen Diensten dürfen nur die mit 🟠 markierten deaktiviert werden, wenn Sie sie nicht nutzen; die mit ⛔ markierten müssen bleiben.";;
+        svc) X="$X Um Zeit zu sparen: Die oben genannten langsamen Dienste sollten nicht leichtfertig deaktiviert werden: Nehmen Sie keine Änderungen an einem Dienst vor, ohne dessen Funktion verstanden zu haben.";;
       esac;;
   *)  if [ "$TT" -lt 30 ]; then X="Moins de 30 secondes est un bon résultat : rien à améliorer. Le plus long est $N."; return; fi
       if [ "$TT" -lt 60 ]; then X="Entre 30 et 60 secondes est acceptable. L'étape la plus longue est $N."
