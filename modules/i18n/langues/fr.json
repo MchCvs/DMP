@@ -114,5 +114,13 @@
   "f2_1.aucune": "aucune",
   "f2_1.aucune_trouvee": "aucune trouvée",
   "f2_1.none.titre": "Aucune sauvegarde de vos fichiers : à surveiller",
-  "f2_1.tool.titre": "Outil installé, aucune copie trouvée : à surveiller"
+  "f2_1.tool.titre": "Outil installé, aucune copie trouvée : à surveiller",
+  "f3.comp": "Le test de vitesse (benchmark) est comme chronométrer un coureur : on fait faire à l'ordinateur un effort identique à chaque fois, pour savoir à quelle vitesse il va et suivre son évolution.",
+  "f3.cmd": "python3, dd (DMP uniquement)",
+  "f3.rapide.titre": "Machine rapide",
+  "f3.rapide.texte": "Les trois mesures sont bonnes : processeur, mémoire et disque suivent. Refaites ce test de temps en temps : une baisse nette signale un problème (disque fatigué, programme en arrière-plan).",
+  "f3.moyenne.titre": "Vitesse moyenne : à surveiller",
+  "f3.moyenne.texte": "Au moins une mesure est seulement correcte. Rien d'anormal pour un usage courant. Si la machine vous paraît lente, la mesure la plus faible indique la pièce à regarder.",
+  "f3.faible.titre": "Vitesse faible : à améliorer",
+  "f3.faible.texte": "Au moins une mesure est faible : c'est la pièce qui limite votre ordinateur. Le disque est le plus facile à améliorer (un SSD change tout). Relancez le test sans autre programme ouvert pour vérifier que ce n'est pas passager."
 }
