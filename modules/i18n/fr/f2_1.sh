@@ -12,8 +12,8 @@ O="$O${NL}${NL}🗄️ Dernière sauvegarde Borg (Pika Backup) sur un support br
 }
 T_RX() {
 case $ST in
-old) R="$(tr_cle f2_1.ancienne.titre date=$BRD)"; X="La dernière copie date de $BAGE jours. Plus elle est ancienne, plus vous perdez de travail en cas de panne. Lancez une sauvegarde Pika et programmez-la (au minimum une par semaine).";;
-recent) R="$(tr_cle f2_1.recente.titre date=$BRD)"; X="Une copie Pika Backup date de $BAGE jour(s) : vos fichiers sont protégés. Branchez le support de temps en temps pour que DMP puisse la vérifier.";;
+old) R="$(tr_cle f2_1.ancienne.titre date=$BRD)"; X="$(tr_cle f2_1.ancienne.texte jours=$BAGE)";;
+recent) R="$(tr_cle f2_1.recente.titre date=$BRD)"; X="$(tr_cle f2_1.recente.texte jours=$BAGE)";;
 none) R="Aucune sauvegarde de vos fichiers : à surveiller"; X="DMP ne trouve ni outil ni copie de vos documents. Règle simple : trois copies, sur deux supports différents, dont une ailleurs. Pour commencer : sudo apt install timeshift (copies du système), puis copiez vos documents sur un disque externe avec rsync.";;
 tool) R="Outil installé, aucune copie trouvée : à surveiller"; X="Un outil sans copie ne protège rien. Lancez une première sauvegarde et programmez-la.";;
 *) R="Sauvegarde du système présente"; X="Un instantané existe. Vérifiez aussi que vos documents personnels sont copiés sur un autre support.";;
