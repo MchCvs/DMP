@@ -1,5 +1,6 @@
 #!/bin/bash
 C=$(nproc)
+. "$(dirname "$0")/../i18n/langues.sh"
 M=$(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 | tr -d '"\\' | xargs)
 L=$(cut -d' ' -f1 /proc/loadavg)
 ID="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$ID/$LG/a1.sh" ] || LG=fr

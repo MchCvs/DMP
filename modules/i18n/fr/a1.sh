@@ -1,6 +1,6 @@
 # Textes français du collecteur a1. Ne modifier que le texte.
-T_COMP="C'est le cerveau de votre ordinateur. Il pense et fait les calculs. Plus il est rapide, plus vos programmes vont vite."
-T_CMD="nproc, lscpu, /proc/loadavg"
+T_COMP="$(tr_cle a1.comp)"
+T_CMD="$(tr_cle a1.cmd)"
 T_O() {
 case $LV in
 3) Q="un nombre élevé : votre ordinateur peut faire beaucoup de choses en même temps (vidéo, navigation, jeux) sans ralentir";;
