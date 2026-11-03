@@ -37,7 +37,7 @@ O="Ein Datenträger ist das physische Objekt. Er ist in Teile unterteilt, die Pa
 case $WL in
 2) R="Eine Partition ist fast voll: bald Platz schaffen"; X="Über 90 % wird der Computer langsamer und kann möglicherweise nicht mehr speichern. Schaffen Sie jetzt Platz.";;
 1) R="Eine Partition füllt sich: im Auge behalten"; X="Ab 75 % sollten Sie große Dateien (Videos, Downloads) löschen oder verschieben.";;
-*) R="Reichlich Platz"; X="Keine Partition ist fast voll, Sie können unbesorgt weitermachen.";;
+*) R="Reichlich Platz"; X="Es ist mehr als genug Speicherplatz vorhanden. Keine der Partitionen ist auch nur annähernd voll, Sie können also bedenkenlos weitermachen.";;
 esac
 [ $HN -ge 2 ] && { R="Ein Datenträger zeigt Anzeichen eines Ausfalls: Sichern Sie jetzt Ihre Dateien"; X="$X Die im Gesundheitsabschnitt festgestellten Anzeichen deuten auf ein echtes Ausfallrisiko hin: Kopieren Sie Ihre wichtigen Dateien noch heute auf ein anderes Medium."; }
 [ $HN -eq 1 ] && [ $WL -lt 2 ] && { R="Ein Datenträger sollte beobachtet werden"; X="$X Ein Gesundheitswert sollte beobachtet werden: Sichern Sie vorsichtshalber Ihre wichtigen Dateien."; }
