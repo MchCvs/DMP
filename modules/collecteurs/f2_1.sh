@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
+. "$(dirname "$0")/../i18n/langues.sh"
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/f2_1.sh" ] || LG=fr
 . "$I18/$LG/f2_1.sh"
 T=""; for t in timeshift borg restic rsnapshot rsync deja-dup pika-backup; do command -v $t >/dev/null && T="$T $t"; done; command -v flatpak >/dev/null && flatpak list --app 2>/dev/null | grep -qi pika && T="$T pika-backup(flatpak)"
