@@ -128,5 +128,7 @@
   "b5.qualite.trames": "Trames non destinées à votre ordinateur : {dr} sur {tot} trames, soit {pct} % du trafic",
   "b5.qualite.trames_quoi": "Ce que c'est : ce sont des messages de gestion du réseau (adaptateurs CPL, box) que votre ordinateur reçoit sans les attendre. Il les écarte. Ce n'est pas une perte pour vous : vos pages et vos vidéos ne sont pas touchées.",
   "b5.qualite.reelles": "Pertes réelles mesurées vers la box et Internet : box {gl} %, Internet {il} %.",
-  "b5.qualite.verdict": "Verdict : {verdict}"
+  "b5.qualite.verdict": "Verdict : {verdict}",
+  "b6.un.titre_t": "{t} service(s) en erreur : à regarder, sans urgence",
+  "b6.plusieurs.titre_t": "{t} services en erreur : à traiter"
 }
