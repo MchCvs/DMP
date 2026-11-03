@@ -100,5 +100,11 @@
   "a2.cmd": "/proc/meminfo",
   "a2.libre": "Mémoire libre, sans gêne",
   "a2.chargee": "Mémoire chargée, à surveiller",
-  "a2.pleine": "Mémoire presque pleine, à libérer"
+  "a2.pleine": "Mémoire presque pleine, à libérer",
+  "a5.comp": "La carte graphique est la peintre de votre ordinateur : elle dessine tout ce qui s'affiche à l'écran (fenêtres, vidéos, jeux).",
+  "a5.no_o": "Aucune carte graphique n'a pu être identifiée. Pourquoi : l'outil de détection est peut-être absent, ou l'ordinateur est une machine virtuelle.",
+  "a5.no_r": "Non identifiée",
+  "a5.cmd": "lspci",
+  "a5.integree": "Carte intégrée au processeur",
+  "a5.dediee": "Carte dédiée"
 }
