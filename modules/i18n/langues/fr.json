@@ -106,5 +106,13 @@
   "a5.no_r": "Non identifiée",
   "a5.cmd": "lspci",
   "a5.integree": "Carte intégrée au processeur",
-  "a5.dediee": "Carte dédiée"
+  "a5.dediee": "Carte dédiée",
+  "f2_1.comp": "La sauvegarde est l'assurance de vos fichiers : elle ne sert à rien jusqu'au jour où l'on en a besoin, et ce jour-là elle sauve tout.",
+  "f2_1.cmd": "command -v, /timeshift, /var/backups, lsblk",
+  "f2_1.aucun_outil": "aucun",
+  "f2_1.aucun_trouve": "aucun trouvé",
+  "f2_1.aucune": "aucune",
+  "f2_1.aucune_trouvee": "aucune trouvée",
+  "f2_1.none.titre": "Aucune sauvegarde de vos fichiers : à surveiller",
+  "f2_1.tool.titre": "Outil installé, aucune copie trouvée : à surveiller"
 }
