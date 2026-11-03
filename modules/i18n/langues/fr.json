@@ -11,5 +11,16 @@
   "d2.gnome_fonds": "🟠 Si vous désinstallez ces fonds d'écran, vous ne pourrez plus choisir les images de bureau fournies avec GNOME. Le bureau fonctionne toujours.",
   "d2.libreoffice_writer": "🟠 Si vous désinstallez LibreOffice Writer, vous ne pourrez plus ouvrir ni modifier vos documents Word ou OpenDocument.",
   "d2.libreoffice_aide": "🟠 Si vous désinstallez l'aide de LibreOffice, vous n'aurez plus le mode d'emploi intégré. Vos documents restent intacts.",
-  "d2.locales_all": "🟠 Ce paquet installe toutes les langues du système. Vous n'en utilisez qu'une : le retirer libère de la place sans rien casser. Votre langue active reste en place."
+  "d2.locales_all": "🟠 Ce paquet installe toutes les langues du système. Vous n'en utilisez qu'une : le retirer libère de la place sans rien casser. Votre langue active reste en place.",
+  "b5.nobox.titre": "La box ne répond pas",
+  "b5.nobox.texte": "Le problème est entre votre ordinateur et la box : vérifiez le câble ou le Wi-Fi, puis redémarrez la box.",
+  "b5.noinet.titre": "Réseau local correct, mais pas d'internet",
+  "b5.noinet.texte": "La box répond, donc votre ordinateur va bien : le problème vient de la box ou de votre fournisseur. Redémarrez la box, et si cela persiste, contactez-le.",
+  "b5.instable.titre": "Connexion instable",
+  "b5.instable.texte": "Des paquets se perdent : cela cause des coupures et des lenteurs. Vérifiez le câble ou rapprochez-vous de la box.",
+  "b5.nodns.titre": "Internet répond, mais les noms de sites ne sont pas résolus",
+  "b5.nodns.texte": "Les sites ne s'ouvriront pas par leur nom : le service d'annuaire (DNS) est en panne, redémarrez la box.",
+  "b5.saine.titre": "Connexion saine",
+  "b5.saine.texte": "Chaque maillon répond bien : navigation, vidéos et mises à jour fonctionnent normalement.",
+  "b5.non_connecte": "Non connecté"
 }
