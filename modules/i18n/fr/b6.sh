@@ -43,7 +43,7 @@ O="Un service est un petit programme invisible qui travaille en arrière-plan, c
 [ $T -gt 0 ] && O="$O${NL}${NL}🚨 Détail des services en erreur$NL$FI"
 case $TL in
 0) R="Tous les services fonctionnent"; X="Aucun service ne signale de problème : le réseau, l'heure, les tâches programmées et le reste travaillent normalement, donc rien à faire.";;
-1) R="$T service(s) en erreur : à regarder, sans urgence"; X="Un ou deux services en erreur ne bloquent pas l'ordinateur en général, car chaque service est indépendant. Lisez les fiches ci-dessus : si le rôle ne vous concerne pas (par exemple Bluetooth sans appareil), vous pouvez l'ignorer ; sinon, essayez de le relancer.";;
-*) R="$T services en erreur : à traiter"; X="Plusieurs services en erreur en même temps peuvent signaler un problème commun (réseau, disque plein, mise à jour interrompue). Commencez par la page Disque (B4) et Réseau (B5), puis relancez les services listés.";;
+1) R="$(tr_cle b6.un.titre_t t=$T)"; X="Un ou deux services en erreur ne bloquent pas l'ordinateur en général, car chaque service est indépendant. Lisez les fiches ci-dessus : si le rôle ne vous concerne pas (par exemple Bluetooth sans appareil), vous pouvez l'ignorer ; sinon, essayez de le relancer.";;
+*) R="$(tr_cle b6.plusieurs.titre_t t=$T)"; X="Plusieurs services en erreur en même temps peuvent signaler un problème commun (réseau, disque plein, mise à jour interrompue). Commencez par la page Disque (B4) et Réseau (B5), puis relancez les services listés.";;
 esac
 }
