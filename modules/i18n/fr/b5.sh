@@ -26,12 +26,12 @@ QL="   • Erreurs matérielles : $ER${NL}      Pourquoi : ce sont des paquets a
 }
 T_O() {
 T_NM; T_SPT; T_QL
-if [ $KW = 1 ]; then K="Wi-Fi (sans fil)"; else K="câble Ethernet"; fi
+if [ $KW = 1 ]; then K="$(tr_cle b5.type.wifi)"; else K="$(tr_cle b5.type.cable)"; fi
 UT="$UD j $UHR h"
 case $BL in
-dl) BAL="Vous recevez bien plus que vous n'envoyez : c'est normal, car naviguer, regarder une vidéo ou mettre à jour consiste surtout à télécharger.";;
-up) BAL="Vous envoyez plus que vous ne recevez : c'est inhabituel. Cela peut venir d'une sauvegarde en ligne ou de l'envoi de gros fichiers.";;
-*) BAL="Réception et envoi sont proches : usage équilibré.";;
+dl) BAL="$(tr_cle b5.trafic.dl)";;
+up) BAL="$(tr_cle b5.trafic.up)";;
+*) BAL="$(tr_cle b5.trafic.equilibre)";;
 esac
 O="🔗 Votre connexion${NL}   • Nom technique : $F (${NM})${NL}   • Type : $K${NL}   • Adresse de votre ordinateur : $IP${NL}      Pourquoi : c'est son numéro de maison sur votre réseau, il permet aux autres appareils de le trouver.${NL}   • Box (passerelle) : $GW${NL}      Pourquoi : c'est la porte de sortie vers internet. Tout ce qui sort ou entre passe par elle.${NL}   • Annuaire des sites (DNS) : ${DNS:-inconnu}${NL}      Pourquoi : il traduit un nom comme debian.org en adresse chiffrée, comme un annuaire téléphonique.${NL}   • Vitesse du lien : $SPT${NL}      Pourquoi : c'est le débit maximal du câble ou du Wi-Fi entre votre ordinateur et la box (ce n'est pas le débit de votre abonnement internet).${NL}${NL}📦 Ce qui a circulé depuis l'allumage ($UT)${NL}   • ⬇️ Reçu : $RH (environ $PH photos de 1 Mo), en $RP paquets${NL}   • ⬆️ Envoyé : $TH, en $TP paquets${NL}   • Moyenne reçue : environ $MH par heure${NL}      Pourquoi : un paquet est un petit colis de données ; une page ou une vidéo arrive en milliers de colis. $BAL${NL}${NL}🩺 Qualité de la liaison${NL}${QL}${NL}${NL}🏓 Tests en direct${NL}   • Votre box : $(t1 x "$GL" "$GA")${NL}   • Internet : $(t1 x "$IL" "$IA")${NL}   • Annuaire (noms de sites) : $([ $DN = 1 ] && echo '✅ fonctionne' || echo '❌ ne répond pas')${NL}      Pourquoi : on teste chaque maillon dans l'ordre (box, puis internet, puis annuaire) pour savoir exactement où se situe un éventuel problème."
 case $ST in
