@@ -1,9 +1,9 @@
-T_COMP="La sauvegarde est l'assurance de vos fichiers : elle ne sert à rien jusqu'au jour où l'on en a besoin, et ce jour-là elle sauve tout."
-T_CMD="command -v, /timeshift, /var/backups, lsblk"
-T_NOTOOL="aucun"
-T_NOSN="aucun trouvé"
-T_NOBK="aucune"
-T_NOBR="aucune trouvée"
+T_COMP="$(tr_cle f2_1.comp)"
+T_CMD="$(tr_cle f2_1.cmd)"
+T_NOTOOL="$(tr_cle f2_1.aucun_outil)"
+T_NOSN="$(tr_cle f2_1.aucun_trouve)"
+T_NOBK="$(tr_cle f2_1.aucune)"
+T_NOBR="$(tr_cle f2_1.aucune_trouvee)"
 T_O1() {
 O="💾 Une sauvegarde est une copie de vos fichiers rangée ailleurs, à l'abri. Pourquoi : un disque finit toujours par tomber en panne, et une erreur de manipulation ou un virus peut tout effacer. Sans copie, ces fichiers sont perdus pour toujours.${NL}${NL}🧰 Outils de sauvegarde installés : ${T:-$T_NOTOOL}${NL}   Pourquoi : il faut un outil pour copier régulièrement sans y penser (timeshift : copie du système ; borg et restic : copies de fichiers ; rsync : copie simple).${NL}${NL}📸 Dernier instantané du système : ${SN:-$T_NOSN}${NL}   Pourquoi : il permet de revenir à un état précédent si une mise à jour tourne mal.${NL}${NL}🗃️ Copie automatique des réglages de Debian (/var/backups) : $BKD${NL}   Pourquoi : Debian garde seul la liste de ses logiciels et de ses comptes. Cela ne contient PAS vos documents ni vos photos.${NL}${NL}🔌 Disques externes branchés (clé, disque USB) : $EXT${NL}   Pourquoi : une sauvegarde doit être sur un autre support que l'ordinateur ; sur le même disque, elle disparaît avec lui."
 }
