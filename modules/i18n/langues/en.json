@@ -84,5 +84,17 @@
   "menu.sec_d": "Section D — Decision",
   "menu.sec_e": "Section E — Reports & Analyses",
   "menu.sec_f": "Section F — Checks & Extensions",
-  "menu.api": "📚 API Docs"
+  "menu.api": "📚 API Docs",
+  "a1.comp": "This is your computer's brain. It thinks and does the calculations. The faster it is, the faster your programs run.",
+  "a1.cmd": "nproc, lscpu, /proc/loadavg (DMP only)",
+  "a1.gamme.entree_de_gamme.nom": "entry level",
+  "a1.gamme.entree_de_gamme.texte": "an i3 is enough for internet, office work and videos, but may struggle if you do heavy tasks",
+  "a1.gamme.milieu_de_gamme.nom": "mid range",
+  "a1.gamme.milieu_de_gamme.texte": "an i5 is the most common choice because it offers the best balance between speed and price",
+  "a1.gamme.haut_de_gamme.nom": "high end",
+  "a1.gamme.haut_de_gamme.texte": "an i7 is fast and comfortable for video editing, creative work and demanding games",
+  "a1.gamme.tres_haut_de_gamme.nom": "very high end",
+  "a1.gamme.tres_haut_de_gamme.texte": "an i9 is a very powerful processor, designed for very heavy workloads",
+  "a1.surcharge": "Overloaded right now: too many tasks waiting",
+  "a1.ok": "Working well"
 }
