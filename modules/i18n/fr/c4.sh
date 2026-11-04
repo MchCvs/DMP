@@ -1,6 +1,6 @@
 # Textes français du collecteur c4. Ne modifier que le texte ; garder les ${...} et $NL tels quels.
 T_TITLE="Identité relevée"
-T_COMP="Les informations techniques sont la carte d'identité de votre ordinateur : modèle, système, version. Pourquoi : quand on dépanne ou installe un logiciel, on commence toujours par ces informations."
+T_COMP="$(tr_cle c4.comp)"
 T_X="Ces informations ne changent presque jamais : elles servent surtout quand on demande de l'aide, car elles permettent à quelqu'un de comprendre exactement votre configuration. Notez-les ou copiez-les."
 T_AR64="64 bits : le standard actuel, capable d'utiliser plus de 4 Go de mémoire"
 T_AR32="32 bits : ancien, limité à 4 Go de mémoire"
