@@ -1,6 +1,6 @@
 # Textes français du collecteur b7. Ne modifier que le texte.
-T_COMP="Cette page montre tous les programmes qui tournent en ce moment, y compris ceux que vous ne voyez pas, et lesquels pèsent le plus lourd."
-T_CMD="ps"
+T_COMP="$(tr_cle b7.comp)"
+T_CMD="$(tr_cle b7.cmd)"
 T_GB="Go"; T_MB="Mo"
 T_TCFMT='   • %s : %s %%\n'
 T_TCNONE="   • Aucun programme ne sollicite le processeur de façon notable."
