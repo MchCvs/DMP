@@ -1,6 +1,6 @@
 # Textes français du collecteur b4. Ne modifier que le texte.
-T_COMP="Cette page montre combien chaque espace de rangement de votre ordinateur est rempli, et à quoi il sert."
-T_CMD="lsblk, df -h"
+T_COMP="$(tr_cle b4.comp)"
+T_CMD="$(tr_cle b4.cmd)"
 T_K() {
 case $KT in
 usb) K="support USB amovible (clé USB = mémoire flash ; disque dur externe = flash ou mécanique)";;
