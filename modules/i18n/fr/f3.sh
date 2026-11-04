@@ -1,5 +1,5 @@
-T_COMP="Le test de vitesse (benchmark) est comme chronométrer un coureur : on fait faire à l'ordinateur un effort identique à chaque fois, pour savoir à quelle vitesse il va et suivre son évolution."
-T_CMD="python3, dd (DMP uniquement)"
+T_COMP="$(tr_cle f3.comp)"
+T_CMD="$(tr_cle f3.cmd)"
 T_DKU="type non lisible"
 T_SSD="SSD"
 T_HDD="disque dur mécanique"

@@ -116,7 +116,7 @@
   "f2_1.none.titre": "Aucune sauvegarde de vos fichiers : à surveiller",
   "f2_1.tool.titre": "Outil installé, aucune copie trouvée : à surveiller",
   "f3.comp": "Le test de vitesse (benchmark) est comme chronométrer un coureur : on fait faire à l'ordinateur un effort identique à chaque fois, pour savoir à quelle vitesse il va et suivre son évolution.",
-  "f3.cmd": "python3, dd (DMP uniquement)",
+  "f3.cmd": "python3, dd",
   "f3.rapide.titre": "Machine rapide",
   "f3.rapide.texte": "Les trois mesures sont bonnes : processeur, mémoire et disque suivent. Refaites ce test de temps en temps : une baisse nette signale un problème (disque fatigué, programme en arrière-plan).",
   "f3.moyenne.titre": "Vitesse moyenne : à surveiller",
