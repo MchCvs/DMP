@@ -190,5 +190,11 @@
   "b6.svc.cron.titre": "Tâches programmées",
   "b6.svc.cron.pourquoi": "il lance seul les nettoyages et sauvegardes planifiés.",
   "b6.svc.ssh.titre": "Accès à distance",
-  "b6.svc.ssh.pourquoi": "il permet de se connecter à l'ordinateur depuis un autre appareil ; s'il est arrêté, personne ne peut entrer à distance, ce qui est plus sûr si vous n'en avez pas besoin."
+  "b6.svc.ssh.pourquoi": "il permet de se connecter à l'ordinateur depuis un autre appareil ; s'il est arrêté, personne ne peut entrer à distance, ce qui est plus sûr si vous n'en avez pas besoin.",
+  "b6.svc.impression.titre": "Impression",
+  "b6.svc.impression.pourquoi": "il gère les imprimantes.",
+  "b6.svc.bluetooth.titre": "Bluetooth",
+  "b6.svc.bluetooth.pourquoi": "il gère les appareils sans fil.",
+  "b6.svc.wifi.titre": "Wi-Fi",
+  "b6.svc.wifi.pourquoi": "il connecte l'ordinateur aux réseaux sans fil."
 }

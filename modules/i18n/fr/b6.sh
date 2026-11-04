@@ -34,9 +34,9 @@ svc NetworkManager.service "$(tr_cle b6.svc.reseau.titre)" "$(tr_cle b6.svc.rese
 svc systemd-timesyncd.service "$(tr_cle b6.svc.heure.titre)" "$(tr_cle b6.svc.heure.pourquoi)"
 svc cron.service "$(tr_cle b6.svc.cron.titre)" "$(tr_cle b6.svc.cron.pourquoi)"
 svc ssh.service "$(tr_cle b6.svc.ssh.titre)" "$(tr_cle b6.svc.ssh.pourquoi)"
-svc cups.service "Impression" "il gère les imprimantes."
-if [ $BT = 1 ]; then svc bluetooth.service "Bluetooth" "il gère les appareils sans fil."; else IM="$IM${NL}   • Bluetooth : ➖ non disponible${NL}      Pourquoi : cet ordinateur n'a pas de module Bluetooth, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence."; fi
-if [ $WF = 1 ]; then svc wpa_supplicant.service "Wi-Fi" "il connecte l'ordinateur aux réseaux sans fil."; else IM="$IM${NL}   • Wi-Fi : ➖ non disponible${NL}      Pourquoi : cet ordinateur n'a pas de carte Wi-Fi, il se connecte uniquement par câble. C'est plus stable et sans conséquence."; fi
+svc cups.service "$(tr_cle b6.svc.impression.titre)" "$(tr_cle b6.svc.impression.pourquoi)"
+if [ $BT = 1 ]; then svc bluetooth.service "$(tr_cle b6.svc.bluetooth.titre)" "$(tr_cle b6.svc.bluetooth.pourquoi)"; else IM="$IM${NL}   • Bluetooth : ➖ non disponible${NL}      Pourquoi : cet ordinateur n'a pas de module Bluetooth, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence."; fi
+if [ $WF = 1 ]; then svc wpa_supplicant.service "$(tr_cle b6.svc.wifi.titre)" "$(tr_cle b6.svc.wifi.pourquoi)"; else IM="$IM${NL}   • Wi-Fi : ➖ non disponible${NL}      Pourquoi : cet ordinateur n'a pas de carte Wi-Fi, il se connecte uniquement par câble. C'est plus stable et sans conséquence."; fi
 }
 T_O() {
 O="Un service est un petit programme invisible qui travaille en arrière-plan, comme le personnel d'un hôtel : on ne le voit pas, mais le réseau, l'impression, l'heure ou le son en dépendent. Pourquoi cette page : si un employé tombe malade, une fonction peut s'arrêter sans que vous compreniez pourquoi.${NL}${NL}📊 En ce moment${NL}   • Services en marche : $RUN${NL}   • Services lancés à chaque démarrage : $ENA${NL}   • Services en erreur : $T${NL}      Pourquoi : zéro est le résultat attendu, cela veut dire que personne ne manque à l'appel.${NL}${NL}🔧 Services importants${NL}$IM"
