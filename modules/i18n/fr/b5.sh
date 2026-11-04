@@ -1,10 +1,10 @@
 # Textes français du collecteur b5. Ne modifier que le texte.
-T_COMP="Cette page montre si la porte de votre ordinateur vers internet fonctionne : la connexion, ce qui y circule, sa qualité et sa vitesse."
+T_COMP="$(tr_cle b5.comp)"
 T_COMP_NO="Cette page montre si votre ordinateur est relié à internet et si cette liaison fonctionne bien."
-T_NO_O="Aucune connexion active n'est détectée. Pourquoi : le câble est débranché, le Wi-Fi est coupé ou la box est éteinte. Sans connexion, impossible de naviguer ou de faire les mises à jour."
-T_NO_R="Non connecté"
+T_NO_O="$(tr_cle b5.no_o)"
+T_NO_R="$(tr_cle b5.no_r)"
 T_NO_CMD="ip route"
-T_CMD="ip, ping, /sys/class/net, getent (DMP uniquement)"
+T_CMD="$(tr_cle b5.cmd)"
 T_BYTE="o"
 t1(){ if [ -z "$2" ] || [ "$2" = 100 ]; then echo "❌ aucune réponse"; else a=${3%.*}; if [ "$a" -lt 30 ]; then q="excellent"; elif [ "$a" -lt 100 ]; then q="correct"; else q="lent"; fi; echo "✅ répond en $3 ms ($q), $2 % de pertes"; fi; }
 T_NM() {
