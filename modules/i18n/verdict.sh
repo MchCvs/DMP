@@ -87,8 +87,8 @@ vx() {
         loader) X="$X Eine kürzere Wartezeit im Startmenü (GRUB) würde diesen Schritt verkürzen.";;
         svc) X="$X Um Zeit zu sparen: Die oben genannten langsamen Dienste sollten nicht leichtfertig deaktiviert werden: Nehmen Sie keine Änderungen an einem Dienst vor, ohne dessen Funktion verstanden zu haben.";;
       esac;;
-  *)  if [ "$TT" -lt 30 ]; then X="Moins de 30 secondes est un bon résultat : rien à améliorer. Le plus long est $N."; return; fi
-      if [ "$TT" -lt 60 ]; then X="Entre 30 et 60 secondes est acceptable. L'étape la plus longue est $N."
+  *)  if [ "$TT" -lt 30 ]; then X="$(tr_cle verdict.vx.rapide n="$N")"; return; fi
+      if [ "$TT" -lt 60 ]; then X="$(tr_cle verdict.vx.correct n="$N")"
       else X="Au-delà d'une minute, quelque chose retarde le démarrage. L'étape la plus longue est $N. Regardez les 8 services les plus lents, et vérifiez la santé du disque (page Disque B4) : un disque fatigué est une cause fréquente."; fi
       case $BIGC in
         fw) X="$X Elle dépend de votre machine, pas de Debian : le firmware ne se désinstalle pas. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut la raccourcir.";;
