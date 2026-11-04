@@ -78,5 +78,11 @@
   "i18n.A6 Carte mère": "A6 Motherboard",
   "i18n.A7 Système Debian": "A7 Debian system",
   "i18n.A8 Ports USB": "A8 USB ports",
-  "i18n.A9 Alimentation électrique": "A9 Power supply"
+  "i18n.A9 Alimentation électrique": "A9 Power supply",
+  "menu.sec_b": "Section B — Activity",
+  "menu.sec_c": "Section C — Maintenance",
+  "menu.sec_d": "Section D — Decision",
+  "menu.sec_e": "Section E — Reports & Analyses",
+  "menu.sec_f": "Section F — Checks & Extensions",
+  "menu.api": "📚 API Docs"
 }

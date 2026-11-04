@@ -2,7 +2,7 @@
   "menu.demarrage": "Schnellstart",
   "menu.tableau": "Dashboard",
   "menu.sante": "Gesundheitsprüfung",
-  "menu.sec_a": "Bereich A — Entdecken",
+  "menu.sec_a": "Bereich A — Entdeckung",
   "i18n.Démarrage rapide": "Schnellstart",
   "i18n.Tableau de bord": "Dashboard",
   "i18n.Vérification santé": "Gesundheitsprüfung",
@@ -78,5 +78,11 @@
   "i18n.A6 Carte mère": "A6 Hauptplatine",
   "i18n.A7 Système Debian": "A7 Debian-System",
   "i18n.A8 Ports USB": "A8 USB-Anschlüsse",
-  "i18n.A9 Alimentation électrique": "A9 Stromversorgung"
+  "i18n.A9 Alimentation électrique": "A9 Stromversorgung",
+  "menu.sec_b": "Bereich B — Aktivität",
+  "menu.sec_c": "Bereich C — Wartung",
+  "menu.sec_d": "Bereich D — Entscheidung",
+  "menu.sec_e": "Bereich E — Berichte & Analysen",
+  "menu.sec_f": "Bereich F — Kontrolle & Erweiterungen",
+  "menu.api": "📚 API-Dokumentation"
 }
