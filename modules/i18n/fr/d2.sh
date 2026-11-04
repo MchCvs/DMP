@@ -1,11 +1,11 @@
 # Textes français du collecteur d2. Ne modifier que le texte.
-T_COMP="Supprimer, c'est désinstaller un logiciel dont vous n'avez plus besoin. Cette page vous montre les plus gros, à quoi ils servent, et comment les retirer sans risque. Pourquoi : un ordinateur allégé démarre plus vite et garde de la place pour l'essentiel."
+T_COMP="$(tr_cle d2.comp)"
 T_R="Aucune suppression nécessaire"
-T_CMD="apt-mark showmanual, dpkg-query"
+T_CMD="$(tr_cle d2.cmd)"
 T_MO="Mo"
 T_ROLE="Rôle :"
 T_CAN="Peut-on le supprimer ?"
-T_X="Aucune suppression n'est faite par DMP : cette page vous montre quoi, pourquoi et comment, vous gardez la décision. Règle simple pour un débutant : ne supprimez rien ici. Ne pas reconnaître un nom ne veut pas dire qu'il est inutile : les logiciels les plus importants du système sont justement ceux qu'on ne voit jamais. Supprimez seulement un logiciel dont vous comprenez le rôle (par exemple un jeu ou une application installée par vous) ET dont vous êtes certain de ne plus avoir besoin."
+T_X="$(tr_cle d2.x)"
 T_PKG(){ case "$1" in
  linux-image*) echo "Le noyau Linux : le cœur de Debian. Il fait le lien entre le matériel (écran, disque, clavier) et les programmes. Sans lui, l'ordinateur ne démarre pas.";;
  linux-headers*|linux-kbuild*|linux-compiler*) echo "Des fichiers qui servent à fabriquer des pilotes pour le noyau (par exemple celui d'une carte graphique). Utile surtout aux utilisateurs avancés.";;

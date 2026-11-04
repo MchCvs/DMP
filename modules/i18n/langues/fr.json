@@ -145,5 +145,8 @@
   "c4.comp": "Les informations techniques sont la carte d'identité de votre ordinateur : modèle, système, version. Pourquoi : quand on dépanne ou installe un logiciel, on commence toujours par ces informations.",
   "d1.comp": "Rechercher, c'est retrouver un sujet sans parcourir toutes les pages : vous tapez un mot dans la case de recherche, DMP cherche ce mot dans toutes ses pages et vous montre les passages concernés. Pourquoi : gagner du temps quand on cherche une information précise.",
   "d1.x": "Si aucun résultat n'apparaît, essayez un mot plus court ou plus simple (« disque » plutôt que « partition »). Chaque résultat renvoie vers la page complète.",
-  "d1.cmd": "recherche dans /api/*"
+  "d1.cmd": "recherche dans /api/*",
+  "d2.comp": "Supprimer, c'est désinstaller un logiciel dont vous n'avez plus besoin. Cette page vous montre les plus gros, à quoi ils servent, et comment les retirer sans risque. Pourquoi : un ordinateur allégé démarre plus vite et garde de la place pour l'essentiel.",
+  "d2.cmd": "apt-mark showmanual, dpkg-query",
+  "d2.x": "Aucune suppression n'est faite par DMP : cette page vous montre quoi, pourquoi et comment, vous gardez la décision. Règle simple pour un débutant : ne supprimez rien ici. Ne pas reconnaître un nom ne veut pas dire qu'il est inutile : les logiciels les plus importants du système sont justement ceux qu'on ne voit jamais. Supprimez seulement un logiciel dont vous comprenez le rôle (par exemple un jeu ou une application installée par vous) ET dont vous êtes certain de ne plus avoir besoin."
 }
