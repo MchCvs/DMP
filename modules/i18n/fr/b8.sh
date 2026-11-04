@@ -1,10 +1,10 @@
 # Textes français du collecteur b8. Ne modifier que le texte.
-T_COMP="Cette page mesure combien de temps votre ordinateur met à démarrer, de l'appui sur le bouton jusqu'au bureau prêt, et ce qui prend du temps."
+T_COMP="$(tr_cle b8.comp)"
 T_COMP_NO="Cette page mesure le temps que met votre ordinateur à démarrer, de l'appui sur le bouton jusqu'au bureau prêt."
-T_NO_O="La mesure n'est pas disponible. Pourquoi : l'outil systemd-analyze est absent, ou le démarrage n'est pas terminé."
-T_NO_R="Mesure indisponible"
-T_NO_CMD="systemd-analyze"
-T_CMD="systemd-analyze, systemd-analyze blame"
+T_NO_O="$(tr_cle b8.no_o)"
+T_NO_R="$(tr_cle b8.no_r)"
+T_NO_CMD="$(tr_cle b8.no_cmd)"
+T_CMD="$(tr_cle b8.cmd)"
 desc(){ case "$1" in
  NetworkManager-wait-online*) echo "attend que le réseau soit prêt avant de continuer. Souvent le plus long, sans gravité : il ne bloque que ce qui a besoin d'internet.";;
  plymouth*) echo "affiche l'écran de démarrage (logo ou animation).";;

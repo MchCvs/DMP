@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
+. "$(dirname "$0")/../i18n/langues.sh"
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/b8.sh" ] || LG=fr
 . "$I18/$LG/b8.sh"; . "$I18/verdict.sh"
 L=$(systemd-analyze 2>/dev/null | head -1)
