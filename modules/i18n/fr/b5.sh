@@ -13,9 +13,9 @@ case $N2 in onboard) NM="$NM ; « o » veut dire intégrée à la carte mère ; 
 }
 T_SPT() {
 case $SQ in
-3) SQT="excellent : suffisant pour tous les usages, même la vidéo 4K et les gros téléchargements";;
-2) SQT="correct pour internet et la vidéo, plus lent pour les gros fichiers";;
-*) SQT="très lent : vérifiez le câble, il est peut-être abîmé";;
+3) SQT="$(tr_cle b5.debit.excellent)";;
+2) SQT="$(tr_cle b5.debit.correct)";;
+*) SQT="$(tr_cle b5.debit.lent)";;
 esac
 if [ $SQ -gt 0 ]; then SPT="$SP Mb/s ($SQT)"; else SPT="non mesurable (normal en Wi-Fi)"; fi
 }

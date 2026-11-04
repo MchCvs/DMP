@@ -155,5 +155,8 @@
   "b5.comp": "Cette page montre si la porte de votre ordinateur vers internet fonctionne : la connexion, ce qui y circule, sa qualité et sa vitesse.",
   "b5.cmd": "ip, ping, /sys/class/net, getent",
   "b5.no_o": "Aucune connexion active n'est détectée. Pourquoi : le câble est débranché, le Wi-Fi est coupé ou la box est éteinte. Sans connexion, impossible de naviguer ou de faire les mises à jour.",
-  "b5.no_r": "Non connecté"
+  "b5.no_r": "Non connecté",
+  "b5.debit.excellent": "excellent : suffisant pour tous les usages, même la vidéo 4K et les gros téléchargements",
+  "b5.debit.correct": "correct pour internet et la vidéo, plus lent pour les gros fichiers",
+  "b5.debit.lent": "très lent : vérifiez le câble, il est peut-être abîmé"
 }
