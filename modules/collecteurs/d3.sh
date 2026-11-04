@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C; S=0
+. "$(dirname "$0")/../i18n/langues.sh"
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/d3.sh" ] || LG=fr
 . "$I18/$LG/d3.sh"
 read DF DP <<< $(df -h --output=avail,pcent / | tail -1); [ ${DP%\%} -lt 75 ] && { E1="✅"; S=$((S+1)); } || E1="🟡"

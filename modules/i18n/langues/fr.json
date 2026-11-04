@@ -148,5 +148,8 @@
   "d1.cmd": "recherche dans /api/*",
   "d2.comp": "Supprimer, c'est désinstaller un logiciel dont vous n'avez plus besoin. Cette page vous montre les plus gros, à quoi ils servent, et comment les retirer sans risque. Pourquoi : un ordinateur allégé démarre plus vite et garde de la place pour l'essentiel.",
   "d2.cmd": "apt-mark showmanual, dpkg-query",
-  "d2.x": "Aucune suppression n'est faite par DMP : cette page vous montre quoi, pourquoi et comment, vous gardez la décision. Règle simple pour un débutant : ne supprimez rien ici. Ne pas reconnaître un nom ne veut pas dire qu'il est inutile : les logiciels les plus importants du système sont justement ceux qu'on ne voit jamais. Supprimez seulement un logiciel dont vous comprenez le rôle (par exemple un jeu ou une application installée par vous) ET dont vous êtes certain de ne plus avoir besoin."
+  "d2.x": "Aucune suppression n'est faite par DMP : cette page vous montre quoi, pourquoi et comment, vous gardez la décision. Règle simple pour un débutant : ne supprimez rien ici. Ne pas reconnaître un nom ne veut pas dire qu'il est inutile : les logiciels les plus importants du système sont justement ceux qu'on ne voit jamais. Supprimez seulement un logiciel dont vous comprenez le rôle (par exemple un jeu ou une application installée par vous) ET dont vous êtes certain de ne plus avoir besoin.",
+  "d3.comp": "Les bénéfices sont ce que vous gagnez à bien entretenir votre ordinateur : il reste rapide, sûr et il dure plus longtemps. Cette page mesure ce que vous avez déjà gagné aujourd'hui.",
+  "d3.cmd": "df, /proc/meminfo, apt, systemctl",
+  "d3.x": "Plus il y a de ✅, plus vous profitez des bénéfices d'un entretien régulier. Un 🟡 n'est pas une panne : c'est un gain encore possible, expliqué sur la page concernée. Pourquoi : quelques minutes d'entretien par semaine évitent les pannes et les mauvaises surprises."
 }
