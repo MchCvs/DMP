@@ -101,5 +101,11 @@
   "a2.cmd": "/proc/meminfo",
   "a2.libre": "Plenty of free memory",
   "a2.chargee": "Memory in use, to watch",
-  "a2.pleine": "Memory almost full, to free up"
+  "a2.pleine": "Memory almost full, to free up",
+  "a5.comp": "The graphics card is your computer's painter: it draws everything shown on screen (windows, videos, games). It is also what decides how smoothly images move.",
+  "a5.no_o": "No graphics card could be identified. Why: the detection tool may be missing, or the computer may not have one.",
+  "a5.no_r": "Not identified",
+  "a5.cmd": "lspci",
+  "a5.integree": "Graphics built into the processor",
+  "a5.dediee": "Dedicated graphics card"
 }
