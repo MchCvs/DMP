@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"
+. "$(dirname "$0")/../i18n/langues.sh"
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/a5.sh" ] || LG=fr
 . "$I18/$LG/a5.sh"
 G=$(LC_ALL=C lspci 2>/dev/null | grep -iE 'vga|3d|display' | cut -d: -f3- | xargs)

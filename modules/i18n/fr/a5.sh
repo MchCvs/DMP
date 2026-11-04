@@ -1,9 +1,9 @@
 # Textes français du collecteur a5. Ne modifier que le texte.
-T_COMP="La carte graphique est la peintre de votre ordinateur : elle dessine tout ce qui s'affiche à l'écran (fenêtres, vidéos, jeux)."
+T_COMP="$(tr_cle a5.comp)"
 T_COMP_NO="La carte graphique fabrique l'image que vous voyez à l'écran."
-T_NO_O="Aucune carte graphique n'a pu être identifiée. Pourquoi : l'outil de détection est peut-être absent, ou l'ordinateur est une machine virtuelle."
-T_NO_R="Non identifiée"
-T_CMD="lspci"
+T_NO_O="$(tr_cle a5.no_o)"
+T_NO_R="$(tr_cle a5.no_r)"
+T_CMD="$(tr_cle a5.cmd)"
 T_O() {
 case $GK in
 ded) K="C'est une carte dédiée : une pièce séparée, puissante, pensée pour les jeux et le montage vidéo."
