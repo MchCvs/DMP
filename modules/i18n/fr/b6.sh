@@ -12,10 +12,10 @@ resources) CA="$(tr_cle b6.cause.ressources)";;
 *) CA="cause indiquée par le système : ${RS:-inconnue}";;
 esac
 case $u in
-NetworkManager-wait-online*) RO="fait patienter le démarrage jusqu'à ce que le réseau soit prêt. Souvent en erreur sans conséquence si le réseau arrive un peu plus tard.";;
-bluetooth*) RO="gère le Bluetooth (casque, souris, manette sans fil). En erreur : le Bluetooth ne fonctionnera pas, le reste oui.";;
-cups*) RO="gère l'impression. En erreur : impossible d'imprimer.";;
-ModemManager*) RO="gère les clés et modems 3G/4G. Sans objet si vous n'en avez pas.";;
+NetworkManager-wait-online*) RO="$(tr_cle b6.role.reseau_attente)";;
+bluetooth*) RO="$(tr_cle b6.role.bluetooth)";;
+cups*) RO="$(tr_cle b6.role.cups)";;
+ModemManager*) RO="$(tr_cle b6.role.modem)";;
 ssh*) RO="permet de se connecter à distance à cet ordinateur. En erreur : personne ne peut s'y connecter à distance.";;
 apache2*|nginx*) RO="serveur de sites web local. En erreur : les sites hébergés ici sont inaccessibles.";;
 smartmontools*|smartd*) RO="surveille la santé des disques. En erreur : les alertes de panne ne seront plus envoyées.";;

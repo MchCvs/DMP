@@ -171,5 +171,9 @@
   "b6.cause.pas_repondu": "le programme n'a pas répondu à temps au démarrage ou à l'arrêt",
   "b6.cause.renonce": "le programme a planté plusieurs fois de suite : le système a renoncé à le relancer",
   "b6.cause.dependance": "il dépend d'un autre service qui n'a pas démarré",
-  "b6.cause.ressources": "le système n'avait pas assez de ressources pour le lancer"
+  "b6.cause.ressources": "le système n'avait pas assez de ressources pour le lancer",
+  "b6.role.reseau_attente": "fait patienter le démarrage jusqu'à ce que le réseau soit prêt. Souvent en erreur sans conséquence si le réseau arrive un peu plus tard.",
+  "b6.role.bluetooth": "gère le Bluetooth (casque, souris, manette sans fil). En erreur : le Bluetooth ne fonctionnera pas, le reste oui.",
+  "b6.role.cups": "gère l'impression. En erreur : impossible d'imprimer.",
+  "b6.role.modem": "gère les clés et modems 3G/4G. Sans objet si vous n'en avez pas."
 }
