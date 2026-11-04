@@ -163,5 +163,7 @@
   "b5.type.cable": "câble Ethernet",
   "b5.trafic.dl": "Vous recevez bien plus que vous n'envoyez : c'est normal, car naviguer, regarder une vidéo ou mettre à jour consiste surtout à télécharger.",
   "b5.trafic.up": "Vous envoyez plus que vous ne recevez : c'est inhabituel. Cela peut venir d'une sauvegarde en ligne ou de l'envoi de gros fichiers.",
-  "b5.trafic.equilibre": "Réception et envoi sont proches : usage équilibré."
+  "b5.trafic.equilibre": "Réception et envoi sont proches : usage équilibré.",
+  "b5.unstable.titre": "Connexion instable",
+  "b5.unstable.texte": "Des paquets se perdent : cela cause des coupures et des lenteurs. Vérifiez le câble ou rapprochez-vous de la box."
 }
