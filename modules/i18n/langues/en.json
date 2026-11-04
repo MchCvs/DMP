@@ -96,5 +96,10 @@
   "a1.gamme.tres_haut_de_gamme.nom": "very high end",
   "a1.gamme.tres_haut_de_gamme.texte": "an i9 is a very powerful processor, designed for very heavy workloads",
   "a1.surcharge": "Overloaded right now: too many tasks waiting",
-  "a1.ok": "Working well"
+  "a1.ok": "Working well",
+  "a2.comp": "RAM is your computer's workbench: everything you open is placed there to be used very quickly. When you switch off, the workbench is cleared.",
+  "a2.cmd": "/proc/meminfo",
+  "a2.libre": "Plenty of free memory",
+  "a2.chargee": "Memory in use, to watch",
+  "a2.pleine": "Memory almost full, to free up"
 }
