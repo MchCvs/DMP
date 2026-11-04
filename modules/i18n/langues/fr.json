@@ -196,5 +196,9 @@
   "b6.svc.bluetooth.titre": "Bluetooth",
   "b6.svc.bluetooth.pourquoi": "il gère les appareils sans fil.",
   "b6.svc.wifi.titre": "Wi-Fi",
-  "b6.svc.wifi.pourquoi": "il connecte l'ordinateur aux réseaux sans fil."
+  "b6.svc.wifi.pourquoi": "il connecte l'ordinateur aux réseaux sans fil.",
+  "b6.nondispo.bluetooth": "cet ordinateur n'a pas de module Bluetooth, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence.",
+  "b6.nondispo.bluetooth_titre": "Bluetooth : ➖ non disponible",
+  "b6.nondispo.wifi": "cet ordinateur n'a pas de module Wi-Fi, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence.",
+  "b6.nondispo.wifi_titre": "Wi-Fi : ➖ non disponible"
 }
