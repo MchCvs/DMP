@@ -202,5 +202,11 @@
   "b6.nondispo.wifi": "cet ordinateur n'a pas de module Wi-Fi, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence.",
   "b6.nondispo.wifi_titre": "Wi-Fi : ➖ non disponible",
   "b6.intro": "Un service est un petit programme invisible qui travaille en arrière-plan, comme le personnel d'un hôtel : on ne le voit pas, mais le réseau, l'impression, l'heure ou le son en dépendent. Pourquoi cette page : si un employé tombe malade, une fonction peut s'arrêter sans que vous compreniez pourquoi.${NL}${NL}📊 En ce moment${NL}   • Services en marche : $RUN${NL}   • Services lancés à chaque démarrage : $ENA${NL}   • Services en erreur : $T${NL}      Pourquoi : zéro est le résultat attendu, cela veut dire que personne ne manque à l'appel.${NL}${NL}🔧 Services importants${NL}$IM",
-  "b6.detail_titre": "Détail des services en erreur"
+  "b6.detail_titre": "Détail des services en erreur",
+  "verdict.role.gnome_software": "boutique d'applications de GNOME : elle installe et met à jour vos logiciels. La fermer ne gêne pas le bureau.",
+  "verdict.role.mutter": "gestionnaire de fenêtres de GNOME : il place et affiche les fenêtres à l'écran. Sans lui, pas de bureau graphique.",
+  "verdict.role.xdg_desktop_portal": "pont entre les applications et le bureau : il gère l'ouverture de fichiers et les boîtes de dialogue. Utile pour les logiciels récents.",
+  "verdict.role.evolution_alarm": "rappels et alarmes du logiciel de messagerie Evolution (agenda). Le fermer supprime les rappels, sans toucher aux courriels.",
+  "verdict.role.evolution_source": "gestion des comptes et agendas d'Evolution (messagerie). Le fermer ne supprime rien, mais les comptes se synchronisent moins souvent.",
+  "verdict.role.utility_utility": "processus de service pour une application (souvent le navigateur ou un logiciel de bureau). Ne pas le couper à la main : il redémarre avec l'application."
 }
