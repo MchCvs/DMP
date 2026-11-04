@@ -1,6 +1,6 @@
 # Textes français du collecteur a2. Ne modifier que le texte.
-T_COMP="La mémoire (RAM) est le bureau de travail de votre ordinateur : tout ce que vous ouvrez y est posé pour être utilisé très vite. Quand vous éteignez, le bureau est vidé."
-T_CMD="/proc/meminfo"
+T_COMP="$(tr_cle a2.comp)"
+T_CMD="$(tr_cle a2.cmd)"
 T_O() {
 case $LV in
 3) Q="une très grande quantité : vous pouvez ouvrir beaucoup de choses en même temps sans souci"

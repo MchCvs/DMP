@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"
+. "$(dirname "$0")/../i18n/langues.sh"
 ID="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$ID/$LG/a2.sh" ] || LG=fr
 . "$ID/$LG/a2.sh"
 T=$(awk '/MemTotal/{printf "%.1f",$2/1048576}' /proc/meminfo)
