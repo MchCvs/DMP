@@ -179,5 +179,8 @@
   "b6.role.ssh": "permet de se connecter à distance à cet ordinateur. En erreur : personne ne peut s'y connecter à distance.",
   "b6.role.web": "serveur de sites web local. En erreur : les sites hébergés ici sont inaccessibles.",
   "b6.role.disques": "surveille la santé des disques. En erreur : les alertes de panne ne seront plus envoyées.",
-  "b6.role.cron": "lance les tâches programmées (sauvegardes, nettoyages). En erreur : elles ne se lancent plus."
+  "b6.role.cron": "lance les tâches programmées (sauvegardes, nettoyages). En erreur : elles ne se lancent plus.",
+  "b6.etat.actif": "✅ actif",
+  "b6.etat.erreur": "❌ en erreur",
+  "b6.etat.arrete": "⚪ arrêté"
 }

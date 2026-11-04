@@ -26,7 +26,7 @@ esac
 echo "${NL}❌ $u${NL}   • Rôle : $RO${NL}   • Cause de l'arrêt : $CA${NL}      Pourquoi : c'est le motif noté par le système au moment où le service s'est arrêté.${NL}   • Depuis : ${SI:-date inconnue}${NL}   • Derniers messages du journal :${NL}$LOG${NL}   • Que faire :${NL}      1) Essayer de le relancer : systemctl $sc restart $u${NL}      2) Si l'erreur revient, lire le journal complet : journalctl $sc -u $u${NL}      3) Si ce service ne vous sert pas, vous pouvez l'ignorer : un service en erreur qui n'est pas utilisé ne gêne pas le reste."
 }
 T_SVC() {
-case $SK in active) e="✅ actif";; failed) e="❌ en erreur";; *) e="⚪ arrêté";; esac
+case $SK in active) e="$(tr_cle b6.etat.actif)";; failed) e="$(tr_cle b6.etat.erreur)";; *) e="$(tr_cle b6.etat.arrete)";; esac
 IM="$IM${NL}   • $2 ($1) : $e${NL}      Pourquoi : $3"
 }
 T_SVCS() {
