@@ -10,6 +10,18 @@ import os
 class DMPHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         # Routes API
+        if self.path.startswith('/i18n/'):
+            import json as _j
+            lang = urlparse(self.path).path.split('/')[-1].replace('.json', '')
+            if lang in ('fr', 'en', 'de'):
+                chemin = DMP_ROOT / 'modules' / 'i18n' / 'langues' / (lang + '.json')
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(chemin.read_bytes())
+            else:
+                self.send_error(404)
+            return
         if self.path.startswith('/api/'):
             u = urlparse(self.path)
             api_key = u.path.split('/')[-1]
