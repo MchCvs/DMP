@@ -1,6 +1,6 @@
 # Textes français du collecteur c1. Ne modifier que le texte.
-T_COMP="Les mises à jour sont des vaccins pour votre ordinateur : chaque fois qu'une faille ou un défaut est découvert dans un logiciel, ses auteurs publient une version corrigée. Pourquoi les installer : un logiciel non mis à jour garde ses failles, et ce sont elles que les pirates et virus exploitent."
-T_CMD="apt list --upgradable (DMP uniquement)"
+T_COMP="$(tr_cle c1.comp)"
+T_CMD="$(tr_cle c1.cmd)"
 T_SECL="🔴 sécurité"; T_ORDL="🔵 ordinaire"
 T_LFMT='   • %s : %s → %s (%s)\n'
 T_O() {

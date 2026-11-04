@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
+. "$(dirname "$0")/../i18n/langues.sh"
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/c1.sh" ] || LG=fr
 . "$I18/$LG/c1.sh"
 L=$(apt list --upgradable 2>/dev/null | tail -n +2); UP=$(echo "$L" | grep -c .); SU=$(echo "$L" | grep -ci security)

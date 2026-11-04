@@ -135,5 +135,7 @@
   "f2_1.ancienne.texte": "La dernière copie date de {jours} jours. Plus elle est ancienne, plus vous perdez de travail en cas de panne. Lancez une sauvegarde Pika et programmez-la (au minimum une par semaine).",
   "f2_1.recente.titre": "Sauvegarde récente trouvée ({date})",
   "f2_1.recente.texte": "Une copie Pika Backup date de {jours} jour(s) : vos fichiers sont protégés. Branchez le support de temps en temps pour que DMP puisse la vérifier.",
-  "a8.reconnus.titre": "{n} appareil(s) reconnu(s)"
+  "a8.reconnus.titre": "{n} appareil(s) reconnu(s)",
+  "c1.comp": "Les mises à jour sont des vaccins pour votre ordinateur : chaque fois qu'une faille ou un défaut est découvert dans un logiciel, ses auteurs publient une version corrigée. Pourquoi les installer : un logiciel non mis à jour garde ses failles, et ce sont elles que les pirates et virus exploitent.",
+  "c1.cmd": "apt list --upgradable"
 }
