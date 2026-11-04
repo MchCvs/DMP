@@ -137,5 +137,7 @@
   "f2_1.recente.texte": "Une copie Pika Backup date de {jours} jour(s) : vos fichiers sont protégés. Branchez le support de temps en temps pour que DMP puisse la vérifier.",
   "a8.reconnus.titre": "{n} appareil(s) reconnu(s)",
   "c1.comp": "Les mises à jour sont des vaccins pour votre ordinateur : chaque fois qu'une faille ou un défaut est découvert dans un logiciel, ses auteurs publient une version corrigée. Pourquoi les installer : un logiciel non mis à jour garde ses failles, et ce sont elles que les pirates et virus exploitent.",
-  "c1.cmd": "apt list --upgradable"
+  "c1.cmd": "apt list --upgradable",
+  "c2.comp": "Un paquet est un logiciel rangé dans la bibliothèque de Debian, prêt à être installé ou retiré proprement. Cette page fait l'inventaire de cette bibliothèque. Pourquoi : savoir ce qui est installé et en bon état évite les conflits.",
+  "c2.cmd": "dpkg-query, apt-mark, dpkg --audit"
 }
