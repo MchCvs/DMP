@@ -165,5 +165,11 @@
   "b5.trafic.up": "Vous envoyez plus que vous ne recevez : c'est inhabituel. Cela peut venir d'une sauvegarde en ligne ou de l'envoi de gros fichiers.",
   "b5.trafic.equilibre": "Réception et envoi sont proches : usage équilibré.",
   "b5.unstable.titre": "Connexion instable",
-  "b5.unstable.texte": "Des paquets se perdent : cela cause des coupures et des lenteurs. Vérifiez le câble ou rapprochez-vous de la box."
+  "b5.unstable.texte": "Des paquets se perdent : cela cause des coupures et des lenteurs. Vérifiez le câble ou rapprochez-vous de la box.",
+  "b6.cause.code": "le programme s'est arrêté en signalant une erreur (code {ex})",
+  "b6.cause.plante": "le programme a été interrompu brutalement, il a planté",
+  "b6.cause.pas_repondu": "le programme n'a pas répondu à temps au démarrage ou à l'arrêt",
+  "b6.cause.renonce": "le programme a planté plusieurs fois de suite : le système a renoncé à le relancer",
+  "b6.cause.dependance": "il dépend d'un autre service qui n'a pas démarré",
+  "b6.cause.ressources": "le système n'avait pas assez de ressources pour le lancer"
 }

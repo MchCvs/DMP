@@ -3,12 +3,12 @@ T_COMP="$(tr_cle b6.comp)"
 T_CMD="$(tr_cle b6.cmd)"
 T_FICHE() {
 case $RS in
-exit-code) CA="le programme s'est arrêté en signalant une erreur (code $EX)";;
-signal|core-dump) CA="le programme a été interrompu brutalement, il a planté";;
-timeout) CA="le programme n'a pas répondu à temps au démarrage ou à l'arrêt";;
-start-limit-hit) CA="le programme a planté plusieurs fois de suite : le système a renoncé à le relancer";;
-dependency) CA="il dépend d'un autre service qui n'a pas démarré";;
-resources) CA="le système n'avait pas assez de ressources pour le lancer";;
+exit-code) CA="$(tr_cle b6.cause.code ex=$EX)";;
+signal|core-dump) CA="$(tr_cle b6.cause.plante)";;
+timeout) CA="$(tr_cle b6.cause.pas_repondu)";;
+start-limit-hit) CA="$(tr_cle b6.cause.renonce)";;
+dependency) CA="$(tr_cle b6.cause.dependance)";;
+resources) CA="$(tr_cle b6.cause.ressources)";;
 *) CA="cause indiquée par le système : ${RS:-inconnue}";;
 esac
 case $u in
