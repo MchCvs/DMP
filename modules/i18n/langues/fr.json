@@ -200,5 +200,7 @@
   "b6.nondispo.bluetooth": "cet ordinateur n'a pas de module Bluetooth, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence.",
   "b6.nondispo.bluetooth_titre": "Bluetooth : ➖ non disponible",
   "b6.nondispo.wifi": "cet ordinateur n'a pas de module Wi-Fi, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence.",
-  "b6.nondispo.wifi_titre": "Wi-Fi : ➖ non disponible"
+  "b6.nondispo.wifi_titre": "Wi-Fi : ➖ non disponible",
+  "b6.intro": "Un service est un petit programme invisible qui travaille en arrière-plan, comme le personnel d'un hôtel : on ne le voit pas, mais le réseau, l'impression, l'heure ou le son en dépendent. Pourquoi cette page : si un employé tombe malade, une fonction peut s'arrêter sans que vous compreniez pourquoi.${NL}${NL}📊 En ce moment${NL}   • Services en marche : $RUN${NL}   • Services lancés à chaque démarrage : $ENA${NL}   • Services en erreur : $T${NL}      Pourquoi : zéro est le résultat attendu, cela veut dire que personne ne manque à l'appel.${NL}${NL}🔧 Services importants${NL}$IM",
+  "b6.detail_titre": "Détail des services en erreur"
 }

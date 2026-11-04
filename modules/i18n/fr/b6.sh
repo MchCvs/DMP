@@ -39,8 +39,8 @@ if [ $BT = 1 ]; then svc bluetooth.service "$(tr_cle b6.svc.bluetooth.titre)" "$
 if [ $WF = 1 ]; then svc wpa_supplicant.service "$(tr_cle b6.svc.wifi.titre)" "$(tr_cle b6.svc.wifi.pourquoi)"; else IM="$IM${NL}   • $(tr_cle b6.nondispo.wifi_titre)${NL}      Pourquoi : $(tr_cle b6.nondispo.wifi)"; fi
 }
 T_O() {
-O="Un service est un petit programme invisible qui travaille en arrière-plan, comme le personnel d'un hôtel : on ne le voit pas, mais le réseau, l'impression, l'heure ou le son en dépendent. Pourquoi cette page : si un employé tombe malade, une fonction peut s'arrêter sans que vous compreniez pourquoi.${NL}${NL}📊 En ce moment${NL}   • Services en marche : $RUN${NL}   • Services lancés à chaque démarrage : $ENA${NL}   • Services en erreur : $T${NL}      Pourquoi : zéro est le résultat attendu, cela veut dire que personne ne manque à l'appel.${NL}${NL}🔧 Services importants${NL}$IM"
-[ $T -gt 0 ] && O="$O${NL}${NL}🚨 Détail des services en erreur$NL$FI"
+O="$(tr_cle b6.intro)"
+[ $T -gt 0 ] && O="$O${NL}${NL}🚨 $(tr_cle b6.detail_titre)$NL$FI"
 case $TL in
 0) R="Tous les services fonctionnent"; X="Aucun service ne signale de problème : le réseau, l'heure, les tâches programmées et le reste travaillent normalement, donc rien à faire.";;
 1) R="$(tr_cle b6.un.titre_t t=$T)"; X="$(tr_cle b6.un.texte)";;
