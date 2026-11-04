@@ -182,5 +182,13 @@
   "b6.role.cron": "lance les tâches programmées (sauvegardes, nettoyages). En erreur : elles ne se lancent plus.",
   "b6.etat.actif": "✅ actif",
   "b6.etat.erreur": "❌ en erreur",
-  "b6.etat.arrete": "⚪ arrêté"
+  "b6.etat.arrete": "⚪ arrêté",
+  "b6.svc.reseau.titre": "Gestion du réseau",
+  "b6.svc.reseau.pourquoi": "c'est lui qui connecte l'ordinateur à internet.",
+  "b6.svc.heure.titre": "Mise à l'heure",
+  "b6.svc.heure.pourquoi": "il règle l'horloge sur internet ; une heure fausse bloque certains sites et les mises à jour.",
+  "b6.svc.cron.titre": "Tâches programmées",
+  "b6.svc.cron.pourquoi": "il lance seul les nettoyages et sauvegardes planifiés.",
+  "b6.svc.ssh.titre": "Accès à distance",
+  "b6.svc.ssh.pourquoi": "il permet de se connecter à l'ordinateur depuis un autre appareil ; s'il est arrêté, personne ne peut entrer à distance, ce qui est plus sûr si vous n'en avez pas besoin."
 }

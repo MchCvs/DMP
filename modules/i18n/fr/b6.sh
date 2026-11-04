@@ -30,10 +30,10 @@ case $SK in active) e="$(tr_cle b6.etat.actif)";; failed) e="$(tr_cle b6.etat.er
 IM="$IM${NL}   • $2 ($1) : $e${NL}      Pourquoi : $3"
 }
 T_SVCS() {
-svc NetworkManager.service "Gestion du réseau" "c'est lui qui connecte l'ordinateur à internet."
-svc systemd-timesyncd.service "Mise à l'heure" "il règle l'horloge sur internet ; une heure fausse bloque certains sites et les mises à jour."
-svc cron.service "Tâches programmées" "il lance seul les nettoyages et sauvegardes planifiés."
-svc ssh.service "Accès à distance" "il permet de se connecter à l'ordinateur depuis un autre appareil ; s'il est arrêté, personne ne peut entrer à distance, ce qui est plus sûr si vous n'en avez pas besoin."
+svc NetworkManager.service "$(tr_cle b6.svc.reseau.titre)" "$(tr_cle b6.svc.reseau.pourquoi)"
+svc systemd-timesyncd.service "$(tr_cle b6.svc.heure.titre)" "$(tr_cle b6.svc.heure.pourquoi)"
+svc cron.service "$(tr_cle b6.svc.cron.titre)" "$(tr_cle b6.svc.cron.pourquoi)"
+svc ssh.service "$(tr_cle b6.svc.ssh.titre)" "$(tr_cle b6.svc.ssh.pourquoi)"
 svc cups.service "Impression" "il gère les imprimantes."
 if [ $BT = 1 ]; then svc bluetooth.service "Bluetooth" "il gère les appareils sans fil."; else IM="$IM${NL}   • Bluetooth : ➖ non disponible${NL}      Pourquoi : cet ordinateur n'a pas de module Bluetooth, le service n'a donc rien à gérer. Son arrêt est normal et sans conséquence."; fi
 if [ $WF = 1 ]; then svc wpa_supplicant.service "Wi-Fi" "il connecte l'ordinateur aux réseaux sans fil."; else IM="$IM${NL}   • Wi-Fi : ➖ non disponible${NL}      Pourquoi : cet ordinateur n'a pas de carte Wi-Fi, il se connecte uniquement par câble. C'est plus stable et sans conséquence."; fi
