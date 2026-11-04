@@ -1,6 +1,6 @@
 # Textes français du collecteur b6. Ne modifier que le texte.
-T_COMP="Cette page vérifie que les petits programmes invisibles qui font fonctionner votre ordinateur tournent tous correctement."
-T_CMD="systemctl, journalctl (DMP uniquement)"
+T_COMP="$(tr_cle b6.comp)"
+T_CMD="$(tr_cle b6.cmd)"
 T_FICHE() {
 case $RS in
 exit-code) CA="le programme s'est arrêté en signalant une erreur (code $EX)";;

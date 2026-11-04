@@ -50,7 +50,7 @@
   "b7.role.bluetoothd": "Gère le Bluetooth.",
   "b7.role.avahi_daemon": "Aide l'ordinateur à découvrir les imprimantes et appareils du réseau local.",
   "b6.comp": "Cette page vérifie que les petits programmes invisibles qui font fonctionner votre ordinateur tournent tous correctement.",
-  "b6.cmd": "systemctl, journalctl (DMP uniquement)",
+  "b6.cmd": "systemctl, journalctl",
   "b6.ok.titre": "Tous les services fonctionnent",
   "b6.ok.texte": "Aucun service ne signale de problème : le réseau, l'heure, les tâches programmées et le reste travaillent normalement, donc rien à faire.",
   "b6.un.titre": "$T service(s) en erreur : à regarder, sans urgence",
