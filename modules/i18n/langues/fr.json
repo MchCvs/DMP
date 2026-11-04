@@ -209,5 +209,22 @@
   "verdict.role.evolution_alarm": "rappels et alarmes du logiciel de messagerie Evolution (agenda). Le fermer supprime les rappels, sans toucher aux courriels.",
   "verdict.role.evolution_source": "gestion des comptes et agendas d'Evolution (messagerie). Le fermer ne supprime rien, mais les comptes se synchronisent moins souvent.",
   "verdict.role.utility_utility": "processus de service pour une application (souvent le navigateur ou un logiciel de bureau). Ne pas le couper à la main : il redémarre avec l'application.",
-  "verdict.role.code": "éditeur de code (Visual Studio Code)"
+  "verdict.role.code": "éditeur de code (Visual Studio Code)",
+  "verdict.role.containerd_containerd_io_runc": "moteur de conteneurs (utilisé par Docker et certains outils). Retirer ce service peut casser Docker ou des applications qui en dépendent.",
+  "verdict.role.code_code": "$(tr_cle verdict.role.code)",
+  "verdict.role.linux_image": "noyau Linux, cœur du système",
+  "verdict.role.linux_headers_linux_kbuild_linux_compiler": "fichiers pour compiler des modules du noyau",
+  "verdict.role.libreoffice": "suite bureautique",
+  "verdict.role.firefox_chromium": "navigateur web",
+  "verdict.role.thunderbird": "messagerie",
+  "verdict.role.firmware": "microprogrammes pour le matériel (Wi-Fi, carte graphique…)",
+  "verdict.role.libllvm": "bibliothèque de compilation utilisée par les pilotes graphiques",
+  "verdict.role.gimp": "retouche d'images",
+  "verdict.role.libc6_libc_bin": "bibliothèque C standard, base du système",
+  "verdict.role.python3_libpython3": "langage Python et ses bibliothèques",
+  "verdict.role.mesa_libgl_libegl_libdrm": "bibliothèques graphiques 3D",
+  "verdict.role.fonts": "polices de caractères",
+  "verdict.role.locales": "langues et formats régionaux",
+  "verdict.role.libgtk_libqt": "bibliothèque d'interface graphique",
+  "verdict.role.systemd_libsystemd": "gestionnaire de services du système"
 }
