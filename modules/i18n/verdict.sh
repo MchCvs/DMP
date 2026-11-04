@@ -8,9 +8,9 @@ de) V_STOP="⛔ Behalten: für das System unverzichtbar. Weder deaktivieren noch
     V_JUDGE="🟠 Nicht verändern, ohne genau zu wissen, was Sie tun: Das Deaktivieren dieses Dienstes kann den Systemstart, ein Update oder die Anzeige beeinträchtigen. Wenn Sie unsicher sind, behalten Sie ihn aktiviert."
     V_LEG="Legende: ⛔ behalten · 🟠 Ihre Entscheidung, je nach Nutzung"
     V_FW="Die Firmware ist auf der Hauptplatine gespeichert: Sie lässt sich nicht deinstallieren und hat nichts mit Debian zu tun. Nur eine BIOS/UEFI-Einstellung (Schnellstart, Festplattenreihenfolge) kann diesen Schritt verkürzen." ;;
-*)  V_STOP="⛔ À garder : indispensable au système. Ne pas désactiver ni retirer."
-    V_JUDGE="🟠 Ne pas toucher sans bien comprendre : retirer ce service peut casser un démarrage, une mise à jour ou l'affichage. Si vous hésitez, laissez-le."
-    V_LEG="Légende : ⛔ à garder · 🟠 ne pas toucher sans bien comprendre"
+*)  V_STOP="$(tr_cle verdict.stop)"
+    V_JUDGE="$(tr_cle verdict.judge)"
+    V_LEG="$(tr_cle verdict.leg)"
     V_FW="Le firmware est inscrit sur la carte mère : il ne se désinstalle pas et n'a rien à voir avec Debian. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut raccourcir cette étape." ;;
 esac
 vsvc() { case "$1" in
