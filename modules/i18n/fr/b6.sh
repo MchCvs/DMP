@@ -16,10 +16,10 @@ NetworkManager-wait-online*) RO="$(tr_cle b6.role.reseau_attente)";;
 bluetooth*) RO="$(tr_cle b6.role.bluetooth)";;
 cups*) RO="$(tr_cle b6.role.cups)";;
 ModemManager*) RO="$(tr_cle b6.role.modem)";;
-ssh*) RO="permet de se connecter à distance à cet ordinateur. En erreur : personne ne peut s'y connecter à distance.";;
-apache2*|nginx*) RO="serveur de sites web local. En erreur : les sites hébergés ici sont inaccessibles.";;
-smartmontools*|smartd*) RO="surveille la santé des disques. En erreur : les alertes de panne ne seront plus envoyées.";;
-cron*) RO="lance les tâches programmées (sauvegardes, nettoyages). En erreur : elles ne se lancent plus.";;
+ssh*) RO="$(tr_cle b6.role.ssh)";;
+apache2*|nginx*) RO="$(tr_cle b6.role.web)";;
+smartmontools*|smartd*) RO="$(tr_cle b6.role.disques)";;
+cron*) RO="$(tr_cle b6.role.cron)";;
 *) RO="${D:-service du système}.";;
 esac
 [ -z "$LOG" ] && LOG="         (journal non lisible avec vos droits : tapez sudo journalctl -u $u)"

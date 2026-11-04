@@ -175,5 +175,9 @@
   "b6.role.reseau_attente": "fait patienter le démarrage jusqu'à ce que le réseau soit prêt. Souvent en erreur sans conséquence si le réseau arrive un peu plus tard.",
   "b6.role.bluetooth": "gère le Bluetooth (casque, souris, manette sans fil). En erreur : le Bluetooth ne fonctionnera pas, le reste oui.",
   "b6.role.cups": "gère l'impression. En erreur : impossible d'imprimer.",
-  "b6.role.modem": "gère les clés et modems 3G/4G. Sans objet si vous n'en avez pas."
+  "b6.role.modem": "gère les clés et modems 3G/4G. Sans objet si vous n'en avez pas.",
+  "b6.role.ssh": "permet de se connecter à distance à cet ordinateur. En erreur : personne ne peut s'y connecter à distance.",
+  "b6.role.web": "serveur de sites web local. En erreur : les sites hébergés ici sont inaccessibles.",
+  "b6.role.disques": "surveille la santé des disques. En erreur : les alertes de panne ne seront plus envoyées.",
+  "b6.role.cron": "lance les tâches programmées (sauvegardes, nettoyages). En erreur : elles ne se lancent plus."
 }
