@@ -89,7 +89,7 @@ vx() {
       esac;;
   *)  if [ "$TT" -lt 30 ]; then X="$(tr_cle verdict.vx.rapide n="$N")"; return; fi
       if [ "$TT" -lt 60 ]; then X="$(tr_cle verdict.vx.correct n="$N")"
-      else X="Au-delà d'une minute, quelque chose retarde le démarrage. L'étape la plus longue est $N. Regardez les 8 services les plus lents, et vérifiez la santé du disque (page Disque B4) : un disque fatigué est une cause fréquente."; fi
+      else X="$(tr_cle verdict.vx.lent n="$N")"; fi
       case $BIGC in
         fw) X="$X Elle dépend de votre machine, pas de Debian : le firmware ne se désinstalle pas. Seul un réglage du BIOS/UEFI (démarrage rapide, ordre des disques) peut la raccourcir.";;
         loader) X="$X Réduire l'attente du menu de démarrage (GRUB) raccourcirait cette étape.";;

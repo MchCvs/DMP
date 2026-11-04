@@ -228,5 +228,6 @@
   "verdict.role.libgtk_libqt": "bibliothèque d'interface graphique",
   "verdict.role.systemd_libsystemd": "gestionnaire de services du système",
   "verdict.vx.rapide": "Moins de 30 secondes est un bon résultat : rien à améliorer. Le plus long est {n}.",
-  "verdict.vx.correct": "Entre 30 et 60 secondes est acceptable. L'étape la plus longue est {n}."
+  "verdict.vx.correct": "Entre 30 et 60 secondes est acceptable. L'étape la plus longue est {n}.",
+  "verdict.vx.lent": "Au-delà d'une minute, quelque chose retarde le démarrage. L'étape la plus longue est {n}. Regardez les 8 services les plus lents, et vérifiez la santé du disque (page Disque B4) : un disque fatigué est une cause fréquente."
 }
