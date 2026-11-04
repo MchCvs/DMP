@@ -208,5 +208,6 @@
   "verdict.role.xdg_desktop_portal": "pont entre les applications et le bureau : il gère l'ouverture de fichiers et les boîtes de dialogue. Utile pour les logiciels récents.",
   "verdict.role.evolution_alarm": "rappels et alarmes du logiciel de messagerie Evolution (agenda). Le fermer supprime les rappels, sans toucher aux courriels.",
   "verdict.role.evolution_source": "gestion des comptes et agendas d'Evolution (messagerie). Le fermer ne supprime rien, mais les comptes se synchronisent moins souvent.",
-  "verdict.role.utility_utility": "processus de service pour une application (souvent le navigateur ou un logiciel de bureau). Ne pas le couper à la main : il redémarre avec l'application."
+  "verdict.role.utility_utility": "processus de service pour une application (souvent le navigateur ou un logiciel de bureau). Ne pas le couper à la main : il redémarre avec l'application.",
+  "verdict.role.code": "éditeur de code (Visual Studio Code)"
 }

@@ -35,7 +35,7 @@ vrole() {
     evolution-source*) r="$(tr_cle verdict.role.evolution_source)";;
     *Utility*|*utility*) r="$(tr_cle verdict.role.utility_utility)";;
     containerd|containerd.io|runc) r="moteur de conteneurs (utilisé par Docker et certains outils). Retirer ce service peut casser Docker ou des applications qui en dépendent.|Container-Laufzeit (von Docker und manchen Programmen genutzt). Dieses Dienstprogramm zu entfernen kann Docker oder davon abhängige Programme beschädigen.";;
-    code|code-*) r="éditeur de code (Visual Studio Code)|Code-Editor (Visual Studio Code)";;
+    code|code-*) r="$(tr_cle verdict.role.code)|Code-Editor (Visual Studio Code)";;
     linux-image*) r="noyau Linux, cœur du système|Linux-Kernel, Kern des Systems";;
     linux-headers*|linux-kbuild*|linux-compiler*) r="fichiers pour compiler des modules du noyau|Dateien zum Kompilieren von Kernel-Modulen";;
     libreoffice*) r="suite bureautique|Office-Paket";;
