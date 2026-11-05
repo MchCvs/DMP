@@ -3,5 +3,5 @@ T_COMP="Preparer = organiser les infos avant de faire un rapport. Comme ranger s
 T_R="Pret a generer rapport"
 T_CMD="date (DMP uniquement)"
 T_O() {
-O="Date: $DATE | Rapport pret a generer"
+O="$(tr_cle e3_1.observations date="$DATE")"
 }
