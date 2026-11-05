@@ -3,5 +3,5 @@ T_COMP="Générer = créer un rapport PDF ou texte avec toutes les infos. Comme 
 T_R="Prêt à télécharger"
 T_CMD="Création document (DMP uniquement)"
 T_O() {
-O="Rapport généré avec succès"
+O="$(tr_cle e3_2.observations)"
 }
