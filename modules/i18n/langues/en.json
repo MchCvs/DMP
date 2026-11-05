@@ -256,5 +256,8 @@
   "d2.locales_all": "This package installs all the system languages. You only use one: removing it frees space without breaking anything. Your active language stays in place.",
   "d2.comp": "Removing means uninstalling software you no longer need. This page shows you the biggest ones, what they are for and how to remove them safely.",
   "d2.cmd": "apt-mark showmanual, dpkg-query",
-  "d2.x": "DMP removes nothing: this page shows you what, why and how, and you keep the decision. Simple rule for beginners: do not remove anything here if you do not know what a name means."
+  "d2.x": "DMP removes nothing: this page shows you what, why and how, and you keep the decision. Simple rule for beginners: do not remove anything here if you do not know what a name means.",
+  "d3.comp": "Benefits are what you gain by looking after your computer well: it stays fast and safe, and it lasts longer.",
+  "d3.cmd": "df, /proc/meminfo, apt, systemctl",
+  "d3.x": "The more ✅ you have, the more you benefit from regular maintenance. A 🟡 is not a failure: it is a gain still possible, explained on the page concerned."
 }
