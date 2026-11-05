@@ -240,5 +240,6 @@
   "menu.tableau": "📈 Tableau de bord",
   "menu.sante": "🏥 Vérification santé",
   "menu.api": "📚 API Docs",
-  "a1.observations": "Votre processeur est un « {m} ». Il possède {c} cœurs. Un cœur est comme un ouvrier : plus il y en a, plus le travail se partage et va vite. Avec {c} cœurs, c'est {q}. Charge actuelle : {l}. Cette valeur mesure combien de tâches attendent leur tour : si elle reste sous {c}, le processeur travaille sans être débordé, car chaque cœur a sa tâche. Au-dessus de {c}, des tâches font la queue et l'ordinateur ralentit."
+  "a1.observations": "Votre processeur est un « {m} ». Il possède {c} cœurs. Un cœur est comme un ouvrier : plus il y en a, plus le travail se partage et va vite. Avec {c} cœurs, c'est {q}. Charge actuelle : {l}. Cette valeur mesure combien de tâches attendent leur tour : si elle reste sous {c}, le processeur travaille sans être débordé, car chaque cœur a sa tâche. Au-dessus de {c}, des tâches font la queue et l'ordinateur ralentit.",
+  "a2.observations": "Votre ordinateur a {t} Go de mémoire, {q}. En ce moment {p} % est occupé et il reste {d} Go libres. Pourquoi c'est important : quand le bureau est plein, l'ordinateur doit ranger des choses sur le disque, qui est bien plus lent, et tout ralentit. Tant qu'il reste de la place libre, tout reste fluide."
 }

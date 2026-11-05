@@ -19,5 +19,5 @@ case $PL in
 esac
 R="Mémoire libre, sans gêne"; [ "$PL" = 1 ] && R="Mémoire chargée, à surveiller"; [ "$PL" = 2 ] && R="Mémoire presque pleine, à libérer"
 X="$XU $XE"
-O="Votre ordinateur a $T Go de mémoire, $Q. En ce moment $P % est occupé et il reste $D Go libres. Pourquoi c'est important : quand le bureau est plein, l'ordinateur doit ranger des choses sur le disque, qui est bien plus lent, et tout ralentit. Tant qu'il reste de la place libre, tout reste fluide."
+O="$(tr_cle a2.observations t="$T" q="$Q" p="$P" d="$D")"
 }
