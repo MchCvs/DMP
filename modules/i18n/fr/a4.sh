@@ -8,6 +8,6 @@ T_O() {
 if [ -n "$WL" ]; then K="en Wi-Fi (sans fil)"; XU="Le Wi-Fi est pratique, mais sa qualité dépend de la distance à la box et des murs : si les pages sont lentes, rapprochez-vous ou passez par un câble."
 else K="par câble"; XU="Le câble est en général plus stable et plus rapide que le Wi-Fi, car le signal ne subit pas d'interférences."; fi
 X="Cette connexion suffit pour naviguer, regarder des vidéos et faire les mises à jour. $XU"
-O="Votre ordinateur est connecté $K, via l'interface « $F ». Son adresse sur le réseau est $A : c'est comme son numéro de maison, qui permet aux autres appareils de le trouver. Pourquoi c'est important : sans cette adresse, aucune page web ni mise à jour ne pourrait arriver jusqu'à vous."
+O="$(tr_cle a4.observations k="$K" f="$F" a="$A")"
 R="Connecté"
 }
