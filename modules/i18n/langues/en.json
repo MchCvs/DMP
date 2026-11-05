@@ -113,5 +113,13 @@
   "a8.no_r": "No USB device",
   "a8.cmd": "/sys/bus/usb/devices",
   "a8.liste.texte": "This list is enough to check that everything you have plugged in is recognised, so it is ready to use. If a device is missing, try another cable or another port, because the system can only use what it recognises.",
-  "a8.reconnus.titre": "{n} device(s) recognised"
+  "a8.reconnus.titre": "{n} device(s) recognised",
+  "b4.comp": "This page shows how full each storage space on your computer is, and what it is used for.",
+  "b4.cmd": "lsblk, df -h",
+  "b4.critique.titre": "A partition is almost full: free up space quickly",
+  "b4.critique.texte": "Above 90%, the computer slows down and may no longer be able to save files. Free up space now.",
+  "b4.surveiller.titre": "A partition is filling up: keep an eye on it",
+  "b4.surveiller.texte": "Above 75%, consider deleting or moving large files (videos, downloads).",
+  "b4.ok.titre": "Plenty of free space",
+  "b4.ok.texte": "No partition is close to full: you can carry on without worry."
 }
