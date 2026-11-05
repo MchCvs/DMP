@@ -3,5 +3,5 @@ T_COMP="Vérifier = s'assurer que les chiffres sont corrects avant de les affich
 T_R="Données sûres à afficher"
 T_CMD="Validation données (DMP uniquement)"
 T_O() {
-O="Tous les chiffres sont valides et cohérents"
+O="$(tr_cle e4_2.observations)"
 }
