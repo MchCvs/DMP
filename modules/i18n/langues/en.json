@@ -238,5 +238,7 @@
   "c1.comp": "Updates are vaccines for your computer: each time a flaw or a defect is discovered in a program, the publisher releases a fix. Installing it protects you.",
   "c1.cmd": "apt list --upgradable",
   "c2.comp": "A package is a piece of software stored in the Debian library, ready to be installed or removed cleanly. This page shows which ones are installed, which are the heaviest, and whether anything is broken.",
-  "c2.cmd": "dpkg-query, apt-mark, dpkg --audit"
+  "c2.cmd": "dpkg-query, apt-mark, dpkg --audit",
+  "c3.comp": "Maintenance means removing what is no longer useful: unused software, copies of downloads, caches. Why: a clean system stays faster and keeps more free space.",
+  "c3.cmd": "apt-get -s autoremove, du, dpkg -l, journalctl"
 }
