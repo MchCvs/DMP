@@ -234,5 +234,7 @@
   "b9.quelques.titre": "Protected, a few points to improve",
   "b9.quelques.texte": "Nothing serious: the system is not in immediate danger, but some points above (ordinary updates, firewall) are worth fixing when you can.",
   "b9.failles.titre": "Security flaws to fix quickly",
-  "b9.failles.texte": "A serious point is reported (a security update is waiting, too many doors are open, or remote administrator access is enabled)."
+  "b9.failles.texte": "A serious point is reported (a security update is waiting, too many doors are open, or remote administrator access is enabled).",
+  "c1.comp": "Updates are vaccines for your computer: each time a flaw or a defect is discovered in a program, the publisher releases a fix. Installing it protects you.",
+  "c1.cmd": "apt list --upgradable"
 }
