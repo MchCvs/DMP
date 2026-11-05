@@ -244,5 +244,17 @@
   "c4.comp": "Technical information is your computer's identity card: model, system, version. Why: when you ask for help, these details let someone understand exactly your setup.",
   "d1.comp": "Searching means finding a topic without going through every page: you type a word in the search box, and DMP shows the pages that talk about it.",
   "d1.x": "If no result appears, try a shorter or simpler word ('disk' rather than 'partition'). Each result takes you to the page concerned.",
-  "d1.cmd": "search in /api/*"
+  "d1.cmd": "search in /api/*",
+  "d2.noyau": "NO: without a kernel, the computer does not start. Debian keeps the old one as a backup, leave it alone.",
+  "d2.firefox": "If you uninstall Firefox, you will no longer be able to browse the web with this browser. Keep it if you use it.",
+  "d2.grub": "NO: GRUB starts Debian when the computer is switched on. Removing it can make the computer impossible to start and prevent future kernel updates.",
+  "d2.docker": "If you uninstall Docker, the applications running in containers will stop working. Keep it if you do not know what it does.",
+  "d2.gnome_aide": "If you uninstall this help, you will no longer have the GNOME user guide in the menu. Not serious, but useful when in doubt.",
+  "d2.gnome_fonds": "If you uninstall these wallpapers, you will no longer be able to choose the desktop images supplied with GNOME. The desktop still works.",
+  "d2.libreoffice_writer": "If you uninstall LibreOffice Writer, you will no longer be able to open or edit your Word or OpenDocument documents.",
+  "d2.libreoffice_aide": "If you uninstall the LibreOffice help, you will no longer have the built-in user guide. Your documents stay intact.",
+  "d2.locales_all": "This package installs all the system languages. You only use one: removing it frees space without breaking anything. Your active language stays in place.",
+  "d2.comp": "Removing means uninstalling software you no longer need. This page shows you the biggest ones, what they are for and how to remove them safely.",
+  "d2.cmd": "apt-mark showmanual, dpkg-query",
+  "d2.x": "DMP removes nothing: this page shows you what, why and how, and you keep the decision. Simple rule for beginners: do not remove anything here if you do not know what a name means."
 }
