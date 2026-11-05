@@ -3,7 +3,7 @@ T_COMP="Cette page dit depuis quand votre ordinateur est allumé sans interrupti
 T_CMD="uptime, /proc/uptime, /proc/loadavg"
 T_O() {
 if [ $J -gt 0 ]; then T="$J jour(s), $H h $M min"; else T="$H h $M min"; fi
-O="⏱️ Allumé depuis : $T (démarrage le $DEP)${NL}${NL}⚙️ Charge du processeur : $L pour $C cœurs${NL}Pourquoi : tant que ce nombre reste sous $C, chaque cœur a sa tâche et l'ordinateur reste fluide."
+O="$(tr_cle b1.observations t="$T" dep="$DEP" l="$L" c="$C")"
 case $UL in
 long) R="Allumé depuis longtemps : un redémarrage est conseillé"; X="Au bout d'un mois, des programmes ont laissé des restes en mémoire et certaines mises à jour (notamment le noyau, le cœur du système) ne s'appliquent qu'après un redémarrage, donc vous n'en profitez pas encore.";;
 mid) R="Allumé depuis plusieurs jours : tout va bien"; X="Redémarrer de temps en temps (une fois par semaine ou deux) est une bonne habitude, car cela remet la mémoire à zéro et applique les mises à jour.";;
