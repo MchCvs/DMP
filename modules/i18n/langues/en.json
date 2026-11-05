@@ -220,5 +220,10 @@
   "b7.role.bash_sh_zsh_dash_fish": "A terminal (the window where commands are typed) or the script running in it.",
   "b7.role.cupsd_cups_browsed": "Manages printing.",
   "b7.role.bluetoothd": "Manages Bluetooth.",
-  "b7.role.avahi_daemon": "Helps the computer find printers and devices on the local network."
+  "b7.role.avahi_daemon": "Helps the computer find printers and devices on the local network.",
+  "b8.comp": "This page measures how long your computer takes to start, from pressing the power button until the desktop is ready, and what slows it down.",
+  "b8.no_o": "The measurement is not available. Why: the systemd-analyze tool is missing, or the startup has not finished.",
+  "b8.no_r": "Measurement unavailable",
+  "b8.no_cmd": "systemd-analyze",
+  "b8.cmd": "systemd-analyze, systemd-analyze blame"
 }
