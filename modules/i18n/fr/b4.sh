@@ -34,7 +34,7 @@ esac
 }
 T_PART() { P="$P${NL}🗂️ $tg  ($s)${NL}   • Occupation : $p ($u utilisés, $a libres)${NL}   • Format : $FS${NL}   • Emplacement physique : $s${NL}   • Rôle : $RO${NL}"; }
 T_O() {
-O="Un disque est l'objet physique. Il est découpé en parties appelées partitions, comme une armoire séparée en tiroirs : chaque partition a son rôle, et l'ordinateur les utilise séparément. Pourquoi ce découpage : séparer le système de vos fichiers rend l'ensemble plus sûr et plus facile à réparer.${NL}${NL}══ $ND disque(s) physique(s) ══$D${NL}══ État de santé des disques ══$SA${NL}══ Partitions utilisées en ce moment ══$P"
+O="$(tr_cle b4.observations nd="$ND" d="$D" sa="$SA" p="$P")"
 case $WL in
 2) R="Une partition est presque pleine : à libérer vite"; X="Au-dessus de 90 %, l'ordinateur ralentit et risque de ne plus pouvoir enregistrer. Libérez de la place maintenant.";;
 1) R="Une partition se remplit : à surveiller"; X="Au-delà de 75 %, pensez à supprimer ou déplacer des fichiers volumineux (vidéos, téléchargements).";;
