@@ -259,5 +259,17 @@
   "d2.x": "DMP removes nothing: this page shows you what, why and how, and you keep the decision. Simple rule for beginners: do not remove anything here if you do not know what a name means.",
   "d3.comp": "Benefits are what you gain by looking after your computer well: it stays fast and safe, and it lasts longer.",
   "d3.cmd": "df, /proc/meminfo, apt, systemctl",
-  "d3.x": "The more ✅ you have, the more you benefit from regular maintenance. A 🟡 is not a failure: it is a gain still possible, explained on the page concerned."
+  "d3.x": "The more ✅ you have, the more you benefit from regular maintenance. A 🟡 is not a failure: it is a gain still possible, explained on the page concerned.",
+  "f2_1.comp": "Backups are insurance for your files: they are useless until the day you need them, and on that day they save everything. This page checks whether a copy exists and how recent it is.",
+  "f2_1.cmd": "command -v, /timeshift, /var/backups, lsblk",
+  "f2_1.aucun_outil": "none",
+  "f2_1.aucun_trouve": "none found",
+  "f2_1.aucune": "none",
+  "f2_1.aucune_trouvee": "none found",
+  "f2_1.none.titre": "No backup of your files: to watch",
+  "f2_1.tool.titre": "Backup tool installed, no copy found: to watch",
+  "f2_1.ancienne.titre": "Last backup is old ({date}): to watch",
+  "f2_1.ancienne.texte": "The last copy dates from {jours} days ago. The older it is, the more work you could lose in case of a failure. Start a Pika backup and schedule it (at least once a week).",
+  "f2_1.recente.titre": "Recent backup found ({date})",
+  "f2_1.recente.texte": "A Pika Backup copy is {jours} day(s) old: your files are protected. Plug in the backup drive from time to time so DMP can check it."
 }
