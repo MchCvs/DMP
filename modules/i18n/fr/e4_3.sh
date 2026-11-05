@@ -3,5 +3,5 @@ T_COMP="Utilisable = les données sont prêtes pour qu'on les mette en graphique
 T_R="Prêt à visualiser"
 T_CMD="Formatage données (DMP uniquement)"
 T_O() {
-O="Données formatées et prêtes"
+O="$(tr_cle e4_3.observations)"
 }
