@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'
+. "$(dirname "$0")/../i18n/langues.sh"
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/b2.sh" ] || LG=fr
 . "$I18/$LG/b2.sh"
 read -r _ a b c d e f g _ < /proc/stat; t1=$((a+b+c+d+e+f+g)); i1=$((d+e)); sleep 1
