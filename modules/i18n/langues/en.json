@@ -295,5 +295,18 @@
   "b3.observations": "🧠 Memory used: {p} % of {t} GB (of which {a} GB is still available)\n\nThe 3 biggest consumers:\n{top}\n\n🔁 Backup memory (swap, on the disk): {sf} GB used out of {st} GB\nWhy: when the workbench is full, the system stores things on the disk, which is much slower. A lot of swap in use means memory has run short.",
   "b5.connexion": "🔗 Your connection\n   • Technical name: {f} ({nm})\n   • Type: {k}\n   • Your computer's address: {ip}\n      Why: this is its house number on your network; it lets other devices find it.\n   • Box (gateway): {gw}\n      Why: it is the way out to the Internet. Everything going out or coming in passes through it.\n   • Site directory (DNS): {dns}\n      Why: it turns a name like debian.org into a numeric address, like a phone book.\n   • Link speed: {spt}\n      Why: this is the maximum speed of the cable or Wi-Fi between your computer and the box (it is not the speed of your internet subscription).",
   "b5.trafic": "📦 What has travelled since power-on ({ut})\n   • ⬇️ Received: {rh} (about {ph} photos of 1 MB), in {rp} packets\n   • ⬆️ Sent: {th}, in {tp} packets\n   • Average received: about {mh} per hour\n      Why: a packet is a small parcel of data; a web page or a video arrives as thousands of parcels. {bal}",
-  "b5.tests": "🏓 Live tests\n   • Your box: {box}\n   • Internet: {internet}\n   • Directory (site names): {annuaire}\n      Why: each link is tested in order (box, then Internet, then directory) to find exactly where a possible problem is."
+  "b5.tests": "🏓 Live tests\n   • Your box: {box}\n   • Internet: {internet}\n   • Directory (site names): {annuaire}\n      Why: each link is tested in order (box, then Internet, then directory) to find exactly where a possible problem is.",
+  "e3_1.observations": "Date: {date} | Report ready to generate",
+  "e3_2.observations": "Report generated successfully",
+  "e3_3.observations": "History of the last 10 reports available",
+  "e4_1.observations": "Data collected and validated",
+  "e4_2.observations": "All figures are valid and consistent",
+  "e4_3.observations": "Data formatted and ready",
+  "e5.observations": "System up since: {uptime} | Average load (last minute): {load} (0 to 4 on 4 cores is normal)",
+  "f1_1.observations": "System errors detected: {errors} (if zero: excellent)",
+  "f1_2.observations": "System healthy and working",
+  "f1_3.observations": "No anomaly detected. Your system is normal.",
+  "f2_2.observations": "Extension added successfully",
+  "f2_3.observations": "Extension removed successfully",
+  "f4.observations": "Last system change: {last} | Number of changes: {changes} (installations/removals)"
 }
