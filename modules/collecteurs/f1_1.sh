@@ -1,5 +1,6 @@
 #!/bin/bash
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/f1_1.sh" ] || LG=fr
+. "$(dirname "$0")/../i18n/langues.sh"
 . "$I18/$LG/f1_1.sh"
 ERRORS=$(dmesg 2>/dev/null | grep -i error | wc -l)
 [[ $ERRORS -eq 0 ]] && RES="$T_OK" || RES="$T_ERR"
