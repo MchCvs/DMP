@@ -240,5 +240,6 @@
   "c2.comp": "A package is a piece of software stored in the Debian library, ready to be installed or removed cleanly. This page shows which ones are installed, which are the heaviest, and whether anything is broken.",
   "c2.cmd": "dpkg-query, apt-mark, dpkg --audit",
   "c3.comp": "Maintenance means removing what is no longer useful: unused software, copies of downloads, caches. Why: a clean system stays faster and keeps more free space.",
-  "c3.cmd": "apt-get -s autoremove, du, dpkg -l, journalctl"
+  "c3.cmd": "apt-get -s autoremove, du, dpkg -l, journalctl",
+  "c4.comp": "Technical information is your computer's identity card: model, system, version. Why: when you ask for help, these details let someone understand exactly your setup."
 }
