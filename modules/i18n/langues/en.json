@@ -286,5 +286,6 @@
   "a4.observations": "Your computer is connected {k}, through the interface \"{f}\". Its network address is {a}: it is like its house number, which lets other devices find it. Why this matters: without this address, no web page or update could reach you.",
   "a5.observations": "Your computer uses: \"{g}\". {k} Why it is useful to know: it tells you whether the computer can handle games or video editing, or whether it is rather meant for everyday use.",
   "a6.observations": "Your motherboard is a \"{n}\" from the manufacturer {v}. Its startup program (BIOS) is version {b}, dated {y}. Why it is useful: the BIOS is the first program started when you switch on the computer. A very old version may lack fixes, but it is only changed when necessary.",
-  "a7.observations": "You are using {p}. Its kernel (the heart of the system, which talks directly to the hardware) is version {k}, for the {m} architecture. Why it matters: knowing the version tells you whether it is still supported and updated. Debian is known for its stability."
+  "a7.observations": "You are using {p}. Its kernel (the heart of the system, which talks directly to the hardware) is version {k}, for the {m} architecture. Why it matters: knowing the version tells you whether it is still supported and updated. Debian is known for its stability.",
+  "a8.observations": "Your computer recognises {n} USB device(s):{o}"
 }

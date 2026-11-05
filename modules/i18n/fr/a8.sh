@@ -24,6 +24,6 @@ esac
 T_DEV() { O="$O${NL}${NL}🔌 Appareil $N : « $nom »${NL}   • Type : $T${NL}   • Rôle : $E${NL}   • Connexion : $V"; }
 T_O() {
 X="$(tr_cle a8.liste.texte)"
-O="Votre ordinateur reconnaît $N appareil(s) USB :$O"
+O="$(tr_cle a8.observations n="$N" o="$O")"
 R="$(tr_cle a8.reconnus.titre n=$N)"
 }
