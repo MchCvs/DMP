@@ -236,5 +236,7 @@
   "b9.failles.titre": "Security flaws to fix quickly",
   "b9.failles.texte": "A serious point is reported (a security update is waiting, too many doors are open, or remote administrator access is enabled).",
   "c1.comp": "Updates are vaccines for your computer: each time a flaw or a defect is discovered in a program, the publisher releases a fix. Installing it protects you.",
-  "c1.cmd": "apt list --upgradable"
+  "c1.cmd": "apt list --upgradable",
+  "c2.comp": "A package is a piece of software stored in the Debian library, ready to be installed or removed cleanly. This page shows which ones are installed, which are the heaviest, and whether anything is broken.",
+  "c2.cmd": "dpkg-query, apt-mark, dpkg --audit"
 }
