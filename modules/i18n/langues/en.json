@@ -107,5 +107,11 @@
   "a5.no_r": "Not identified",
   "a5.cmd": "lspci",
   "a5.integree": "Graphics built into the processor",
-  "a5.dediee": "Dedicated graphics card"
+  "a5.dediee": "Dedicated graphics card",
+  "a8.comp": "Devices are everything you plug into the computer: keyboard, mouse, USB stick, webcam, printer. Each one needs to be recognised by the system to work.",
+  "a8.no_o": "No USB device is detected right now. Why: nothing is plugged in, or your keyboard and mouse connect in another way.",
+  "a8.no_r": "No USB device",
+  "a8.cmd": "/sys/bus/usb/devices",
+  "a8.liste.texte": "This list is enough to check that everything you have plugged in is recognised, so it is ready to use. If a device is missing, try another cable or another port, because the system can only use what it recognises.",
+  "a8.reconnus.titre": "{n} device(s) recognised"
 }
