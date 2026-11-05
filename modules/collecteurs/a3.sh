@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$(dirname "$0")/lib.sh"; NL=$'\n'; export LC_ALL=C
+. "$(dirname "$0")/../i18n/langues.sh"
 ID="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$ID/$LG/a3.sh" ] || LG=fr
 . "$ID/$LG/a3.sh"
 read S U A P <<< $(df -h --output=size,used,avail,pcent / | tail -1); NP=${P%\%}; SG=$(df -BG --output=size / | tail -1 | tr -dc 0-9)

@@ -16,6 +16,6 @@ case $SL in
 2) SU="Cette capacité est suffisante pour un usage courant, mais photos et vidéos la remplissent vite : surveillez l'espace restant.";;
 *) SU="Cette capacité est limitée : photos et vidéos la rempliront vite, pensez à un disque externe.";;
 esac
-O="Un disque est l'armoire où sont rangés pour de bon vos documents, photos, programmes et le système. Contrairement à la mémoire, il garde tout quand on éteint.${NL}Pourquoi cette page : connaître les armoires de votre ordinateur, leur taille et leur type, c'est savoir où ranger et quoi sauvegarder.${NL}${NL}🔎 $N disque(s) détecté(s) sur cet ordinateur :$D${NL}${NL}🏠 Disque principal (celui du système) : capacité $S, occupé à $P ($U utilisés, $A libres)${NL}   Pourquoi : un disque trop plein ralentit l'ordinateur, empêche les mises à jour et l'enregistrement de nouveaux fichiers. En dessous de 75 %, on est tranquille."
+O="$(tr_cle a3.observations n="$N" d="$D" s="$S" p="$P" u="$U" a="$A")"
 R="Espace suffisant"; [ $NP -ge 75 ] && R="Espace à surveiller"; [ $NP -ge 90 ] && R="Disque principal presque plein : à libérer rapidement"
 }
