@@ -239,5 +239,6 @@
   "menu.sec_f": "🔍 Section F — Contrôle & Extensions",
   "menu.tableau": "📈 Tableau de bord",
   "menu.sante": "🏥 Vérification santé",
-  "menu.api": "📚 API Docs"
+  "menu.api": "📚 API Docs",
+  "a1.observations": "Votre processeur est un « {m} ». Il possède {c} cœurs. Un cœur est comme un ouvrier : plus il y en a, plus le travail se partage et va vite. Avec {c} cœurs, c'est {q}. Charge actuelle : {l}. Cette valeur mesure combien de tâches attendent leur tour : si elle reste sous {c}, le processeur travaille sans être débordé, car chaque cœur a sa tâche. Au-dessus de {c}, des tâches font la queue et l'ordinateur ralentit."
 }

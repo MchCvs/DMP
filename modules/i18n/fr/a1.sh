@@ -7,7 +7,7 @@ case $LV in
 2) Q="un nombre confortable pour un usage courant : internet, bureautique, vidéos";;
 *) Q="un nombre modeste : l'ordinateur peut ralentir si on lance beaucoup de choses en même temps";;
 esac
-O="Votre processeur est un « $M ». Il possède $C cœurs. Un cœur est comme un ouvrier : plus il y en a, plus le travail se partage et va vite. Avec $C cœurs, c'est $Q. Charge actuelle : $L. Cette valeur mesure combien de tâches attendent leur tour : si elle reste sous $C, le processeur travaille sans être débordé, car chaque cœur a sa tâche. Au-dessus de $C, des tâches font la queue et l'ordinateur ralentit."
+O="$(tr_cle a1.observations m="$M" c="$C" q="$Q" l="$L")"
 case $GM in
 3) GN="entrée de gamme"; GX="un i3 suffit pour internet, la bureautique et les vidéos, mais peut peiner si on fait beaucoup de choses à la fois";;
 5) GN="milieu de gamme"; GX="un i5 est le choix le plus courant car il offre le meilleur équilibre entre vitesse et prix : il suffit largement pour internet, la bureautique, les vidéos, les photos et les jeux courants";;
