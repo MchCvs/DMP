@@ -1,5 +1,6 @@
 #!/bin/bash
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e5.sh" ] || LG=fr
+. "$(dirname "$0")/../i18n/langues.sh"
 . "$I18/$LG/e5.sh"
 UPTIME=$(uptime -p 2>/dev/null | sed 's/up //')
 LOAD=$(cat /proc/loadavg | awk '{print $1}')

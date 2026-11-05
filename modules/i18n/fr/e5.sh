@@ -4,5 +4,5 @@ T_R="Diagnostic complet disponible"
 T_CMD="uptime -p + /proc/loadavg (DMP uniquement)"
 T_NOTE="Si Load > nombre de cœurs: système surchargé. Sinon: c'est bon"
 T_O() {
-O="Système actif depuis: $UPTIME | Charge moyenne (dernière minute): $LOAD (0-4 sur 4 cœurs c'est normal)"
+O="$(tr_cle e5.observations uptime="$UPTIME" load="$LOAD")"
 }
