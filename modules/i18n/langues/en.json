@@ -225,5 +225,14 @@
   "b8.no_o": "The measurement is not available. Why: the systemd-analyze tool is missing, or the startup has not finished.",
   "b8.no_r": "Measurement unavailable",
   "b8.no_cmd": "systemd-analyze",
-  "b8.cmd": "systemd-analyze, systemd-analyze blame"
+  "b8.cmd": "systemd-analyze, systemd-analyze blame",
+  "b9.comp": "This page checks that the doors of your computer are properly closed: security updates, firewall, open doors and recent access.",
+  "b9.cmd": "apt, ss, systemctl, last",
+  "b9.nohist": "   • History not available",
+  "b9.ok.titre": "System well protected",
+  "b9.ok.texte": "No update is waiting, no door is open for no reason, nothing to report: the main entrances are closed.",
+  "b9.quelques.titre": "Protected, a few points to improve",
+  "b9.quelques.texte": "Nothing serious: the system is not in immediate danger, but some points above (ordinary updates, firewall) are worth fixing when you can.",
+  "b9.failles.titre": "Security flaws to fix quickly",
+  "b9.failles.texte": "A serious point is reported (a security update is waiting, too many doors are open, or remote administrator access is enabled)."
 }
