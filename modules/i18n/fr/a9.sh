@@ -12,6 +12,6 @@ bad) XU="Votre batterie n'a gardé que $W % de sa capacité d'origine : elle est
 *) XU="L'usure de la batterie n'a pas pu être mesurée.";;
 esac
 X="$XU Pourquoi : une batterie perd un peu de capacité à chaque cycle de charge, c'est normal avec les années."
-O="Votre batterie est chargée à $P % (état : $S). Pourquoi c'est utile : cela indique combien de temps vous pouvez travailler sans prise. Une batterie qui ne tient plus longtemps est usée avec les années."
+O="$(tr_cle a9.observations p="$P" s="$S")"
 R="Batterie détectée"
 }

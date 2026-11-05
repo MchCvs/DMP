@@ -247,5 +247,6 @@
   "a5.observations": "Votre ordinateur utilise : « {g} ». {k} Pourquoi c'est utile de le savoir : cela vous dit si l'ordinateur peut gérer des jeux ou du montage, ou s'il est plutôt fait pour un usage courant.",
   "a6.observations": "Votre carte mère est une « {n} » du fabricant {v}. Son programme de démarrage (BIOS) est en version {b}, datée du {y}. Pourquoi c'est utile : le BIOS est le premier programme lancé quand vous allumez l'ordinateur. Une version très ancienne peut manquer de corrections, mais on ne la modifie que si nécessaire.",
   "a7.observations": "Vous utilisez {p}. Son noyau (le cœur du système, qui parle directement au matériel) est en version {k}, pour une architecture {m}. Pourquoi c'est important : connaître sa version permet de savoir si elle est encore suivie et mise à jour. Debian est réputé pour sa stabilité.",
-  "a8.observations": "Votre ordinateur reconnaît {n} appareil(s) USB :{o}"
+  "a8.observations": "Votre ordinateur reconnaît {n} appareil(s) USB :{o}",
+  "a9.observations": "Votre batterie est chargée à {p} % (état : {s}). Pourquoi c'est utile : cela indique combien de temps vous pouvez travailler sans prise. Une batterie qui ne tient plus longtemps est usée avec les années."
 }
