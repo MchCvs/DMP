@@ -3,5 +3,5 @@ T_COMP="Consulter = lire les anciens rapports pour voir l'évolution. Comme reli
 T_R="Archives accessibles"
 T_CMD="Lecture historique (DMP uniquement)"
 T_O() {
-O="Historique de 10 derniers rapports disponible"
+O="$(tr_cle e3_3.observations)"
 }
