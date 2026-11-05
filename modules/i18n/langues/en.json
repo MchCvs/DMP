@@ -271,5 +271,13 @@
   "f2_1.ancienne.titre": "Last backup is old ({date}): to watch",
   "f2_1.ancienne.texte": "The last copy dates from {jours} days ago. The older it is, the more work you could lose in case of a failure. Start a Pika backup and schedule it (at least once a week).",
   "f2_1.recente.titre": "Recent backup found ({date})",
-  "f2_1.recente.texte": "A Pika Backup copy is {jours} day(s) old: your files are protected. Plug in the backup drive from time to time so DMP can check it."
+  "f2_1.recente.texte": "A Pika Backup copy is {jours} day(s) old: your files are protected. Plug in the backup drive from time to time so DMP can check it.",
+  "f3.comp": "The speed test (benchmark) is like timing a runner: the computer does an identical effort each time, so the results can be compared over time.",
+  "f3.cmd": "python3, dd",
+  "f3.rapide.titre": "Fast machine",
+  "f3.rapide.texte": "All three measurements are good: processor, memory and disk keep up. Repeat this test from time to time: a clear drop signals a problem (tired disk, program running in the background).",
+  "f3.moyenne.titre": "Average speed: to watch",
+  "f3.moyenne.texte": "At least one measurement is only fair. Nothing abnormal for everyday use. If the machine seems slow to you, the measurement shows which part is the limit.",
+  "f3.faible.titre": "Low speed: to improve",
+  "f3.faible.texte": "At least one measurement is low: that is the part limiting your computer. The disk is the easiest to improve (a SSD is a major gain)."
 }
