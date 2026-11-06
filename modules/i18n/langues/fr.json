@@ -209,7 +209,6 @@
   "verdict.role.utility_utility": "processus de service pour une application (souvent le navigateur ou un logiciel de bureau). Ne pas le couper à la main : il redémarre avec l'application.",
   "verdict.role.code": "éditeur de code (Visual Studio Code)",
   "verdict.role.containerd_containerd_io_runc": "moteur de conteneurs (utilisé par Docker et certains outils). Retirer ce service peut casser Docker ou des applications qui en dépendent.",
-  "verdict.role.code_code": "$(tr_cle verdict.role.code)",
   "verdict.role.linux_image": "noyau Linux, cœur du système",
   "verdict.role.linux_headers_linux_kbuild_linux_compiler": "fichiers pour compiler des modules du noyau",
   "verdict.role.libreoffice": "suite bureautique",

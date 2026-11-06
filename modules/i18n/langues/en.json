@@ -310,5 +310,12 @@
   "f2_3.observations": "Extension removed successfully",
   "f4.observations": "Last system change: {last} | Number of changes: {changes} (installations/removals)",
   "e1.observations": "Hostname: {h} | CPU: {c} cores | RAM: {r} | Disk: {d}",
-  "e2.observations": "CPU: {cpu} % | RAM: {mem} % | Disk: {disk} % | Final score: {score}/100"
+  "e2.observations": "CPU: {cpu} % | RAM: {mem} % | Disk: {disk} % | Final score: {score}/100",
+  "verdict.stop": "⛔ Keep: essential to the system. Do not disable or remove.",
+  "verdict.judge": "🟠 Do not touch without understanding it: removing this service can break startup, an update or the display. If in doubt, leave it.",
+  "verdict.leg": "Legend: ⛔ keep · 🟠 do not touch without understanding it",
+  "verdict.firmware": "The firmware is stored on the motherboard: it cannot be uninstalled and has nothing to do with Debian. Only a BIOS/UEFI setting (fast boot, disk order) can shorten this step.",
+  "verdict.vx.rapide": "Under 30 seconds is a good result: nothing to improve. The longest step is {n}.",
+  "verdict.vx.correct": "Between 30 and 60 seconds is acceptable. The longest step is {n}.",
+  "verdict.vx.lent": "Beyond one minute, something is slowing down startup. The longest step is {n}. Look at the 8 slowest services and check the disk health (Disk page B4): a tired disk is a common cause."
 }
