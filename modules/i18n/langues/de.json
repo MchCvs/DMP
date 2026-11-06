@@ -296,5 +296,10 @@
   "a9.observations": "Ihr Akku ist zu {p} % geladen (Zustand: {s}). Warum das nützlich ist: Sie zeigt, wie lange Sie ohne Netzkabel arbeiten können. Ein Akku, der nicht mehr so lange hält, ist im Lauf der Jahre verschlissen.",
   "b1.observations": "⏱️ Eingeschaltet seit: {t} (Start am {dep})\n\n⚙️ Prozessorlast: {l} bei {c} Kernen\nWarum: Solange diese Zahl unter {c} bleibt, hat jeder Kern seine Aufgabe und der Computer bleibt flüssig.",
   "b2.observations": "📊 Der Prozessor arbeitet gerade zu {p} %.\n\nDie 3 Programme, die ihn am meisten beanspruchen:\n{top}\n\nWarum: Ein Prozessor, der lange bei 100 % läuft, macht den Computer langsam, weil er keine freie Zeit für neue Anfragen hat.",
-  "b3.observations": "🧠 Genutzter Arbeitsspeicher: {p} % von {t} GB (davon sind noch {a} GB verfügbar)\n\nDie 3 größten Verbraucher:\n{top}\n\n🔁 Auslagerungsspeicher (Swap, auf der Festplatte): {sf} GB von {st} GB genutzt\nWarum: Wenn die Arbeitsfläche voll ist, lagert das System Daten auf die viel langsamere Festplatte aus. Viel genutzter Swap bedeutet, dass der Arbeitsspeicher knapp wurde."
+  "b3.observations": "🧠 Genutzter Arbeitsspeicher: {p} % von {t} GB (davon sind noch {a} GB verfügbar)\n\nDie 3 größten Verbraucher:\n{top}\n\n🔁 Auslagerungsspeicher (Swap, auf der Festplatte): {sf} GB von {st} GB genutzt\nWarum: Wenn die Arbeitsfläche voll ist, lagert das System Daten auf die viel langsamere Festplatte aus. Viel genutzter Swap bedeutet, dass der Arbeitsspeicher knapp wurde.",
+  "e1.observations": "Hostname: {h} | CPU: {c} Kerne | RAM: {r} | Festplatte: {d}",
+  "e2.observations": "CPU: {cpu} % | RAM: {mem} % | Festplatte: {disk} % | Endpunktzahl: {score}/100",
+  "e3_1.observations": "Datum: {date} | Bericht bereit zur Erstellung",
+  "e3_2.observations": "Bericht erfolgreich erstellt",
+  "e3_3.observations": "Verlauf der letzten 10 Berichte verfügbar"
 }
