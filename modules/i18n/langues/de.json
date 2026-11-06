@@ -117,5 +117,14 @@
   "a8.cmd": "/sys/bus/usb/devices",
   "a8.liste.texte": "Diese Liste genügt, um zu prüfen, ob alles, was Sie angeschlossen haben, erkannt wird und einsatzbereit ist. Fehlt ein Gerät, probieren Sie ein anderes Kabel oder einen anderen Anschluss, denn das System kann nur verwenden, was es erkennt.",
   "a8.reconnus.titre": "{n} Gerät(e) erkannt",
-  "a8.observations": "Ihr Computer erkennt {n} USB-Gerät(e):{o}"
+  "a8.observations": "Ihr Computer erkennt {n} USB-Gerät(e):{o}",
+  "b4.comp": "Diese Seite zeigt, wie voll jeder Speicherbereich Ihres Computers ist und wofür er verwendet wird.",
+  "b4.cmd": "lsblk, df -h",
+  "b4.critique.titre": "Eine Partition ist fast voll: bald Platz schaffen",
+  "b4.critique.texte": "Über 90 % wird der Computer langsamer und kann möglicherweise nicht mehr speichern. Schaffen Sie jetzt Platz.",
+  "b4.surveiller.titre": "Eine Partition füllt sich: im Auge behalten",
+  "b4.surveiller.texte": "Über 75 % sollten Sie überlegen, große Dateien (Videos, Downloads) zu löschen oder zu verschieben.",
+  "b4.ok.titre": "Reichlich Platz",
+  "b4.ok.texte": "Keine Partition ist fast voll, Sie können unbesorgt weitermachen.",
+  "b4.observations": "Eine Festplatte ist das physische Gerät. Sie ist in Bereiche namens Partitionen unterteilt, wie ein Schrank mit Schubladen: Jede Partition hat ihre Aufgabe, und der Computer nutzt sie getrennt. Warum diese Aufteilung: Wenn das System von Ihren Dateien getrennt ist, ist alles sicherer und leichter zu reparieren.\n\n══ {nd} physische Festplatte(n) ══{d}\n══ Zustand der Festplatten ══{sa}\n══ Gerade genutzte Partitionen ══{p}"
 }
