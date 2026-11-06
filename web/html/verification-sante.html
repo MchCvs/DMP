@@ -35,4 +35,5 @@ r.textContent=T.res?T.res(m):m[2]?'🔴 '+m[2]+' point(s) à corriger en priorit
 (async()=>{const G=[[T.g1||'🧩 Composants principaux',['a1','a2','a3','a6','a7'],1],[T.g2||'🔌 Périphériques et connexions (tous détaillés)',['a8','b4','a5','a4','b5','a9'],2],[T.g3||'🛡️ Fonctionnement et sécurité',['b1','b2','b3','b6','b7','b8','b9'],1]];
 const D=await all([...new Set(G.flatMap(g=>g[1]))]),o=document.getElementById('obs'),ns=[];o.textContent='';
 G.forEach(([t,l,m])=>{o.appendChild(E('h3','margin:20px 0 4px',t));l.forEach(k=>{const r=card(k,D[k]||{},m);ns.push(r.n);o.appendChild(r.c)})});res(ns)})();
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>

@@ -52,4 +52,5 @@ row=(k,D,wx)=>{const d=D[k]||{},n=lv((DF&&DF[k])||d),p=sp(d.resultat),c=E('div',
 const t=E('div');KS.forEach(k=>{const d=D[k]||{},n=lv(DL[k]||d),p=sp(d.resultat),l=E('div','display:flex;gap:10px;align-items:baseline;padding:9px 6px;border-bottom:1px solid #eee;line-height:1.5'+(n===2?';background:#fdedec':''));l.appendChild(E('span','width:26px',IC[n]));const b=E('div');b.appendChild(E('b','',N[k]+' : '));b.appendChild(document.createTextNode(p[0]));l.appendChild(b);t.appendChild(l)});o.appendChild(t);
 const m=[0,0,0,0];KS.forEach(k=>m[lv(DL[k])]++);
 r.textContent=LN==='fr'?('Bilan du contrôle : '+KS.length+' points vérifiés. ✅ '+m[0]+' en bon état, 🟡 '+m[1]+' à surveiller, 🔴 '+m[2]+' à corriger, ➖ '+m[3]+' sans objet.\n\nComment lire la liste : une ligne = un point vérifié. Le symbole donne le verdict : ✅ rien à faire, 🟡 à regarder sans urgence, 🔴 à traiter en priorité (ligne rose), ➖ l\'élément n\'existe pas sur votre ordinateur.\n\nPourquoi un contrôle : comme un contrôle technique, il vérifie tout d\'un coup et ne laisse passer aucun point. Pour comprendre une ligne, ouvrez la page du sujet (étape F1-2) ou la liste des anomalies (étape F1-3).'):TX[LN].fin(KS.length,m)})();
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>

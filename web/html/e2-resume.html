@@ -49,4 +49,5 @@ const pr=KS.filter(k=>lv(D[k])>0&&lv(D[k])<3).sort((a,b)=>lv(D[b])-lv(D[a]));
 o.appendChild(E('h3','margin:18px 0 6px','🎯 À traiter en priorité'));
 if(!pr.length)o.appendChild(E('div','','Rien à traiter : tous les sujets sont en bon état.'));pr.slice(0,5).forEach(k=>o.appendChild(row(k,D,1)));
 r.textContent=(t[2]?'🔴 '+t[2]+' sujet(s) demandent une action rapide : ils sont listés en premier ci-dessus. ':t[1]?'🟡 Aucun point urgent, mais '+t[1]+' sujet(s) à surveiller. ':'✅ Votre ordinateur est en bon état sur tous les sujets. ')+'\n\nPourquoi cette page : elle sert de point de départ. Si tout est vert, inutile d\'aller plus loin. Sinon, cliquez sur « Page complète » du sujet concerné : il explique la cause et la marche à suivre.\nLes ➖ sont des éléments que votre ordinateur n\'a pas (par exemple la batterie sur un ordinateur fixe ; le Bluetooth et le Wi-Fi absents sont détaillés en page B6) : ce n\'est pas un défaut.'})();
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>

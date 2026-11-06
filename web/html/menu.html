@@ -112,5 +112,6 @@ a:hover{background:#2980b9}
 <script>
 (function(){var L=localStorage.getItem('dmp_lang')||'fr';var M={'🚀 Démarrage rapide':'menu.demarrage','🔍 Section A — Découverte':'menu.sec_a','⚙️ Section B — Activité':'menu.sec_b','🛠️ Section C — Maintenance':'menu.sec_c','🎯 Section D — Décision':'menu.sec_d','📊 Section E — Rapports &amp; Analyses':'menu.sec_e','🔍 Section F — Contrôle &amp; Extensions':'menu.sec_f','📈 Tableau de bord':'menu.tableau','🏥 Vérification santé':'menu.sante'};fetch('/i18n/'+L+'.json').then(function(r){return r.json()}).then(function(T){document.querySelectorAll('h2,a').forEach(function(e){var k=M[e.textContent.trim()];if(k&&T[k])e.textContent=T[k]})}).catch(function(){});})();
 </script>
+<script src="page-i18n.js"></script>
 </body>
 </html>

@@ -56,4 +56,5 @@ o.appendChild(E('h3','margin:20px 0 6px',(LN==='fr'?'🔄 Changements depuis le 
 o.appendChild(E('div','line-height:1.8;white-space:pre-line',pv?(ch.length?ch.join('\n'):(LN==='fr'?'Aucun changement : tout est identique au contrôle précédent.':TX[LN].nochg)):(LN==='fr'?'Premier contrôle : DMP garde ce résultat pour le comparer à la prochaine visite.':TX[LN].first)));
 try{localStorage.setItem('dmp-ctrl',JSON.stringify({t:Date.now(),v:cur}))}catch(e){}
 r.textContent=LN==='fr'?('Les résultats sont regroupés par domaine, avec une note sur 100 (✅ vaut 100, 🟡 vaut 60, 🔴 vaut 20, la moyenne donne la note). Sous chaque domaine, chaque sujet est expliqué en une phrase avec ce qu\'il faut faire.\n\nChangements : DMP se souvient du dernier contrôle dans votre navigateur. Une flèche comme « ✅ → 🟡 » veut dire qu\'un sujet s\'est dégradé depuis, « 🟡 → ✅ » qu\'il s\'est amélioré.\n\nPourquoi comparer : un seul résultat dit où vous en êtes, la comparaison dit si vos actions ont servi ou si quelque chose se dégrade tout seul.'):TX[LN].fin})();
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>

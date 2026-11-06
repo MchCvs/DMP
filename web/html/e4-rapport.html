@@ -50,4 +50,5 @@ o.appendChild(tb);o.appendChild(E('div','color:#7f8c8d','Rapport établi le '+ne
 G.forEach(([t,ks])=>{o.appendChild(E('h3','margin:22px 0 4px;border-bottom:2px solid #ecf0f1',t));ks.forEach(k=>{const d=D[k]||{},n=lv(d),p=sp(d.resultat),c=E('div','margin:12px 0;padding:10px;border-left:6px solid '+CO[n]+';background:#fff;border-radius:4px');c.appendChild(E('div','font-size:17px;font-weight:bold',IC[n]+' '+N[k]+' : '+p[0]));if(p[1])c.appendChild(E('div','margin:6px 0;line-height:1.6','Ce que ça veut dire : '+p[1]));c.appendChild(E('div','white-space:pre-line;line-height:1.6;color:#333',d.observations||''));o.appendChild(c)})});
 const t=[0,0,0,0];KS.forEach(k=>t[lv(D[k])]++);
 r.textContent='Bilan : ✅ '+t[0]+' en bon état, 🟡 '+t[1]+' à surveiller, 🔴 '+t[2]+' à corriger, ➖ '+t[3]+' sans objet.\n\nPourquoi ce rapport : il fige l\'état de votre ordinateur à un instant précis. Gardez-le (PDF) pour comparer plus tard, ou envoyez-le à la personne qui vous dépanne : elle verra tout sans rien vous demander.\nLes graphiques de la page suivante (E4) sont construits à partir de ce rapport.'})();
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>

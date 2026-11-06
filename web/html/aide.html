@@ -37,4 +37,5 @@ r(['Page','Sujet','Données brutes (API)'],1);
 Object.keys(N).forEach(k=>{const p=E('a','color:#3498db',k.toUpperCase());p.href=k+'.html';const a=E('a','color:#3498db','/api/'+k);a.href='/api/'+k;r([p,NT[k],a])});
 o.appendChild(t);
 document.getElementById('res').textContent=T.res||'Les pages servent à lire, les adresses « API » servent aux logiciels. Pourquoi : si un jour vous voulez relier DMP à un autre outil (alerte, graphique, tableau), il lui suffit de lire ces adresses. Dans un terminal : curl http://127.0.0.1:8765/api/a1 . Les mots-clés « comprendre », « observations » et « resultat » correspondent exactement aux trois blocs des pages.'})();
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>

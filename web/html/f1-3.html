@@ -60,4 +60,5 @@ const na=KS.filter(k=>lv(DL[k])===3);
 if(na.length){o.appendChild(E('h3','margin:20px 0 6px',(LN==='fr'?'➖ Sans objet (ce n\'est pas une anomalie)':TX[LN].nah)));o.appendChild(E('div','line-height:1.7',na.map(k=>N[k]).join(' · ')+(LN==='fr'?'\nPourquoi : ces éléments n\'existent pas sur votre ordinateur (par exemple une batterie sur un ordinateur fixe). On ne peut pas dire qu\'ils fonctionnent mal : ils sont absents.':TX[LN].nap)));o.lastChild.style.whiteSpace='pre-line'}
 const R=A.filter(k=>lv(DL[k])===2).length;
 r.textContent=LN==='fr'?((A.length?A.length+' point(s) à regarder, dont '+R+' à corriger rapidement.':'Aucune anomalie.')+'\n\nUne anomalie est un écart par rapport à ce qui est attendu, comme un bruit inhabituel dans une voiture : ce n\'est pas forcément grave, mais cela mérite un coup d\'œil.\n🔴 : agir sans tarder (risque de panne, de ralentissement fort ou de faille). Ouvrez le détail : la cause et la marche à suivre y sont écrites.\n🟡 : à surveiller, aucune urgence.\n\nPourquoi cette liste : les points en bon état sont masqués, pour ne laisser que ce qui demande une action. Après correction, revenez sur F1-1 pour vérifier que le point passe au vert.'):TX[LN].fin(A.length,R)})();
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>
