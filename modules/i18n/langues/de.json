@@ -280,5 +280,13 @@
   "f2_1.ancienne.titre": "Letzte Sicherung ist alt ({date}): im Auge behalten",
   "f2_1.ancienne.texte": "Die letzte Kopie ist {jours} Tage alt. Je älter sie ist, desto mehr Arbeit könnten Sie im Falle eines Ausfalls verlieren. Starten Sie eine Pika-Sicherung und planen Sie sie (mindestens einmal pro Woche).",
   "f2_1.recente.titre": "Aktuelle Sicherung gefunden ({date})",
-  "f2_1.recente.texte": "Eine Pika-Backup-Kopie ist {jours} Tag(e) alt: Ihre Dateien sind geschützt. Schließen Sie das Sicherungsmedium von Zeit zu Zeit an, damit DMP es prüfen kann."
+  "f2_1.recente.texte": "Eine Pika-Backup-Kopie ist {jours} Tag(e) alt: Ihre Dateien sind geschützt. Schließen Sie das Sicherungsmedium von Zeit zu Zeit an, damit DMP es prüfen kann.",
+  "f3.comp": "Der Geschwindigkeitstest (Benchmark) ist wie das Stoppen eines Läufers: Der Computer leistet jedes Mal den gleichen Aufwand, sodass sich die Ergebnisse über die Zeit vergleichen lassen.",
+  "f3.cmd": "python3, dd",
+  "f3.rapide.titre": "Schneller Rechner",
+  "f3.rapide.texte": "Alle drei Messungen sind gut: Prozessor, Speicher und Festplatte halten mit. Wiederholen Sie diesen Test von Zeit zu Zeit: Ein deutlicher Rückgang weist auf ein Problem hin (müde Festplatte, Programm im Hintergrund).",
+  "f3.moyenne.titre": "Mittlere Geschwindigkeit: im Auge behalten",
+  "f3.moyenne.texte": "Mindestens eine Messung ist nur ausreichend. Für den Alltag nichts Ungewöhnliches. Wenn Ihnen der Rechner langsam vorkommt, zeigt die Messung, welcher Teil der Engpass ist.",
+  "f3.faible.titre": "Geringe Geschwindigkeit: verbessern",
+  "f3.faible.texte": "Mindestens eine Messung ist niedrig: Das ist der Teil, der Ihren Computer bremst. Die Festplatte lässt sich am einfachsten verbessern (eine SSD bringt einen großen Gewinn)."
 }
