@@ -265,5 +265,8 @@
   "d2.locales_all": "Dieses Paket installiert alle Systemsprachen. Sie verwenden jedoch nur eine davon: Wenn Sie es entfernen, schaffen Sie Speicherplatz, ohne dass dabei etwas zerstört wird. Ihre aktive Sprache bleibt erhalten.",
   "d2.comp": "Entfernen heißt, Software zu deinstallieren, die Sie nicht mehr brauchen. Diese Seite zeigt Ihnen die größten, wofür sie dienen und wie Sie sie gefahrlos entfernen.",
   "d2.cmd": "apt-mark showmanual, dpkg-query",
-  "d2.x": "DMP entfernt nichts: Diese Seite zeigt Ihnen was, warum und wie, die Entscheidung bleibt bei Ihnen. Einfache Regel für Einsteiger: Entfernen Sie hier nichts, dessen Namen Sie nicht kennen."
+  "d2.x": "DMP entfernt nichts: Diese Seite zeigt Ihnen was, warum und wie, die Entscheidung bleibt bei Ihnen. Einfache Regel für Einsteiger: Entfernen Sie hier nichts, dessen Namen Sie nicht kennen.",
+  "d3.comp": "Die Vorteile sind das, was Sie gewinnen, wenn Sie Ihren Computer gut pflegen: Er bleibt schnell und sicher und hält länger.",
+  "d3.cmd": "df, /proc/meminfo, apt, systemctl",
+  "d3.x": "Je mehr ✅ Sie haben, desto mehr profitieren Sie von regelmäßiger Pflege. Ein 🟡 ist kein Defekt: Es ist ein noch möglicher Gewinn, der auf der jeweiligen Seite erklärt wird."
 }
