@@ -97,5 +97,11 @@
   "a1.gamme.tres_haut_de_gamme.texte": "Ein i9 ist ein sehr leistungsstarker Prozessor, gedacht für sehr schwere Aufgaben.",
   "a1.surcharge": "Gerade überlastet: zu viele Aufgaben warten",
   "a1.ok": "Läuft gut",
-  "a1.observations": "Ihr Prozessor ist ein „{m}“. Er hat {c} Kerne. Ein Kern ist wie ein Arbeiter: Je mehr es gibt, desto besser wird die Arbeit verteilt und desto schneller ist sie erledigt. Mit {c} Kernen ist das {q}. Aktuelle Auslastung: {l}. Dieser Wert zeigt, wie viele Aufgaben auf ihre Reihe warten: Bleibt er unter {c}, arbeitet der Prozessor nicht überlastet, weil jeder Kern seine eigene Aufgabe hat. Darüber reihen sich Aufgaben in die Warteschlange, und der Computer wird langsamer."
+  "a1.observations": "Ihr Prozessor ist ein „{m}“. Er hat {c} Kerne. Ein Kern ist wie ein Arbeiter: Je mehr es gibt, desto besser wird die Arbeit verteilt und desto schneller ist sie erledigt. Mit {c} Kernen ist das {q}. Aktuelle Auslastung: {l}. Dieser Wert zeigt, wie viele Aufgaben auf ihre Reihe warten: Bleibt er unter {c}, arbeitet der Prozessor nicht überlastet, weil jeder Kern seine eigene Aufgabe hat. Darüber reihen sich Aufgaben in die Warteschlange, und der Computer wird langsamer.",
+  "a2.comp": "Der Arbeitsspeicher (RAM) ist die Arbeitsfläche Ihres Computers: Alles, was Sie öffnen, wird dort abgelegt, um sehr schnell benutzt zu werden. Beim Ausschalten wird die Arbeitsfläche geleert.",
+  "a2.cmd": "/proc/meminfo",
+  "a2.libre": "Reichlich freier Speicher",
+  "a2.chargee": "Speicher in Benutzung, im Auge behalten",
+  "a2.pleine": "Speicher fast voll, bitte freigeben",
+  "a2.observations": "Ihr Computer hat {t} GB Arbeitsspeicher, {q}. Im Moment sind {p} % belegt und {d} GB sind frei. Warum das wichtig ist: Wenn die Arbeitsfläche voll ist, muss der Computer Daten auf der Festplatte ablegen, die viel langsamer ist, und alles wird langsamer. Solange freier Platz vorhanden ist, bleibt alles flüssig."
 }
