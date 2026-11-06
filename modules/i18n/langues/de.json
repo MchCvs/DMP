@@ -247,5 +247,7 @@
   "c1.comp": "Updates sind Impfungen für Ihren Computer: Jedes Mal, wenn in einem Programm eine Sicherheitslücke oder ein Fehler entdeckt wird, veröffentlicht der Herausgeber eine Korrektur. Wenn Sie sie installieren, sind Sie geschützt.",
   "c1.cmd": "apt list --upgradable",
   "c2.comp": "Ein Paket ist eine Software, die in der Debian-Bibliothek abgelegt ist und sauber installiert oder entfernt werden kann. Diese Seite zeigt, welche installiert sind, welche am meisten Platz brauchen und ob etwas defekt ist.",
-  "c2.cmd": "dpkg-query, apt-mark, dpkg --audit"
+  "c2.cmd": "dpkg-query, apt-mark, dpkg --audit",
+  "c3.comp": "Pflege heißt, das zu entfernen, was nicht mehr gebraucht wird: nicht benötigte Software, Kopien von Downloads, Caches. Warum: Ein aufgeräumtes System bleibt schneller und hat mehr freien Speicherplatz.",
+  "c3.cmd": "apt-get -s autoremove, du, dpkg -l, journalctl"
 }
