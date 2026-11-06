@@ -311,5 +311,10 @@
   "f1_3.observations": "Keine Auffälligkeit erkannt. Ihr System ist in Ordnung.",
   "f2_2.observations": "Erweiterung erfolgreich hinzugefügt",
   "f2_3.observations": "Erweiterung erfolgreich entfernt",
-  "f4.observations": "Letzte Systemänderung: {last} | Anzahl der Änderungen: {changes} (Installationen/Entfernungen)"
+  "f4.observations": "Letzte Systemänderung: {last} | Anzahl der Änderungen: {changes} (Installationen/Entfernungen)",
+  "b5.unstable.titre": "Instabile Verbindung",
+  "b5.unstable.texte": "Pakete gehen verloren: Das verursacht Abbrüche und Verlangsamungen. Prüfen Sie das Kabel oder gehen Sie näher an die Box.",
+  "verdict.stop": "⛔ Behalten: für das System unverzichtbar. Nicht deaktivieren und nicht entfernen.",
+  "verdict.judge": "🟠 Nicht verändern, ohne genau zu wissen, was Sie tun: Das Deaktivieren dieses Dienstes kann den Systemstart, ein Update oder die Anzeige beeinträchtigen. Wenn Sie unsicher sind, behalten Sie ihn aktiviert.",
+  "verdict.leg": "Legende: ⛔ behalten · 🟠 Nicht verändern, ohne genau zu wissen, was Sie tun"
 }
