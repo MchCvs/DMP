@@ -1,5 +1,6 @@
 #!/bin/bash
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e1.sh" ] || LG=fr
+. "$(dirname "$0")/../i18n/langues.sh"
 . "$I18/$LG/e1.sh"
 CORES=$(nproc)
 RAM=$(free -h | grep "^Mem:" | awk '{print $2}')

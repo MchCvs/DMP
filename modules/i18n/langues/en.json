@@ -308,5 +308,7 @@
   "f1_3.observations": "No anomaly detected. Your system is normal.",
   "f2_2.observations": "Extension added successfully",
   "f2_3.observations": "Extension removed successfully",
-  "f4.observations": "Last system change: {last} | Number of changes: {changes} (installations/removals)"
+  "f4.observations": "Last system change: {last} | Number of changes: {changes} (installations/removals)",
+  "e1.observations": "Hostname: {h} | CPU: {c} cores | RAM: {r} | Disk: {d}",
+  "e2.observations": "CPU: {cpu} % | RAM: {mem} % | Disk: {disk} % | Final score: {score}/100"
 }

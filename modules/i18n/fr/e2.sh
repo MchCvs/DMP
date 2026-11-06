@@ -6,5 +6,5 @@ T_GOOD="Bon"
 T_IMP="À améliorer"
 T_NOTE="Score >80 = Excellent | 60-80 = Bon | <60 = Nettoyage recommandé"
 T_O() {
-O="CPU: $CPU_USAGE% | RAM: $MEM_USAGE% | Disque: $DISK_USAGE% | Score final: $SCORE/100"
+O="$(tr_cle e2.observations cpu="$CPU_USAGE" mem="$MEM_USAGE" disk="$DISK_USAGE" score="$SCORE")"
 }

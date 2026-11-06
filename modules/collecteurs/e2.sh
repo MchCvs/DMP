@@ -1,5 +1,6 @@
 #!/bin/bash
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/e2.sh" ] || LG=fr
+. "$(dirname "$0")/../i18n/langues.sh"
 . "$I18/$LG/e2.sh"
 CPU_USAGE=$(a=$(awk '/^cpu /{print $2+$3+$4+$5+$6+$7+$8,$5+$6}' /proc/stat); sleep 1; b=$(awk '/^cpu /{print $2+$3+$4+$5+$6+$7+$8,$5+$6}' /proc/stat); echo "$a $b" | awk '{dt=$3-$1; di=$4-$2; print (dt>0)?int(100*(dt-di)/dt):0}')
 MEM_USAGE=$(free | grep "^Mem:" | awk '{print int(($3/$2)*100)}')
