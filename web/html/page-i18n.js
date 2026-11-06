@@ -3,6 +3,11 @@
   if (L === 'fr') return;
   fetch('/i18n/' + L + '.json').then(function (r) { return r.json(); }).then(function (d) {
     var PAGES = {'a2':'page.nom.0','a3':'page.nom.1','a4':'page.nom.2','a5':'page.nom.3','a6':'page.nom.4','a7':'page.nom.5','a8':'page.nom.6','a9':'page.nom.7','b1':'page.nom.8','b2':'page.nom.9','b3':'page.nom.10','b4':'page.nom.11','b5':'page.nom.12','b6':'page.nom.13','b7':'page.nom.14','b8':'page.nom.15','b9':'page.nom.16','c1':'page.nom.17','c2':'page.nom.18','c3':'page.nom.19','c4':'page.nom.20','d1':'page.nom.21','d2':'page.nom.22','d3':'page.nom.23','e1-analyse':'page.nom.24','e2-resume':'page.nom.25','e3-score':'page.nom.26','e4-rapport':'page.nom.27','e5-graphiques':'page.nom.28','f1-1':'page.nom.29','f1-2':'page.nom.30','f1-3':'page.nom.31','f2-extensions':'page.nom.32','f3-f4':'page.nom.33','verification-sante':'page.nom.34'};
+    var BT = {'Imprimer/enregistrer en PDF':'page.imprimer','Copier le rapport':'page.copier','Infos techniques':'page.infos_titre'};
+    document.querySelectorAll('button, a.btn, h2, h3, summary').forEach(function (e) {
+      var k = BT[e.textContent.trim()];
+      if (k && d[k]) e.textContent = d[k];
+    });
     var M = {
       'Accueil': 'page.accueil', 'Comprendre': 'page.comprendre', "Ce qu'on voit": 'page.voit',
       'Ce que ça veut dire': 'page.veut', 'Précédent': 'page.precedent', 'Suivant': 'page.suivant',
@@ -16,6 +21,16 @@ var SEC = {'A':'page.sec_a','B':'page.sec_b','C':'page.sec_c','D':'page.sec_d','
         var pg = (location.pathname.split('/').pop() || '').replace(/\.html$/, '');
     var h1s = document.querySelectorAll('h1');
     if (h1s.length > 1 && d['page.titre.' + pg]) h1s[1].textContent = d['page.titre.' + pg];
+    document.querySelectorAll('button[onclick]').forEach(function (e) {
+      var oc = e.getAttribute('onclick') || '';
+      var k = /print\(/.test(oc) ? 'bouton.imprimer' : /copierRapport/.test(oc) ? 'bouton.copier' : null;
+      if (k && d[k]) e.textContent = d[k];
+    });
+    document.querySelectorAll('.breadcrumb strong').forEach(function (e) {
+      var pg = (location.pathname.split('/').pop() || '').replace(/\.html$/, '');
+      var nom = PAGES[pg];
+      if (nom && d[nom] && e.textContent.trim() === ((e.parentElement.querySelectorAll('strong').length) ? e.textContent.trim() : '')) e.textContent = d[nom];
+    });
     document.querySelectorAll('a').forEach(function (e) {
       var m = e.textContent.trim().match(/^(Suivant|Précédent) : (.+?)\s*(→|←)$/); if (!m) m = null;
       if (m) {
@@ -33,6 +48,7 @@ var SEC = {'A':'page.sec_a','B':'page.sec_b','C':'page.sec_c','D':'page.sec_d','
       var nom = PAGES[mm[1]];
       if (!nom || !d[nom]) return;
       var txt = e.textContent.trim();
+      if (/^←/.test(txt)) { e.textContent = '← ' + d[nom] + '' ; return; }
       if (/^(Suivant|Next)/.test(txt) || /^(Précédent|Previous)/.test(txt)) {
         var flèche = txt.match(/(→|←)$/);
         var sens = /^(Suivant|Next)/.test(txt) ? d['page.suivant'] : d['page.precedent'];
