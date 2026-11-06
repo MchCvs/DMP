@@ -13,7 +13,10 @@ var SEC = {'A':'page.sec_a','B':'page.sec_b','C':'page.sec_c','D':'page.sec_d','
       var s = e.textContent.trim().match(/^Section ([A-F])$/);
       if (s && d[SEC[s[1]]]) e.textContent = d[SEC[s[1]]];
     });
-        document.querySelectorAll('a').forEach(function (e) {
+        var pg = (location.pathname.split('/').pop() || '').replace(/\.html$/, '');
+    var h1s = document.querySelectorAll('h1');
+    if (h1s.length > 1 && d['page.titre.' + pg]) h1s[1].textContent = d['page.titre.' + pg];
+    document.querySelectorAll('a').forEach(function (e) {
       var m = e.textContent.trim().match(/^(Suivant|Précédent) : (.+?)\s*(→|←)$/); if (!m) m = null;
       if (m) {
         var n = M[m[2]];

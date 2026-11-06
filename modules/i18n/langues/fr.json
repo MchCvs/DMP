@@ -281,5 +281,11 @@
   "page.sec_c": "Section C",
   "page.sec_d": "Section D",
   "page.sec_e": "Section E",
-  "page.sec_f": "Section F"
+  "page.sec_f": "Section F",
+  "page.titre.a1": "⚙️ A1 — Le processeur de votre ordinateur",
+  "page.titre.a2": "📌 A2 Mémoire vive",
+  "page.titre.b1": "📌 B1 Depuis combien de temps ça tourne",
+  "page.titre.c1": "📌 C1 Mises à jour",
+  "page.titre.d1": "🔍 D1 — Recherche",
+  "page.titre.e1-analyse": "E1 Analyse"
 }

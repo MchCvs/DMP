@@ -392,5 +392,11 @@
   "page.sec_c": "Bereich C",
   "page.sec_d": "Bereich D",
   "page.sec_e": "Bereich E",
-  "page.sec_f": "Bereich F"
+  "page.sec_f": "Bereich F",
+  "page.titre.a1": "⚙️ A1 — Der Prozessor Ihres Computers",
+  "page.titre.a2": "📌 A2 Arbeitsspeicher",
+  "page.titre.b1": "📌 B1 Wie lange es schon läuft",
+  "page.titre.c1": "📌 C1 Updates",
+  "page.titre.d1": "🔍 D1 — Suche",
+  "page.titre.e1-analyse": "E1 Analyse"
 }
