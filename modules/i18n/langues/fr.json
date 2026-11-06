@@ -322,5 +322,11 @@
   "page.titre.index": "📊 DMP",
   "page.titre.menu": "📊 DMP — Debian Maintenance Professionnel",
   "page.titre.tableau-bord": "Tableau de bord",
-  "page.titre.verification-sante": "Vérification santé"
+  "page.titre.verification-sante": "Vérification santé",
+  "page.imprimer": "Imprimer/enregistrer en PDF",
+  "page.copier": "Copier le rapport",
+  "page.infos_titre": "Infos techniques",
+  "bouton.imprimer": "🖨️ Imprimer / enregistrer en PDF",
+  "bouton.copier": "📋 Copier le rapport",
+  "page.complete": "Page complète →"
 }

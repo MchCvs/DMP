@@ -29,7 +29,7 @@ const card=(k,d,m)=>{const[v,x]=sp(d.resultat),n=d.resultat?niv(v):3,c=E('div','
 c.appendChild(E('div','font-size:17px;font-weight:bold',IC[n]+' '+N[k]+' : '+v));
 if(x&&m)c.appendChild(E('div','margin-top:6px;line-height:1.6','Ce que ça veut dire : '+x));
 if(m&&d.observations){const t=E('details','margin-top:8px');t.open=m===2;t.appendChild(E('summary','cursor:pointer;color:#3498db','Voir le détail'));t.appendChild(E('div','margin-top:8px;padding:10px;background:#f4f6f7;border-radius:4px;line-height:1.6',d.observations));c.appendChild(t)}
-const a=E('a','display:inline-block;margin-top:8px;color:#3498db','Page complète →');a.href=k+'.html';c.appendChild(a);return{c,n}};
+const a=E('a','display:inline-block;margin-top:8px;color:#3498db',(window.DMP_T&&window.DMP_T['page.complete'])||'Page complète →');a.href=k+'.html';c.appendChild(a);return{c,n}};
 const res=ns=>{const m=[0,0,0,0];ns.forEach(n=>m[n]++);const r=document.getElementById('res');
 r.textContent=m[2]?'🔴 '+m[2]+' point(s) à corriger en priorité, '+m[1]+' à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant rouge signale un risque réel (panne proche, ralentissement fort ou faille de sécurité). Commencez par les cartes rouges, puis passez aux jaunes.':m[1]?'🟡 '+m[1]+' point(s) à surveiller, '+m[0]+' en bon état. Pourquoi : un voyant jaune n\'est pas une panne, c\'est une invitation à regarder sans urgence. Ouvrez la carte concernée : elle explique quoi faire.':'✅ Tout est en bon état ('+m[0]+' points vérifiés, '+m[3]+' sans objet). Pourquoi : aucun composant ne signale de problème. Les ➖ sont des éléments que votre ordinateur n\'a pas (par exemple une batterie sur un ordinateur fixe), ce qui est normal.'};
 Object.assign(N,{c1:'Mises à jour',c2:'Paquets',c3:'Entretien',c4:'Infos techniques'});
@@ -38,7 +38,7 @@ DOM=[['Matériel',['a1','a2','a5','a6','a9'],'les composants de la machine et le
 dscore=(D,ks)=>{const v=ks.map(k=>lv(D[k])).filter(n=>n<3);return v.length?Math.round(v.reduce((s,n)=>s+SC[n],0)/v.length):null},
 dom=D=>DOM.map(([n,ks,w])=>[n,ks,w,dscore(D,ks)]).filter(x=>x[3]!==null),
 gl=s=>s>=85?0:s>=60?1:2,
-lnk=k=>{const a=E('a','color:#3498db','Page complète →');a.href=k+'.html';return a},
+lnk=k=>{const a=E('a','color:#3498db',(window.DMP_T&&window.DMP_T['page.complete'])||'Page complète →');a.href=k+'.html';return a},
 row=(k,D,wx)=>{const d=D[k]||{},n=lv(d),p=sp(d.resultat),c=E('div','border-left:6px solid '+CO[n]+';padding:8px 12px;margin:8px 0;background:#fff;border-radius:4px;line-height:1.6');c.appendChild(E('b','',IC[n]+' '+N[k]+' : '+p[0]));if(wx&&p[1])c.appendChild(E('div','margin-top:4px','→ '+p[1]));c.appendChild(lnk(k));return c};
 (async()=>{const D=await all(KS),o=document.getElementById('obs'),r=document.getElementById('res');o.textContent='';
 const NS='http://www.w3.org/2000/svg',S=(t,a,x)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(x!==undefined)e.textContent=x;return e},FN='Arial';

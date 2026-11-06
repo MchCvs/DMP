@@ -433,5 +433,11 @@
   "page.titre.index": "📊 DMP",
   "page.titre.menu": "📊 DMP — Debian-Wartung für Profis",
   "page.titre.tableau-bord": "Dashboard",
-  "page.titre.verification-sante": "Gesundheitsprüfung"
+  "page.titre.verification-sante": "Gesundheitsprüfung",
+  "page.imprimer": "Drucken/als PDF speichern",
+  "page.copier": "Bericht kopieren",
+  "page.infos_titre": "Technische Informationen",
+  "bouton.imprimer": "🖨️ Drucken / als PDF speichern",
+  "bouton.copier": "📋 Bericht kopieren",
+  "page.complete": "Vollständige Seite →"
 }
