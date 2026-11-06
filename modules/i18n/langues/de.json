@@ -253,5 +253,17 @@
   "c4.comp": "Die technischen Informationen sind der Ausweis Ihres Computers: Modell, System, Version. Warum: Wenn Sie um Hilfe bitten, kann man mit diesen Angaben Ihre Konfiguration genau nachvollziehen.",
   "d1.comp": "Suchen heißt, ein Thema zu finden, ohne alle Seiten durchzugehen: Sie tippen ein Wort in das Suchfeld, und DMP zeigt die Seiten, die davon handeln.",
   "d1.x": "Wenn kein Ergebnis erscheint, versuchen Sie ein kürzeres oder einfacheres Wort („Festplatte“ statt „Partition“). Jedes Ergebnis führt Sie zur betreffenden Seite.",
-  "d1.cmd": "Suche in /api/*"
+  "d1.cmd": "Suche in /api/*",
+  "d2.noyau": "NEIN: Ohne Kernel startet der Computer nicht. Debian behält den alten als Reserve, lassen Sie ihn in Ruhe.",
+  "d2.firefox": "Wenn Sie Firefox deinstallieren, können Sie im Internet mit diesem Browser nicht mehr surfen. Behalten Sie ihn, wenn Sie ihn benutzen.",
+  "d2.grub": "NEIN: GRUB startet Debian beim Einschalten. Wird es entfernt, kann der Computer womöglich nicht mehr starten, und künftige Kernel-Updates sind nicht mehr möglich.",
+  "d2.docker": "Wenn Sie Docker deinstallieren, funktionieren die Anwendungen nicht mehr, die in Containern laufen. Behalten Sie es, wenn Sie nicht wissen, wozu es dient.",
+  "d2.gnome_aide": "Wenn Sie diese Hilfe deinstallieren, wird die GNOME-Anleitung nicht mehr im Menü angezeigt. Das ist zwar kein großes Problem, aber im Zweifelsfall nützlich.",
+  "d2.gnome_fonds": "Wenn Sie diese Hintergrundbilder deinstallieren, können Sie die mit GNOME mitgelieferten Desktop-Hintergrundbilder nicht mehr auswählen. Der Desktop funktioniert weiterhin.",
+  "d2.libreoffice_writer": "Wenn Sie LibreOffice Writer deinstallieren, können Sie Ihre Word- oder OpenDocument-Dateien nicht mehr öffnen oder bearbeiten.",
+  "d2.libreoffice_aide": "Wenn Sie die LibreOffice-Hilfe deinstallieren, steht Ihnen die integrierte Bedienungsanleitung nicht mehr zur Verfügung. Ihre Dokumente bleiben davon unberührt.",
+  "d2.locales_all": "Dieses Paket installiert alle Systemsprachen. Sie verwenden jedoch nur eine davon: Wenn Sie es entfernen, schaffen Sie Speicherplatz, ohne dass dabei etwas zerstört wird. Ihre aktive Sprache bleibt erhalten.",
+  "d2.comp": "Entfernen heißt, Software zu deinstallieren, die Sie nicht mehr brauchen. Diese Seite zeigt Ihnen die größten, wofür sie dienen und wie Sie sie gefahrlos entfernen.",
+  "d2.cmd": "apt-mark showmanual, dpkg-query",
+  "d2.x": "DMP entfernt nichts: Diese Seite zeigt Ihnen was, warum und wie, die Entscheidung bleibt bei Ihnen. Einfache Regel für Einsteiger: Entfernen Sie hier nichts, dessen Namen Sie nicht kennen."
 }
