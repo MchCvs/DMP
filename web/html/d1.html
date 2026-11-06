@@ -66,4 +66,5 @@ const c=E('div','border:1px solid #ddd;border-left:6px solid #3498db;border-radi
 L.slice(0,6).forEach(l=>c.appendChild(E('div','margin-top:6px;line-height:1.6',l)));const a=E('a','display:inline-block;margin-top:8px;color:#3498db',(LN==='fr'?'Ouvrir la page →':TX[LN].open));a.href=k+'.html';c.appendChild(a);out.appendChild(c)});
 r.textContent=LN==='fr'?(n?n+' page(s) mentionnent « '+q.value+' ». Pourquoi : chaque carte montre les phrases qui contiennent votre mot, et le lien ouvre la page complète pour tout comprendre.':'Aucune page ne mentionne « '+q.value+' ». Essayez un mot plus simple ou plus court (par exemple « disque » au lieu de « partition »).'):(n?TX[LN].found(n,q.value):TX[LN].none(q.value))};
 b.onclick=go;b.onmousedown=()=>{b.style.transform='scale(.95)'};b.onmouseup=b.onmouseleave=()=>{b.style.transform=''};q.onkeydown=e=>{if(e.key==='Enter')go()};
-</script></body></html>
+</script><script src="page-i18n.js"></script>
+</body></html>
