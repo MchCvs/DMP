@@ -330,5 +330,6 @@
   "bouton.copier": "📋 Copier le rapport",
   "page.complete": "Page complète →",
   "e5.pourquoi": "Pourquoi des graphiques : l'œil repère un problème dans un dessin bien plus vite que dans un texte, et la même image permet de suivre l'évolution d'un jour à l'autre.",
-  "e5.fichiers": "Utiliser les fichiers : le SVG s'ouvre dans un navigateur, LibreOffice ou Inkscape et reste net à toute taille. Le PNG s'insère dans un courriel ou un document. Les détails de chaque chiffre sont dans le rapport (page précédente)."
+  "e5.fichiers": "Utiliser les fichiers : le SVG s'ouvre dans un navigateur, LibreOffice ou Inkscape et reste net à toute taille. Le PNG s'insère dans un courriel ou un document. Les détails de chaque chiffre sont dans le rapport (page précédente).",
+  "e5.leg.notes": "plus la barre est longue et verte, meilleur est le domaine. Vert : 85 et plus (rien à faire). Orange : 60 à 85 (à surveiller). Rouge : moins de 60 (à traiter). Le domaine le plus court est celui où agir en premier."
 }

@@ -441,5 +441,6 @@
   "bouton.copier": "📋 Copy the report",
   "page.complete": "Full page →",
   "e5.pourquoi": "Why charts: the eye spots a problem in a picture much faster than in a text, and the same image lets you follow changes from one day to the next.",
-  "e5.fichiers": "Using the files: the SVG opens in a browser, LibreOffice or Inkscape and stays sharp at any size. The PNG fits into an email or a document. The details of each figure are in the report (previous page)."
+  "e5.fichiers": "Using the files: the SVG opens in a browser, LibreOffice or Inkscape and stays sharp at any size. The PNG fits into an email or a document. The details of each figure are in the report (previous page).",
+  "e5.leg.notes": "the longer and greener the bar, the better the area. Green: 85 and above (nothing to do). Orange: 60 to 85 (to watch). Red: below 60 (to deal with). The shortest area is the one to act on first."
 }
