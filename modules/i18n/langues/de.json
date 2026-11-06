@@ -110,5 +110,12 @@
   "a5.cmd": "lspci",
   "a5.integree": "In den Prozessor integrierte Grafik",
   "a5.dediee": "Dedizierte Grafikkarte",
-  "a5.observations": "Ihr Computer verwendet: „{g}“. {k} Warum das nützlich ist: Es zeigt Ihnen, ob der Computer Spiele oder Videobearbeitung bewältigen kann oder eher für den Alltag gedacht ist."
+  "a5.observations": "Ihr Computer verwendet: „{g}“. {k} Warum das nützlich ist: Es zeigt Ihnen, ob der Computer Spiele oder Videobearbeitung bewältigen kann oder eher für den Alltag gedacht ist.",
+  "a8.comp": "Geräte sind alles, was Sie an den Computer anschließen: Tastatur, Maus, USB-Stick, Webcam, Drucker. Jedes muss vom System erkannt werden, damit es funktioniert.",
+  "a8.no_o": "Im Moment wird kein USB-Gerät erkannt. Warum: Es ist nichts angeschlossen, oder Tastatur und Maus sind anders verbunden.",
+  "a8.no_r": "Kein USB-Gerät",
+  "a8.cmd": "/sys/bus/usb/devices",
+  "a8.liste.texte": "Diese Liste genügt, um zu prüfen, ob alles, was Sie angeschlossen haben, erkannt wird und einsatzbereit ist. Fehlt ein Gerät, probieren Sie ein anderes Kabel oder einen anderen Anschluss, denn das System kann nur verwenden, was es erkennt.",
+  "a8.reconnus.titre": "{n} Gerät(e) erkannt",
+  "a8.observations": "Ihr Computer erkennt {n} USB-Gerät(e):{o}"
 }
