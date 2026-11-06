@@ -250,5 +250,8 @@
   "c2.cmd": "dpkg-query, apt-mark, dpkg --audit",
   "c3.comp": "Pflege heißt, das zu entfernen, was nicht mehr gebraucht wird: nicht benötigte Software, Kopien von Downloads, Caches. Warum: Ein aufgeräumtes System bleibt schneller und hat mehr freien Speicherplatz.",
   "c3.cmd": "apt-get -s autoremove, du, dpkg -l, journalctl",
-  "c4.comp": "Die technischen Informationen sind der Ausweis Ihres Computers: Modell, System, Version. Warum: Wenn Sie um Hilfe bitten, kann man mit diesen Angaben Ihre Konfiguration genau nachvollziehen."
+  "c4.comp": "Die technischen Informationen sind der Ausweis Ihres Computers: Modell, System, Version. Warum: Wenn Sie um Hilfe bitten, kann man mit diesen Angaben Ihre Konfiguration genau nachvollziehen.",
+  "d1.comp": "Suchen heißt, ein Thema zu finden, ohne alle Seiten durchzugehen: Sie tippen ein Wort in das Suchfeld, und DMP zeigt die Seiten, die davon handeln.",
+  "d1.x": "Wenn kein Ergebnis erscheint, versuchen Sie ein kürzeres oder einfacheres Wort („Festplatte“ statt „Partition“). Jedes Ergebnis führt Sie zur betreffenden Seite.",
+  "d1.cmd": "Suche in /api/*"
 }
