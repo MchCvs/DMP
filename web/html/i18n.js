@@ -73,7 +73,7 @@
     }
     if (document.querySelector('.lang-bar')) return;
     var nav = document.querySelector('nav') || document.querySelector('header');
-    return;
+    if (!nav) return;
     var box = document.createElement('span');
     box.style.cssText = 'float:right;margin-right:10px;display:inline-flex;flex-direction:row;align-items:center;white-space:nowrap;';
     SUP.forEach(function (l) {

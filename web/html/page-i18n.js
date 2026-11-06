@@ -8,7 +8,12 @@
       'Ce que ça veut dire': 'page.veut', 'Précédent': 'page.precedent', 'Suivant': 'page.suivant',
       'Retour': 'page.retour', 'Infos techniques (pour experts)': 'page.infos', 'A2 Mémoire': 'page.nom.0', 'A3 Disque': 'page.nom.1', 'A4 Réseau': 'page.nom.2', 'A5 Carte graphique': 'page.nom.3', 'A6 Carte-mère': 'page.nom.4', 'A7 Debian': 'page.nom.5', 'A8 USB': 'page.nom.6', 'A9 Alimentation': 'page.nom.7', 'B1 Disponibilité': 'page.nom.8', 'B2 Processeur %': 'page.nom.9', 'B3 Mémoire %': 'page.nom.10', 'B4 Disque %': 'page.nom.11', 'B5 Réseau': 'page.nom.12', 'B6 Services': 'page.nom.13', 'B7 Processus': 'page.nom.14', 'B8 Démarrage': 'page.nom.15', 'B9 Sécurité': 'page.nom.16', 'C1 Mises à jour': 'page.nom.17', 'C2 Paquets': 'page.nom.18', 'C3 Entretien': 'page.nom.19', 'C4 Technique': 'page.nom.20', 'D1 Recherche': 'page.nom.21', 'D2 Suppression': 'page.nom.22', 'D3 Bénéfices': 'page.nom.23', 'E1 Analyse': 'page.nom.24', 'E2 Résumé': 'page.nom.25', 'E3 Score': 'page.nom.26', 'E4 Rapport': 'page.nom.27', 'E5 Graphiques': 'page.nom.28', 'F1-1 Contrôle': 'page.nom.29', 'F1-2 Résultats': 'page.nom.30', 'F1-3 Anomalies': 'page.nom.31', 'F2 Monitoring et sauvegarde': 'page.nom.32', 'F3-F4 Vitesse et historique': 'page.nom.33', 'Vérification santé': 'page.nom.34'
     };
-    document.querySelectorAll('a').forEach(function (e) {
+var SEC = {'A':'page.sec_a','B':'page.sec_b','C':'page.sec_c','D':'page.sec_d','E':'page.sec_e','F':'page.sec_f'};
+    document.querySelectorAll('.breadcrumb strong').forEach(function (e) {
+      var s = e.textContent.trim().match(/^Section ([A-F])$/);
+      if (s && d[SEC[s[1]]]) e.textContent = d[SEC[s[1]]];
+    });
+        document.querySelectorAll('a').forEach(function (e) {
       var m = e.textContent.trim().match(/^(Suivant|Précédent) : (.+?)\s*(→|←)$/); if (!m) m = null;
       if (m) {
         var n = M[m[2]];

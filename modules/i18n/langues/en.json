@@ -386,5 +386,11 @@
   "page.nom.31": "F1-3 Anomalies",
   "page.nom.32": "F2 Monitoring and backup",
   "page.nom.33": "F3-F4 Speed and history",
-  "page.nom.34": "Health check"
+  "page.nom.34": "Health check",
+  "page.sec_a": "Section A",
+  "page.sec_b": "Section B",
+  "page.sec_c": "Section C",
+  "page.sec_d": "Section D",
+  "page.sec_e": "Section E",
+  "page.sec_f": "Section F"
 }

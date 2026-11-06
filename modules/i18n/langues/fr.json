@@ -275,5 +275,11 @@
   "page.infos": "Infos techniques (pour experts)",
   "page.suivant": "Suivant",
   "page.precedent": "Précédent",
-  "page.retour": "Retour"
+  "page.retour": "Retour",
+  "page.sec_a": "Section A",
+  "page.sec_b": "Section B",
+  "page.sec_c": "Section C",
+  "page.sec_d": "Section D",
+  "page.sec_e": "Section E",
+  "page.sec_f": "Section F"
 }

@@ -386,5 +386,11 @@
   "page.nom.31": "F1-3 Auffälligkeiten",
   "page.nom.32": "F2 Überwachung und Sicherung",
   "page.nom.33": "F3-F4 Geschwindigkeit und Verlauf",
-  "page.nom.34": "Gesundheitsprüfung"
+  "page.nom.34": "Gesundheitsprüfung",
+  "page.sec_a": "Bereich A",
+  "page.sec_b": "Bereich B",
+  "page.sec_c": "Bereich C",
+  "page.sec_d": "Bereich D",
+  "page.sec_e": "Bereich E",
+  "page.sec_f": "Bereich F"
 }
