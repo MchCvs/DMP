@@ -268,5 +268,17 @@
   "d2.x": "DMP entfernt nichts: Diese Seite zeigt Ihnen was, warum und wie, die Entscheidung bleibt bei Ihnen. Einfache Regel für Einsteiger: Entfernen Sie hier nichts, dessen Namen Sie nicht kennen.",
   "d3.comp": "Die Vorteile sind das, was Sie gewinnen, wenn Sie Ihren Computer gut pflegen: Er bleibt schnell und sicher und hält länger.",
   "d3.cmd": "df, /proc/meminfo, apt, systemctl",
-  "d3.x": "Je mehr ✅ Sie haben, desto mehr profitieren Sie von regelmäßiger Pflege. Ein 🟡 ist kein Defekt: Es ist ein noch möglicher Gewinn, der auf der jeweiligen Seite erklärt wird."
+  "d3.x": "Je mehr ✅ Sie haben, desto mehr profitieren Sie von regelmäßiger Pflege. Ein 🟡 ist kein Defekt: Es ist ein noch möglicher Gewinn, der auf der jeweiligen Seite erklärt wird.",
+  "f2_1.comp": "Eine Sicherung ist die Versicherung für Ihre Dateien: Sie nützt nichts, bis der Tag kommt, an dem Sie sie brauchen, und dann rettet sie alles. Diese Seite prüft, ob eine Kopie existiert und wie aktuell sie ist.",
+  "f2_1.cmd": "command -v, /timeshift, /var/backups, lsblk",
+  "f2_1.aucun_outil": "keines",
+  "f2_1.aucun_trouve": "nichts gefunden",
+  "f2_1.aucune": "keine",
+  "f2_1.aucune_trouvee": "nichts gefunden",
+  "f2_1.none.titre": "Keine Sicherung Ihrer Dateien: im Auge behalten",
+  "f2_1.tool.titre": "Sicherungswerkzeug installiert, keine Kopie gefunden: im Auge behalten",
+  "f2_1.ancienne.titre": "Letzte Sicherung ist alt ({date}): im Auge behalten",
+  "f2_1.ancienne.texte": "Die letzte Kopie ist {jours} Tage alt. Je älter sie ist, desto mehr Arbeit könnten Sie im Falle eines Ausfalls verlieren. Starten Sie eine Pika-Sicherung und planen Sie sie (mindestens einmal pro Woche).",
+  "f2_1.recente.titre": "Aktuelle Sicherung gefunden ({date})",
+  "f2_1.recente.texte": "Eine Pika-Backup-Kopie ist {jours} Tag(e) alt: Ihre Dateien sind geschützt. Schließen Sie das Sicherungsmedium von Zeit zu Zeit an, damit DMP es prüfen kann."
 }
