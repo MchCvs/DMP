@@ -249,5 +249,6 @@
   "c2.comp": "Ein Paket ist eine Software, die in der Debian-Bibliothek abgelegt ist und sauber installiert oder entfernt werden kann. Diese Seite zeigt, welche installiert sind, welche am meisten Platz brauchen und ob etwas defekt ist.",
   "c2.cmd": "dpkg-query, apt-mark, dpkg --audit",
   "c3.comp": "Pflege heißt, das zu entfernen, was nicht mehr gebraucht wird: nicht benötigte Software, Kopien von Downloads, Caches. Warum: Ein aufgeräumtes System bleibt schneller und hat mehr freien Speicherplatz.",
-  "c3.cmd": "apt-get -s autoremove, du, dpkg -l, journalctl"
+  "c3.cmd": "apt-get -s autoremove, du, dpkg -l, journalctl",
+  "c4.comp": "Die technischen Informationen sind der Ausweis Ihres Computers: Modell, System, Version. Warum: Wenn Sie um Hilfe bitten, kann man mit diesen Angaben Ihre Konfiguration genau nachvollziehen."
 }
