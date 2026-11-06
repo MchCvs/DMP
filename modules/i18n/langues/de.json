@@ -243,5 +243,7 @@
   "b9.quelques.titre": "Geschützt, einige Punkte zu verbessern",
   "b9.quelques.texte": "Nichts Ernstes: Das System ist nicht unmittelbar gefährdet, aber einige Punkte oben (übliche Updates, Firewall) sollten Sie bei Gelegenheit beheben.",
   "b9.failles.titre": "Sicherheitslücken, bitte zügig beheben",
-  "b9.failles.texte": "Es wird ein ernster Punkt gemeldet (ein Sicherheitsupdate wartet, zu viele Türen sind offen oder der Administratorzugriff aus der Ferne ist aktiviert)."
+  "b9.failles.texte": "Es wird ein ernster Punkt gemeldet (ein Sicherheitsupdate wartet, zu viele Türen sind offen oder der Administratorzugriff aus der Ferne ist aktiviert).",
+  "c1.comp": "Updates sind Impfungen für Ihren Computer: Jedes Mal, wenn in einem Programm eine Sicherheitslücke oder ein Fehler entdeckt wird, veröffentlicht der Herausgeber eine Korrektur. Wenn Sie sie installieren, sind Sie geschützt.",
+  "c1.cmd": "apt list --upgradable"
 }
