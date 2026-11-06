@@ -84,5 +84,18 @@
   "menu.sec_d": "Bereich D — Entscheidung",
   "menu.sec_e": "Bereich E — Berichte & Analysen",
   "menu.sec_f": "Bereich F — Kontrolle & Erweiterungen",
-  "menu.api": "📚 API-Dokumentation"
+  "menu.api": "📚 API-Dokumentation",
+  "a1.comp": "Dies ist das Gehirn Ihres Computers. Er denkt und führt die Berechnungen aus. Je schneller er ist, desto schneller laufen Ihre Programme.",
+  "a1.cmd": "nproc, lscpu, /proc/loadavg (nur DMP)",
+  "a1.gamme.entree_de_gamme.nom": "Einstiegsklasse",
+  "a1.gamme.entree_de_gamme.texte": "Ein i3 reicht für Internet, Büroarbeit und Videos, kann aber bei anspruchsvollen Aufgaben an seine Grenzen stoßen.",
+  "a1.gamme.milieu_de_gamme.nom": "Mittelklasse",
+  "a1.gamme.milieu_de_gamme.texte": "Ein i5 ist die häufigste Wahl, weil er das beste Gleichgewicht zwischen Geschwindigkeit und Preis bietet.",
+  "a1.gamme.haut_de_gamme.nom": "Oberklasse",
+  "a1.gamme.haut_de_gamme.texte": "Ein i7 ist schnell und eignet sich gut für Videoschnitt, kreative Arbeit und anspruchsvolle Spiele.",
+  "a1.gamme.tres_haut_de_gamme.nom": "Spitzenklasse",
+  "a1.gamme.tres_haut_de_gamme.texte": "Ein i9 ist ein sehr leistungsstarker Prozessor, gedacht für sehr schwere Aufgaben.",
+  "a1.surcharge": "Gerade überlastet: zu viele Aufgaben warten",
+  "a1.ok": "Läuft gut",
+  "a1.observations": "Ihr Prozessor ist ein „{m}“. Er hat {c} Kerne. Ein Kern ist wie ein Arbeiter: Je mehr es gibt, desto besser wird die Arbeit verteilt und desto schneller ist sie erledigt. Mit {c} Kernen ist das {q}. Aktuelle Auslastung: {l}. Dieser Wert zeigt, wie viele Aufgaben auf ihre Reihe warten: Bleibt er unter {c}, arbeitet der Prozessor nicht überlastet, weil jeder Kern seine eigene Aufgabe hat. Darüber reihen sich Aufgaben in die Warteschlange, und der Computer wird langsamer."
 }
