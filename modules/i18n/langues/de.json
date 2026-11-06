@@ -439,5 +439,7 @@
   "page.infos_titre": "Technische Informationen",
   "bouton.imprimer": "🖨️ Drucken / als PDF speichern",
   "bouton.copier": "📋 Bericht kopieren",
-  "page.complete": "Vollständige Seite →"
+  "page.complete": "Vollständige Seite →",
+  "e5.pourquoi": "Warum Grafiken: Das Auge erkennt ein Problem in einer Zeichnung viel schneller als in einem Text, und dasselbe Bild zeigt die Entwicklung von einem Tag zum nächsten.",
+  "e5.fichiers": "Dateien verwenden: Die SVG-Datei öffnet sich in einem Browser, in LibreOffice oder Inkscape und bleibt in jeder Größe scharf. Die PNG-Datei passt in eine E-Mail oder ein Dokument. Die Details jeder Zahl stehen im Bericht (vorherige Seite)."
 }
