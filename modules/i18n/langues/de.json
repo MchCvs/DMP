@@ -234,5 +234,14 @@
   "b8.no_o": "Die Messung ist nicht verfügbar. Warum: Das Werkzeug systemd-analyze fehlt, oder der Start ist noch nicht abgeschlossen.",
   "b8.no_r": "Messung nicht verfügbar",
   "b8.no_cmd": "systemd-analyze",
-  "b8.cmd": "systemd-analyze, systemd-analyze blame"
+  "b8.cmd": "systemd-analyze, systemd-analyze blame",
+  "b9.comp": "Diese Seite prüft, ob die Türen Ihres Computers richtig geschlossen sind: Sicherheitsupdates, Firewall, offene Türen und letzte Zugriffe.",
+  "b9.cmd": "apt, ss, systemctl, last",
+  "b9.nohist": "   • Verlauf nicht verfügbar",
+  "b9.ok.titre": "System gut geschützt",
+  "b9.ok.texte": "Kein Update wartet, keine Tür steht ohne Grund offen, nichts zu melden: Die wichtigsten Eingänge sind geschlossen.",
+  "b9.quelques.titre": "Geschützt, einige Punkte zu verbessern",
+  "b9.quelques.texte": "Nichts Ernstes: Das System ist nicht unmittelbar gefährdet, aber einige Punkte oben (übliche Updates, Firewall) sollten Sie bei Gelegenheit beheben.",
+  "b9.failles.titre": "Sicherheitslücken, bitte zügig beheben",
+  "b9.failles.texte": "Es wird ein ernster Punkt gemeldet (ein Sicherheitsupdate wartet, zu viele Türen sind offen oder der Administratorzugriff aus der Ferne ist aktiviert)."
 }
