@@ -343,5 +343,13 @@
   "verdict.vx.rapide": "Unter 30 Sekunden ist ein gutes Ergebnis: nichts zu verbessern. Der längste Schritt ist {n}.",
   "verdict.vx.correct": "Zwischen 30 und 60 Sekunden ist akzeptabel. Der längste Schritt ist {n}.",
   "verdict.vx.lent": "Über einer Minute verzögert etwas den Systemstart. Der längste Schritt ist {n}. Sehen Sie sich die 8 langsamsten Dienste an und prüfen Sie den Zustand der Festplatte (Seite Festplatte B4): Eine müde Festplatte ist eine häufige Ursache.",
-  "verdict.firmware": "Die Firmware ist auf der Hauptplatine gespeichert: Sie lässt sich nicht deinstallieren und hat nichts mit Debian zu tun. Nur eine BIOS/UEFI-Einstellung (Schnellstart, Festplattenreihenfolge) kann diesen Schritt verkürzen."
+  "verdict.firmware": "Die Firmware ist auf der Hauptplatine gespeichert: Sie lässt sich nicht deinstallieren und hat nichts mit Debian zu tun. Nur eine BIOS/UEFI-Einstellung (Schnellstart, Festplattenreihenfolge) kann diesen Schritt verkürzen.",
+  "page.accueil": "Startseite",
+  "page.comprendre": "Verstehen",
+  "page.voit": "Was wir sehen",
+  "page.veut": "Was das bedeutet",
+  "page.infos": "Technische Informationen (für Experten)",
+  "page.suivant": "Weiter",
+  "page.precedent": "Zurück",
+  "page.retour": "Zurück"
 }

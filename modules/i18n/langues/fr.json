@@ -267,5 +267,13 @@
   "f2_3.observations": "Extension supprimée avec succès",
   "f4.observations": "Dernière modification système : {last} | Nombre de changements : {changes} (installations/suppressions)",
   "e1.observations": "Hostname: {h} | CPU: {c} cœurs | RAM: {r} | Disque: {d}",
-  "e2.observations": "CPU : {cpu} % | RAM : {mem} % | Disque : {disk} % | Score final : {score}/100"
+  "e2.observations": "CPU : {cpu} % | RAM : {mem} % | Disque : {disk} % | Score final : {score}/100",
+  "page.accueil": "Accueil",
+  "page.comprendre": "Comprendre",
+  "page.voit": "Ce qu'on voit",
+  "page.veut": "Ce que ça veut dire",
+  "page.infos": "Infos techniques (pour experts)",
+  "page.suivant": "Suivant",
+  "page.precedent": "Précédent",
+  "page.retour": "Retour"
 }

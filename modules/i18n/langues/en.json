@@ -343,5 +343,13 @@
   "verdict.role.systemd_libsystemd": "system service manager",
   "b5.unstable.titre": "Unstable connection",
   "b5.unstable.texte": "Packets are being lost: this causes cut-offs and slowdowns. Check the cable or move closer to the box.",
-  "b6.intro": "A service is a small invisible program that works in the background, like the staff of a hotel: you do not see it, but the network, printing, the clock or the sound depend on it. Why this page: if an employee falls ill, a function can stop without your understanding why straight away."
+  "b6.intro": "A service is a small invisible program that works in the background, like the staff of a hotel: you do not see it, but the network, printing, the clock or the sound depend on it. Why this page: if an employee falls ill, a function can stop without your understanding why straight away.",
+  "page.accueil": "Home",
+  "page.comprendre": "Understand",
+  "page.voit": "What we see",
+  "page.veut": "What it means",
+  "page.infos": "Technical information (for experts)",
+  "page.suivant": "Next",
+  "page.precedent": "Previous",
+  "page.retour": "Back"
 }
