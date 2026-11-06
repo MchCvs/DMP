@@ -301,5 +301,15 @@
   "e2.observations": "CPU: {cpu} % | RAM: {mem} % | Festplatte: {disk} % | Endpunktzahl: {score}/100",
   "e3_1.observations": "Datum: {date} | Bericht bereit zur Erstellung",
   "e3_2.observations": "Bericht erfolgreich erstellt",
-  "e3_3.observations": "Verlauf der letzten 10 Berichte verfügbar"
+  "e3_3.observations": "Verlauf der letzten 10 Berichte verfügbar",
+  "e4_1.observations": "Daten erfasst und geprüft",
+  "e4_2.observations": "Alle Zahlen sind gültig und stimmig",
+  "e4_3.observations": "Daten formatiert und bereit",
+  "e5.observations": "System läuft seit: {uptime} | Durchschnittliche Last (letzte Minute): {load} (0 bis 4 auf 4 Kernen ist normal)",
+  "f1_1.observations": "Erkannte Systemfehler: {errors} (bei null: ausgezeichnet)",
+  "f1_2.observations": "System gesund und funktionsfähig",
+  "f1_3.observations": "Keine Auffälligkeit erkannt. Ihr System ist in Ordnung.",
+  "f2_2.observations": "Erweiterung erfolgreich hinzugefügt",
+  "f2_3.observations": "Erweiterung erfolgreich entfernt",
+  "f4.observations": "Letzte Systemänderung: {last} | Anzahl der Änderungen: {changes} (Installationen/Entfernungen)"
 }
