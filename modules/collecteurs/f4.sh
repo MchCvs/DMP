@@ -1,5 +1,6 @@
 #!/bin/bash
 I18="$(dirname "$0")/../i18n"; LG=${DMP_LANG:-fr}; [ -f "$I18/$LG/f4.sh" ] || LG=fr
+. "$(dirname "$0")/../i18n/langues.sh"
 . "$I18/$LG/f4.sh"
 LAST_BOOT=$(stat /var/log/apt/history.log 2>/dev/null | grep Modify | cut -d' ' -f2-3 || echo "Inconnu")
 CHANGES=$(grep "apt-get install\|apt-get remove" /var/log/apt/history.log 2>/dev/null | wc -l)

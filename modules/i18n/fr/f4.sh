@@ -3,5 +3,5 @@ T_R="Historique complet"
 T_CMD="/var/log/apt/history.log (DMP uniquement)"
 T_NOTE="Cet historique sert à tracer les modifications. Utile si quelque chose s'est cassé"
 T_O() {
-O="Dernière modification système: $LAST_BOOT | Nombre de changements: $CHANGES (installations/suppressions)"
+O="$(tr_cle f4.observations last="$LAST_BOOT" changes="$CHANGES")"
 }

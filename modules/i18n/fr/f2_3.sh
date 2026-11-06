@@ -2,5 +2,5 @@ T_COMP="Supprimer = enlever une extension qu'on n'utilise plus. Comme résilier 
 T_R="Suppression complète"
 T_CMD="Suppression extension (DMP uniquement)"
 T_O() {
-O="Extension supprimée avec succès"
+O="$(tr_cle f2_3.observations)"
 }

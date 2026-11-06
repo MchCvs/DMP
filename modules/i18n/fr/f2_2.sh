@@ -2,5 +2,5 @@ T_COMP="Ajouter = installer une nouvelle extension pour faire plus de choses. Co
 T_R="Installation terminée"
 T_CMD="Installation extension (DMP uniquement)"
 T_O() {
-O="Extension ajoutée avec succès"
+O="$(tr_cle f2_2.observations)"
 }
