@@ -355,5 +355,6 @@
   "e5.mes.temperature": "Température du disque",
   "e5.mes.demarrage": "Temps de démarrage",
   "e5.bilan.debut": "Ce que disent les graphiques : ",
-  "e5.comment_lire": "Comment lire : "
+  "e5.comment_lire": "Comment lire : ",
+  "e5.compteur": "{n} sujet(s)"
 }
