@@ -447,5 +447,6 @@
   "e5.leg.mesures": "each bar is a real measurement taken when the report was made. Processor, memory, disk: the percentage in use (green below 60 %, orange up to 85 %, red above; disk: 75 % and 90 %). Temperature: green below 50 °C. Startup: a full bar corresponds to 60 seconds, green below 30 s.",
   "e5.titre.notes": "1) Overall health score by area (out of 100)",
   "e5.titre.repartition": "2) Breakdown of the checks",
-  "e5.titre.mesures": "3) Key measures"
+  "e5.titre.mesures": "3) Key measures",
+  "e5.comprendre": "Charts turn the report results into pictures: a long green bar is good, a short or red bar shows where to act. Why: the eye spots a problem in a picture much faster than in text."
 }

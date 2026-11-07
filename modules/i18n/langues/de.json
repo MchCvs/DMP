@@ -447,5 +447,6 @@
   "e5.leg.mesures": "jeder Balken ist eine echte Messung zum Zeitpunkt des Berichts. Prozessor, Speicher, Festplatte: der Auslastungsprozentsatz (grün unter 60 %, orange bis 85 %, rot darüber; Festplatte: 75 % und 90 %). Temperatur: grün unter 50 °C. Start: ein voller Balken entspricht 60 Sekunden, grün unter 30 s.",
   "e5.titre.notes": "1) Gesundheitsbewertung nach Bereich (von 100)",
   "e5.titre.repartition": "2) Aufteilung der Prüfungen",
-  "e5.titre.mesures": "3) Wichtige Messwerte"
+  "e5.titre.mesures": "3) Wichtige Messwerte",
+  "e5.comprendre": "Diagramme machen die Berichtsergebnisse anschaulich: Ein langer grüner Balken ist gut, ein kurzer oder roter Balken zeigt, wo man handeln sollte. Warum: Das Auge erkennt ein Problem in einem Bild viel schneller als in einem Text."
 }

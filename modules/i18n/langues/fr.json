@@ -336,5 +336,6 @@
   "e5.leg.mesures": "chaque barre est une mesure réelle prise à l'instant du rapport. Processeur, mémoire, disque : le pourcentage d'occupation (vert sous 60 %, orange jusqu'à 85 %, rouge au-delà ; disque : 75 % et 90 %). Température : vert sous 50 °C. Démarrage : la barre pleine correspond à 60 secondes, vert sous 30 s.",
   "e5.titre.notes": "1) Note de santé par domaine (sur 100)",
   "e5.titre.repartition": "2) Répartition des sujets vérifiés",
-  "e5.titre.mesures": "3) Mesures clés"
+  "e5.titre.mesures": "3) Mesures clés",
+  "e5.comprendre": "Les graphiques transforment les résultats du rapport en images : une barre longue et verte est bonne, une barre courte ou rouge signale où agir. Pourquoi : l'œil repère un problème dans un dessin bien plus vite que dans un texte."
 }
