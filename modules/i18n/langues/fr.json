@@ -367,5 +367,6 @@
   "aide.comprendre": "DMP est un logiciel qui examine votre ordinateur et vous l'explique en mots simples. Chaque page (A1 à B9) a deux visages : la page que vous lisez, et ses données brutes, que l'on appelle API, lisibles par d'autres logiciels. Cette page liste les deux.",
   "aide.th_page": "Page",
   "aide.th_sujet": "Sujet",
-  "aide.th_api": "Données brutes (API)"
+  "aide.th_api": "Données brutes (API)",
+  "aide.titre": "Aide et API"
 }

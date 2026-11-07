@@ -478,5 +478,6 @@
   "aide.comprendre": "DMP is software that examines your computer and explains it in plain words. Each page (A1 to B9) has two faces: the page you read, and its raw data, called API, readable by other software. This page lists both.",
   "aide.th_page": "Page",
   "aide.th_sujet": "Topic",
-  "aide.th_api": "Raw data (API)"
+  "aide.th_api": "Raw data (API)",
+  "aide.titre": "Help and API"
 }
