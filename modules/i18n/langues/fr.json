@@ -362,5 +362,6 @@
   "e5.bilan.faible": "le domaine le plus faible est « {faible} » ({score_faible} / 100), le plus solide « {fort} » ({score_fort} / 100). ",
   "e5.bilan.urgence": "aucun point urgent, {n} à surveiller. ",
   "e5.bilan.sous85": "{nom} est à {score} / 100 : à surveiller. ",
-  "e5.bilan.tous": "tous les domaines sont en bon état. "
+  "e5.bilan.tous": "tous les domaines sont en bon état. ",
+  "e5.bilan.perf": "Les graphiques représentent les performances à l'instant T, c'est prendre une photo de votre ordinateur pour voir ce qui va bien ou pas, comme votre médecin le ferait avec votre bilan sanguin, dans le but de prendre les mesures nécessaires pour remédier aux anomalies constatées. "
 }

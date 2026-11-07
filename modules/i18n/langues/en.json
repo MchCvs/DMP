@@ -473,5 +473,6 @@
   "e5.bilan.faible": "the weakest area is “{faible}” ({score_faible} / 100), the strongest “{fort}” ({score_fort} / 100). ",
   "e5.bilan.urgence": "no urgent point, {n} to watch. ",
   "e5.bilan.sous85": "{nom} is at {score} / 100: to watch. ",
-  "e5.bilan.tous": "all areas are in good condition. "
+  "e5.bilan.tous": "all areas are in good condition. ",
+  "e5.bilan.perf": "The charts show performance at this moment, like a photo of your computer, to see what is fine and what is not, the way your doctor reads your blood test, so that the necessary steps can be taken to fix the problems found. "
 }

@@ -473,5 +473,6 @@
   "e5.bilan.faible": "der schwächste Bereich ist „{faible}“ ({score_faible} / 100), der stärkste „{fort}“ ({score_fort} / 100). ",
   "e5.bilan.urgence": "kein dringender Punkt, {n} im Auge zu behalten. ",
   "e5.bilan.sous85": "{nom} steht bei {score} / 100: im Auge behalten. ",
-  "e5.bilan.tous": "alle Bereiche sind in gutem Zustand. "
+  "e5.bilan.tous": "alle Bereiche sind in gutem Zustand. ",
+  "e5.bilan.perf": "Die Diagramme zeigen die Leistung zum jetzigen Zeitpunkt, wie ein Foto Ihres Computers, um zu sehen, was in Ordnung ist und was nicht, so wie Ihr Arzt Ihren Blutbefund liest, damit die nötigen Schritte gegen die festgestellten Probleme ergriffen werden können. "
 }
