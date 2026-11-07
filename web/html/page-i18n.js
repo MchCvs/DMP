@@ -19,6 +19,11 @@ var SEC = {'A':'page.sec_a','B':'page.sec_b','C':'page.sec_c','D':'page.sec_d','
       if (s && d[SEC[s[1]]]) e.textContent = d[SEC[s[1]]];
     });
         window.DMP_T = d;
+    document.querySelectorAll('nav a').forEach(function (e) {
+      var h = e.getAttribute('href') || '';
+      if (h === 'menu.html' && d['nav.menu']) e.textContent = d['nav.menu'];
+      if (h === 'aide.html' && d['nav.aide']) e.textContent = d['nav.aide'];
+    });
     var pg = (location.pathname.split('/').pop() || '').replace(/\.html$/, '');
     var h1s = document.querySelectorAll('h1');
     if (h1s.length > 1 && d['page.titre.' + pg]) h1s[1].textContent = d['page.titre.' + pg];

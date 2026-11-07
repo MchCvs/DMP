@@ -467,5 +467,7 @@
   "e5.mes.demarrage": "Startzeit",
   "e5.bilan.debut": "Was die Diagramme zeigen: ",
   "e5.comment_lire": "So lesen Sie es: ",
-  "e5.compteur": "{n} Prüfung(en)"
+  "e5.compteur": "{n} Prüfung(en)",
+  "nav.menu": "Menü",
+  "nav.aide": "Hilfe"
 }

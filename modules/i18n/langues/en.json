@@ -467,5 +467,7 @@
   "e5.mes.demarrage": "Startup time",
   "e5.bilan.debut": "What the charts say: ",
   "e5.comment_lire": "How to read: ",
-  "e5.compteur": "{n} check(s)"
+  "e5.compteur": "{n} check(s)",
+  "nav.menu": "Menu",
+  "nav.aide": "Help"
 }
