@@ -363,5 +363,9 @@
   "e5.bilan.urgence": "aucun point urgent, {n} à surveiller. ",
   "e5.bilan.sous85": "{nom} est à {score} / 100 : à surveiller. ",
   "e5.bilan.tous": "tous les domaines sont en bon état. ",
-  "e5.bilan.perf": "Les graphiques représentent les performances à l'instant T, c'est prendre une photo de votre ordinateur pour voir ce qui va bien ou pas, comme votre médecin le ferait avec votre bilan sanguin, dans le but de prendre les mesures nécessaires pour remédier aux anomalies constatées. "
+  "e5.bilan.perf": "Les graphiques représentent les performances à l'instant T, c'est prendre une photo de votre ordinateur pour voir ce qui va bien ou pas, comme votre médecin le ferait avec votre bilan sanguin, dans le but de prendre les mesures nécessaires pour remédier aux anomalies constatées. ",
+  "aide.comprendre": "DMP est un logiciel qui examine votre ordinateur et vous l'explique en mots simples. Chaque page (A1 à B9) a deux visages : la page que vous lisez, et ses données brutes, que l'on appelle API, lisibles par d'autres logiciels. Cette page liste les deux.",
+  "aide.th_page": "Page",
+  "aide.th_sujet": "Sujet",
+  "aide.th_api": "Données brutes (API)"
 }

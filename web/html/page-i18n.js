@@ -18,7 +18,9 @@ var SEC = {'A':'page.sec_a','B':'page.sec_b','C':'page.sec_c','D':'page.sec_d','
       var s = e.textContent.trim().match(/^Section ([A-F])$/);
       if (s && d[SEC[s[1]]]) e.textContent = d[SEC[s[1]]];
     });
-        window.DMP_T = d;
+        var ac = document.getElementById('aide-comp');
+    if (ac && d['aide.comprendre']) ac.textContent = d['aide.comprendre'];
+    window.DMP_T = d;
     document.querySelectorAll('nav a').forEach(function (e) {
       var h = e.getAttribute('href') || '';
       if (h === 'menu.html' && d['nav.menu']) e.textContent = d['nav.menu'];

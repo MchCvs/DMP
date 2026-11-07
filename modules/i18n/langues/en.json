@@ -474,5 +474,9 @@
   "e5.bilan.urgence": "no urgent point, {n} to watch. ",
   "e5.bilan.sous85": "{nom} is at {score} / 100: to watch. ",
   "e5.bilan.tous": "all areas are in good condition. ",
-  "e5.bilan.perf": "The charts show performance at this moment, like a photo of your computer, to see what is fine and what is not, the way your doctor reads your blood test, so that the necessary steps can be taken to fix the problems found. "
+  "e5.bilan.perf": "The charts show performance at this moment, like a photo of your computer, to see what is fine and what is not, the way your doctor reads your blood test, so that the necessary steps can be taken to fix the problems found. ",
+  "aide.comprendre": "DMP is software that examines your computer and explains it in plain words. Each page (A1 to B9) has two faces: the page you read, and its raw data, called API, readable by other software. This page lists both.",
+  "aide.th_page": "Page",
+  "aide.th_sujet": "Topic",
+  "aide.th_api": "Raw data (API)"
 }

@@ -474,5 +474,9 @@
   "e5.bilan.urgence": "kein dringender Punkt, {n} im Auge zu behalten. ",
   "e5.bilan.sous85": "{nom} steht bei {score} / 100: im Auge behalten. ",
   "e5.bilan.tous": "alle Bereiche sind in gutem Zustand. ",
-  "e5.bilan.perf": "Die Diagramme zeigen die Leistung zum jetzigen Zeitpunkt, wie ein Foto Ihres Computers, um zu sehen, was in Ordnung ist und was nicht, so wie Ihr Arzt Ihren Blutbefund liest, damit die nötigen Schritte gegen die festgestellten Probleme ergriffen werden können. "
+  "e5.bilan.perf": "Die Diagramme zeigen die Leistung zum jetzigen Zeitpunkt, wie ein Foto Ihres Computers, um zu sehen, was in Ordnung ist und was nicht, so wie Ihr Arzt Ihren Blutbefund liest, damit die nötigen Schritte gegen die festgestellten Probleme ergriffen werden können. ",
+  "aide.comprendre": "DMP ist eine Software, die Ihren Computer untersucht und Ihnen das in einfachen Worten erklärt. Jede Seite (A1 bis B9) hat zwei Gesichter: die Seite, die Sie lesen, und ihre Rohdaten, die API genannt werden und von anderer Software gelesen werden können. Diese Seite zeigt beide.",
+  "aide.th_page": "Seite",
+  "aide.th_sujet": "Thema",
+  "aide.th_api": "Rohdaten (API)"
 }
