@@ -450,5 +450,10 @@
   "e5.titre.mesures": "3) Wichtige Messwerte",
   "e5.comprendre": "Diagramme machen die Berichtsergebnisse anschaulich: Ein langer grüner Balken ist gut, ein kurzer oder roter Balken zeigt, wo man handeln sollte. Warum: Das Auge erkennt ein Problem in einem Bild viel schneller als in einem Text.",
   "e5.btn.svg": "💾 Herunterladen (SVG)",
-  "e5.btn.png": "🖼️ Herunterladen (PNG)"
+  "e5.btn.png": "🖼️ Herunterladen (PNG)",
+  "e5.dom.materiel": "Hardware",
+  "e5.dom.performance": "Leistung",
+  "e5.dom.stockage": "Speicher",
+  "e5.dom.reseau": "Netzwerk",
+  "e5.dom.securite": "Sicherheit und Pflege"
 }

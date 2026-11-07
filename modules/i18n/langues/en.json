@@ -450,5 +450,10 @@
   "e5.titre.mesures": "3) Key measures",
   "e5.comprendre": "Charts turn the report results into pictures: a long green bar is good, a short or red bar shows where to act. Why: the eye spots a problem in a picture much faster than in text.",
   "e5.btn.svg": "💾 Download (SVG)",
-  "e5.btn.png": "🖼️ Download (PNG)"
+  "e5.btn.png": "🖼️ Download (PNG)",
+  "e5.dom.materiel": "Hardware",
+  "e5.dom.performance": "Performance",
+  "e5.dom.stockage": "Storage",
+  "e5.dom.reseau": "Network",
+  "e5.dom.securite": "Security and maintenance"
 }
