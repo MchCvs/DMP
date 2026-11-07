@@ -455,5 +455,14 @@
   "e5.dom.performance": "Performance",
   "e5.dom.stockage": "Storage",
   "e5.dom.reseau": "Network",
-  "e5.dom.securite": "Security and maintenance"
+  "e5.dom.securite": "Security and maintenance",
+  "e5.etat.bon": "Good condition",
+  "e5.etat.surveiller": "To watch",
+  "e5.etat.corriger": "To correct",
+  "e5.etat.sans_objet": "Not applicable",
+  "e5.mes.processeur": "Processor (load)",
+  "e5.mes.memoire": "Memory in use",
+  "e5.mes.disque": "Main disk in use",
+  "e5.mes.temperature": "Disk temperature",
+  "e5.mes.demarrage": "Startup time"
 }

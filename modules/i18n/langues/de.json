@@ -455,5 +455,14 @@
   "e5.dom.performance": "Leistung",
   "e5.dom.stockage": "Speicher",
   "e5.dom.reseau": "Netzwerk",
-  "e5.dom.securite": "Sicherheit und Pflege"
+  "e5.dom.securite": "Sicherheit und Pflege",
+  "e5.etat.bon": "In gutem Zustand",
+  "e5.etat.surveiller": "Im Auge behalten",
+  "e5.etat.corriger": "Zu korrigieren",
+  "e5.etat.sans_objet": "Nicht zutreffend",
+  "e5.mes.processeur": "Prozessor (Last)",
+  "e5.mes.memoire": "Speicher belegt",
+  "e5.mes.disque": "Hauptfestplatte belegt",
+  "e5.mes.temperature": "Festplattentemperatur",
+  "e5.mes.demarrage": "Startzeit"
 }

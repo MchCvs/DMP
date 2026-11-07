@@ -344,5 +344,14 @@
   "e5.dom.performance": "Performance",
   "e5.dom.stockage": "Stockage",
   "e5.dom.reseau": "Réseau",
-  "e5.dom.securite": "Sécurité et entretien"
+  "e5.dom.securite": "Sécurité et entretien",
+  "e5.etat.bon": "En bon état",
+  "e5.etat.surveiller": "À surveiller",
+  "e5.etat.corriger": "À corriger",
+  "e5.etat.sans_objet": "Sans objet",
+  "e5.mes.processeur": "Processeur (charge)",
+  "e5.mes.memoire": "Mémoire occupée",
+  "e5.mes.disque": "Disque principal occupé",
+  "e5.mes.temperature": "Température du disque",
+  "e5.mes.demarrage": "Temps de démarrage"
 }
