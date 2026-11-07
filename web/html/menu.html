@@ -94,7 +94,7 @@ a:hover{background:#2980b9}
 
 </div>
 
-<div id="dmp-sign">Créé par Thierry CHEVASSUS, Piton Sainte Rose, île de la Réunion, France</div>
+<div id="dmp-sign"><span id=menu-credit>Créé par Thierry CHEVASSUS, Piton Sainte Rose, île de la Réunion, France</span></div>
 
 <script>
 (function(){
@@ -113,5 +113,6 @@ a:hover{background:#2980b9}
 (function(){var L=localStorage.getItem('dmp_lang')||'fr';var M={'A1 Processeur':'page.nom.a1','A2 Mémoire':'page.nom.0','A3 Disque':'page.nom.1','A4 Réseau':'page.nom.2','A5 Carte graphique':'page.nom.3','A6 Carte-mère':'page.nom.4','A7 Debian':'page.nom.5','A8 USB':'page.nom.6','A9 Alimentation':'page.nom.7','B1 Disponibilité':'page.nom.8','B2 Processeur %':'page.nom.9','B3 Mémoire %':'page.nom.10','B4 Disque %':'page.nom.11','B5 Réseau':'page.nom.12','B6 Services':'page.nom.13','B7 Processus':'page.nom.14','B8 Démarrage':'page.nom.15','B9 Sécurité':'page.nom.16','C1 Mises à jour':'page.nom.17','C2 Paquets':'page.nom.18','C3 Entretien':'page.nom.19','C4 Technique':'page.nom.20','D1 Recherche':'page.nom.21','D2 Suppression':'page.nom.22','D3 Bénéfices':'page.nom.23','E1 Analyse':'page.nom.24','E2 Résumé':'page.nom.25','E3 Score':'page.nom.26','E4 Rapport':'page.nom.27','E5 Graphiques':'page.nom.28','F1-1 Contrôle':'page.nom.29','F1-2 Résultats':'page.nom.30','F1-3 Anomalies':'page.nom.31','F2 Monitoring et sauvegarde':'page.nom.32','F3-F4 Vitesse et historique':'page.nom.33','Vérification santé':'page.nom.34','🚀 Démarrage rapide':'menu.demarrage','🔍 Section A — Découverte':'menu.sec_a','⚙️ Section B — Activité':'menu.sec_b','🛠️ Section C — Maintenance':'menu.sec_c','🎯 Section D — Décision':'menu.sec_d','📊 Section E — Rapports &amp; Analyses':'menu.sec_e','🔍 Section F — Contrôle &amp; Extensions':'menu.sec_f','📈 Tableau de bord':'menu.tableau','🏥 Vérification santé':'menu.sante'};fetch('/i18n/'+L+'.json').then(function(r){return r.json()}).then(function(T){document.querySelectorAll('h2,a').forEach(function(e){var k=M[e.textContent.trim()];if(k&&T[k])e.textContent=T[k]})}).catch(function(){});})();
 </script>
 <script src="page-i18n.js"></script>
+<script>(function(){var L=localStorage.getItem('dmp_lang')||'fr';if(L==='fr')return;fetch('/i18n/'+L+'.json').then(function(r){return r.json()}).then(function(d){var e=document.getElementById('menu-credit');if(e&&d['menu.credit'])e.textContent=d['menu.credit'];}).catch(function(){});})();</script>
 </body>
 </html>

@@ -480,5 +480,6 @@
   "aide.th_sujet": "Topic",
   "aide.th_api": "Raw data (API)",
   "aide.titre": "Help and API",
-  "page.nom.a1": "A1 Processor"
+  "page.nom.a1": "A1 Processor",
+  "menu.credit": "Created by Thierry CHEVASSUS, Piton Sainte Rose, Réunion Island, France"
 }
