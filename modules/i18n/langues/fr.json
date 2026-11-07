@@ -337,5 +337,7 @@
   "e5.titre.notes": "1) Note de santé par domaine (sur 100)",
   "e5.titre.repartition": "2) Répartition des sujets vérifiés",
   "e5.titre.mesures": "3) Mesures clés",
-  "e5.comprendre": "Les graphiques transforment les résultats du rapport en images : une barre longue et verte est bonne, une barre courte ou rouge signale où agir. Pourquoi : l'œil repère un problème dans un dessin bien plus vite que dans un texte."
+  "e5.comprendre": "Les graphiques transforment les résultats du rapport en images : une barre longue et verte est bonne, une barre courte ou rouge signale où agir. Pourquoi : l'œil repère un problème dans un dessin bien plus vite que dans un texte.",
+  "e5.btn.svg": "💾 Télécharger (SVG)",
+  "e5.btn.png": "🖼️ Télécharger (PNG)"
 }

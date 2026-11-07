@@ -448,5 +448,7 @@
   "e5.titre.notes": "1) Gesundheitsbewertung nach Bereich (von 100)",
   "e5.titre.repartition": "2) Aufteilung der Prüfungen",
   "e5.titre.mesures": "3) Wichtige Messwerte",
-  "e5.comprendre": "Diagramme machen die Berichtsergebnisse anschaulich: Ein langer grüner Balken ist gut, ein kurzer oder roter Balken zeigt, wo man handeln sollte. Warum: Das Auge erkennt ein Problem in einem Bild viel schneller als in einem Text."
+  "e5.comprendre": "Diagramme machen die Berichtsergebnisse anschaulich: Ein langer grüner Balken ist gut, ein kurzer oder roter Balken zeigt, wo man handeln sollte. Warum: Das Auge erkennt ein Problem in einem Bild viel schneller als in einem Text.",
+  "e5.btn.svg": "💾 Herunterladen (SVG)",
+  "e5.btn.png": "🖼️ Herunterladen (PNG)"
 }

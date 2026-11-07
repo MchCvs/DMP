@@ -448,5 +448,7 @@
   "e5.titre.notes": "1) Overall health score by area (out of 100)",
   "e5.titre.repartition": "2) Breakdown of the checks",
   "e5.titre.mesures": "3) Key measures",
-  "e5.comprendre": "Charts turn the report results into pictures: a long green bar is good, a short or red bar shows where to act. Why: the eye spots a problem in a picture much faster than in text."
+  "e5.comprendre": "Charts turn the report results into pictures: a long green bar is good, a short or red bar shows where to act. Why: the eye spots a problem in a picture much faster than in text.",
+  "e5.btn.svg": "💾 Download (SVG)",
+  "e5.btn.png": "🖼️ Download (PNG)"
 }
