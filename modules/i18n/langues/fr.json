@@ -358,5 +358,9 @@
   "e5.comment_lire": "Comment lire : ",
   "e5.compteur": "{n} sujet(s)",
   "nav.menu": "Menu",
-  "nav.aide": "Aide"
+  "nav.aide": "Aide",
+  "e5.bilan.faible": "le domaine le plus faible est « {faible} » ({score_faible} / 100), le plus solide « {fort} » ({score_fort} / 100). ",
+  "e5.bilan.urgence": "aucun point urgent, {n} à surveiller. ",
+  "e5.bilan.sous85": "{nom} est à {score} / 100 : à surveiller. ",
+  "e5.bilan.tous": "tous les domaines sont en bon état. "
 }

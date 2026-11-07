@@ -469,5 +469,9 @@
   "e5.comment_lire": "So lesen Sie es: ",
   "e5.compteur": "{n} Prüfung(en)",
   "nav.menu": "Menü",
-  "nav.aide": "Hilfe"
+  "nav.aide": "Hilfe",
+  "e5.bilan.faible": "der schwächste Bereich ist „{faible}“ ({score_faible} / 100), der stärkste „{fort}“ ({score_fort} / 100). ",
+  "e5.bilan.urgence": "kein dringender Punkt, {n} im Auge zu behalten. ",
+  "e5.bilan.sous85": "{nom} steht bei {score} / 100: im Auge behalten. ",
+  "e5.bilan.tous": "alle Bereiche sind in gutem Zustand. "
 }

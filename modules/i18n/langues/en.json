@@ -469,5 +469,9 @@
   "e5.comment_lire": "How to read: ",
   "e5.compteur": "{n} check(s)",
   "nav.menu": "Menu",
-  "nav.aide": "Help"
+  "nav.aide": "Help",
+  "e5.bilan.faible": "the weakest area is “{faible}” ({score_faible} / 100), the strongest “{fort}” ({score_fort} / 100). ",
+  "e5.bilan.urgence": "no urgent point, {n} to watch. ",
+  "e5.bilan.sous85": "{nom} is at {score} / 100: to watch. ",
+  "e5.bilan.tous": "all areas are in good condition. "
 }
