@@ -479,5 +479,6 @@
   "aide.th_page": "Page",
   "aide.th_sujet": "Topic",
   "aide.th_api": "Raw data (API)",
-  "aide.titre": "Help and API"
+  "aide.titre": "Help and API",
+  "page.nom.a1": "A1 Processor"
 }
