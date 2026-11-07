@@ -464,5 +464,6 @@
   "e5.mes.memoire": "Speicher belegt",
   "e5.mes.disque": "Hauptfestplatte belegt",
   "e5.mes.temperature": "Festplattentemperatur",
-  "e5.mes.demarrage": "Startzeit"
+  "e5.mes.demarrage": "Startzeit",
+  "e5.bilan.debut": "Was die Diagramme zeigen: "
 }

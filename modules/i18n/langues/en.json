@@ -464,5 +464,6 @@
   "e5.mes.memoire": "Memory in use",
   "e5.mes.disque": "Main disk in use",
   "e5.mes.temperature": "Disk temperature",
-  "e5.mes.demarrage": "Startup time"
+  "e5.mes.demarrage": "Startup time",
+  "e5.bilan.debut": "What the charts say: "
 }
