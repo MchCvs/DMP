@@ -3,7 +3,7 @@ T_COMP_NO="Diese Seite zeigt, ob Ihr Computer mit dem Internet verbunden ist und
 T_NO_O="Es wurde keine aktive Verbindung erkannt. Warum: Das Kabel ist abgezogen, das WLAN ist ausgeschaltet oder der Router ist aus. Ohne Verbindung ist weder Surfen noch das Durchführen von Updates möglich."
 T_NO_R="Nicht verbunden"
 T_NO_CMD="ip route"
-T_CMD="ip, ping, /sys/class/net, getent (DMP uniquement)"
+T_CMD="ip, ping, /sys/class/net, getent"
 T_BYTE="B"
 t1(){ if [ -z "$2" ] || [ "$2" = 100 ]; then echo "❌ keine Antwort"; else a=${3%.*}; if [ "$a" -lt 30 ]; then q="ausgezeichnet"; elif [ "$a" -lt 100 ]; then q="in Ordnung"; else q="langsam"; fi; echo "✅ antwortet in $3 ms ($q), $2 % Verluste"; fi; }
 T_NM() {

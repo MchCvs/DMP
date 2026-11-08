@@ -1,5 +1,5 @@
 T_COMP="Updates sind Impfungen für Ihren Computer: Jedes Mal, wenn in einer Software eine Lücke oder ein Fehler entdeckt wird, veröffentlichen ihre Autoren eine korrigierte Version. Warum man sie installiert: Eine nicht aktualisierte Software behält ihre Lücken, und genau die nutzen Hacker und Viren aus."
-T_CMD="apt list --upgradable (DMP uniquement)"
+T_CMD="apt list --upgradable"
 T_SECL="🔴 Sicherheit"; T_ORDL="🔵 gewöhnlich"
 T_LFMT='   • %s: %s → %s (%s)\n'
 T_O() {

@@ -1,5 +1,5 @@
 T_COMP="Updates are vaccines for your computer: whenever a hole or a defect is found in a piece of software, its authors publish a fixed version. Why install them: software that is not updated keeps its holes, and those are what hackers and viruses exploit."
-T_CMD="apt list --upgradable (DMP uniquement)"
+T_CMD="apt list --upgradable"
 T_SECL="🔴 security"; T_ORDL="🔵 ordinary"
 T_LFMT='   • %s: %s → %s (%s)\n'
 T_O() {

@@ -1,5 +1,5 @@
 T_COMP="This page shows all the programs running right now, including those you do not see, and which ones weigh the most."
-T_CMD="ps (DMP uniquement)"
+T_CMD="ps"
 T_GB="GB"; T_MB="MB"
 T_TCFMT='   • %s: %s %%\n'
 T_TCNONE="   • No program is using the processor in any notable way."

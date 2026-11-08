@@ -1,5 +1,5 @@
 T_COMP="This page checks that the doors of your computer are properly closed: security updates, firewall, open doors, remote access."
-T_CMD="apt, ss, systemctl, last (DMP uniquement)"
+T_CMD="apt, ss, systemctl, last"
 T_NOHIST="   • History not available"
 pd(){ case $1 in 3000) echo "Open WebUI: chat interface with AI models, started by Docker.";; 22) echo "Remote access (SSH): lets you control the computer from another device.";; 631) echo "Printing (CUPS).";; 80|443|8080) echo "Web server.";; 8765) echo "The DMP server, which displays these pages.";; 3306) echo "MySQL/MariaDB database.";; 5432) echo "PostgreSQL database.";; 25|587) echo "Internal mail service (here Postfix): it delivers the messages the system sends to itself, such as alerts from scheduled tasks. It sends nothing over the internet.";; 445|139) echo "Windows file sharing (Samba).";; 53) echo "Local website-name directory (DNS).";; *) echo "Program waiting for connections on this number.";; esac; }
 T_PORTL() { PT="$PT${NL}🔒 Door $p: internal to the computer${NL}   • Role: $(pd $p)${NL}   • Why harmless: it only listens to this computer, nobody else can connect to it.${NL}"; }

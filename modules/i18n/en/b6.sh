@@ -1,5 +1,5 @@
 T_COMP="This page checks that the small invisible programs that keep your computer running are all working properly."
-T_CMD="systemctl, journalctl (DMP uniquement)"
+T_CMD="systemctl, journalctl"
 T_FICHE() {
 case $RS in
 exit-code) CA="the program stopped and reported an error (code $EX)";;

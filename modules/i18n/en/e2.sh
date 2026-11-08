@@ -1,6 +1,6 @@
 # English texts of collector e2. Edit the text only.
 T_COMP="Score = an overall health grade (0-100). Like a doctor’s report for your computer."
-T_CMD="ps aux + free + df (DMP only)"
+T_CMD="ps aux + free + df"
 T_EXC="Excellent"
 T_GOOD="Good"
 T_IMP="To improve"

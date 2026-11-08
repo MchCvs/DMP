@@ -1,5 +1,5 @@
 T_COMP="Das ist das Gehirn Ihres Computers. Es denkt und führt die Berechnungen aus. Je schneller es ist, desto schneller laufen Ihre Programme."
-T_CMD="nproc, lscpu, /proc/loadavg (DMP uniquement)"
+T_CMD="nproc, lscpu, /proc/loadavg"
 T_O() {
 case $LV in
 3) Q="eine hohe Zahl: Ihr Computer kann viele Dinge gleichzeitig erledigen (Video, Surfen, Spiele), ohne langsamer zu werden";;

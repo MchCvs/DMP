@@ -1,5 +1,5 @@
 T_COMP="Diese Seite prüft, ob die Türen Ihres Computers gut verschlossen sind: Sicherheitsupdates, Firewall, offene Türen, Fernzugriff."
-T_CMD="apt, ss, systemctl, last (DMP uniquement)"
+T_CMD="apt, ss, systemctl, last"
 T_NOHIST="   • Verlauf nicht verfügbar"
 pd(){ case $1 in 3000) echo "Open WebUI: Chat-Oberfläche mit KI-Modellen, von Docker gestartet.";; 22) echo "Fernzugriff (SSH): erlaubt es, den Computer von einem anderen Gerät aus zu steuern.";; 631) echo "Drucken (CUPS).";; 80|443|8080) echo "Webserver.";; 8765) echo "Der DMP-Server, der diese Seiten anzeigt.";; 3306) echo "MySQL/MariaDB-Datenbank.";; 5432) echo "PostgreSQL-Datenbank.";; 25|587) echo "Interner Maildienst (hier Postfix): Er stellt die Nachrichten zu, die das System an sich selbst schickt, etwa Meldungen geplanter Aufgaben. Er sendet nichts ins Internet.";; 445|139) echo "Windows-Dateifreigabe (Samba).";; 53) echo "Lokales Verzeichnis der Webseitennamen (DNS).";; *) echo "Programm, das auf Verbindungen an dieser Nummer wartet.";; esac; }
 T_PORTL() { PT="$PT${NL}🔒 Tür $p: intern im Computer${NL}   • Aufgabe: $(pd $p)${NL}   • Warum ungefährlich: Sie hört nur auf diesen Computer, niemand sonst kann sich damit verbinden.${NL}"; }

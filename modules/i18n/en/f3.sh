@@ -1,5 +1,5 @@
 T_COMP="The speed test (benchmark) is like timing a runner: the computer is given the same effort each time, so we know how fast it goes and can follow how it changes."
-T_CMD="python3, dd (DMP only)"
+T_CMD="python3, dd"
 T_DKU="type not readable"
 T_SSD="SSD"
 T_HDD="mechanical hard disk"

@@ -1,5 +1,5 @@
 T_COMP="Diese Seite zeigt alle Programme, die gerade laufen, auch die, die Sie nicht sehen, und welche am schwersten wiegen."
-T_CMD="ps (DMP uniquement)"
+T_CMD="ps"
 T_GB="GB"; T_MB="MB"
 T_TCFMT='   • %s: %s %%\n'
 T_TCNONE="   • Kein Programm beansprucht den Prozessor nennenswert."

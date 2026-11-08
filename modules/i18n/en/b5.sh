@@ -3,7 +3,7 @@ T_COMP_NO="This page shows whether your computer is connected to the internet an
 T_NO_O="No active connection is detected. Why: the cable is unplugged, Wi-Fi is off or the router is switched off. Without a connection, you cannot browse or run updates."
 T_NO_R="Not connected"
 T_NO_CMD="ip route"
-T_CMD="ip, ping, /sys/class/net, getent (DMP uniquement)"
+T_CMD="ip, ping, /sys/class/net, getent"
 T_BYTE="B"
 t1(){ if [ -z "$2" ] || [ "$2" = 100 ]; then echo "❌ no response"; else a=${3%.*}; if [ "$a" -lt 30 ]; then q="excellent"; elif [ "$a" -lt 100 ]; then q="decent"; else q="slow"; fi; echo "✅ responds in $3 ms ($q), $2 % loss"; fi; }
 T_NM() {

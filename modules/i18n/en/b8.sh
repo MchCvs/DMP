@@ -3,7 +3,7 @@ T_COMP_NO="This page measures the time your computer takes to start, from pressi
 T_NO_O="The measurement is not available. Why: the systemd-analyze tool is missing, or startup is not finished."
 T_NO_R="Measurement unavailable"
 T_NO_CMD="systemd-analyze"
-T_CMD="systemd-analyze, systemd-analyze blame (DMP uniquement)"
+T_CMD="systemd-analyze, systemd-analyze blame"
 desc(){ case "$1" in
  NetworkManager-wait-online*) echo "waits for the network to be ready before continuing. Often the longest, harmless: it only blocks what needs the internet.";;
  plymouth*) echo "shows the startup screen (logo or animation).";;

@@ -1,6 +1,6 @@
 T_COMP="Résultats = le résumé du contrôle. Tout va bien ou il y a des soucis à régler."
 T_R="Inspection terminée avec succès"
-T_CMD="Compilation résultats (DMP uniquement)"
+T_CMD="Compilation résultats"
 T_O() {
 O="$(tr_cle f1_2.observations)"
 }
