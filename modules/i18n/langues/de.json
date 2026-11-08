@@ -340,7 +340,7 @@
   "verdict.role.locales": "Sprachen und Regionalformate",
   "verdict.role.libgtk_libqt": "Bibliothek für grafische Oberflächen",
   "verdict.role.systemd_libsystemd": "Dienstverwaltung des Systems",
-  "verdict.vx.rapide": "Unter 30 Sekunden ist ein gutes Ergebnis: nichts zu verbessern. Der längste Schritt ist {n}.",
+  "verdict.vx.rapide": "Weniger als 30 Sekunden: ein gutes Ergebnis – es gibt nichts zu verbessern. Der längste Vorgang beträgt {n}.",
   "verdict.vx.correct": "Zwischen 30 und 60 Sekunden ist akzeptabel. Der längste Schritt ist {n}.",
   "verdict.vx.lent": "Über einer Minute verzögert etwas den Systemstart. Der längste Schritt ist {n}. Sehen Sie sich die 8 langsamsten Dienste an und prüfen Sie den Zustand der Festplatte (Seite Festplatte B4): Eine müde Festplatte ist eine häufige Ursache.",
   "verdict.firmware": "Die Firmware ist auf der Hauptplatine fest eingebettet: Sie lässt sich nicht deinstallieren und hat nichts mit Debian zu tun. Nur eine BIOS/UEFI-Einstellung (Schnellstart, Festplattenreihenfolge) kann diesen Schritt verkürzen.",
