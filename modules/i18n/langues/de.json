@@ -134,7 +134,7 @@
   "b5.noinet.texte": "Die Box antwortet, also funktioniert Ihr Computer: Das Problem kommt von der Box oder von Ihrem Anbieter. Starten Sie die Box neu, und wenn es bestehen bleibt, wenden Sie sich an Ihren Anbieter.",
   "b5.instable.titre": "Instabile Verbindung",
   "b5.instable.texte": "Pakete gehen verloren: Das verursacht Abbrüche und Verlangsamungen. Prüfen Sie das Kabel oder gehen Sie näher an die Box.",
-  "b5.nodns.titre": "Das Internet antwortet, aber Websitenamen werden nicht aufgelöst",
+  "b5.nodns.titre": "Das Internet funktioniert, aber von der Seite, an die die Anfrage gesendet wurde, kommt keine Antwort.",
   "b5.nodns.texte": "Websites öffnen sich nicht über ihren Namen: Der Namensdienst (DNS) ist gestört, starten Sie die Box neu.",
   "b5.saine.titre": "Gesunde Verbindung",
   "b5.saine.texte": "Jede Verbindungsstelle antwortet gut: Surfen, Videos und Updates funktionieren normal.",
