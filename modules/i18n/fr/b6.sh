@@ -39,7 +39,7 @@ if [ $BT = 1 ]; then svc bluetooth.service "$(tr_cle b6.svc.bluetooth.titre)" "$
 if [ $WF = 1 ]; then svc wpa_supplicant.service "$(tr_cle b6.svc.wifi.titre)" "$(tr_cle b6.svc.wifi.pourquoi)"; else IM="$IM${NL}   • $(tr_cle b6.nondispo.wifi_titre)${NL}      Pourquoi : $(tr_cle b6.nondispo.wifi)"; fi
 }
 T_O() {
-O="$(tr_cle b6.intro)"
+O="$(tr_cle b6.intro run="$RUN" ena="$ENA" t="$T" im="$IM")"
 [ $T -gt 0 ] && O="$O${NL}${NL}🚨 $(tr_cle b6.detail_titre)$NL$FI"
 case $TL in
 0) R="Tous les services fonctionnent"; X="Aucun service ne signale de problème : le réseau, l'heure, les tâches programmées et le reste travaillent normalement, donc rien à faire.";;
