@@ -485,5 +485,8 @@
   "tableau.titre": "Übersicht",
   "tableau.comprendre": "Die Übersicht ist wie das Armaturenbrett eines Autos: Auf einen Blick sehen Sie für jedes Thema eine Anzeige. Grün: alles in Ordnung. Gelb: bei Gelegenheit ansehen. Rot: vorrangig beheben. Grau: dieses Element gibt es auf Ihrem Computer nicht (normal). Warum diese Seite: Sie sehen sofort, ob etwas nicht stimmt, ohne 18 Seiten zu öffnen.",
   "vs.comp": "Die Gesundheitsprüfung ist der vollständige Check-up Ihres Computers, wie ein Besuch beim Arzt: Jede Komponente und jedes angeschlossene Gerät wird untersucht, mit einem klaren Urteil und einer Erklärung. Warum diese Seite: Ein Gerät in schlechtem Zustand (müde Festplatte, beschädigtes Netzwerkkabel, stummer USB-Anschluss) bleibt oft unbemerkt, bis es ausfällt.",
-  "vs.aide": "Hilfe und API →"
+  "vs.aide": "Hilfe und API →",
+  "d2.danger.titre": "GEFAHR — IM ZWEIFEL NICHT ENTFERNEN.",
+  "d2.danger.intro": "Eine Software kann harmlos wirken und dennoch lebenswichtig sein:",
+  "d2.danger.texte": "der Bootloader (GRUB), die Prozessor-Korrekturen (Microcode), die internen Treiber (Firmware) oder die Spracheinstellungen (Locales). Ihr Entfernen kann verhindern, dass der Computer startet, Sicherheitslücken offen lassen oder die Anzeige beschädigen. Lesen Sie vor jedem Entfernen die Liste, die apt vorschlägt, und suchen Sie den Namen im Internet."
 }

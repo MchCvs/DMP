@@ -409,5 +409,8 @@
   "tableau.titre": "Tableau de bord",
   "tableau.comprendre": "Le tableau de bord est le tableau de commande d'une voiture : d'un seul coup d'œil, un voyant par sujet. Vert : tout va bien. Jaune : à regarder sans urgence. Rouge : à traiter en priorité. Gris : cet élément n'existe pas sur votre ordinateur (normal). Pourquoi cette page : voir tout de suite si quelque chose cloche, sans ouvrir 18 pages.",
   "vs.comp": "La vérification santé est le bilan complet de votre ordinateur, comme une visite chez le médecin : chaque composant et chaque périphérique branché est examiné, avec un verdict clair et l'explication. Pourquoi cette page : un périphérique en mauvais état (disque fatigué, câble réseau abîmé, port USB muet) passe souvent inaperçu jusqu'à la panne.",
-  "vs.aide": "Aide et API →"
+  "vs.aide": "Aide et API →",
+  "d2.danger.titre": "DANGER — EN CAS DE DOUTE, NE SUPPRIMEZ PAS.",
+  "d2.danger.intro": "Un logiciel peut sembler anodin et être vital :",
+  "d2.danger.texte": "le chargeur de démarrage (GRUB), les correctifs du processeur (microcode), les pilotes internes (firmware) ou les réglages de langue (locales). Les retirer peut empêcher l'ordinateur de démarrer, laisser des failles de sécurité ouvertes ou casser l'affichage. Avant toute suppression, lisez la liste que propose apt et cherchez le nom sur internet."
 }

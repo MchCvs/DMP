@@ -16,7 +16,7 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 <div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>D2 Supprimer</strong></div>
 <h1>📌 D2 Supprimer</h1>
 
-<div id=dmp-danger style="border:4px solid #c0392b;background:#fdedec;border-radius:6px;padding:16px;margin:20px 0;display:flex;gap:14px;align-items:flex-start"><div style="font-size:44px;line-height:1">⛔</div><div style="color:#922b21;font-size:18px;line-height:1.6"><b>DANGER — EN CAS DE DOUTE, NE SUPPRIMEZ PAS.</b><br><b>Un logiciel peut sembler anodin et être vital :</b> le chargeur de démarrage (GRUB), les correctifs du processeur (microcode), les pilotes internes (firmware) ou les réglages de langue (locales). Les retirer peut empêcher l'ordinateur de démarrer, laisser des failles de sécurité ouvertes ou casser l'affichage. Avant toute suppression, lisez la liste que propose apt et cherchez le nom sur internet.</div></div>
+<div id=dmp-danger style="border:4px solid #c0392b;background:#fdedec;border-radius:6px;padding:16px;margin:20px 0;display:flex;gap:14px;align-items:flex-start"><div style="font-size:44px;line-height:1">⛔</div><div style="color:#922b21;font-size:18px;line-height:1.6"><b id=dd1>DANGER — EN CAS DE DOUTE, NE SUPPRIMEZ PAS.</b><br><b id=dd2>Un logiciel peut sembler anodin et être vital :</b> <span id=dd3>le chargeur de démarrage (GRUB), les correctifs du processeur (microcode), les pilotes internes (firmware) ou les réglages de langue (locales). Les retirer peut empêcher l'ordinateur de démarrer, laisser des failles de sécurité ouvertes ou casser l'affichage. Avant toute suppression, lisez la liste que propose apt et cherchez le nom sur internet.</span></div></div>
 <div class=block><h2>Comprendre</h2><p id=comp>Chargement...</p></div>
 <div class=block><h2>Ce qu'on voit</h2><p id=obs>Chargement...</p></div>
 <div class=block><h2>Ce que ça veut dire</h2><p id=res>Chargement...</p></div>
@@ -37,4 +37,5 @@ async function load(){
 load();
 </script>
 <script src="page-i18n.js"></script>
+<script>(function(){var L=localStorage.getItem('dmp_lang')||'fr';if(L==='fr')return;fetch('/i18n/'+L+'.json').then(function(r){return r.json()}).then(function(d){document.getElementById('dd1').textContent=d['d2.danger.titre']||'';document.getElementById('dd2').textContent=d['d2.danger.intro']||'';document.getElementById('dd3').textContent=d['d2.danger.texte']||'';}).catch(function(){});})();</script>
 </body></html>

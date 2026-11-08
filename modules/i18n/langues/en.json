@@ -485,5 +485,8 @@
   "tableau.titre": "Dashboard",
   "tableau.comprendre": "The dashboard is a car's dashboard: at a glance, one indicator per subject. Green: all is well. Yellow: look at it when you can. Red: deal with it first. Grey: this item does not exist on your computer (normal). Why this page: to see at once if something is wrong, without opening 18 pages.",
   "vs.comp": "The health check is your computer's full check-up, like a visit to the doctor: every component and every connected device is examined, with a clear verdict and an explanation. Why this page: a device in poor condition (a tired disk, a damaged network cable, a silent USB port) often goes unnoticed until it fails.",
-  "vs.aide": "Help and API →"
+  "vs.aide": "Help and API →",
+  "d2.danger.titre": "DANGER — WHEN IN DOUBT, DO NOT REMOVE.",
+  "d2.danger.intro": "A piece of software can seem harmless and yet be vital:",
+  "d2.danger.texte": "the boot loader (GRUB), the processor fixes (microcode), the internal drivers (firmware) or the language settings (locales). Removing them can stop the computer from starting, leave security holes open or break the display. Before removing anything, read the list apt proposes and search the name on the Internet."
 }
