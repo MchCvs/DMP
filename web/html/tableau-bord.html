@@ -14,7 +14,7 @@ nav{background:#34495e;padding:10px 20px}nav a{color:white;margin:0 10px;text-de
 <nav><a href=menu.html>Menu</a> | <a href=aide.html>Aide</a></nav>
 <div class=container>
 <div class=breadcrumb><a href=menu.html>Accueil</a> › <strong>Tableau de bord</strong></div><h1>Tableau de bord</h1>
-<div class=block><h2>Comprendre</h2><p>Le tableau de bord est le tableau de commande d'une voiture : d'un seul coup d'œil, un voyant par sujet. Vert : tout va bien. Jaune : à regarder sans urgence. Rouge : à traiter en priorité. Gris : cet élément n'existe pas sur votre ordinateur (normal). Pourquoi cette page : voir tout de suite si quelque chose cloche, sans ouvrir 18 pages.</p></div>
+<div class=block><h2>Comprendre</h2><p id=tb-comp>Le tableau de bord est le tableau de commande d'une voiture : d'un seul coup d'œil, un voyant par sujet. Vert : tout va bien. Jaune : à regarder sans urgence. Rouge : à traiter en priorité. Gris : cet élément n'existe pas sur votre ordinateur (normal). Pourquoi cette page : voir tout de suite si quelque chose cloche, sans ouvrir 18 pages.</p></div>
 <div class=block><h2>Ce qu'on voit</h2><div id=obs>Chargement…</div></div>
 <div class=block><h2>Ce que ça veut dire</h2><p id=res>Chargement…</p></div>
 <div class=nav-section><a href=menu.html class=btn>← Menu</a><a href=verification-sante.html class=btn>Suivant : Vérification santé →</a></div></div><script>
@@ -35,4 +35,5 @@ r.textContent=T.res?T.res(m):m[2]?'🔴 '+m[2]+' point(s) à corriger en priorit
 (async()=>{const D=await all(Object.keys(N)),o=document.getElementById('obs'),ns=[];o.textContent='';
 [[T.g1||'⚙️ Le matériel',['a1','a2','a3','a4','a5','a6','a7','a8','a9']],[T.g2||'📈 Ce qui se passe en direct',['b1','b2','b3','b4','b5','b6','b7','b8','b9']]].forEach(([t,l])=>{o.appendChild(E('h3','margin:20px 0 4px',t));const g=E('div','display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 12px');l.forEach(k=>{const r=card(k,D[k]||{},0);ns.push(r.n);g.appendChild(r.c)});o.appendChild(g)});res(ns)})();
 </script><script src="page-i18n.js"></script>
+<script>(function(){var L=localStorage.getItem('dmp_lang')||'fr';if(L==='fr')return;fetch('/i18n/'+L+'.json').then(function(r){return r.json()}).then(function(d){var p=document.getElementById('tb-comp');if(p&&d['tableau.comprendre'])p.textContent=d['tableau.comprendre'];}).catch(function(){});})();</script>
 </body></html>

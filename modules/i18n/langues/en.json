@@ -481,5 +481,7 @@
   "aide.th_api": "Raw data (API)",
   "aide.titre": "Help and API",
   "page.nom.a1": "A1 Processor",
-  "menu.credit": "Created by Thierry CHEVASSUS, Piton Sainte Rose, Réunion Island, France"
+  "menu.credit": "Created by Thierry CHEVASSUS, Piton Sainte Rose, Réunion Island, France",
+  "tableau.titre": "Dashboard",
+  "tableau.comprendre": "The dashboard is a car's dashboard: at a glance, one indicator per subject. Green: all is well. Yellow: look at it when you can. Red: deal with it first. Grey: this item does not exist on your computer (normal). Why this page: to see at once if something is wrong, without opening 18 pages."
 }
