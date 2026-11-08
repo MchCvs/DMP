@@ -483,5 +483,7 @@
   "page.nom.a1": "A1 Processor",
   "menu.credit": "Created by Thierry CHEVASSUS, Piton Sainte Rose, Réunion Island, France",
   "tableau.titre": "Dashboard",
-  "tableau.comprendre": "The dashboard is a car's dashboard: at a glance, one indicator per subject. Green: all is well. Yellow: look at it when you can. Red: deal with it first. Grey: this item does not exist on your computer (normal). Why this page: to see at once if something is wrong, without opening 18 pages."
+  "tableau.comprendre": "The dashboard is a car's dashboard: at a glance, one indicator per subject. Green: all is well. Yellow: look at it when you can. Red: deal with it first. Grey: this item does not exist on your computer (normal). Why this page: to see at once if something is wrong, without opening 18 pages.",
+  "vs.comp": "The health check is your computer's full check-up, like a visit to the doctor: every component and every connected device is examined, with a clear verdict and an explanation. Why this page: a device in poor condition (a tired disk, a damaged network cable, a silent USB port) often goes unnoticed until it fails.",
+  "vs.aide": "Help and API →"
 }

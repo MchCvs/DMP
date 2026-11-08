@@ -407,5 +407,7 @@
   "page.nom.a1": "A1 Processeur",
   "menu.credit": "Créé par Thierry CHEVASSUS, Piton Sainte Rose, île de la Réunion, France",
   "tableau.titre": "Tableau de bord",
-  "tableau.comprendre": "Le tableau de bord est le tableau de commande d'une voiture : d'un seul coup d'œil, un voyant par sujet. Vert : tout va bien. Jaune : à regarder sans urgence. Rouge : à traiter en priorité. Gris : cet élément n'existe pas sur votre ordinateur (normal). Pourquoi cette page : voir tout de suite si quelque chose cloche, sans ouvrir 18 pages."
+  "tableau.comprendre": "Le tableau de bord est le tableau de commande d'une voiture : d'un seul coup d'œil, un voyant par sujet. Vert : tout va bien. Jaune : à regarder sans urgence. Rouge : à traiter en priorité. Gris : cet élément n'existe pas sur votre ordinateur (normal). Pourquoi cette page : voir tout de suite si quelque chose cloche, sans ouvrir 18 pages.",
+  "vs.comp": "La vérification santé est le bilan complet de votre ordinateur, comme une visite chez le médecin : chaque composant et chaque périphérique branché est examiné, avec un verdict clair et l'explication. Pourquoi cette page : un périphérique en mauvais état (disque fatigué, câble réseau abîmé, port USB muet) passe souvent inaperçu jusqu'à la panne.",
+  "vs.aide": "Aide et API →"
 }
