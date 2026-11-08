@@ -11,7 +11,7 @@ dmp (1.8.7-1) unstable; urgency=medium
   * Niveaux et textes de E5 : phrase de bilan selon les couleurs.
   * Commandes de suppression données avec sudo.
   * Retrait des pages orphelines (historique.html, index.html).
-  * Serveur : les adresses avec ?lang= fonctionnent.
+  * Serveur : les liens avec ?lang= fonctionnent.
 
  -- Thierry CHEVASSUS <thierry.chevassus@laposte.net>  Sun, 08 Nov 2026 20:57:05 +0400
 
