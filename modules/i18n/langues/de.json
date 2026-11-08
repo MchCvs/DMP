@@ -441,7 +441,7 @@
   "bouton.copier": "📋 Bericht kopieren",
   "page.complete": "Vollständige Seite →",
   "e5.pourquoi": "Warum Grafiken: Das Auge erkennt ein Problem in einer Zeichnung viel schneller als in einem Text, und dasselbe Bild zeigt die Entwicklung von einem Tag zum nächsten.",
-  "e5.fichiers": "Dateien verwenden: Die SVG-Datei öffnet sich in einem Browser, in LibreOffice oder Inkscape und bleibt in jeder Größe scharf. Die PNG-Datei passt in eine E-Mail oder ein Dokument. Die Details jeder Zahl stehen im Bericht (vorherige Seite).",
+  "e5.fichiers": "Dateien verwenden: Die SVG-Datei öffnet sich in einem Browser, in LibreOffice oder Inkscape – die Grafik bleibt bei jeder Größe scharf. Die PNG-Datei lässt sich in eine E-Mail oder ein Dokument einfügen. Die Einzelheiten zu den einzelnen Zahlen finden Sie im Bericht (vorherige Seite).",
   "e5.leg.notes": "je länger und grüner der Balken, desto besser der Bereich. Grün: 85 und mehr (nichts zu tun). Orange: 60 bis 85 (im Auge behalten). Rot: unter 60 (zu bearbeiten). Der kürzeste Bereich ist derjenige, mit dem Sie zuerst beginnen sollten.",
   "e5.leg.repartition": "jeder Balken zeigt den Anteil der Prüfungen in diesem Zustand. Ein überwiegend grüner Balken ist das Zeichen eines gesunden Rechners. Grau steht für das, was Ihr Computer nicht hat (zum Beispiel einen Akku bei einem Standrechner; fehlendes Bluetooth und WLAN sind auf Seite B6 beschrieben): Das ist kein Fehler.",
   "e5.leg.mesures": "jeder Balken ist eine echte Messung zum Zeitpunkt des Berichts. Prozessor, Speicher, Festplatte: der Auslastungsprozentsatz (grün unter 60 %, orange bis 85 %, rot darüber; Festplatte: 75 % und 90 %). Temperatur: grün unter 50 °C. Start: ein voller Balken entspricht 60 Sekunden, grün unter 30 s.",
