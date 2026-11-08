@@ -1,6 +1,6 @@
 # Deutsche Texte des Collectors e2. Nur den Text ändern.
 T_COMP="Punktzahl = eine Gesamtnote für die Gesundheit (0-100). Wie ein Arztbericht für Ihren Computer."
-T_CMD="ps aux + free + df (nur DMP)"
+T_CMD="ps aux + free + df"
 T_EXC="Ausgezeichnet"
 T_GOOD="Gut"
 T_IMP="Zu verbessern"

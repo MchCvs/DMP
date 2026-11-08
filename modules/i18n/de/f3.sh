@@ -1,5 +1,5 @@
 T_COMP="Der Geschwindigkeitstest (Benchmark) ist wie das Stoppen eines Läufers: Der Computer muss jedes Mal dieselbe Anstrengung leisten, damit man weiß, wie schnell er ist, und seine Entwicklung verfolgen kann."
-T_CMD="python3, dd (nur DMP)"
+T_CMD="python3, dd"
 T_DKU="Typ nicht lesbar"
 T_SSD="SSD"
 T_HDD="mechanische Festplatte"
