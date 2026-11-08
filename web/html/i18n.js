@@ -72,8 +72,7 @@
       }).observe(document.body, { childList: true, subtree: true });
     }
     if (document.querySelector('.lang-bar')) return;
-    var nav = document.querySelector('nav') || document.querySelector('header');
-    if (!nav) return;
+    return;
     var box = document.createElement('span');
     box.style.cssText = 'float:right;margin-right:10px;display:inline-flex;flex-direction:row;align-items:center;white-space:nowrap;';
     SUP.forEach(function (l) {
