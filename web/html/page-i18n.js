@@ -59,9 +59,9 @@ var SEC = {'A':'page.sec_a','B':'page.sec_b','C':'page.sec_c','D':'page.sec_d','
       if (!nom || !d[nom]) return;
       var txt = e.textContent.trim();
       if (/^←/.test(txt)) { e.textContent = '← ' + d[nom] + '' ; return; }
-      if (/^(Suivant|Next)/.test(txt) || /^(Précédent|Previous)/.test(txt)) {
+      if (/^(Suivant|Next|Weiter)/.test(txt) || /^(Précédent|Previous|Zurück)/.test(txt)) {
         var flèche = txt.match(/(→|←)$/);
-        var sens = /^(Suivant|Next)/.test(txt) ? d['page.suivant'] : d['page.precedent'];
+        var sens = /^(Suivant|Next|Weiter)/.test(txt) ? d['page.suivant'] : d['page.precedent'];
         e.textContent = sens + ': ' + d[nom] + (flèche ? ' ' + flèche[1] : '');
       }
     });
