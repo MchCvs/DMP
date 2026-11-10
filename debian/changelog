@@ -1,3 +1,13 @@
+dmp (1.8.8-1) unstable; urgency=medium
+
+  * Allemand : corrections de Michel appliquées (six phrases :
+    GRUB, service réseau au démarrage, page de démarrage, page de
+    sécurité).
+  * Suffixe « (DMP uniquement) » ajouté une seule fois, par lib.sh
+    (plus de doublon dans les infos techniques).
+
+ -- Thierry CHEVASSUS <thierry.chevassus@laposte.net>  Tue, 10 Nov 2026 13:33:40 +0400
+
 dmp (1.8.7-1) unstable; urgency=medium
 
   * Traduction complète en français, anglais et allemand :
