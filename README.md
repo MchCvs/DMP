@@ -60,10 +60,10 @@ Ne supprimez pas le dossier `~/DMP`. Mise à jour : `cd ~/DMP && git pull && sys
 
 ### Méthode B : paquet Debian (.deb)
 
-Téléchargez `dmp_1.8.3-1_all.deb` depuis la [page des releases](https://github.com/MchCvs/DMP/releases/latest), puis :
+Téléchargez `dmp_1.8.8-1_all.deb` depuis la [page des releases](https://github.com/MchCvs/DMP/releases/latest), puis :
 
 ```
-sudo apt install ./dmp_1.8.3-1_all.deb
+sudo apt install ./dmp_1.8.8-1_all.deb
 systemctl --user enable --now dmp.service
 ```
 
