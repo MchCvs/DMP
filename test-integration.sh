@@ -17,5 +17,9 @@ for k in a1 a2 a3 a4 a5 a6 a7 a8 a9 b1 b2 b3 b4 b5 b6 b7 b8 b9 c1 c2 c3 c4 d1 d2
   n=$(curl -s "http://localhost:$PORT/api/$k" | jq -r '.niveau' 2>/dev/null)
   case "$n" in 0|1|2|3) ;; *) echo "❌ niveau $k : '$n'"; ERR=1;; esac
 done
+echo "🧪 Cohérence de la version"
+V=$(cat "$DMP_ROOT/modules/VERSION" 2>/dev/null)
+R=$(grep -o 'dmp_[0-9][0-9.]*-[0-9]*_all\.deb' "$DMP_ROOT/README.md" | head -1 | sed 's/dmp_\(.*\)-[0-9]*_all\.deb/\1/')
+[ -n "$R" ] && [ "$V" = "$R" ] || { echo "❌ README ($R) et VERSION ($V) diffèrent"; ERR=1; }
 [ "$ERR" = 0 ] && echo "✅ Tous les contrôles sont passés" || echo "⚠️ Des contrôles ont échoué"
 exit $ERR
