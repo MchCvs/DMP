@@ -33,8 +33,7 @@ Logiciel de Thierry Chevassus (La Réunion) qui explique en mots simples l'état
 
 ## Reste à faire
 
-- E5 : titres des graphiques, libellés des barres, phrase de bilan « Ce que disent les graphiques ».
-- Relecture de l'allemand par Michel (en attente), puis reconstruction du paquet en 1.8.7.
+- Relecture de l'allemand par Michel (en attente de sa réponse), puis application de ses corrections et publication éventuelle d'une 1.8.9.
 - Sous-pages C, D, E, F : textes à migrer vers les dictionnaires.
 
 ## Style
