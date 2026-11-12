@@ -13,9 +13,11 @@ for p in menu tableau-bord verification-sante aide a1 a2 a3 a4 a5 a6 a7 a8 a9 b1
   [ "$code" = 200 ] || { echo "❌ page $p : $code"; ERR=1; }
 done
 echo "🧪 Niveaux des collecteurs"
-for k in a1 a2 a3 a4 a5 a6 a7 a8 a9 b1 b2 b3 b4 b5 b6 b7 b8 b9 c1 c2 c3 c4 d1 d2 d3 f2_1 f3; do
-  n=$(curl -s "http://localhost:$PORT/api/$k" | jq -r '.niveau' 2>/dev/null)
-  case "$n" in 0|1|2|3) ;; *) echo "❌ niveau $k : '$n'"; ERR=1;; esac
+for k in a1 a2 a3 a4 a5 a6 a7 a8 a9 b1 b2 b3 b4 b5 b6 b7 b8 b9 c1 c2 c3 c4 d1 d2 d3 e1 e2 e3_1 e3_2 e3_3 e4_1 e4_2 e4_3 e5 f1_1 f1_2 f1_3 f2_1 f2_2 f2_3 f3 f4; do
+  for l in fr en de; do
+  n=$(curl -s "http://localhost:$PORT/api/$k?lang=$l" | jq -r '.niveau' 2>/dev/null)
+  case "$n" in 0|1|2|3) ;; *) echo "❌ niveau $k $l : '$n'"; ERR=1;; esac
+  done
 done
 echo "🧪 Cohérence de la version"
 V=$(cat "$DMP_ROOT/modules/VERSION" 2>/dev/null)
