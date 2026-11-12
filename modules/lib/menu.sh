@@ -2,7 +2,7 @@
 
 # ==================================================
 # DMP - Menu principal
-# Version 1.8.4
+# Version : voir modules/VERSION
 # Navigation DMP v1
 # ==================================================
 
