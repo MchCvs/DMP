@@ -5,3 +5,4 @@ Comment=Debian Maintenance Professionnel
 Exec=xdg-open http://localhost:8765
 Icon=dmp
 Categories=System;Monitor;
+Keywords=debian;maintenance;diagnostic;système;
