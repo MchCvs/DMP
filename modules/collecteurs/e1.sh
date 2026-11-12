@@ -8,4 +8,4 @@ DISK=$(df -h / | tail -1 | awk '{print $2}')
 DISK=${DISK:-"non lisible"}
 HOSTNAME=$(hostname)
 T_O
-echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"informations_techniques\":{\"cmd\":\"nproc + free -h + df -h + hostname\",\"cores\":$CORES,\"ram\":\"$RAM\",\"disk\":\"$DISK\",\"hostname\":\"$HOSTNAME\"}}"
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$T_R\",\"niveau\":3,\"informations_techniques\":{\"cmd\":\"nproc + free -h + df -h + hostname\",\"cores\":$CORES,\"ram\":\"$RAM\",\"disk\":\"$DISK\",\"hostname\":\"$HOSTNAME\"}}"
