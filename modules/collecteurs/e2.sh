@@ -9,4 +9,4 @@ SCORE=$((100 - (CPU_USAGE + MEM_USAGE + DISK_USAGE) / 3))
 SCORE=$([[ $SCORE -lt 0 ]] && echo 0 || echo $SCORE)
 if [[ $SCORE -gt 80 ]]; then RES="$T_EXC"; elif [[ $SCORE -gt 60 ]]; then RES="$T_GOOD"; else RES="$T_IMP"; fi
 T_O
-echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$RES\",\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"cpu\":$CPU_USAGE,\"mem\":$MEM_USAGE,\"disk\":$DISK_USAGE,\"score\":$SCORE,\"note\":\"$T_NOTE\"}}"
+echo "{\"comprendre\":\"$T_COMP\",\"observations\":\"$O\",\"resultat\":\"$RES\",\"niveau\":3,\"informations_techniques\":{\"cmd\":\"$T_CMD\",\"cpu\":$CPU_USAGE,\"mem\":$MEM_USAGE,\"disk\":$DISK_USAGE,\"score\":$SCORE,\"note\":\"$T_NOTE\"}}"
