@@ -1,0 +1,16 @@
+.TH DMP 1 "2026-11-10" "1.8.8" "Commandes DMP"
+.SH NOM
+dmp \- explique en mots simples l'état de votre machine Debian
+.SH SYNOPSIS
+.B dmp
+.SH DESCRIPTION
+DMP lance un petit serveur web local qui examine votre ordinateur Debian et
+présente le résultat dans le navigateur.
+.PP
+Le serveur écoute uniquement sur 127.0.0.1, port 8765. Aucune donnée n'est
+envoyée sur Internet.
+.SH UTILISATION
+Ouvrez ensuite \fIhttp://127.0.0.1:8765/menu.html\fR dans votre navigateur,
+ou lancez l'icône DMP du menu des applications.
+.SH VOIR AUSSI
+Documentation et code : https://github.com/MchCvs/DMP
