@@ -1,7 +1,7 @@
 Source: dmp
 Section: admin
 Priority: optional
-Maintainer: Thierry CHEVASSUS <thierry@example.invalid>
+Maintainer: Thierry CHEVASSUS <thierry.chevassus@laposte.net>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.7.0
 Homepage: https://github.com/MchCvs/DMP
