@@ -19,6 +19,7 @@ desc(){ case "$1" in
  soffice*|libreoffice*) echo "LibreOffice : traitement de texte, tableur, présentations.";;
  vlc|mpv|totem) echo "Lecteur de vidéos et de musique.";;
  pipewire*|wireplumber|pulseaudio) echo "Gère le son : haut-parleurs, micro, casque.";;
+ open_webui*|Open\ WebUI) echo "Interface web d'un logiciel d'intelligence artificielle, lancée sur votre ordinateur.";;
  python*|node|java) echo "Un programme écrit dans un langage de script (ou un outil de développement). Ici il peut s'agir du serveur DMP lui-même.";;
  bash|sh|zsh|dash|fish) echo "Un terminal (la fenêtre où l'on tape des commandes) ou le script qui s'y exécute.";;
  cupsd|cups-browsed) echo "Gère l'impression.";;
