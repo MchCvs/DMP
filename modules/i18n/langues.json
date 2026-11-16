@@ -1,0 +1,22 @@
+{
+  "langues": [
+    {
+      "code": "fr",
+      "nom": "Français",
+      "drapeau": "🇫🇷",
+      "image": "images/flags/fr.png"
+    },
+    {
+      "code": "en",
+      "nom": "English",
+      "drapeau": "🇬🇧",
+      "image": "images/flags/gb.png"
+    },
+    {
+      "code": "de",
+      "nom": "Deutsch",
+      "drapeau": "🇩🇪",
+      "image": "images/flags/de.png"
+    }
+  ]
+}
