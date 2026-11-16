@@ -2,6 +2,8 @@
 // Copyright (C) 2026 Thierry CHEVASSUS — GPL-3.0-or-later — voir LICENSE
 (function () {
   var SUP = ['fr', 'en', 'de'];
+  fetch('/i18n/langues.json').then(function (r) { return r.json(); }).then(function (j) { SUP = j.langues.map(function (l) { return l.code; }); }).catch(function () {}).then(demarrer);
+  function demarrer() {
   function pick() {
     var p = new URLSearchParams(location.search).get('lang');
     var s = null;
@@ -12,6 +14,7 @@
   var LANG = pick();
   try { localStorage.setItem('dmp_lang', LANG); } catch (e) {}
   window.DMP_LANG = LANG;
+  document.dispatchEvent(new Event('dmp-lang-prete'));
   document.documentElement.lang = LANG;
 
   // Les appels à l'API transmettent la langue au collecteur
@@ -54,7 +57,7 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function prete() {
     walk(document.body);
     if (LANG !== 'fr') {
       new MutationObserver(function (ms) {
@@ -89,5 +92,7 @@
       box.appendChild(a);
     });
     nav.appendChild(box);
-  });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', prete); else prete();
+  }
 })();
