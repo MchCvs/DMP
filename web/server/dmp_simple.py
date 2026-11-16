@@ -12,6 +12,13 @@ import os
 class DMPHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         # Routes API
+        if self.path.split('?')[0] == '/i18n/langues.json':
+            data = (DMP_ROOT / 'modules' / 'i18n' / 'langues.json').read_bytes()
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(data)
+            return
         if self.path.startswith('/i18n/'):
             import json as _j
             lang = urlparse(self.path).path.split('/')[-1].replace('.json', '')
