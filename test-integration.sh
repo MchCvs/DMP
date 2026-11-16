@@ -23,5 +23,10 @@ echo "🧪 Cohérence de la version"
 V=$(cat "$DMP_ROOT/modules/VERSION" 2>/dev/null)
 R=$(grep -o 'dmp_[0-9][0-9.]*-[0-9]*_all\.deb' "$DMP_ROOT/README.md" | head -1 | sed 's/dmp_\(.*\)-[0-9]*_all\.deb/\1/')
 [ -n "$R" ] && [ "$V" = "$R" ] || { echo "❌ README ($R) et VERSION ($V) diffèrent"; ERR=1; }
+echo "🧪 Dictionnaires de langue"
+for l in fr en de; do
+  python3 -m json.tool "$DMP_ROOT/modules/i18n/langues/$l.json" >/dev/null 2>&1 || { echo "❌ JSON invalide : $l.json"; ERR=1; }
+done
+python3 -c "import json,sys; d=json.load(open('$DMP_ROOT/modules/i18n/langues/en.json',encoding='utf-8')); sys.exit(1 if [k for k,v in d.items() if '\"' in v] else 0)" || { echo "❌ guillemets droits dans en.json"; ERR=1; }
 [ "$ERR" = 0 ] && echo "✅ Tous les contrôles sont passés" || echo "⚠️ Des contrôles ont échoué"
 exit $ERR
