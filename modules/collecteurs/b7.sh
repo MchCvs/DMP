@@ -20,6 +20,7 @@ while IFS='|' read -r c n cp m u; do [ -z "$c" ] && continue; i=$((i+1))
  MEM=$(awk -v k=$m -v g="$T_GB" -v mb="$T_MB" 'BEGIN{if(k>=1048576)printf "%.1f %s",k/1048576,g;else printf "%d %s",k/1024,mb}'); PC=$(awk -v k=$m -v t=$MT 'BEGIN{printf "%.1f",k*100/t}')
  T_ITEM
 done <<< "$TOP"
+if ! echo "$TOP" | grep -q "^Mises à jour automatiques|" && echo "$AGG" | grep -q "^Mises à jour automatiques|"; then LIST="$LIST${NL}   • ${T_UPD:-}"; fi
 if ! echo "$TOP" | grep -q "^DMP (serveur)|" && echo "$AGG" | grep -q "^DMP (serveur)|"; then LIST="$LIST${NL}   • ${T_DMP_LUI:-}"; fi
 TC=$(echo "$AGG" | sort -t'|' -k3 -nr | head -3 | awk -F'|' -v f="$T_TCFMT" '$3>0{printf f,$1,$3}')
 [ -z "$TC" ] && TC="$T_TCNONE"
