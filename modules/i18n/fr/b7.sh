@@ -1,6 +1,7 @@
 # Textes français du collecteur b7. Ne modifier que le texte.
 T_COMP="$(tr_cle b7.comp)"
 T_CMD="$(tr_cle b7.cmd)"
+T_DMP_LUI="$(tr_cle b7.dmp_lui_meme)"
 T_GB="Go"; T_MB="Mo"
 T_TCFMT='   • %s : %s %%\n'
 T_TCNONE="   • Aucun programme ne sollicite le processeur de façon notable."
