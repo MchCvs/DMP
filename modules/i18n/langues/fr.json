@@ -413,5 +413,6 @@
   "d2.danger.titre": "DANGER — EN CAS DE DOUTE, NE SUPPRIMEZ PAS.",
   "d2.danger.intro": "Un logiciel peut sembler anodin et être vital :",
   "d2.danger.texte": "le chargeur de démarrage (GRUB), les correctifs du processeur (microcode), les pilotes internes (firmware) ou les réglages de langue (locales). Les retirer peut empêcher l'ordinateur de démarrer, laisser des failles de sécurité ouvertes ou casser l'affichage. Avant toute suppression, lisez la liste que propose apt et cherchez le nom sur internet.",
-  "b7.dmp_lui_meme": "DMP ne figure pas dans ce classement : c'est lui qui fait tourner cette page. Il est affiché ici pour que vous sachiez qui fait ce relevé."
+  "b7.dmp_lui_meme": "DMP ne figure pas dans ce classement : c'est lui qui fait tourner cette page. Il est affiché ici pour que vous sachiez qui fait ce relevé.",
+  "b7.updates": "Mises à jour automatiques : ce programme de Debian installe les mises à jour de sécurité. Il consomme peu de mémoire, donc il n'apparaît pas dans ce classement."
 }
