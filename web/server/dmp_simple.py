@@ -5,6 +5,8 @@ from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 DMP_ROOT = Path(__file__).resolve().parents[2]
 import subprocess
+import json as _json
+LANGUES_OK = [l['code'] for l in _json.loads((Path(__file__).resolve().parents[2] / 'modules/i18n/langues.json').read_text(encoding='utf-8'))['langues']] if (Path(__file__).resolve().parents[2] / 'modules/i18n/langues.json').exists() else ['fr']
 import os
 
 class DMPHandler(SimpleHTTPRequestHandler):
@@ -13,7 +15,7 @@ class DMPHandler(SimpleHTTPRequestHandler):
         if self.path.startswith('/i18n/'):
             import json as _j
             lang = urlparse(self.path).path.split('/')[-1].replace('.json', '')
-            if lang in ('fr', 'en', 'de'):
+            if lang in LANGUES_OK:
                 chemin = DMP_ROOT / 'modules' / 'i18n' / 'langues' / (lang + '.json')
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -26,7 +28,7 @@ class DMPHandler(SimpleHTTPRequestHandler):
             u = urlparse(self.path)
             api_key = u.path.split('/')[-1]
             lang = parse_qs(u.query).get('lang', ['fr'])[0]
-            if lang not in ('fr', 'en', 'de'):
+            if lang not in LANGUES_OK:
                 lang = 'fr'
             script = f'{DMP_ROOT}/modules/collecteurs/{api_key}.sh'
             
