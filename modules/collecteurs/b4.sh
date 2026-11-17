@@ -16,7 +16,7 @@ for dk in $(LC_ALL=C lsblk -dno NAME,TYPE | awk '$2=="disk" && $1!~/^zram/{print
  T_SAD
 done
 P=""; W=0
-while read -r s f t u a p tg; do n=${p%\%}; [ "$n" -gt "$W" ] && W=$n
+while read -r s f t u a p tg; do s=$(fmt_taille "$s"); u=$(fmt_taille "$u"); a=$(fmt_taille "$a"); n=${p%\%}; [ "$n" -gt "$W" ] && W=$n
  T_FS; T_RO; T_PART
 done < <(LC_ALL=C df -h --output=source,fstype,size,used,avail,pcent,target -x tmpfs -x devtmpfs -x squashfs -x efivarfs -x overlay | tail -n +2)
 if [ $W -ge 90 ]; then WL=2; elif [ $W -ge 75 ]; then WL=1; else WL=0; fi
