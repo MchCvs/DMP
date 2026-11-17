@@ -16,6 +16,6 @@ case $SL in
 2) SU="Cette capacité est suffisante pour un usage courant, mais photos et vidéos la remplissent vite : surveillez l'espace restant.";;
 *) SU="Cette capacité est limitée : photos et vidéos la rempliront vite, pensez à un disque externe.";;
 esac
-O="$(tr_cle a3.observations n="$N" d="$D" s="$S" p="$P" u="$U" a="$A")"
+O="$(tr_cle a3.observations n="$N" d="$D" s="$(fmt_taille "$S")" p="$P" u="$(fmt_taille "$U")" a="$(fmt_taille "$A")")"
 R="Espace suffisant"; [ $NP -ge 75 ] && R="Espace à surveiller"; [ $NP -ge 90 ] && R="Disque principal presque plein : à libérer rapidement"
 }
