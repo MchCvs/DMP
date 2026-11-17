@@ -11,3 +11,5 @@ if p: d["possibilities"]=json.loads(p)
 print(json.dumps(d,ensure_ascii=False))
 P
 }
+
+fmt_taille(){ echo "$1" | sed -E 's/^([0-9.,]+)([KMGT])$/\1 \2o/; s/\./,/; s/ Ko/ Ko/'; }
