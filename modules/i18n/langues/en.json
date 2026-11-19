@@ -490,5 +490,7 @@
   "d2.danger.intro": "A piece of software can seem harmless and yet be vital:",
   "d2.danger.texte": "the boot loader (GRUB), the processor fixes (microcode), the internal drivers (firmware) or the language settings (locales). Removing them can stop the computer from starting, leave security holes open or break the display. Before removing anything, read the list apt proposes and search the name on the Internet.",
   "b7.dmp_lui_meme": "DMP is not part of this ranking: it runs this page. It is shown here so you know what makes this measurement.",
-  "b7.updates": "Automatic updates: this Debian program installs security updates. It uses little memory, so it does not appear in this ranking."
+  "b7.updates": "Automatic updates: this Debian program installs security updates. It uses little memory, so it does not appear in this ranking.",
+  "f2_1.memo.titre": "Last external backup seen on {date}",
+  "f2_1.memo.texte": "The backup disk is not connected right now: DMP cannot check the backups made since. Connect the disk to update this information."
 }

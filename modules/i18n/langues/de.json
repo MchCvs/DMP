@@ -490,5 +490,7 @@
   "d2.danger.intro": "Eine Software kann harmlos wirken und dennoch lebenswichtig sein:",
   "d2.danger.texte": "der Bootloader (GRUB), die Prozessor-Korrekturen (Microcode), die internen Treiber (Firmware) oder die Spracheinstellungen (Locales). Ihr Entfernen kann verhindern, dass der Computer startet, Sicherheitslücken offen lassen oder die Anzeige beschädigen. Lesen Sie vor jedem Entfernen die Liste, die apt vorschlägt, und suchen Sie den Namen im Internet.",
   "b7.dmp_lui_meme": "DMP gehört nicht zu dieser Rangliste: Es betreibt diese Seite. Es wird hier angezeigt, damit Sie wissen, wer diese Messung durchführt.",
-  "b7.updates": "Automatische Updates: Dieses Debian-Programm installiert Sicherheitsupdates. Es benötigt wenig Speicher und erscheint deshalb nicht in dieser Rangliste."
+  "b7.updates": "Automatische Updates: Dieses Debian-Programm installiert Sicherheitsupdates. Es benötigt wenig Speicher und erscheint deshalb nicht in dieser Rangliste.",
+  "f2_1.memo.titre": "Letzte externe Sicherung gesehen am {date}",
+  "f2_1.memo.texte": "Die Sicherungsfestplatte ist gerade nicht angeschlossen: DMP kann die seitdem erstellten Sicherungen nicht prüfen. Schließen Sie die Festplatte an, um diese Information zu aktualisieren."
 }
