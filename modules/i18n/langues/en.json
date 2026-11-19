@@ -492,5 +492,8 @@
   "b7.dmp_lui_meme": "DMP is not part of this ranking: it runs this page. It is shown here so you know what makes this measurement.",
   "b7.updates": "Automatic updates: this Debian program installs security updates. It uses little memory, so it does not appear in this ranking.",
   "f2_1.memo.titre": "Last external backup seen on {date}",
-  "f2_1.memo.texte": "The backup disk is not connected right now: DMP cannot check the backups made since. Connect the disk to update this information."
+  "f2_1.memo.texte": "The backup disk is not connected right now: DMP cannot check the backups made since. Connect the disk to update this information.",
+  "a1.verdict.ok": "Working well",
+  "a1.verdict.surcharge": "Overloaded right now: too many tasks waiting",
+  "a1.age.inconnu": "Its age could not be determined automatically: the larger the number in its name, the more recent it is."
 }
