@@ -7,6 +7,7 @@ T=""; for t in timeshift borg restic rsnapshot rsync deja-dup pika-backup; do co
 SNSYS=$(ls -d /timeshift/snapshots/*/ 2>/dev/null | sort | tail -1)
 SNEXT=$(ls -d /media/*/*/timeshift/snapshots/*/ /mnt/*/timeshift/snapshots/*/ 2>/dev/null | sort | tail -1)
 SN="${SNSYS:-$SNEXT}"
+SNLIST=""; [ -n "$SN" ] && { SNB=$(basename "${SN%/}"); [[ "${SNB:0:10}" =~ ^([0-9]{4})-([0-9]{2})-([0-9]{2})$ ]] && SNLIST="${BASH_REMATCH[3]}/${BASH_REMATCH[2]}/${BASH_REMATCH[1]}"; }
 BK=$(ls -t /var/backups/*.gz 2>/dev/null | head -1); [ -n "$BK" ] && BKD=$(date -r "$BK" +%d/%m/%Y) || BKD="$T_NOBK"
 EXT=$(lsblk -dno RM,TYPE 2>/dev/null | awk '$1==1&&$2=="disk"' | wc -l)
 T_O1
