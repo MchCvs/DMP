@@ -31,7 +31,7 @@ elif [ -n "$BR" ]; then if [ $BAGE -gt 7 ]; then ST=old; else ST=recent; fi
 elif [ -z "$T" ] && [ -z "$LAST" ]; then ST=none
 elif [ -z "$LAST" ]; then ST=tool
 else ST=ok; fi
-LAST_DISP="$LAST"
+LAST_DISP="$LAST"; [[ "$LAST" =~ ^([0-9]{4})-([0-9]{2})-([0-9]{2})$ ]] && LAST_DISP="${BASH_REMATCH[3]}/${BASH_REMATCH[2]}/${BASH_REMATCH[1]}"
 T_RX
 case "$ST" in ok|recent) NV=0;; old|tool|memo) NV=1;; none) NV=2;; *) NV=3;; esac
 export NV
