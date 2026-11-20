@@ -9,10 +9,10 @@ case $LV in
 esac
 O="$(tr_cle a1.observations m="$M" c="$C" q="$Q" l="$L")"
 case $GM in
-3) GN="entrée de gamme"; GX="un i3 suffit pour internet, la bureautique et les vidéos, mais peut peiner si on fait beaucoup de choses à la fois";;
-5) GN="milieu de gamme"; GX="un i5 est le choix le plus courant car il offre le meilleur équilibre entre vitesse et prix : il suffit largement pour internet, la bureautique, les vidéos, les photos et les jeux courants";;
-7) GN="haut de gamme"; GX="un i7 est rapide et à l'aise pour le montage vidéo, la création et les jeux exigeants";;
-9) GN="très haut de gamme"; GX="un i9 est un processeur de grande puissance, pensé pour les usages très lourds";;
+3) GN="$(tr_cle a1.gamme.entree_de_gamme.nom)"; GX="$(tr_cle a1.gamme.entree_de_gamme.texte)";;
+5) GN="$(tr_cle a1.gamme.milieu_de_gamme.nom)"; GX="$(tr_cle a1.gamme.milieu_de_gamme.texte)";;
+7) GN="$(tr_cle a1.gamme.haut_de_gamme.nom)"; GX="$(tr_cle a1.gamme.haut_de_gamme.texte)";;
+9) GN="$(tr_cle a1.gamme.tres_haut_de_gamme.nom)"; GX="$(tr_cle a1.gamme.tres_haut_de_gamme.texte)";;
 esac
 case $FA in
 intel) E="Qu'est-ce qu'un Core i5, i7... ? Intel est l'un des deux grands fabricants de processeurs (l'autre est AMD). « Core » est sa gamme grand public, classée par niveau, comme les tailles d'une même marque : i3 (entrée de gamme), i5 (milieu de gamme), i7 (haut de gamme), i9 (très haut de gamme). Le vôtre est $GN : $GX. Le nombre qui suit la lettre i (par exemple 12400) indique la génération et la puissance : plus il est grand, plus le processeur est récent et efficace. Pourquoi c'est utile de le savoir : cela vous dit ce que votre ordinateur peut faire confortablement, et quand il sera peut-être temps de le changer.";;
