@@ -450,5 +450,11 @@
   "a3.partition": "Partition {pn} ({ps}, {pf}) montée sur {pm} : {u} utilisé",
   "a3.disque": "💽 Disque {n} : « {nom} » — {modele}",
   "a3.capacite": "Capacité : {g} Go",
-  "a3.type_disque": "Type : {k}"
+  "a3.type_disque": "Type : {k}",
+  "a3.capacite.3": "Cette capacité est largement suffisante pour documents, photos et de nombreux films. Seuls les jeux lourds ou la vidéo 4K en grande quantité pourraient la remplir, car ces fichiers sont très volumineux.",
+  "a3.capacite.2": "Cette capacité est suffisante pour un usage courant, mais photos et vidéos la remplissent vite : surveillez l'espace restant.",
+  "a3.capacite.0": "Cette capacité est limitée : photos et vidéos la rempliront vite, pensez à un disque externe.",
+  "a1.coeurs.3": "un nombre élevé : votre ordinateur peut faire beaucoup de choses en même temps (vidéo, navigation, jeux) sans ralentir",
+  "a1.coeurs.2": "un nombre confortable pour un usage courant : internet, bureautique, vidéos",
+  "a1.coeurs.0": "un nombre modeste : l'ordinateur peut ralentir si on lance beaucoup de choses en même temps"
 }

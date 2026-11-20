@@ -3,9 +3,9 @@ T_COMP="$(tr_cle a1.comp)"
 T_CMD="$(tr_cle a1.cmd)"
 T_O() {
 case $LV in
-3) Q="un nombre élevé : votre ordinateur peut faire beaucoup de choses en même temps (vidéo, navigation, jeux) sans ralentir";;
-2) Q="un nombre confortable pour un usage courant : internet, bureautique, vidéos";;
-*) Q="un nombre modeste : l'ordinateur peut ralentir si on lance beaucoup de choses en même temps";;
+3) Q="$(tr_cle a1.coeurs.3)";;
+2) Q="$(tr_cle a1.coeurs.2)";;
+*) Q="$(tr_cle a1.coeurs.0)";;
 esac
 O="$(tr_cle a1.observations m="$M" c="$C" q="$Q" l="$L")"
 case $GM in
