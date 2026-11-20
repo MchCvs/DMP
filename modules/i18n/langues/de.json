@@ -515,5 +515,16 @@
   "a2.usage.2": "Er reicht für den normalen Gebrauch (Internet mit vielen Tabs, Büroarbeit, Videos, Fotos). Für aufwendigen Videoschnitt wäre er knapp, da diese Aufgaben den Schreibtisch schnell füllen.",
   "a2.usage.1": "Er reicht für Internet und Büroarbeit, wird aber bei vielen Tabs knapp, da aktuelle Browser anspruchsvoll sind.",
   "a2.usage.0": "Er ist klein: Er reicht für den gelegentlichen Gebrauch aus und läuft stabiler, wenn nur wenige Programme geöffnet sind.",
-  "a2.marge": "Im Moment nutzen Sie nur einen Teil davon ({p} %): Sie haben Spielraum."
+  "a2.marge": "Im Moment nutzen Sie nur einen Teil davon ({p} %): Sie haben Spielraum.",
+  "a3.comprendre": "Die Datenträger sind die Schränke Ihres Computers: Hier wird alles dauerhaft aufbewahrt.",
+  "a3.verdict.0": "Ausreichend Platz",
+  "a3.verdict.1": "Platz im Auge behalten",
+  "a3.verdict.2": "Hauptdatenträger fast voll: bald Platz schaffen",
+  "a3.type.usb": "austauschbarer USB-Datenträger (ein USB-Stick besteht aus Flash-Speicher ohne bewegliche Teile; eine externe Festplatte hat eine rotierende Scheibe)",
+  "a3.type.ssd": "SSD (keine beweglichen Teile: schnell, leise, stoßfest)",
+  "a3.type.mecanique": "mechanische Festplatte (eine Scheibe dreht sich: langsamer, sie nutzt sich mit den Jahren ab)",
+  "a3.partition": "Partition {pn} ({ps}, {pf}) eingebunden unter {pm}: {u} belegt",
+  "a3.disque": "💽 Datenträger {n}: „{nom}“ — {modele}",
+  "a3.capacite": "Kapazität: {g} GB",
+  "a3.type_disque": "Typ: {k}"
 }

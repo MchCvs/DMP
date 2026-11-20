@@ -515,5 +515,16 @@
   "a2.usage.2": "It is enough for everyday use (internet with many tabs, office work, videos, photos). For heavy video editing it would be tight, because these tasks quickly fill the desk.",
   "a2.usage.1": "It is enough for internet and office work, but becomes tight with many tabs, because recent browsers are demanding.",
   "a2.usage.0": "It is small: it is enough for light use, and runs better with few programs open.",
-  "a2.marge": "Right now you are using only part of it ({p} %): you have room to spare."
+  "a2.marge": "Right now you are using only part of it ({p} %): you have room to spare.",
+  "a3.comprendre": "Disks are your computer's cabinets: this is where everything is stored permanently.",
+  "a3.verdict.0": "Enough space",
+  "a3.verdict.1": "Space to keep an eye on",
+  "a3.verdict.2": "Main disk almost full: free up space quickly",
+  "a3.type.usb": "removable USB device (a USB stick uses flash memory with no moving parts; an external hard drive has a spinning platter)",
+  "a3.type.ssd": "SSD (no moving parts: fast, silent, shock-resistant)",
+  "a3.type.mecanique": "mechanical hard disk (a platter spins: slower, it wears out over the years)",
+  "a3.partition": "Partition {pn} ({ps}, {pf}) mounted on {pm}: {u} used",
+  "a3.disque": "💽 Disk {n}: “{nom}” — {modele}",
+  "a3.capacite": "Capacity: {g} GB",
+  "a3.type_disque": "Type: {k}"
 }

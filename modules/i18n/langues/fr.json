@@ -439,5 +439,16 @@
   "a2.usage.2": "Elle est suffisante pour un usage courant (internet avec beaucoup d'onglets, bureautique, vidéos, photos). Pour du montage vidéo lourd elle serait juste, car ces tâches remplissent vite le bureau.",
   "a2.usage.1": "Elle suffit pour internet et la bureautique, mais devient juste avec beaucoup d'onglets, car les navigateurs récents sont gourmands.",
   "a2.usage.0": "Elle est petite : elle suffit pour un usage léger, et tient mieux avec peu de programmes ouverts.",
-  "a2.marge": "En ce moment vous n'en utilisez qu'une partie ({p} %) : vous avez de la marge."
+  "a2.marge": "En ce moment vous n'en utilisez qu'une partie ({p} %) : vous avez de la marge.",
+  "a3.comprendre": "Les disques sont les armoires de votre ordinateur : c'est là que tout est rangé de façon permanente.",
+  "a3.verdict.0": "Espace suffisant",
+  "a3.verdict.1": "Espace à surveiller",
+  "a3.verdict.2": "Disque principal presque plein : à libérer rapidement",
+  "a3.type.usb": "support USB amovible (clé USB = mémoire flash ; disque dur externe = flash ou mécanique)",
+  "a3.type.ssd": "SSD (sans pièce mobile : rapide, silencieux, résistant aux chocs)",
+  "a3.type.mecanique": "disque dur mécanique (un plateau tourne : plus lent, il s'use avec les années)",
+  "a3.partition": "Partition {pn} ({ps}, {pf}) montée sur {pm} : {u} utilisé",
+  "a3.disque": "💽 Disque {n} : « {nom} » — {modele}",
+  "a3.capacite": "Capacité : {g} Go",
+  "a3.type_disque": "Type : {k}"
 }
