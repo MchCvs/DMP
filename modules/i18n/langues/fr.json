@@ -425,5 +425,6 @@
   "a1.age": "Âge : c'est un processeur {d}, sorti vers {y}. Pourquoi cela compte : un processeur récent est plus rapide et consomme moins d'énergie ; un ancien reste utilisable tant que vos usages sont simples, mais il finit par ralentir avec des logiciels de plus en plus exigeants.",
   "a1.age.neuf": "récent",
   "a1.age.mid": "d'âge moyen",
-  "a1.age.ancien": "ancien"
+  "a1.age.ancien": "ancien",
+  "a1.cpu.intel": "Qu'est-ce qu'un Core i5, i7... ? Intel est l'un des deux grands fabricants de processeurs (l'autre est AMD). « Core » est sa gamme grand public, classée par niveau, comme les tailles d'une même marque : i3 (entrée de gamme), i5 (milieu de gamme), i7 (haut de gamme), i9 (très haut de gamme). Le vôtre est {gn} : {gx}. Le nombre qui suit la lettre i (par exemple 12400) indique la génération et la puissance : plus il est grand, plus le processeur est récent et efficace. Pourquoi c'est utile de le savoir : cela vous dit ce que votre ordinateur peut faire confortablement, et quand il sera peut-être temps de le changer."
 }

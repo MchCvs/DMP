@@ -15,7 +15,7 @@ case $GM in
 9) GN="$(tr_cle a1.gamme.tres_haut_de_gamme.nom)"; GX="$(tr_cle a1.gamme.tres_haut_de_gamme.texte)";;
 esac
 case $FA in
-intel) E="Qu'est-ce qu'un Core i5, i7... ? Intel est l'un des deux grands fabricants de processeurs (l'autre est AMD). « Core » est sa gamme grand public, classée par niveau, comme les tailles d'une même marque : i3 (entrée de gamme), i5 (milieu de gamme), i7 (haut de gamme), i9 (très haut de gamme). Le vôtre est $GN : $GX. Le nombre qui suit la lettre i (par exemple 12400) indique la génération et la puissance : plus il est grand, plus le processeur est récent et efficace. Pourquoi c'est utile de le savoir : cela vous dit ce que votre ordinateur peut faire confortablement, et quand il sera peut-être temps de le changer.";;
+intel) E="$(tr_cle a1.cpu.intel gn="$GN" gx="$GX")";;
 amd) E="Qu'est-ce qu'un Ryzen ? AMD est l'un des deux grands fabricants de processeurs (l'autre est Intel). Ryzen est sa gamme grand public, classée par niveau : Ryzen 3 (entrée de gamme), 5 (milieu de gamme, le plus courant), 7 (haut de gamme), 9 (très haut de gamme). Le nombre qui suit indique la génération : plus il est grand, plus le processeur est récent. Pourquoi c'est utile de le savoir : cela vous dit ce que votre ordinateur peut faire confortablement.";;
 *) E="Le nom de votre processeur indique son fabricant et son niveau de puissance. Comparez-le à d'autres modèles du même fabricant pour savoir s'il est récent et puissant.";;
 esac
