@@ -16,7 +16,7 @@ case $GM in
 esac
 case $FA in
 intel) E="$(tr_cle a1.cpu.intel gn="$GN" gx="$GX")";;
-amd) E="Qu'est-ce qu'un Ryzen ? AMD est l'un des deux grands fabricants de processeurs (l'autre est Intel). Ryzen est sa gamme grand public, classée par niveau : Ryzen 3 (entrée de gamme), 5 (milieu de gamme, le plus courant), 7 (haut de gamme), 9 (très haut de gamme). Le nombre qui suit indique la génération : plus il est grand, plus le processeur est récent. Pourquoi c'est utile de le savoir : cela vous dit ce que votre ordinateur peut faire confortablement.";;
+amd) E="$(tr_cle a1.cpu.amd)";;
 *) E="Le nom de votre processeur indique son fabricant et son niveau de puissance. Comparez-le à d'autres modèles du même fabricant pour savoir s'il est récent et puissant.";;
 esac
 O="$O $E"
