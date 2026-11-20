@@ -497,5 +497,9 @@
   "a1.verdict.surcharge": "Overloaded right now: too many tasks waiting",
   "a1.age.inconnu": "Its age could not be determined automatically: the larger the number in its name, the more recent it is.",
   "a1.usage.3": "For everyday use (internet, office work, videos, photos), it is more than enough. It is also suitable for demanding uses such as video editing or games, because with {c} cores the work is shared well.",
-  "a1.usage.2": "For everyday use (internet, office work, videos, photos), it is enough. For video editing or very recent games it will be tight, because these tasks need many cores at the same time."
+  "a1.usage.2": "For everyday use (internet, office work, videos, photos), it is enough. For video editing or very recent games it will be tight, because these tasks need many cores at the same time.",
+  "a1.age": "Age: the processor is {d}, released around {y}. Why it matters: a recent processor is faster and uses less energy; an older one remains usable as long as your uses are simple, but it eventually slows down with more and more demanding software.",
+  "a1.age.neuf": "recent",
+  "a1.age.mid": "mid-aged",
+  "a1.age.ancien": "old"
 }

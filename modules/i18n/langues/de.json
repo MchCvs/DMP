@@ -497,5 +497,9 @@
   "a1.verdict.surcharge": "Im Moment überlastet: zu viele Aufgaben warten",
   "a1.age.inconnu": "Sein Alter konnte nicht automatisch bestimmt werden: Je größer die Zahl in seinem Namen, desto neuer ist er.",
   "a1.usage.3": "Für den normalen Gebrauch (Internet, Büroarbeit, Videos, Fotos) reicht er mehr als aus. Er eignet sich auch für anspruchsvolle Anwendungen wie Videoschnitt oder Spiele, da sich die Arbeit bei {c} Kernen gut verteilt.",
-  "a1.usage.2": "Für den normalen Gebrauch (Internet, Büroarbeit, Videos, Fotos) reicht er aus. Für Videoschnitt oder sehr neue Spiele wird es knapp, da diese Aufgaben viele Kerne gleichzeitig benötigen."
+  "a1.usage.2": "Für den normalen Gebrauch (Internet, Büroarbeit, Videos, Fotos) reicht er aus. Für Videoschnitt oder sehr neue Spiele wird es knapp, da diese Aufgaben viele Kerne gleichzeitig benötigen.",
+  "a1.age": "Alter: Der Prozessor ist {d}, erschienen um {y}. Warum das wichtig ist: Ein neuer Prozessor ist schneller und verbraucht weniger Energie; ein alter bleibt nutzbar, solange Ihre Anwendungen einfach sind, wird aber mit immer anspruchsvollerer Software irgendwann langsamer.",
+  "a1.age.neuf": "neu",
+  "a1.age.mid": "von mittlerem Alter",
+  "a1.age.ancien": "alt"
 }

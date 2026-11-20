@@ -26,8 +26,8 @@ case $LV in
 *) U="Il suffit pour internet et la bureautique légère, mais il est limité dès qu'on fait plusieurs choses à la fois, car $C cœurs seulement se partagent le travail.";;
 esac
 if [ -n "$Y" ]; then
- case $AC in new) D="récent";; mid) D="d'âge moyen";; *) D="ancien";; esac
- AG="Âge : c'est un processeur $D, sorti vers $Y. Pourquoi cela compte : un processeur récent est plus rapide et consomme moins d'énergie ; un ancien reste utilisable tant que vos usages sont simples, mais il finit par ralentir avec des logiciels de plus en plus exigeants."
+ case $AC in new) D="$(tr_cle a1.age.neuf)";; mid) D="$(tr_cle a1.age.mid)";; *) D="$(tr_cle a1.age.ancien)";; esac
+ AG="$(tr_cle a1.age d=$D y=$Y)"
 else AG="$(tr_cle a1.age.inconnu)"; fi
 if [ -n "$OV" ]; then R="$(tr_cle a1.verdict.surcharge)"; else R="$(tr_cle a1.verdict.ok)"; fi
 R="$R. $U $AG"
