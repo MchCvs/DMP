@@ -419,5 +419,7 @@
   "f2_1.memo.texte": "Le disque de sauvegarde n'est pas branché maintenant : DMP ne peut pas vérifier les sauvegardes faites depuis. Branchez le disque pour actualiser cette information.",
   "a1.verdict.ok": "Fonctionne bien",
   "a1.verdict.surcharge": "Surchargé en ce moment : trop de tâches en attente",
-  "a1.age.inconnu": "Son âge n'a pas pu être déterminé automatiquement : plus le nombre dans son nom est grand, plus il est récent."
+  "a1.age.inconnu": "Son âge n'a pas pu être déterminé automatiquement : plus le nombre dans son nom est grand, plus il est récent.",
+  "a1.usage.3": "Pour un usage courant (internet, bureautique, vidéos, photos), il est largement suffisant. Il convient aussi aux usages exigeants comme le montage vidéo ou les jeux, car avec {c} cœurs le travail se partage bien.",
+  "a1.usage.2": "Pour un usage courant (internet, bureautique, vidéos, photos), il est suffisant. Pour du montage vidéo ou des jeux très récents, il sera plus juste, car ces tâches demandent beaucoup de cœurs en même temps."
 }

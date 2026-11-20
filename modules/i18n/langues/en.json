@@ -495,5 +495,7 @@
   "f2_1.memo.texte": "The backup disk is not connected right now: DMP cannot check the backups made since. Connect the disk to update this information.",
   "a1.verdict.ok": "Working well",
   "a1.verdict.surcharge": "Overloaded right now: too many tasks waiting",
-  "a1.age.inconnu": "Its age could not be determined automatically: the larger the number in its name, the more recent it is."
+  "a1.age.inconnu": "Its age could not be determined automatically: the larger the number in its name, the more recent it is.",
+  "a1.usage.3": "For everyday use (internet, office work, videos, photos), it is more than enough. It is also suitable for demanding uses such as video editing or games, because with {c} cores the work is shared well.",
+  "a1.usage.2": "For everyday use (internet, office work, videos, photos), it is enough. For video editing or very recent games it will be tight, because these tasks need many cores at the same time."
 }

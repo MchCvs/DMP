@@ -495,5 +495,7 @@
   "f2_1.memo.texte": "Die Sicherungsfestplatte ist gerade nicht angeschlossen: DMP kann die seitdem erstellten Sicherungen nicht prüfen. Schließen Sie die Festplatte an, um diese Information zu aktualisieren.",
   "a1.verdict.ok": "Funktioniert gut",
   "a1.verdict.surcharge": "Im Moment überlastet: zu viele Aufgaben warten",
-  "a1.age.inconnu": "Sein Alter konnte nicht automatisch bestimmt werden: Je größer die Zahl in seinem Namen, desto neuer ist er."
+  "a1.age.inconnu": "Sein Alter konnte nicht automatisch bestimmt werden: Je größer die Zahl in seinem Namen, desto neuer ist er.",
+  "a1.usage.3": "Für den normalen Gebrauch (Internet, Büroarbeit, Videos, Fotos) reicht er mehr als aus. Er eignet sich auch für anspruchsvolle Anwendungen wie Videoschnitt oder Spiele, da sich die Arbeit bei {c} Kernen gut verteilt.",
+  "a1.usage.2": "Für den normalen Gebrauch (Internet, Büroarbeit, Videos, Fotos) reicht er aus. Für Videoschnitt oder sehr neue Spiele wird es knapp, da diese Aufgaben viele Kerne gleichzeitig benötigen."
 }

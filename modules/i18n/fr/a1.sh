@@ -21,8 +21,8 @@ amd) E="Qu'est-ce qu'un Ryzen ? AMD est l'un des deux grands fabricants de proce
 esac
 O="$O $E"
 case $LV in
-3) U="Pour un usage courant (internet, bureautique, vidéos, photos), il est largement suffisant. Il convient aussi aux usages exigeants comme le montage vidéo ou les jeux, car avec $C cœurs le travail se répartit bien.";;
-2) U="Pour un usage courant (internet, bureautique, vidéos, photos), il est suffisant. Pour du montage vidéo ou des jeux très récents, il sera plus juste, car ces tâches demandent beaucoup de cœurs en même temps.";;
+3) U="$(tr_cle a1.usage.3 c="$C")";;
+2) U="$(tr_cle a1.usage.2 c="$C")";;
 *) U="Il suffit pour internet et la bureautique légère, mais il est limité dès qu'on fait plusieurs choses à la fois, car $C cœurs seulement se partagent le travail.";;
 esac
 if [ -n "$Y" ]; then
