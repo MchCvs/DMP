@@ -503,5 +503,12 @@
   "a1.age.mid": "von mittlerem Alter",
   "a1.age.ancien": "alt",
   "a1.cpu.intel": "Was ist ein Core i5, i7 ...? Intel ist einer der beiden großen Prozessorhersteller (der andere ist AMD). „Core“ ist die Reihe für den Massenmarkt, nach Leistungsstufen geordnet: i3 (Einstieg), i5 (Mittelklasse), i7 (Oberklasse), i9 (obere Spitzenklasse). Ihrer ist {gn}: {gx}. Die Zahl hinter dem i (zum Beispiel 12400) gibt Generation und Leistung an: je größer, desto neuer und effizienter ist der Prozessor. Warum das nützlich ist: Sie sehen, was Ihr Computer bequem leisten kann, und wann es vielleicht Zeit für einen neuen ist.",
-  "a1.cpu.amd": "Was ist ein Ryzen? AMD ist einer der beiden großen Prozessorhersteller (der andere ist Intel). Ryzen ist die Reihe für den Massenmarkt, nach Leistungsstufen geordnet: Ryzen 3 (Einstieg), 5 (Mittelklasse, am häufigsten), 7 (Oberklasse), 9 (obere Spitzenklasse). Die Zahl dahinter gibt die Generation an: je höher, desto neuer ist der Prozessor. Warum das nützlich ist: Sie sehen, was Ihr Computer bequem leisten kann."
+  "a1.cpu.amd": "Was ist ein Ryzen? AMD ist einer der beiden großen Prozessorhersteller (der andere ist Intel). Ryzen ist die Reihe für den Massenmarkt, nach Leistungsstufen geordnet: Ryzen 3 (Einstieg), 5 (Mittelklasse, am häufigsten), 7 (Oberklasse), 9 (obere Spitzenklasse). Die Zahl dahinter gibt die Generation an: je höher, desto neuer ist der Prozessor. Warum das nützlich ist: Sie sehen, was Ihr Computer bequem leisten kann.",
+  "a2.quantite.3": "eine sehr große Menge: Sie können ohne Sorge viele Dinge gleichzeitig öffnen",
+  "a2.quantite.2": "eine angenehme Menge für Internet, Büroarbeit, Videos und ein wenig kreative Arbeit",
+  "a2.quantite.1": "eine ordentliche Menge, die aber knapp wird, wenn Sie viele Dinge öffnen",
+  "a2.quantite.0": "eine geringe Menge: Der Computer kann schnell langsam werden",
+  "a2.verdict.0": "Arbeitsspeicher in guter Verfassung",
+  "a2.verdict.1": "Arbeitsspeicher ziemlich stark ausgelastet, im Auge behalten",
+  "a2.verdict.2": "Arbeitsspeicher fast voll: Der Computer wird möglicherweise langsamer"
 }

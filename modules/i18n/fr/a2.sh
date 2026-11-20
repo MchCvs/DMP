@@ -3,13 +3,13 @@ T_COMP="$(tr_cle a2.comp)"
 T_CMD="$(tr_cle a2.cmd)"
 T_O() {
 case $LV in
-3) Q="une très grande quantité : vous pouvez ouvrir beaucoup de choses en même temps sans souci"
+3) Q="$(tr_cle a2.quantite.3)"
 XU="Elle est largement suffisante, même pour le montage vidéo ou plusieurs logiciels lourds en même temps, car ces tâches gardent beaucoup de données sur le bureau.";;
-2) Q="une quantité confortable pour internet, la bureautique, les vidéos et un peu de création"
+2) Q="$(tr_cle a2.quantite.2)"
 XU="Elle est suffisante pour un usage courant (internet avec beaucoup d'onglets, bureautique, vidéos, photos). Pour du montage vidéo lourd elle serait juste, car ces tâches remplissent vite le bureau.";;
-1) Q="une quantité correcte mais juste si vous ouvrez beaucoup de choses"
+1) Q="$(tr_cle a2.quantite.1)"
 XU="Elle suffit pour internet et la bureautique, mais devient juste avec beaucoup d'onglets, car les navigateurs récents sont gourmands.";;
-*) Q="une quantité faible : l'ordinateur peut vite ralentir"
+*) Q="$(tr_cle a2.quantite.0)"
 XU="Elle est petite : elle suffit pour un usage léger, et tient mieux avec peu de programmes ouverts.";;
 esac
 case $PL in
@@ -17,7 +17,7 @@ case $PL in
 1) XE="Elle est assez utilisée ($P %) : elle commence à peser, fermez les programmes dont vous n'avez plus besoin.";;
 *) XE="Elle est presque pleine ($P %) : fermez des programmes ou des onglets.";;
 esac
-R="Mémoire libre, sans gêne"; [ "$PL" = 1 ] && R="Mémoire chargée, à surveiller"; [ "$PL" = 2 ] && R="Mémoire presque pleine, à libérer"
+R="$(tr_cle a2.verdict.0)"; [ "$PL" = 1 ] && R="$(tr_cle a2.verdict.1)"; [ "$PL" = 2 ] && R="$(tr_cle a2.verdict.2)"
 X="$XU $XE"
 O="$(tr_cle a2.observations t="$T" q="$Q" p="$P" d="$D")"
 }
