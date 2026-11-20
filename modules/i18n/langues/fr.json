@@ -416,5 +416,8 @@
   "b7.dmp_lui_meme": "DMP ne figure pas dans ce classement : c'est lui qui fait tourner cette page. Il est affiché ici pour que vous sachiez qui fait ce relevé.",
   "b7.updates": "Mises à jour automatiques : ce programme de Debian installe les mises à jour de sécurité. Il consomme peu de mémoire, donc il n'apparaît pas dans ce classement.",
   "f2_1.memo.titre": "Dernière sauvegarde externe vue le {date}",
-  "f2_1.memo.texte": "Le disque de sauvegarde n'est pas branché maintenant : DMP ne peut pas vérifier les sauvegardes faites depuis. Branchez le disque pour actualiser cette information."
+  "f2_1.memo.texte": "Le disque de sauvegarde n'est pas branché maintenant : DMP ne peut pas vérifier les sauvegardes faites depuis. Branchez le disque pour actualiser cette information.",
+  "a1.verdict.ok": "Fonctionne bien",
+  "a1.verdict.surcharge": "Surchargé en ce moment : trop de tâches en attente",
+  "a1.age.inconnu": "Son âge n'a pas pu être déterminé automatiquement : plus le nombre dans son nom est grand, plus il est récent."
 }

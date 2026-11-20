@@ -492,5 +492,8 @@
   "b7.dmp_lui_meme": "DMP gehört nicht zu dieser Rangliste: Es betreibt diese Seite. Es wird hier angezeigt, damit Sie wissen, wer diese Messung durchführt.",
   "b7.updates": "Automatische Updates: Dieses Debian-Programm installiert Sicherheitsupdates. Es benötigt wenig Speicher und erscheint deshalb nicht in dieser Rangliste.",
   "f2_1.memo.titre": "Letzte externe Sicherung gesehen am {date}",
-  "f2_1.memo.texte": "Die Sicherungsfestplatte ist gerade nicht angeschlossen: DMP kann die seitdem erstellten Sicherungen nicht prüfen. Schließen Sie die Festplatte an, um diese Information zu aktualisieren."
+  "f2_1.memo.texte": "Die Sicherungsfestplatte ist gerade nicht angeschlossen: DMP kann die seitdem erstellten Sicherungen nicht prüfen. Schließen Sie die Festplatte an, um diese Information zu aktualisieren.",
+  "a1.verdict.ok": "Funktioniert gut",
+  "a1.verdict.surcharge": "Im Moment überlastet: zu viele Aufgaben warten",
+  "a1.age.inconnu": "Sein Alter konnte nicht automatisch bestimmt werden: Je größer die Zahl in seinem Namen, desto neuer ist er."
 }

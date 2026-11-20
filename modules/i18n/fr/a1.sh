@@ -28,7 +28,7 @@ esac
 if [ -n "$Y" ]; then
  case $AC in new) D="récent";; mid) D="d'âge moyen";; *) D="ancien";; esac
  AG="Âge : c'est un processeur $D, sorti vers $Y. Pourquoi cela compte : un processeur récent est plus rapide et consomme moins d'énergie ; un ancien reste utilisable tant que vos usages sont simples, mais il finit par ralentir avec des logiciels de plus en plus exigeants."
-else AG="Son âge n'a pas pu être déterminé automatiquement : plus le numéro dans son nom est grand, plus il est récent."; fi
-if [ -n "$OV" ]; then R="Surchargé en ce moment : trop de tâches en attente"; else R="Fonctionne bien"; fi
+else AG="$(tr_cle a1.age.inconnu)"; fi
+if [ -n "$OV" ]; then R="$(tr_cle a1.verdict.surcharge)"; else R="$(tr_cle a1.verdict.ok)"; fi
 R="$R. $U $AG"
 }
