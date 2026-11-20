@@ -434,5 +434,10 @@
   "a2.quantite.0": "une quantité faible : l'ordinateur peut vite ralentir",
   "a2.verdict.0": "Mémoire libre, sans gêne",
   "a2.verdict.1": "Mémoire chargée, à surveiller",
-  "a2.verdict.2": "Mémoire presque pleine, à libérer"
+  "a2.verdict.2": "Mémoire presque pleine, à libérer",
+  "a2.usage.3": "Elle est largement suffisante, même pour le montage vidéo ou plusieurs logiciels lourds en même temps, car ces tâches gardent beaucoup de données sur le bureau.",
+  "a2.usage.2": "Elle est suffisante pour un usage courant (internet avec beaucoup d'onglets, bureautique, vidéos, photos). Pour du montage vidéo lourd elle serait juste, car ces tâches remplissent vite le bureau.",
+  "a2.usage.1": "Elle suffit pour internet et la bureautique, mais devient juste avec beaucoup d'onglets, car les navigateurs récents sont gourmands.",
+  "a2.usage.0": "Elle est petite : elle suffit pour un usage léger, et tient mieux avec peu de programmes ouverts.",
+  "a2.marge": "En ce moment vous n'en utilisez qu'une partie ({p} %) : vous avez de la marge."
 }

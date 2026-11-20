@@ -510,5 +510,10 @@
   "a2.quantite.0": "eine geringe Menge: Der Computer kann schnell langsam werden",
   "a2.verdict.0": "Arbeitsspeicher in guter Verfassung",
   "a2.verdict.1": "Arbeitsspeicher ziemlich stark ausgelastet, im Auge behalten",
-  "a2.verdict.2": "Arbeitsspeicher fast voll: Der Computer wird möglicherweise langsamer"
+  "a2.verdict.2": "Arbeitsspeicher fast voll: Der Computer wird möglicherweise langsamer",
+  "a2.usage.3": "Er reicht mehr als aus, selbst für Videoschnitt oder mehrere aufwendige Programme gleichzeitig, da diese Aufgaben viele Daten auf dem Schreibtisch halten.",
+  "a2.usage.2": "Er reicht für den normalen Gebrauch (Internet mit vielen Tabs, Büroarbeit, Videos, Fotos). Für aufwendigen Videoschnitt wäre er knapp, da diese Aufgaben den Schreibtisch schnell füllen.",
+  "a2.usage.1": "Er reicht für Internet und Büroarbeit, wird aber bei vielen Tabs knapp, da aktuelle Browser anspruchsvoll sind.",
+  "a2.usage.0": "Er ist klein: Er reicht für den gelegentlichen Gebrauch aus und läuft stabiler, wenn nur wenige Programme geöffnet sind.",
+  "a2.marge": "Im Moment nutzen Sie nur einen Teil davon ({p} %): Sie haben Spielraum."
 }

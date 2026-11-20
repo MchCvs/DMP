@@ -510,5 +510,10 @@
   "a2.quantite.0": "a small amount: the computer can quickly slow down",
   "a2.verdict.0": "Memory in good shape",
   "a2.verdict.1": "Memory fairly used, to watch",
-  "a2.verdict.2": "Memory almost full: the computer may slow down"
+  "a2.verdict.2": "Memory almost full: the computer may slow down",
+  "a2.usage.3": "It is more than enough, even for video editing or several heavy programs at the same time, because these tasks keep a lot of data on the desk.",
+  "a2.usage.2": "It is enough for everyday use (internet with many tabs, office work, videos, photos). For heavy video editing it would be tight, because these tasks quickly fill the desk.",
+  "a2.usage.1": "It is enough for internet and office work, but becomes tight with many tabs, because recent browsers are demanding.",
+  "a2.usage.0": "It is small: it is enough for light use, and runs better with few programs open.",
+  "a2.marge": "Right now you are using only part of it ({p} %): you have room to spare."
 }
